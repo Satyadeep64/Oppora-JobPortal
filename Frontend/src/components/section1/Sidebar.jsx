@@ -1,0 +1,180 @@
+
+import { LayoutDashboard } from "lucide-react";
+import { NavLink } from "react-router-dom";
+import {
+    FaHome,
+    FaBriefcase,
+    FaGraduationCap,
+    FaTrophy,
+    FaUserTie,
+    FaClipboardCheck,
+    FaCode,
+    FaBook,
+    FaChartLine, 
+    FaUser,
+    FaGift,
+    FaAward,
+    FaCog,
+    FaPlus
+} from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
+const Sidebar = () => {
+    const navigate = useNavigate();
+
+    const role = localStorage.getItem("userRole");
+
+
+    const isRecruiter = role === "Recruiter";
+
+
+    return (
+        <div className="sidebar">
+            
+            {role === "Recruiter" && (
+            <button className="post-btn" onClick={()=>navigate("/post-opportunity")}>
+                <FaPlus/>
+                {isRecruiter ? "Post Opportunity" : "Explore"}
+            </button>
+            )}
+           {role === "Candidate" && (
+    <button 
+        className="post-btn" 
+        onClick={() => navigate("/jobs")}
+    >
+        <FaPlus />
+        Explore
+    </button>
+)}
+            
+
+            <div className="menu">
+
+                <NavLink to={isRecruiter ? "/home" : "/home"}>
+                    <FaHome/>
+                    Home
+                </NavLink>
+                
+               {role === "Recruiter" && (
+    <NavLink to="/dashboard/recruiter" className="nav-link" onClick={()=>navigate("/RecruiterDashboard")}>
+        <LayoutDashboard size={18} />
+        <span>Dashboard</span>
+    </NavLink>
+)}
+
+
+                {isRecruiter && (
+    <NavLink to="/manage-opportunities">
+        <FaGraduationCap />
+        <span>Manage Jobs</span>
+    </NavLink>
+)}
+
+
+                {!isRecruiter && (
+    <NavLink to="/jobs">
+        <FaBriefcase/>
+        Jobs
+    </NavLink>)}
+
+
+     <NavLink 
+    to={isRecruiter ? "/recruiter/applicants" : "/competitions"}
+    ><FaTrophy/>{isRecruiter ? "Applicants" : "Competitions"}
+    </NavLink>
+
+
+                <NavLink to={isRecruiter ? "/create-test" : "/resume-analyzer"}>
+                    <FaUserTie/>
+                    {isRecruiter ? "Create Assessment" : "AI Resume Analyzer"}
+                </NavLink>
+
+
+                <NavLink to={isRecruiter ? "/interviews" : "/mock-tests"}>
+                    <FaClipboardCheck/>
+                    {isRecruiter ? "Schedule Interviews" : "Mock Tests"}
+                </NavLink>
+
+
+                <NavLink to={isRecruiter ? "/candidate-search" : "/mock-interview"}>
+                    <FaUserTie/>
+                    {isRecruiter ? "Find Candidates" : "AI Mock Interview"}
+                </NavLink>
+
+
+                {
+                    !isRecruiter && (
+                        <a 
+                        href="https://takeuforward.org/strivers-a2z-dsa-course/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >
+                            <FaCode/>
+                            Striver DSA Sheet
+                        </a>
+                    )
+                }
+
+
+                <NavLink to={isRecruiter ? "/courses" : "/courses"}>
+                    <FaBook/>
+                    Courses
+                </NavLink>
+
+
+            </div>
+
+
+            <hr/>
+
+
+            <div className="menu">
+
+                <h5>
+                    {isRecruiter ? "Recruitment Activity" : "My Activity"}
+                </h5>
+
+
+                {!isRecruiter && (<NavLink to="/my-activity"><FaChartLine />My Activity</NavLink>)}
+
+            </div>
+
+
+
+            <hr/>
+
+
+            <div className="menu">
+
+                <h5>
+                    Other
+                </h5>
+
+
+                <NavLink to="/referrals">
+                    <FaGift/>
+                    Referrals
+                </NavLink>
+
+
+                <NavLink to="/awards">
+                    <FaAward/>
+                    Oppora Awards
+                </NavLink>
+
+
+                <NavLink to="/settings">
+                    <FaCog/>
+                    Settings
+                </NavLink>
+
+
+            </div>
+
+
+        </div>
+    )
+}
+
+
+export default Sidebar;

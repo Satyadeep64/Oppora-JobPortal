@@ -1,0 +1,1097 @@
+/* ==========================
+   Main
+========================== */
+
+.recruiter-applicants{
+
+    min-height:100vh;
+
+    padding:40px;
+
+    background:#f8fafc;
+
+    color:#111827;
+
+    transition:.3s;
+
+}
+
+
+.recruiter-applicants.dark{
+
+    background:#020617;
+
+    color:white;
+
+}
+
+
+
+/* ==========================
+ Header
+========================== */
+
+
+.header h1{
+
+    font-size:32px;
+
+    margin-bottom:8px;
+
+}
+
+
+
+.header p{
+
+    color:#64748b;
+
+}
+
+
+.dark .header p{
+
+    color:#94a3b8;
+
+}
+
+
+
+
+
+/* ==========================
+ Stats Cards
+========================== */
+
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+    margin:30px 0;
+
+}
+
+
+
+.stats div{
+
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.08);
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.stats div:hover{
+
+
+    transform:translateY(-5px);
+
+
+}
+
+
+
+.stats h2{
+
+    font-size:34px;
+
+    color:#2563eb;
+
+    margin-bottom:8px;
+
+}
+
+
+
+.stats p{
+
+    color:#64748b;
+
+}
+
+
+
+.dark .stats div{
+
+
+    background:#1e293b;
+
+    color:white;
+
+
+}
+
+
+
+.dark .stats p{
+
+
+    color:#cbd5e1;
+
+}
+
+
+
+
+
+/* ==========================
+ Filters
+========================== */
+
+
+.filters{
+
+
+    display:flex;
+
+    gap:20px;
+
+    margin-bottom:30px;
+
+
+}
+
+
+
+.filters input,
+.filters select{
+
+
+    padding:12px 15px;
+
+    width:280px;
+
+    border-radius:12px;
+
+    border:1px solid #cbd5e1;
+
+    background:white;
+
+    outline:none;
+
+}
+
+
+
+.dark .filters input,
+.dark .filters select{
+
+
+    background:#1e293b;
+
+    color:white;
+
+    border-color:#475569;
+
+
+}
+
+
+
+
+/* ==========================
+ Candidate Cards
+========================== */
+
+
+.candidate-card{
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+
+    background:white;
+
+
+    padding:25px;
+
+
+    border-radius:20px;
+
+
+    margin-bottom:20px;
+
+
+    box-shadow:
+
+    0 8px 25px rgba(0,0,0,.08);
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.candidate-card:hover{
+
+
+    transform:translateY(-3px);
+
+}
+
+
+
+.dark .candidate-card{
+
+
+    background:#1e293b;
+
+}
+
+
+
+
+
+/* Candidate Information */
+
+
+.candidate-info{
+
+
+    flex:1;
+
+
+}
+
+
+
+.candidate-info h2{
+
+
+    font-size:22px;
+
+    margin-bottom:12px;
+
+
+}
+
+
+
+.candidate-info p{
+
+
+    margin:8px 0;
+
+    color:#475569;
+
+
+}
+
+
+
+.dark .candidate-info p{
+
+
+    color:#cbd5e1;
+
+
+}
+
+
+
+
+.candidate-info b{
+
+
+    color:#111827;
+
+
+}
+
+
+.dark .candidate-info b{
+
+
+    color:white;
+
+
+}
+
+
+
+
+
+/* ==========================
+ Status Badge
+========================== */
+
+
+.status{
+
+
+    padding:6px 14px;
+
+
+    border-radius:20px;
+
+
+    margin-left:8px;
+
+
+    font-size:13px;
+
+
+    font-weight:600;
+
+
+}
+
+
+
+.status.Applied{
+
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+
+}
+
+
+
+.status.Shortlisted{
+
+
+    background:#dcfce7;
+
+    color:#16a34a;
+
+
+}
+
+
+
+.status.Rejected{
+
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+
+}
+
+
+
+
+.dark .status.Applied{
+
+
+    background:#1e40af;
+
+    color:white;
+
+
+}
+
+
+
+.dark .status.Shortlisted{
+
+
+    background:#166534;
+
+    color:white;
+
+
+}
+
+
+
+.dark .status.Rejected{
+
+
+    background:#991b1b;
+
+    color:white;
+
+
+}
+
+
+
+
+
+/* ==========================
+ Actions
+========================== */
+
+
+.actions{
+
+
+    display:flex;
+
+    gap:12px;
+
+
+}
+
+
+
+.actions button{
+
+
+    padding:11px 18px;
+
+
+    border:none;
+
+
+    border-radius:10px;
+
+
+    color:white;
+
+
+    cursor:pointer;
+
+
+    font-weight:600;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.actions button:hover{
+
+
+    transform:scale(1.05);
+
+
+}
+
+
+
+.resume{
+
+
+    background:#2563eb;
+
+
+}
+
+
+
+.accept{
+
+
+    background:#16a34a;
+
+
+}
+
+
+
+.reject{
+
+
+    background:#dc2626;
+
+
+}
+
+
+
+
+/* ==========================
+ Empty
+========================== */
+
+
+.empty-card{
+
+
+    background:white;
+
+
+    padding:40px;
+
+
+    border-radius:18px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+.dark .empty-card{
+
+
+    background:#1e293b;
+
+
+}
+
+
+
+
+/* ==========================
+ Responsive
+========================== */
+
+
+@media(max-width:1100px){
+
+
+.stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+.candidate-card{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:20px;
+
+}
+
+
+
+}
+
+
+
+@media(max-width:700px){
+
+
+.recruiter-applicants{
+
+padding:20px;
+
+}
+
+
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.filters{
+
+flex-direction:column;
+
+}
+
+
+
+.filters input,
+.filters select{
+
+width:100%;
+
+}
+
+
+
+.actions{
+
+width:100%;
+
+}
+
+
+
+.actions button{
+
+flex:1;
+
+}
+
+
+}
+.recruiter-applicants{
+
+min-height:100vh;
+
+padding:40px;
+
+background:#f8fafc;
+
+color:#111827;
+
+}
+
+
+
+.recruiter-applicants.dark{
+
+background:#020617;
+
+color:white;
+
+}
+
+
+
+
+.page-header h1{
+
+font-size:34px;
+
+margin-bottom:8px;
+
+}
+
+
+
+.page-header p{
+
+color:#64748b;
+
+}
+
+
+
+
+
+
+.stats{
+
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:25px;
+
+margin:35px 0;
+
+}
+
+
+
+
+
+.stat-card{
+
+
+background:white;
+
+padding:25px;
+
+border-radius:20px;
+
+text-align:center;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+
+
+.stat-card:hover{
+
+transform:translateY(-5px);
+
+}
+
+
+
+
+
+.stat-card h2{
+
+font-size:32px;
+
+margin:0;
+
+color:#2563eb;
+
+}
+
+
+
+
+.dark .stat-card{
+
+background:#1e293b;
+
+}
+
+
+
+
+
+
+
+
+.filters{
+
+display:flex;
+
+gap:20px;
+
+margin-bottom:30px;
+
+}
+
+
+
+.filters input,
+.filters select{
+
+
+padding:14px 18px;
+
+border-radius:12px;
+
+border:1px solid #cbd5e1;
+
+font-size:15px;
+
+}
+
+
+
+
+
+.dark .filters input,
+.dark .filters select{
+
+background:#1e293b;
+
+color:white;
+
+}
+
+
+
+
+
+
+
+
+
+
+.candidate-card{
+
+
+display:grid;
+
+grid-template-columns:2fr 1fr auto;
+
+align-items:center;
+
+gap:30px;
+
+
+background:white;
+
+padding:25px;
+
+border-radius:22px;
+
+margin-bottom:20px;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+
+transition:.3s;
+
+
+}
+
+
+
+
+.candidate-card:hover{
+
+transform:translateY(-4px);
+
+}
+
+
+
+
+.dark .candidate-card{
+
+background:#1e293b;
+
+}
+
+
+
+
+
+
+
+
+.candidate-left{
+
+display:flex;
+
+gap:20px;
+
+align-items:center;
+
+}
+
+
+
+
+.avatar{
+
+height:60px;
+
+width:60px;
+
+border-radius:50%;
+
+background:#2563eb;
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:25px;
+
+font-weight:bold;
+
+}
+
+
+
+
+
+.candidate-left h2{
+
+margin:0;
+
+}
+
+
+
+
+.candidate-left p{
+
+margin:6px 0;
+
+color:#64748b;
+
+}
+
+
+.dark .candidate-left p{
+
+color:#cbd5e1;
+
+}
+
+
+
+
+
+
+
+
+
+.candidate-middle{
+
+text-align:center;
+
+}
+
+
+
+.status{
+
+
+display:inline-block;
+
+margin-top:10px;
+
+padding:7px 18px;
+
+border-radius:20px;
+
+background:#dbeafe;
+
+color:#2563eb;
+
+}
+
+
+
+
+
+.actions{
+
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+
+}
+
+
+
+.actions button{
+
+
+padding:10px 20px;
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
+color:white;
+
+}
+
+
+
+
+
+.resume{
+
+background:#2563eb;
+
+}
+
+
+.accept{
+
+background:#16a34a;
+
+}
+
+
+.reject{
+
+background:#dc2626;
+
+}
+
+
+
+
+
+
+
+
+.empty-card{
+
+
+background:white;
+
+padding:40px;
+
+border-radius:20px;
+
+text-align:center;
+
+}
+
+
+
+.dark .empty-card{
+
+background:#1e293b;
+
+}
+
+
+
+
+
+
+
+
+@media(max-width:1000px){
+
+
+.stats{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+
+.candidate-card{
+
+grid-template-columns:1fr;
+
+}
+
+
+}
+
+
+
+
+@media(max-width:600px){
+
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+
+.filters{
+
+flex-direction:column;
+
+}
+
+}
