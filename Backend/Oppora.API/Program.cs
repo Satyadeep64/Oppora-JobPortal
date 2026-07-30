@@ -4,7 +4,10 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Oppora.API.Data;
 using Oppora.API.Services;
+using Oppora.API.Services.Import;
+using Oppora.API.Services.Import.Importers;
 using System.Text;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -39,6 +42,13 @@ builder.Services.AddControllers();
 // Services
 
 builder.Services.AddScoped<CloudinaryService>();
+builder.Services.AddScoped<ICompetitionImporter, CsvCompetitionImporter>();
+builder.Services.AddScoped<ICompetitionImporter, RssCompetitionImporter>();
+builder.Services.AddScoped<ICompetitionImporter, ApiCompetitionImporter>();
+builder.Services.AddScoped<ICompetitionImporter, ManualCompetitionImporter>();
+builder.Services.AddScoped<CompetitionImporterFactory>();
+builder.Services.AddScoped<CompetitionIngestionService>();
+
 
 
 

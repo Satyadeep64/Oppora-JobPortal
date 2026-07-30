@@ -1,0 +1,97 @@
+/* Competition List Layout */
+.competition-list-container {
+  width: 100%;
+  flex: 1;
+}
+
+/* One Card Per Row with 20px gap */
+.competition-list-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Friendly Error State UI */
+.error-state-box {
+  background-color: #ffffff;
+  border: 1.5px solid #fee2e2;
+  border-radius: 16px;
+  padding: 40px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+}
+
+.error-state-icon {
+  font-size: 44px;
+  color: #ef4444;
+}
+
+.error-state-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.error-state-message {
+  font-size: 14px;
+  color: #64748b;
+  max-width: 480px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.retry-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 20px;
+  background: linear-gradient(135deg, #1c4980 0%, #0056d2 100%);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  margin-top: 6px;
+}
+
+.retry-btn:hover {
+  background: linear-gradient(135deg, #163a66 0%, #0044ab 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 86, 210, 0.25);
+}
+
+.retry-btn-icon {
+  font-size: 16px;
+}
+
+/* Empty State UI */
+.empty-state-box {
+  background-color: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 48px 24px;
+  text-align: center;
+  color: #64748b;
+}
+
+.empty-state-box h3 {
+  font-size: 18px;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+  .competition-list-grid {
+    gap: 16px;
+  }
+}

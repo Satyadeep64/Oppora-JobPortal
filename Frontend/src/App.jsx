@@ -20,6 +20,8 @@ import OpportunityDetails from "./pages/Opportunity/OpportunityDetails";
 import ViewApplicants from "./pages/Recruiter/ViewApplicants";
 import RecruiterApplicants from "./pages/RecruiterApplicants/RecruiterApplicants";
 import ScrollToTop from "./components/ScrollToTop";
+import CompetitionPage from "./pages/Competitions/CompetitionPage";
+import CompetitionDetails from "./pages/CompetitionDetails/CompetitionDetails";
 
 const App = () => {
   const [loading,setLoading] = useState(true);
@@ -52,6 +54,8 @@ const App = () => {
         <Route path="/post-opportunity" element={<PostOpportunity/>}/> 
         <Route path="/edit-opportunity/:id" element={<EditOpportunity/>}/>
         <Route path="/jobs" element={<Jobs />}/>
+        <Route path="/competitions" element={<CompetitionPage />}/>
+        <Route path="/competitions/:id" element={<CompetitionDetails />}/>
         <Route path="/manage-opportunities"element={<ManageOpportunities/>}/>
         <Route path="/my-activity"element={<UserDashboard />}/>
         <Route path="/opportunity/:id" element={<OpportunityDetails/>}/>

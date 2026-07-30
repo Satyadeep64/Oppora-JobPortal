@@ -1,0 +1,2111 @@
+[
+  {
+    "id": 1,
+    "slug": "google-solution-challenge-2026",
+    "title": "Google Solution Challenge 2026",
+    "organization": "Google Developer Student Clubs",
+    "logo": "https://icon.horse/icon/google.com",
+    "banner": "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&auto=format&fit=crop&q=80",
+    "category": "Hackathons",
+    "subcategory": "AI & Mobile Engineering",
+    "description": "Build a technical solution for one of the 17 United Nations Sustainable Development Goals using Google technologies like Flutter, Firebase, GCP, Android, and Gemini AI.",
+    "overview": "The Google Solution Challenge is an annual international technical competition inviting university students worldwide to solve local community problems aligned with the United Nations 17 Sustainable Development Goals (SDGs). Participants leverage Google Cloud Platform, Flutter, Firebase, Android, and TensorFlow to architect production-ready software solutions while receiving direct technical mentorship from Google software engineers.",
+    "mode": "Online",
+    "location": "Online / Global",
+    "teamSize": "1 - 4 Members",
+    "deadline": "31 Mar 2026",
+    "registrationFee": "Free Entry",
+    "importantDates": [
+      {
+        "title": "Registration & Submission Launch",
+        "date": "01 Jan 2026",
+        "description": "Global project submission portal opens on Google Developers platform."
+      },
+      {
+        "title": "Project Submission Deadline",
+        "date": "31 Mar 2026",
+        "description": "Final date to upload 2-minute YouTube demo video & public GitHub repository."
+      },
+      {
+        "title": "Top 50 Semifinalists Announcement",
+        "date": "15 Apr 2026",
+        "description": "Top 50 global teams selected for 1-on-1 Googler engineering mentorship."
+      },
+      {
+        "title": "Top 10 Finalist Demo Day",
+        "date": "10 May 2026",
+        "description": "Live presentation to Google leadership panel for final prize placement."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Round 1: Solution Ideation & Prototype Submission",
+        "description": "Form a team of up to 4 students, choose 1 or more UN SDGs, and build a functioning application using Google developer tools. Submit a 2-minute video walkthrough showcasing user flow, system architecture, and public GitHub repository link.",
+        "startDate": "01 Jan 2026",
+        "endDate": "31 Mar 2026"
+      },
+      {
+        "title": "Round 2: Top 50 Global Mentorship Cohort",
+        "description": "The Top 50 global teams undergo deep technical reviews and receive weekly 1-on-1 mentorship sessions with Google software engineers to refine code quality, accessibility, cloud scalability, and UI/UX design.",
+        "startDate": "15 Apr 2026",
+        "endDate": "30 Apr 2026"
+      },
+      {
+        "title": "Round 3: Global Final Demo Day & Live Pitch",
+        "description": "Top 10 finalist teams present live virtually to Google Vice Presidents, Developer Relations Leaders, and UN Impact Directors to determine the Top 3 global winners.",
+        "startDate": "10 May 2026",
+        "endDate": "10 May 2026"
+      }
+    ],
+    "eligibility": [
+      "Must be an active student enrolled in an undergraduate or postgraduate degree program at an accredited college or university.",
+      "Teams must consist of 1 to 4 students (inter-college and inter-disciplinary teams are permitted).",
+      "Solutions must incorporate at least one core Google technology (Flutter, Firebase, GCP, Android, TensorFlow, Gemini AI).",
+      "Project must target at least one of the 17 UN Sustainable Development Goals."
+    ],
+    "prizes": [
+      {
+        "position": "Top 3 Global Winning Teams",
+        "reward": "$3,000 USD per team member + 1-on-1 executive mentorship + Feature on official Google Developers Blog"
+      },
+      {
+        "position": "Top 10 Global Finalists",
+        "reward": "$1,000 USD per team member + Custom Google Swag Package + Certificate of Distinction"
+      },
+      {
+        "position": "Top 50 Semifinalists",
+        "reward": "Exclusive Google Cloud Swag Box + 1-on-1 Googler Technical Mentorship + Certificate of Achievement"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do all team members need to belong to the same GDSC chapter or university?",
+        "answer": "No! Students from different universities, GDSC chapters, or degree streams can form a joint team as long as all members are active college students."
+      },
+      {
+        "question": "What qualifies as a Google technology for the submission?",
+        "answer": "Any core Google platform qualifies, including Flutter, Firebase, Google Cloud Platform (GCP), Android SDK, TensorFlow, ARCore, or Google Gemini AI APIs."
+      },
+      {
+        "question": "How are projects evaluated during Round 1?",
+        "answer": "Projects are evaluated 50% on impact (how effectively it addresses the chosen UN SDG and solves a real community problem) and 50% on technology (effective use of Google tools, code quality, UI usability)."
+      }
+    ],
+    "officialRegistrationUrl": "https://developers.google.com/community/gdsc-solution-challenge",
+    "contactEmail": "gdsc-solution-challenge@google.com",
+    "website": "https://developers.google.com/community/gdsc-solution-challenge",
+    "socialLinks": {
+      "twitter": "https://twitter.com/googledevs",
+      "linkedin": "https://linkedin.com/company/google",
+      "github": "https://github.com/googlesamples"
+    },
+    "tags": [
+      "Google",
+      "UN Goals",
+      "Flutter",
+      "Android",
+      "Firebase"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "UN Sustainable Goal Impact",
+        "weight": "30%",
+        "description": "Direct alignment and measurable impact on one or more UN 17 Sustainable Development Goals."
+      },
+      {
+        "title": "Technical Execution & Architecture",
+        "weight": "30%",
+        "description": "Effective implementation using Google technologies (Flutter, Firebase, Cloud, Android)."
+      },
+      {
+        "title": "User Experience & Accessibility",
+        "weight": "20%",
+        "description": "Intuitive UI/UX design, ease of use, and accessibility standards compliance."
+      },
+      {
+        "title": "Scalability & Completeness",
+        "weight": "20%",
+        "description": "Production readiness, scalability potential, and working prototype completeness."
+      }
+    ],
+    "postedDate": "Posted 2 hours ago",
+    "registeredCount": "18,943 Registered",
+    "views": 45200,
+    "bookmarkCount": 3820,
+    "closingInDays": 14,
+    "status": "Open",
+    "difficulty": "Intermediate",
+    "popularityBadge": "Trending"
+  },
+  {
+    "id": 2,
+    "title": "Microsoft Imagine Cup 2026",
+    "organization": "Microsoft Corporation",
+    "logo": "https://icon.horse/icon/microsoft.com",
+    "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=80",
+    "category": "Hackathons",
+    "subcategory": "Cloud & Artificial Intelligence",
+    "description": "The premier global competition for student tech innovators to build impactful startups leveraging Azure AI and Microsoft Cloud.",
+    "overview": "Microsoft Imagine Cup empowers young entrepreneurs and coders to launch viable technology startups. Teams build software prototypes utilizing Azure OpenAI Service, GitHub Copilot, and Azure Cloud infrastructure while receiving venture pitch coaching.",
+    "mode": "Online",
+    "location": "Online / Worldwide",
+    "teamSize": "1 - 4 Members",
+    "deadline": "15 Feb 2026",
+    "registrationFee": "Fully Sponsored by Microsoft",
+    "importantDates": [
+      {
+        "title": "World Submissions Open",
+        "date": "10 Oct 2025",
+        "description": "Submit pitch deck and Azure architecture proposal."
+      },
+      {
+        "title": "Submission Deadline",
+        "date": "15 Feb 2026",
+        "description": "Final chance to submit Azure cloud prototype."
+      },
+      {
+        "title": "World Semifinals",
+        "date": "20 Mar 2026",
+        "description": "Virtual pitch to Microsoft executives."
+      },
+      {
+        "title": "World Championship at MS Build",
+        "date": "25 May 2026",
+        "description": "Live presentation for $100K grand prize."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Round 1: Online Project & Pitch Deck Submission",
+        "description": "Submit a 3-minute video pitch, business model canvas, software architecture diagram, and Azure deployment link.",
+        "startDate": "10 Oct 2025",
+        "endDate": "15 Feb 2026"
+      },
+      {
+        "title": "Round 2: Global Semifinals & VC Mentorship",
+        "description": "Semifinalist teams present live virtually to a panel of Microsoft Cloud architects and startup investors.",
+        "startDate": "20 Mar 2026",
+        "endDate": "25 Mar 2026"
+      },
+      {
+        "title": "Round 3: Imagine Cup World Championship",
+        "description": "Top 3 global finalist teams pitch on stage at Microsoft Build event in Seattle for the Imagine Cup trophy.",
+        "startDate": "25 May 2026",
+        "endDate": "25 May 2026"
+      }
+    ],
+    "eligibility": [
+      "Participants must be at least 16 years old at the time of submission.",
+      "Must be actively enrolled as a student at an accredited high school, college, or university.",
+      "Projects must be deployed on Microsoft Azure cloud services.",
+      "Maximum of 4 members per team."
+    ],
+    "prizes": [
+      {
+        "position": "Imagine Cup World Champion",
+        "reward": "$100,000 USD Cash + Mentorship Session with Microsoft CEO Satya Nadella + $100,000 Azure Credits"
+      },
+      {
+        "position": "World Finalist Runners Up (2 Teams)",
+        "reward": "$50,000 USD Cash Prize + $50,000 Azure Startup Credits"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do I have to use Azure services for my project?",
+        "answer": "Yes, projects must utilize Azure cloud services (Azure OpenAI, Azure AI Search, Azure Functions, etc.)."
+      },
+      {
+        "question": "Can high school students participate in Imagine Cup?",
+        "answer": "Yes! Students aged 16 and above enrolled in high school or university are fully eligible."
+      }
+    ],
+    "officialRegistrationUrl": "https://imaginecup.microsoft.com",
+    "contactEmail": "imaginecup@microsoft.com",
+    "website": "https://imaginecup.microsoft.com",
+    "socialLinks": {
+      "twitter": "https://twitter.com/msftimagine",
+      "linkedin": "https://linkedin.com/company/microsoft",
+      "github": "https://github.com/microsoft"
+    },
+    "tags": [
+      "Microsoft",
+      "Azure AI",
+      "Startup Pitch",
+      "Global"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "AI & Cloud Innovation",
+        "weight": "35%",
+        "description": "Novel application of Microsoft Azure AI, OpenAI models, or cloud infrastructure."
+      },
+      {
+        "title": "Business Viability & Pitch",
+        "weight": "25%",
+        "description": "Clear business model, market opportunity, and compelling team pitch presentation."
+      },
+      {
+        "title": "Technical Sophistication",
+        "weight": "25%",
+        "description": "Depth of technical architecture, software engineering quality, and security."
+      },
+      {
+        "title": "Social Responsibility & Ethics",
+        "weight": "15%",
+        "description": "Responsible AI practices, ethical data usage, and positive societal impact."
+      }
+    ],
+    "postedDate": "Posted 5 hours ago",
+    "registeredCount": "32,411 Registered",
+    "views": 78900,
+    "bookmarkCount": 6210,
+    "closingInDays": 21,
+    "status": "Open",
+    "difficulty": "Advanced",
+    "popularityBadge": "Featured"
+  },
+  {
+    "id": 3,
+    "title": "Amazon ML Challenge 2026",
+    "organization": "Amazon India & AWS",
+    "logo": "https://icon.horse/icon/amazon.com",
+    "banner": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
+    "category": "Competitions",
+    "subcategory": "Machine Learning & Vision",
+    "description": "Solve real-world e-commerce Machine Learning problems including multimodal product entity extraction and computer vision ranking.",
+    "overview": "Amazon ML Challenge tests students on high-dimensional feature engineering, NLP transformer models, and deep vision architectures applied to real e-commerce data streams.",
+    "mode": "Online",
+    "location": "India / Online",
+    "teamSize": "2 - 4 Members",
+    "deadline": "10 Aug 2026",
+    "registrationFee": "Sponsored by AWS",
+    "importantDates": [
+      {
+        "title": "Registrations Open",
+        "date": "15 Jul 2026",
+        "description": "Team registration on HackerEarth platform."
+      },
+      {
+        "title": "48-Hour Hackathon Window",
+        "date": "10 Aug 2026",
+        "description": "Dataset release & continuous model training."
+      },
+      {
+        "title": "Leaderboard Freeze",
+        "date": "12 Aug 2026",
+        "description": "Automated macro F1-score evaluation."
+      },
+      {
+        "title": "Amazon PPI Interviews",
+        "date": "25 Aug 2026",
+        "description": "Direct interviews for top leaderboard teams."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Round 1: 48-Hour Machine Learning Sprint",
+        "description": "Train multimodal neural networks to extract entity values from product images and text descriptions. Submit CSV predictions evaluated via F1 score.",
+        "startDate": "10 Aug 2026",
+        "endDate": "12 Aug 2026"
+      },
+      {
+        "title": "Round 2: Code Verification & Model Inspection",
+        "description": "Top 50 teams submit Jupyter Notebooks, model weights, and training scripts to Amazon ML Scientists for reproducibility checks.",
+        "startDate": "15 Aug 2026",
+        "endDate": "18 Aug 2026"
+      },
+      {
+        "title": "Round 3: Amazon Leadership Pre-Placement Interviews (PPI)",
+        "description": "Top rankers are invited to Amazon Leadership Interviews for Applied Scientist & Machine Learning Engineer roles.",
+        "startDate": "25 Aug 2026",
+        "endDate": "30 Aug 2026"
+      }
+    ],
+    "eligibility": [
+      "Open to pre-final and final year B.Tech, M.Tech, Dual Degree, and PhD students in India.",
+      "Teams must consist of 2 to 4 members from the same institute.",
+      "Participants must demonstrate proficiency in Python, PyTorch, or TensorFlow."
+    ],
+    "prizes": [
+      {
+        "position": "1st Rank Winning Team",
+        "reward": "₹ 1,00,000 Cash Prize + Pre-Placement Interviews (PPI) for Amazon Applied Scientist roles"
+      },
+      {
+        "position": "2nd Rank Team",
+        "reward": "₹ 75,000 Cash Prize + Pre-Placement Interviews (PPI) for Amazon roles"
+      },
+      {
+        "position": "Top 10 Teams",
+        "reward": "Amazon Kindle Paperwhite Devices + AWS Goodies Certificate"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can students from different branches participate?",
+        "answer": "Yes! Students from any engineering or science stream are eligible."
+      },
+      {
+        "question": "How are predictions evaluated?",
+        "answer": "Submissions are evaluated in real time using Macro F1-score on a hidden test dataset."
+      }
+    ],
+    "officialRegistrationUrl": "https://unstop.com/competitions/amazon-ml-challenge",
+    "contactEmail": "amazon-ml-challenge@amazon.com",
+    "website": "https://www.amazon.in/b?node=26744002031",
+    "socialLinks": {
+      "twitter": "https://twitter.com/amazonIN",
+      "linkedin": "https://linkedin.com/company/amazon",
+      "github": "https://github.com/aws"
+    },
+    "tags": [
+      "Amazon",
+      "Machine Learning",
+      "Computer Vision",
+      "PPI"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "Model Accuracy & F1-Score",
+        "weight": "40%",
+        "description": "Quantitative prediction accuracy evaluated on a hidden test dataset."
+      },
+      {
+        "title": "Feature Engineering & Pipeline",
+        "weight": "25%",
+        "description": "Quality of data preprocessing, feature selection, and transformation techniques."
+      },
+      {
+        "title": "Algorithmic Optimization",
+        "weight": "20%",
+        "description": "Model efficiency, latency, hyperparameter tuning, and resource consumption."
+      },
+      {
+        "title": "Code Quality & Reproducibility",
+        "weight": "15%",
+        "description": "Clean Jupyter notebook structure, documentation, and reproducible pipeline."
+      }
+    ],
+    "postedDate": "Posted 12 hours ago",
+    "registeredCount": "14,820 Registered",
+    "views": 39400,
+    "bookmarkCount": 2950,
+    "closingInDays": 7,
+    "status": "Closing Soon",
+    "difficulty": "Intermediate",
+    "popularityBadge": "Trending"
+  },
+  {
+    "id": 4,
+    "title": "NASA International Space Apps Challenge 2026",
+    "organization": "NASA (National Aeronautics and Space Administration)",
+    "logo": "https://icon.horse/icon/nasa.gov",
+    "banner": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80",
+    "category": "Hackathons",
+    "subcategory": "Space Tech & Open Data",
+    "description": "The world's largest annual space hackathon using open earth and space data from NASA and agency space partners.",
+    "overview": "NASA Space Apps Challenge invites global problem solvers to utilize public satellite imagery, climate observations, and astrophysics datasets to solve Earth science and deep space challenges.",
+    "mode": "Hybrid",
+    "location": "Global / Local Events",
+    "teamSize": "1 - 6 Members",
+    "deadline": "04 Oct 2026",
+    "registrationFee": "Free Entry",
+    "importantDates": [
+      {
+        "title": "Local Registration Opens",
+        "date": "15 Jul 2026",
+        "description": "Select your local city event page."
+      },
+      {
+        "title": "Global Hackathon Weekend",
+        "date": "04 Oct 2026",
+        "description": "48-hour continuous hackathon sprint."
+      },
+      {
+        "title": "Local Nominees Announced",
+        "date": "20 Oct 2026",
+        "description": "Local judging panel selects top nominees."
+      },
+      {
+        "title": "NASA Global Award Winners",
+        "date": "15 Nov 2026",
+        "description": "NASA executive committee publishes global winners."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Round 1: 48-Hour Local & Virtual Sprint",
+        "description": "Select one official NASA challenge topic (e.g. Exoplanet Visualization, Earth Climate Analytics). Submit project URL and video pitch.",
+        "startDate": "04 Oct 2026",
+        "endDate": "05 Oct 2026"
+      },
+      {
+        "title": "Round 2: Global Judging Evaluation",
+        "description": "Projects nominated by local organizers are reviewed by NASA scientists, ESA engineers, and space agency directors.",
+        "startDate": "20 Oct 2026",
+        "endDate": "15 Nov 2026"
+      }
+    ],
+    "eligibility": [
+      "Open to everyone! Coders, scientists, designers, storytellers, makers, builders, and students.",
+      "Teams can have 1 to 6 members.",
+      "Must utilize open data provided by NASA or participating space agencies."
+    ],
+    "prizes": [
+      {
+        "position": "Global Winners (10 Categories)",
+        "reward": "Official Invitation to attend a NASA Rocket Launch in Florida + NASA Certificate"
+      },
+      {
+        "position": "Global Nominees",
+        "reward": "NASA Space Apps Global Nominee Certificate & Badge"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is coding experience required for NASA Space Apps?",
+        "answer": "No! Teams need diverse skills including storytelling, design, data analysis, and science communication."
+      },
+      {
+        "question": "Can I participate virtually if there is no local event in my city?",
+        "answer": "Yes! You can register under the Universal Event for virtual participants."
+      }
+    ],
+    "officialRegistrationUrl": "https://www.spaceappschallenge.org",
+    "contactEmail": "info@spaceappschallenge.org",
+    "website": "https://www.spaceappschallenge.org",
+    "socialLinks": {
+      "twitter": "https://twitter.com/spaceapps",
+      "linkedin": "https://linkedin.com/company/nasa",
+      "github": "https://github.com/nasa"
+    },
+    "tags": [
+      "NASA",
+      "Space Data",
+      "Open Science",
+      "Astronomy"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "Space Data Utilization",
+        "weight": "35%",
+        "description": "Creative use of open NASA Earth and space science datasets."
+      },
+      {
+        "title": "Problem Solving & Relevance",
+        "weight": "25%",
+        "description": "Effectiveness of the solution in addressing the specific NASA challenge statement."
+      },
+      {
+        "title": "Innovation & Originality",
+        "weight": "25%",
+        "description": "Unique perspective, original concept design, and creative technology application."
+      },
+      {
+        "title": "Presentation & Storytelling",
+        "weight": "15%",
+        "description": "Clarity of documentation, project pitch video, and team demonstration."
+      }
+    ],
+    "postedDate": "Posted 1 day ago",
+    "registeredCount": "24,150 Registered",
+    "views": 61200,
+    "bookmarkCount": 5100,
+    "closingInDays": 30,
+    "status": "Open",
+    "difficulty": "Intermediate",
+    "popularityBadge": "Editor's Pick"
+  },
+  {
+    "id": 5,
+    "title": "Google Summer of Code (GSoC) 2026",
+    "organization": "Google Open Source",
+    "logo": "https://icon.horse/icon/google.com",
+    "banner": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=80",
+    "category": "Competitions",
+    "subcategory": "Open Source Engineering",
+    "description": "A global, online program focused on bringing new contributors into open source software development over 12+ weeks with stipend.",
+    "overview": "Google Summer of Code pairs student and beginner developers with open source organizations (Linux, Python Software Foundation, Apache, Blender) to work on real software repositories under 1-on-1 mentor guidance.",
+    "mode": "Online",
+    "location": "Online / Remote",
+    "teamSize": "Individual",
+    "deadline": "02 Apr 2026",
+    "registrationFee": "Free Entry",
+    "importantDates": [
+      {
+        "title": "Mentoring Organizations Announced",
+        "date": "20 Feb 2026",
+        "description": "List of accepted open source orgs published."
+      },
+      {
+        "title": "Contributor Applications Open",
+        "date": "18 Mar 2026",
+        "description": "Submit project proposal to mentoring orgs."
+      },
+      {
+        "title": "Application Deadline",
+        "date": "02 Apr 2026",
+        "description": "Final deadline to submit GSoC proposals."
+      },
+      {
+        "title": "Accepted Contributors Announced",
+        "date": "01 May 2026",
+        "description": "Results published on GSoC portal."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Phase 1: Mentoring Organization Bonding & Proposal Draft",
+        "description": "Engage with open source organization maintainers via IRC/Slack, solve initial good-first-issues, and draft a detailed project proposal.",
+        "startDate": "20 Feb 2026",
+        "endDate": "02 Apr 2026"
+      },
+      {
+        "title": "Phase 2: Community Bonding & Coding Sprint",
+        "description": "Work 12 to 22 weeks writing code, submitting Pull Requests, and passing midterm code evaluations with your assigned mentor.",
+        "startDate": "01 Jun 2026",
+        "endDate": "20 Sep 2026"
+      }
+    ],
+    "eligibility": [
+      "Must be at least 18 years old at time of registration.",
+      "Must be a student or beginner to open source software development.",
+      "Must be eligible to work in your country of residence."
+    ],
+    "prizes": [
+      {
+        "position": "Successful GSoC Finisher",
+        "reward": "Stipend ($1,500 - $3,000 USD depending on country PPP) + Official GSoC Certificate & T-Shirt"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I submit proposals to multiple open source organizations?",
+        "answer": "Yes! You can submit up to 3 proposals across different mentoring organizations."
+      },
+      {
+        "question": "Is GSoC a full-time commitment?",
+        "answer": "GSoC offers both medium (~90 hour) and large (~175 hour) project sizes to fit different schedules."
+      }
+    ],
+    "officialRegistrationUrl": "https://summerofcode.withgoogle.com",
+    "contactEmail": "gsoc-support@google.com",
+    "website": "https://summerofcode.withgoogle.com",
+    "socialLinks": {
+      "twitter": "https://twitter.com/gsoc",
+      "linkedin": "https://linkedin.com/company/google",
+      "github": "https://github.com/google"
+    },
+    "tags": [
+      "Google",
+      "Open Source",
+      "Git",
+      "Stipend"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "Open Source Community Engagement",
+        "weight": "30%",
+        "description": "Active communication with mentor organization, pull request quality, and community interaction."
+      },
+      {
+        "title": "Code Contribution & Testing",
+        "weight": "35%",
+        "description": "Production-grade code contributions, unit test coverage, and documentation."
+      },
+      {
+        "title": "Project Milestone Tracking",
+        "weight": "20%",
+        "description": "Adherence to midterm and final project evaluation goals and timelines."
+      },
+      {
+        "title": "Architecture & System Design",
+        "weight": "15%",
+        "description": "Clean code design, modularity, and adherence to open-source project standards."
+      }
+    ],
+    "postedDate": "Posted yesterday",
+    "registeredCount": "41,800 Registered",
+    "views": 95400,
+    "bookmarkCount": 8900,
+    "closingInDays": 45,
+    "status": "Open",
+    "difficulty": "Advanced",
+    "popularityBadge": "Editor's Pick"
+  },
+  {
+    "id": 6,
+    "title": "ETHIndia 2026",
+    "organization": "Devfolio & Ethereum Foundation",
+    "logo": "https://icon.horse/icon/devfolio.co",
+    "banner": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&auto=format&fit=crop&q=80",
+    "category": "Hackathons",
+    "subcategory": "Web3 & Blockchain",
+    "description": "Asia's largest Ethereum hackathon bringing together Web3 developers, researchers, and creators to build decentralized applications.",
+    "overview": "ETHIndia gathers world-class smart contract developers, ZK researchers, and EVM builders to push the boundaries of decentralized finance, zero-knowledge proofs, and Web3 infrastructure.",
+    "mode": "Offline",
+    "location": "Bengaluru, India",
+    "teamSize": "1 - 4 Members",
+    "deadline": "15 Nov 2026",
+    "registrationFee": "Free Entry",
+    "importantDates": [
+      {
+        "title": "Devfolio Applications Open",
+        "date": "01 Sep 2026",
+        "description": "Submit GitHub profile & Web3 proof of work."
+      },
+      {
+        "title": "Application Deadline",
+        "date": "15 Nov 2026",
+        "description": "Shortlisting and hacking pass allocation."
+      },
+      {
+        "title": "36-Hour Offline Hackathon",
+        "date": "05 Dec 2026",
+        "description": "Live hacking at KTPO Convention Center, Bengaluru."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Round 1: Devfolio Profile Screening",
+        "description": "Application review based on past GitHub commits, smart contract projects, and Web3 technical experience.",
+        "startDate": "01 Sep 2026",
+        "endDate": "15 Nov 2026"
+      },
+      {
+        "title": "Round 2: 36-Hour Non-Stop Hackathon",
+        "description": "Build dApps on Ethereum, Polygon, Arbitrum, Optimism, or Base. Pitch to top Web3 VCs and protocol founders.",
+        "startDate": "05 Dec 2026",
+        "endDate": "07 Dec 2026"
+      }
+    ],
+    "eligibility": [
+      "Open to developers, smart contract engineers, UI/UX designers, and students worldwide.",
+      "Teams can have 1 to 4 members.",
+      "Must build projects using EVM-compatible blockchains."
+    ],
+    "prizes": [
+      {
+        "position": "Total Track Bounties & Grants",
+        "reward": "$100,000+ USD Cash Bounties + Seed Grant Funding from Top Web3 VCs"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is accommodation provided for outstation hackers?",
+        "answer": "Yes, ETHIndia provides venue hacking space, 24/7 meals, and resting areas during the 36-hour hackathon."
+      }
+    ],
+    "officialRegistrationUrl": "https://devfolio.co/hackathons",
+    "contactEmail": "support@devfolio.co",
+    "website": "https://ethindia2026.devfolio.co",
+    "socialLinks": {
+      "twitter": "https://twitter.com/ethindiaco",
+      "linkedin": "https://linkedin.com/company/devfolio",
+      "github": "https://github.com/ethindia"
+    },
+    "tags": [
+      "Devfolio",
+      "Ethereum",
+      "Web3",
+      "Smart Contracts",
+      "Crypto"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "EVM Smart Contract Security",
+        "weight": "35%",
+        "description": "Robustness against vulnerabilities (reentrancy, overflow, access control) on Ethereum/L2s."
+      },
+      {
+        "title": "Protocol Innovation",
+        "weight": "30%",
+        "description": "Novel application of Zero-Knowledge proofs, Account Abstraction, or DeFi primitives."
+      },
+      {
+        "title": "UI/UX & Web3 Integration",
+        "weight": "20%",
+        "description": "Seamless wallet connection, transaction feedback, and decentralized storage integration."
+      },
+      {
+        "title": "Hackathon Demo & Completeness",
+        "weight": "15%",
+        "description": "Working live testnet deployment and compelling 3-minute stage demo."
+      }
+    ],
+    "postedDate": "Posted 2 days ago",
+    "registeredCount": "8,640 Registered",
+    "views": 28300,
+    "bookmarkCount": 2140,
+    "closingInDays": 5,
+    "status": "Closing Soon",
+    "difficulty": "Advanced",
+    "popularityBadge": "Trending"
+  },
+  {
+    "id": 7,
+    "title": "Major League Hacking (MLH) Global Hack Week 2026",
+    "organization": "Major League Hacking (MLH)",
+    "logo": "https://icon.horse/icon/mlh.io",
+    "banner": "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&auto=format&fit=crop&q=80",
+    "category": "Hackathons",
+    "subcategory": "Community Hacking & Learning",
+    "description": "A week-long celebration of learning, building, and sharing projects alongside a global community of 10,000+ hackers.",
+    "overview": "Global Hack Week by MLH provides interactive technical workshops, live coding livestreams, mini-challenges, and peer collaboration across Web Development, Data Science, and Game Dev tracks.",
+    "mode": "Online",
+    "location": "Online / Worldwide",
+    "teamSize": "Individual / Team",
+    "deadline": "18 Jan 2026",
+    "registrationFee": "Free Entry",
+    "importantDates": [
+      {
+        "title": "Registration Open",
+        "date": "01 Dec 2025",
+        "description": "Claim your MLH digital event pass."
+      },
+      {
+        "title": "Global Hack Week Kickoff",
+        "date": "18 Jan 2026",
+        "description": "Live opening stream & track release."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Daily Build Tracks & Mini Challenges",
+        "description": "Participate in daily workshops, submit small code snippets, and build projects in Web, AI, or Game Dev tracks.",
+        "startDate": "18 Jan 2026",
+        "endDate": "25 Jan 2026"
+      }
+    ],
+    "eligibility": [
+      "Open to developers, students, and beginners worldwide.",
+      "No prior coding experience required."
+    ],
+    "prizes": [
+      {
+        "position": "Track Winners",
+        "reward": "MLH Swag Boxes, Mechanical Keyboards, and Domain Credits"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I participate if I am completely new to coding?",
+        "answer": "Yes! MLH Global Hack Week is designed with beginner-friendly workshops and live support."
+      }
+    ],
+    "officialRegistrationUrl": "https://mlh.io/seasons/2026/events",
+    "contactEmail": "hi@mlh.io",
+    "website": "https://mlh.io/seasons/2026/events",
+    "socialLinks": {
+      "twitter": "https://twitter.com/mlhacks",
+      "linkedin": "https://linkedin.com/company/major-league-hacking",
+      "github": "https://github.com/mlh"
+    },
+    "tags": [
+      "MLH",
+      "Community",
+      "Hackathon",
+      "Learn To Code"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "Learning & Growth",
+        "weight": "30%",
+        "description": "Extent of new skills acquired and technical challenges overcome during Hack Week."
+      },
+      {
+        "title": "Project Utility & Fun",
+        "weight": "30%",
+        "description": "Practical usefulness or creative entertainment value of the hackathon project."
+      },
+      {
+        "title": "Documentation & Demo",
+        "weight": "25%",
+        "description": "Devpost submission quality, README documentation, and video walkthrough."
+      },
+      {
+        "title": "Community Support",
+        "weight": "15%",
+        "description": "Helping fellow hackers, attending workshops, and active Discord participation."
+      }
+    ],
+    "postedDate": "Posted 3 days ago",
+    "registeredCount": "12,390 Registered",
+    "views": 31500,
+    "bookmarkCount": 2450,
+    "closingInDays": 12,
+    "status": "Open",
+    "difficulty": "Beginner",
+    "popularityBadge": "Featured"
+  },
+  {
+    "id": 8,
+    "title": "Kaggle March Machine Learning Mania 2026",
+    "organization": "Kaggle (Google LLC)",
+    "logo": "https://icon.horse/icon/kaggle.com",
+    "banner": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80",
+    "category": "Competitions",
+    "subcategory": "Predictive Analytics & ML",
+    "description": "Predict the outcomes of college basketball tournament games using historical stats, predictive modeling, and probabilistic forecasting.",
+    "overview": "Kaggle's annual March Mania competition challenges data scientists to engineer predictive models outputting win probability matrices evaluated via log-loss during live tournament play.",
+    "mode": "Online",
+    "location": "Online / Kaggle Platform",
+    "teamSize": "1 - 4 Members",
+    "deadline": "15 Mar 2026",
+    "registrationFee": "Free Entry",
+    "importantDates": [
+      {
+        "title": "Dataset Release",
+        "date": "01 Feb 2026",
+        "description": "Historical NCAA stats dataset published."
+      },
+      {
+        "title": "Model Freeze Deadline",
+        "date": "15 Mar 2026",
+        "description": "Final submissions locked before tournament begins."
+      },
+      {
+        "title": "Tournament Evaluation Complete",
+        "date": "05 Apr 2026",
+        "description": "Final leaderboard scoring."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Stage 1: Probabilistic Model Development",
+        "description": "Train XGBoost, LightGBM, or Neural Net models on historical college basketball stats to predict pairwise win probabilities.",
+        "startDate": "01 Feb 2026",
+        "endDate": "15 Mar 2026"
+      },
+      {
+        "title": "Stage 2: Live Tournament Log-Loss Scoring",
+        "description": "Submitted probability matrices are automatically scored against real-world game outcomes during the NCAA tournament.",
+        "startDate": "16 Mar 2026",
+        "endDate": "05 Apr 2026"
+      }
+    ],
+    "eligibility": [
+      "Open to all Kaggle account holders worldwide.",
+      "Teams can consist of 1 to 4 participants."
+    ],
+    "prizes": [
+      {
+        "position": "1st Place Gold Medalist",
+        "reward": "$25,000 USD Cash + Kaggle Grandmaster Ranking Points"
+      },
+      {
+        "position": "Top 5 Leaderboard",
+        "reward": "$10,000 USD Pool Distribution"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What metric is used to evaluate submissions?",
+        "answer": "Submissions are evaluated using Brier Score or Binned Log Loss between predictions and actual outcomes."
+      }
+    ],
+    "officialRegistrationUrl": "https://www.kaggle.com",
+    "contactEmail": "support@kaggle.com",
+    "website": "https://www.kaggle.com",
+    "socialLinks": {
+      "twitter": "https://twitter.com/kaggle",
+      "linkedin": "https://linkedin.com/company/kaggle",
+      "github": "https://github.com/kaggle"
+    },
+    "tags": [
+      "Kaggle",
+      "Data Science",
+      "Machine Learning",
+      "Python"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "Log Loss & Evaluation Score",
+        "weight": "50%",
+        "description": "Probabilistic prediction accuracy on NCAA tournament outcomes."
+      },
+      {
+        "title": "Statistical Modeling Depth",
+        "weight": "25%",
+        "description": "Sophistication of ranking algorithms, Elo ratings, or ensemble methods."
+      },
+      {
+        "title": "Data Pipeline Robustness",
+        "weight": "15%",
+        "description": "Handling missing historical team data, feature scaling, and validation splits."
+      },
+      {
+        "title": "Kernel Quality & Insights",
+        "weight": "10%",
+        "description": "Clarity of Kaggle Notebook exploratory data analysis and chart visualizations."
+      }
+    ],
+    "postedDate": "Posted 4 days ago",
+    "registeredCount": "19,750 Registered",
+    "views": 52100,
+    "bookmarkCount": 4120,
+    "closingInDays": 18,
+    "status": "Open",
+    "difficulty": "Beginner",
+    "popularityBadge": "Featured"
+  },
+  {
+    "id": 9,
+    "title": "HackerEarth International Women's Day Hackathon 2026",
+    "organization": "HackerEarth",
+    "logo": "https://icon.horse/icon/hackerearth.com",
+    "banner": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop&q=80",
+    "category": "Hackathons",
+    "subcategory": "Diversity & Social Impact",
+    "description": "Empowering women in technology to build innovative software solutions addressing diversity, inclusion, and healthcare equity.",
+    "overview": "HackerEarth IWD Hackathon brings together female developers to build applications solving workplace equity, women's wellness, and educational accessibility.",
+    "mode": "Online",
+    "location": "Online",
+    "teamSize": "1 - 3 Members",
+    "deadline": "08 Mar 2026",
+    "registrationFee": "Free Entry",
+    "importantDates": [
+      {
+        "title": "Idea Submissions Open",
+        "date": "01 Feb 2026",
+        "description": "Submit problem statement pitch."
+      },
+      {
+        "title": "Submission Deadline",
+        "date": "08 Mar 2026",
+        "description": "Final prototype code submission."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Round 1: Idea Pitch & Prototype Submission",
+        "description": "Build a software application focusing on women empowerment, health tech, or financial literacy.",
+        "startDate": "01 Feb 2026",
+        "endDate": "08 Mar 2026"
+      }
+    ],
+    "eligibility": [
+      "Open to women developers, engineers, and students globally.",
+      "Teams can have 1 to 3 members."
+    ],
+    "prizes": [
+      {
+        "position": "1st Winner Team",
+        "reward": "$5,000 USD Cash + Mentorship Sessions"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can male allies join the team?",
+        "answer": "Teams must be led by a female team captain; check track guidelines for team composition."
+      }
+    ],
+    "officialRegistrationUrl": "https://www.hackerearth.com/challenges",
+    "contactEmail": "support@hackerearth.com",
+    "website": "https://www.hackerearth.com/challenges",
+    "socialLinks": {
+      "twitter": "https://twitter.com/hackerearth",
+      "linkedin": "https://linkedin.com/company/hackerearth",
+      "github": "https://github.com/hackerearth"
+    },
+    "tags": [
+      "HackerEarth",
+      "Women In Tech",
+      "Diversity",
+      "Software"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "Technical Problem Solving",
+        "weight": "35%",
+        "description": "Robustness, efficiency, and completeness of the software development solution."
+      },
+      {
+        "title": "Innovation & Social Relevance",
+        "weight": "25%",
+        "description": "Originality of the concept and its impact on women empowerment or social equity."
+      },
+      {
+        "title": "User Interface & Accessibility",
+        "weight": "20%",
+        "description": "Clean visual design, responsive layout, and universal accessibility features."
+      },
+      {
+        "title": "Code Cleanliness & Documentation",
+        "weight": "20%",
+        "description": "Modular code structure, Git commits, inline comments, and architectural diagrams."
+      }
+    ],
+    "postedDate": "Posted 5 days ago",
+    "registeredCount": "6,420 Registered",
+    "views": 18900,
+    "bookmarkCount": 1380,
+    "closingInDays": 3,
+    "status": "Closing Soon",
+    "difficulty": "Intermediate",
+    "popularityBadge": "Featured"
+  },
+  {
+    "id": 10,
+    "title": "Meta Hacker Cup 2026",
+    "organization": "Meta Platforms Inc.",
+    "logo": "https://icon.horse/icon/meta.com",
+    "banner": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80",
+    "category": "Competitions",
+    "subcategory": "Algorithmic Competitive Programming",
+    "description": "Meta's annual international algorithmic programming competition testing algorithmic problem-solving speed and accuracy.",
+    "overview": "Meta Hacker Cup challenges programmers from around the world to solve complex algorithmic puzzles involving graph theory, dynamic programming, number theory, and computational geometry under strict speed constraints.",
+    "mode": "Online",
+    "location": "Online / Meta Platform",
+    "teamSize": "Individual",
+    "deadline": "20 Sep 2026",
+    "registrationFee": "Free Entry",
+    "importantDates": [
+      {
+        "title": "Qualification Round",
+        "date": "20 Sep 2026",
+        "description": "72-hour window to solve at least 1 problem."
+      },
+      {
+        "title": "Round 1",
+        "date": "10 Oct 2026",
+        "description": "Timed 24-hour contest."
+      },
+      {
+        "title": "World Finals",
+        "date": "05 Dec 2026",
+        "description": "Top 25 global finalists."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Qualification Round",
+        "description": "Solve 1 problem correctly out of 4 algorithmic problems within 72 hours.",
+        "startDate": "20 Sep 2026",
+        "endDate": "23 Sep 2026"
+      },
+      {
+        "title": "Round 1 & Round 2",
+        "description": "Strictly timed algorithmic coding rounds requiring fast input/output processing and optimal complexity.",
+        "startDate": "10 Oct 2026",
+        "endDate": "25 Oct 2026"
+      }
+    ],
+    "eligibility": [
+      "Open to individual programmers worldwide aged 18+."
+    ],
+    "prizes": [
+      {
+        "position": "Meta Hacker Cup Champion",
+        "reward": "$20,000 USD Cash Prize + World Champion Trophy"
+      },
+      {
+        "position": "Top 2,000 Contestants",
+        "reward": "Official Meta Hacker Cup Commemorative T-Shirt"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What programming languages are supported?",
+        "answer": "Any language capable of running on standard Linux command line (C++, Python, Java, Rust, Go, etc.)."
+      }
+    ],
+    "officialRegistrationUrl": "https://www.facebook.com/codingcompetitions/hacker-cup",
+    "contactEmail": "hackercup@meta.com",
+    "website": "https://www.facebook.com/codingcompetitions/hacker-cup",
+    "socialLinks": {
+      "twitter": "https://twitter.com/meta",
+      "linkedin": "https://linkedin.com/company/meta",
+      "github": "https://github.com/facebook"
+    },
+    "tags": [
+      "Meta",
+      "Algorithmic Coding",
+      "C++",
+      "Competitive Programming"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "Test Case Pass Rate",
+        "weight": "60%",
+        "description": "Correctness of algorithmic output against strict hidden input test sets."
+      },
+      {
+        "title": "Time Complexity Efficiency",
+        "weight": "25%",
+        "description": "Execution runtime within strict time limits (typically 2-4 seconds per test case)."
+      },
+      {
+        "title": "Memory Space Efficiency",
+        "weight": "15%",
+        "description": "Optimal memory consumption adhering to strict megabyte space limits."
+      }
+    ],
+    "postedDate": "Posted 6 days ago",
+    "registeredCount": "38,200 Registered",
+    "views": 84600,
+    "bookmarkCount": 7410,
+    "closingInDays": 25,
+    "status": "Open",
+    "difficulty": "Advanced",
+    "popularityBadge": "Editor's Pick"
+  },
+  {
+    "id": 11,
+    "title": "Smart India Hackathon 2026 (SIH)",
+    "organization": "Ministry of Education & AICTE, Govt. of India",
+    "logo": "https://icon.horse/icon/sih.gov.in",
+    "banner": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop&q=80",
+    "category": "Hackathons",
+    "subcategory": "Public Policy & National Hardware/Software",
+    "description": "India's largest nationwide initiative to provide students a platform to solve pressing problems of ministries, departments, and industries.",
+    "overview": "Smart India Hackathon is a nationwide initiative by Ministry of Education and AICTE where college teams solve problem statements submitted by central government ministries, state governments, and corporate partners.",
+    "mode": "Hybrid",
+    "location": "Nodal Centers across India",
+    "teamSize": "6 Members (Mandatory 1 Female Member)",
+    "deadline": "15 Sep 2026",
+    "registrationFee": "Free Entry",
+    "importantDates": [
+      {
+        "title": "SPOC College Nomination",
+        "date": "15 Aug 2026",
+        "description": "Internal college screening hackathon."
+      },
+      {
+        "title": "Nomination Deadline",
+        "date": "15 Sep 2026",
+        "description": "SPOC nominates top 5 team ideas."
+      },
+      {
+        "title": "Grand Finale 36-Hr Hackathon",
+        "date": "18 Dec 2026",
+        "description": "36-hour non-stop nodal center event."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Internal Campus Hackathon",
+        "description": "Colleges host internal hackathons to select their top 5 team entries for national SIH evaluation.",
+        "startDate": "15 Aug 2026",
+        "endDate": "15 Sep 2026"
+      },
+      {
+        "title": "National Grand Finale",
+        "description": "36-hour continuous hackathon held simultaneously across 40+ nodal centers across India.",
+        "startDate": "18 Dec 2026",
+        "endDate": "20 Dec 2026"
+      }
+    ],
+    "eligibility": [
+      "Must be regular students of HEIs in India.",
+      "Teams must consist of exactly 6 members with at least 1 female member."
+    ],
+    "prizes": [
+      {
+        "position": "Problem Statement Winner",
+        "reward": "₹ 1,00,000 Cash Prize per winning team"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is female team member mandatory?",
+        "answer": "Yes, every team must have at least one female team member."
+      }
+    ],
+    "officialRegistrationUrl": "https://www.sih.gov.in",
+    "contactEmail": "sih@aicte-india.org",
+    "website": "https://www.sih.gov.in",
+    "socialLinks": {
+      "twitter": "https://twitter.com/abhayjere",
+      "linkedin": "https://linkedin.com/company/aicte",
+      "github": "https://github.com/sih-india"
+    },
+    "tags": [
+      "Govt of India",
+      "SIH",
+      "AICTE",
+      "National Hackathon"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "Hardware / Software Prototype",
+        "weight": "35%",
+        "description": "Functional working model addressing the designated Ministry problem statement."
+      },
+      {
+        "title": "National Impact & Feasibility",
+        "weight": "25%",
+        "description": "Potential for real-world deployment across Indian government departments or public sectors."
+      },
+      {
+        "title": "Technical Scalability",
+        "weight": "25%",
+        "description": "System capacity to handle high concurrency, data loads, and enterprise integration."
+      },
+      {
+        "title": "Grand Finale Pitch",
+        "weight": "15%",
+        "description": "Live presentation to jury of ministry domain experts and industry leaders."
+      }
+    ],
+    "postedDate": "Posted 1 week ago",
+    "registeredCount": "52,800 Registered",
+    "views": 135000,
+    "bookmarkCount": 11200,
+    "closingInDays": 60,
+    "status": "Open",
+    "difficulty": "Advanced",
+    "popularityBadge": "Featured"
+  },
+  {
+    "id": 12,
+    "title": "TCS CodeVita Season 12",
+    "organization": "Tata Consultancy Services (TCS)",
+    "logo": "https://icon.horse/icon/tcs.com",
+    "banner": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=80",
+    "category": "Competitions",
+    "subcategory": "Competitive Programming & Hiring",
+    "description": "Guinness World Record holding competitive programming contest promoting coding as a sport and connecting talent with TCS careers.",
+    "overview": "TCS CodeVita connects student coders globally through algorithmic challenges across C++, Java, Python, and C#, serving as a hiring gateway for TCS Digital and Innovator engineering roles.",
+    "mode": "Online",
+    "location": "Online / Global",
+    "teamSize": "Individual",
+    "deadline": "15 Nov 2026",
+    "registrationFee": "Free Entry",
+    "importantDates": [
+      {
+        "title": "Pre-Qualifier Round 1",
+        "date": "15 Nov 2026",
+        "description": "6-hour online coding contest."
+      },
+      {
+        "title": "Qualifier Round 2",
+        "date": "10 Dec 2026",
+        "description": "Advanced problem solving."
+      },
+      {
+        "title": "Grand Finale",
+        "date": "15 Feb 2027",
+        "description": "Live finale in Mumbai."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Round 1: Zone Pre-Qualifier",
+        "description": "Solve 6 algorithmic coding problems within a 6-hour window.",
+        "startDate": "15 Nov 2026",
+        "endDate": "16 Nov 2026"
+      }
+    ],
+    "eligibility": [
+      "Science and Engineering students graduating in 2025, 2026, or 2027."
+    ],
+    "prizes": [
+      {
+        "position": "CodeVita World Champion",
+        "reward": "$10,000 USD Prize + Direct TCS Digital / Innovator Job Offer"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Does CodeVita lead to job interviews at TCS?",
+        "answer": "Yes! Top rankers are directly interviewed for TCS Digital and TCS Innovator roles."
+      }
+    ],
+    "officialRegistrationUrl": "https://codevita.tcsapps.com",
+    "contactEmail": "campusconnect@tcs.com",
+    "website": "https://tcscodevita.com",
+    "socialLinks": {
+      "twitter": "https://twitter.com/tcs",
+      "linkedin": "https://linkedin.com/company/tata-consultancy-services",
+      "github": "https://github.com/tcs"
+    },
+    "tags": [
+      "TCS",
+      "CodeVita",
+      "Competitive Programming",
+      "Hiring"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "Algorithmic Accuracy",
+        "weight": "50%",
+        "description": "Pass rate across all sample and complex hidden automated test cases."
+      },
+      {
+        "title": "Runtime Optimization",
+        "weight": "30%",
+        "description": "Fast execution speed utilizing efficient data structures (Graphs, DP, Trees)."
+      },
+      {
+        "title": "Coding Best Practices",
+        "weight": "20%",
+        "description": "Clean syntax, memory management, and avoiding runtime exception errors."
+      }
+    ],
+    "postedDate": "Posted 8 days ago",
+    "registeredCount": "45,100 Registered",
+    "views": 108000,
+    "bookmarkCount": 9350,
+    "closingInDays": 15,
+    "status": "Open",
+    "difficulty": "Intermediate",
+    "popularityBadge": "Trending"
+  },
+  {
+    "id": 13,
+    "title": "Flipkart GRiD 6.0 - Software Development Track",
+    "organization": "Flipkart Internet Pvt Ltd",
+    "logo": "https://icon.horse/icon/flipkart.com",
+    "banner": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+    "category": "Competitions",
+    "subcategory": "E-Commerce System Design",
+    "description": "Flipkart's flagship engineering campus challenge evaluating data structures, system architecture, and scalable software problem solving.",
+    "overview": "Flipkart GRiD challenges engineering undergraduates to build distributed, fault-tolerant e-commerce systems handling millions of concurrent microservice requests.",
+    "mode": "Online",
+    "location": "India / Online",
+    "teamSize": "1 - 3 Members",
+    "deadline": "18 Aug 2026",
+    "registrationFee": "Free Entry",
+    "importantDates": [
+      {
+        "title": "E-Commerce Tech Quiz",
+        "date": "18 Aug 2026",
+        "description": "Screening quiz on DSA & systems."
+      },
+      {
+        "title": "Proof of Concept Submission",
+        "date": "05 Sep 2026",
+        "description": "Build backend microservice."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Round 1: Tech Quiz",
+        "description": "30 MCQs on Data Structures, Algorithms, CS Fundamentals, and E-Commerce System Concepts.",
+        "startDate": "18 Aug 2026",
+        "endDate": "18 Aug 2026"
+      }
+    ],
+    "eligibility": [
+      "B.Tech / B.E. / M.Tech students graduating in 2025, 2026, 2027, or 2028."
+    ],
+    "prizes": [
+      {
+        "position": "National Winners",
+        "reward": "₹ 3,00,000 Cash Prize + SDE Internship / Full-time Offers"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Are inter-year teams allowed?",
+        "answer": "Yes, students from different years of the same college can team up."
+      }
+    ],
+    "officialRegistrationUrl": "https://unstop.com/competitions/flipkart-grid",
+    "contactEmail": "grid@flipkart.com",
+    "website": "https://unstop.com/competitions/flipkart-grid",
+    "socialLinks": {
+      "twitter": "https://twitter.com/flipkart",
+      "linkedin": "https://linkedin.com/company/flipkart",
+      "github": "https://github.com/flipkart"
+    },
+    "tags": [
+      "Flipkart",
+      "E-Commerce",
+      "SDE Hiring",
+      "System Design"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "System Architecture & Microservices",
+        "weight": "35%",
+        "description": "Design of high-throughput, low-latency e-commerce microservices infrastructure."
+      },
+      {
+        "title": "Problem Statement Execution",
+        "weight": "30%",
+        "description": "Completeness of solution targeting Flipkart software engineering challenges."
+      },
+      {
+        "title": "Scalability & Fault Tolerance",
+        "weight": "20%",
+        "description": "Resilience under high surge traffic, load balancing, and failure recovery."
+      },
+      {
+        "title": "Grand Jury Demo",
+        "weight": "15%",
+        "description": "Technical presentation and live Q&A session with Flipkart Senior Architects."
+      }
+    ],
+    "postedDate": "Posted 10 days ago",
+    "registeredCount": "28,640 Registered",
+    "views": 67200,
+    "bookmarkCount": 5840,
+    "closingInDays": 10,
+    "status": "Open",
+    "difficulty": "Intermediate",
+    "popularityBadge": "Trending"
+  },
+  {
+    "id": 14,
+    "title": "IIT Bombay Techfest Innovation Challenge 2026",
+    "organization": "IIT Bombay Techfest",
+    "logo": "https://icon.horse/icon/techfest.org",
+    "banner": "https://images.unsplash.com/photo-1562774053-701939374585?w=800&auto=format&fit=crop&q=80",
+    "category": "Competitions",
+    "subcategory": "Robotics & Hardware Engineering",
+    "description": "Asia's largest science and technology festival inviting innovative projects in AI, Robotics, Renewable Energy, and Smart Mobility.",
+    "overview": "Techfest IIT Bombay provides a national showcase for hardware innovations, autonomous drones, clean energy prototypes, and robotics engineering.",
+    "mode": "Hybrid",
+    "location": "IIT Bombay Campus, Mumbai",
+    "teamSize": "2 - 4 Members",
+    "deadline": "10 Oct 2026",
+    "registrationFee": "₹ 250 Entry Fee",
+    "importantDates": [
+      {
+        "title": "Abstract Submission",
+        "date": "10 Oct 2026",
+        "description": "Submit technical design document."
+      },
+      {
+        "title": "On-Campus Finale",
+        "date": "16 Dec 2026",
+        "description": "Exhibition at IIT Bombay."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Round 1: Abstract & CAD Review",
+        "description": "Submit technical abstract, circuit diagrams, and CAD models.",
+        "startDate": "10 Oct 2026",
+        "endDate": "15 Oct 2026"
+      }
+    ],
+    "eligibility": [
+      "Students currently pursuing diploma or degree courses in technical institutes."
+    ],
+    "prizes": [
+      {
+        "position": "Techfest Innovation Winner",
+        "reward": "₹ 2,50,000 Cash Prize + Incubation Mentorship at SINE IIT Bombay"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will IIT Bombay provide travel allowance for finalists?",
+        "answer": "Accommodation and partial travel grants are provided to shortlisted teams visiting campus."
+      }
+    ],
+    "officialRegistrationUrl": "https://techfest.org",
+    "contactEmail": "info@techfest.org",
+    "website": "https://techfest.org",
+    "socialLinks": {
+      "twitter": "https://twitter.com/techfest_iitb",
+      "linkedin": "https://linkedin.com/company/techfest",
+      "github": "https://github.com/techfest-iitb"
+    },
+    "tags": [
+      "IIT Bombay",
+      "Techfest",
+      "Robotics",
+      "Innovation"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "Robotics / Hardware Innovation",
+        "weight": "40%",
+        "description": "Engineering precision, sensor integration, and mechanical innovation."
+      },
+      {
+        "title": "Operational Efficiency",
+        "weight": "30%",
+        "description": "Speed, accuracy, and autonomy in completing the prescribed obstacle course."
+      },
+      {
+        "title": "Design & Fabrication",
+        "weight": "15%",
+        "description": "3D printing, CAD model accuracy, circuit board layout, and build quality."
+      },
+      {
+        "title": "Technical Report & Viva",
+        "weight": "15%",
+        "description": "Comprehensive design documentation and oral defense before IIT Bombay faculty."
+      }
+    ],
+    "postedDate": "Posted 12 days ago",
+    "registeredCount": "15,320 Registered",
+    "views": 41800,
+    "bookmarkCount": 3260,
+    "closingInDays": 20,
+    "status": "Open",
+    "difficulty": "Intermediate",
+    "popularityBadge": "Featured"
+  },
+  {
+    "id": 15,
+    "title": "IIT Madras Shaastra Tech Challenge 2026",
+    "organization": "IIT Madras Shaastra",
+    "logo": "https://icon.horse/icon/shaastra.org",
+    "banner": "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=800&auto=format&fit=crop&q=80",
+    "category": "Competitions",
+    "subcategory": "DeepTech & Quantum Systems",
+    "description": "ISO-certified student-managed technical festival hosting challenges in Autonomous Vehicles, Quantum Computing, and MedTech.",
+    "overview": "IIT Madras Shaastra Tech Challenge tests engineering fundamentals across deep tech domains including quantum algorithms, biomedical electronics, and EV battery systems.",
+    "mode": "Hybrid",
+    "location": "IIT Madras, Chennai",
+    "teamSize": "1 - 4 Members",
+    "deadline": "05 Nov 2026",
+    "registrationFee": "₹ 300 Entry Fee",
+    "importantDates": [
+      {
+        "title": "Synopsis Deadline",
+        "date": "05 Nov 2026",
+        "description": "Submit online project synopsis."
+      },
+      {
+        "title": "Finale Showcase",
+        "date": "04 Jan 2027",
+        "description": "Live demonstration at IIT Madras."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Phase 1: Project Synopsis",
+        "description": "Submit problem statement and software/hardware methodology.",
+        "startDate": "05 Nov 2026",
+        "endDate": "10 Nov 2026"
+      }
+    ],
+    "eligibility": [
+      "Open to undergraduate and postgraduate engineering students."
+    ],
+    "prizes": [
+      {
+        "position": "Top Performing Teams",
+        "reward": "₹ 2,00,000 Total Prize Pool + Certificates"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is Shaastra an ISO certified event?",
+        "answer": "Yes! Shaastra is the first student-managed festival in the world to receive ISO 9001 certification."
+      }
+    ],
+    "officialRegistrationUrl": "https://shaastra.org",
+    "contactEmail": "sec_shaastra@iitm.ac.in",
+    "website": "https://shaastra.org",
+    "socialLinks": {
+      "twitter": "https://twitter.com/shaastra_iitm",
+      "linkedin": "https://linkedin.com/company/shaastra-iit-madras",
+      "github": "https://github.com/shaastra"
+    },
+    "tags": [
+      "IIT Madras",
+      "Shaastra",
+      "Quantum",
+      "MedTech"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "DeepTech Novelty",
+        "weight": "35%",
+        "description": "Breakthrough research application in Quantum, Photonics, or MedTech systems."
+      },
+      {
+        "title": "Experimental Validation",
+        "weight": "30%",
+        "description": "Empirical data, simulation accuracy, and prototype performance validation."
+      },
+      {
+        "title": "Commercial Viability",
+        "weight": "20%",
+        "description": "Patent potential, market size, and technology readiness level (TRL)."
+      },
+      {
+        "title": "Shaastra Poster & Demo",
+        "weight": "15%",
+        "description": "Quality of research poster presentation and live prototype demonstration."
+      }
+    ],
+    "postedDate": "Posted 2 weeks ago",
+    "registeredCount": "11,890 Registered",
+    "views": 33400,
+    "bookmarkCount": 2710,
+    "closingInDays": 16,
+    "status": "Open",
+    "difficulty": "Beginner",
+    "popularityBadge": "Featured"
+  },
+  {
+    "id": 16,
+    "title": "Goldman Sachs Engineering Campus Hiring 2026",
+    "organization": "Goldman Sachs",
+    "logo": "https://icon.horse/icon/goldmansachs.com",
+    "banner": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&auto=format&fit=crop&q=80",
+    "category": "Internships",
+    "subcategory": "Fintech & Quantitative Software",
+    "description": "Annual hiring initiative for engineering students seeking Summer Internship and Full-Time Analyst roles in Goldman Sachs Engineering.",
+    "overview": "Goldman Sachs Engineering recruits high-caliber software engineering talent specializing in distributed ledger technology, high-frequency trading platforms, data analytics, and cyber defense.",
+    "mode": "Online",
+    "location": "Bengaluru / Hyderabad",
+    "teamSize": "Individual",
+    "deadline": "14 Aug 2026",
+    "registrationFee": "Scholarship & Fellowship Grant",
+    "importantDates": [
+      {
+        "title": "Aptitude & Coding Assessment",
+        "date": "14 Aug 2026",
+        "description": "Online proctored test."
+      },
+      {
+        "title": "Virtual Interviews",
+        "date": "28 Aug 2026",
+        "description": "Data structures & system design interviews."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Round 1: Online Technical Assessment",
+        "description": "90-minute test covering algorithms, quantitative aptitude, and computer science fundamentals.",
+        "startDate": "14 Aug 2026",
+        "endDate": "14 Aug 2026"
+      }
+    ],
+    "eligibility": [
+      "Engineering students graduating in 2026 or 2027."
+    ],
+    "prizes": [
+      {
+        "position": "Hired Candidates",
+        "reward": "Full-Time Analyst CTC up to ₹ 30 LPA / Internship Stipend ₹ 1 Lakh/Month"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What topics are covered in the coding test?",
+        "answer": "Data Structures, Algorithms, Mathematics, and CS Core (OS/DBMS)."
+      }
+    ],
+    "officialRegistrationUrl": "https://www.goldmansachs.com/careers/students",
+    "contactEmail": "gs-campusin@gs.com",
+    "website": "https://www.goldmansachs.com/careers/students",
+    "socialLinks": {
+      "twitter": "https://twitter.com/goldmansachs",
+      "linkedin": "https://linkedin.com/company/goldman-sachs",
+      "github": "https://github.com/goldmansachs"
+    },
+    "tags": [
+      "Goldman Sachs",
+      "Fintech",
+      "Software Analyst",
+      "High Salary"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "Coding Test Score",
+        "weight": "40%",
+        "description": "Performance on Data Structures & Algorithms coding assessment."
+      },
+      {
+        "title": "Computer Science Fundamentals",
+        "weight": "30%",
+        "description": "Knowledge of OS, DBMS, Computer Networks, and System Architecture."
+      },
+      {
+        "title": "Problem Solving Aptitude",
+        "weight": "20%",
+        "description": "Analytical thinking, mathematical logic, and quantitative aptitude."
+      },
+      {
+        "title": "Technical Interview Defense",
+        "weight": "10%",
+        "description": "Ability to explain thought process and optimize code during live interviews."
+      }
+    ],
+    "postedDate": "Posted 18 days ago",
+    "registeredCount": "22,450 Registered",
+    "views": 58900,
+    "bookmarkCount": 4920,
+    "closingInDays": 8,
+    "status": "Open",
+    "difficulty": "Advanced",
+    "popularityBadge": "Editor's Pick"
+  },
+  {
+    "id": 17,
+    "title": "ICPC International Collegiate Programming Contest 2026",
+    "organization": "ICPC Foundation",
+    "logo": "https://icon.horse/icon/icpc.global",
+    "banner": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=80",
+    "category": "Competitions",
+    "subcategory": "Competitive Programming Olympics",
+    "description": "The oldest, largest, and most prestigious algorithmic programming contest for university students worldwide.",
+    "overview": "The ICPC challenges teams of 3 university students sharing 1 computer to solve 10-12 complex mathematical and algorithmic problems within 5 hours under real-time penalty scoring.",
+    "mode": "Hybrid",
+    "location": "Regional Contests & World Finals",
+    "teamSize": "3 Members (Same University)",
+    "deadline": "18 Oct 2026",
+    "registrationFee": "Free Entry",
+    "importantDates": [
+      {
+        "title": "Online Preliminary Contest",
+        "date": "18 Oct 2026",
+        "description": "Regional online qualifier."
+      },
+      {
+        "title": "Onsite Regionals",
+        "date": "15 Dec 2026",
+        "description": "Onsite 5-hour contest."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Round 1: Preliminary Online Regional Contest",
+        "description": "5-hour online contest solving 10-12 algorithmic problems.",
+        "startDate": "18 Oct 2026",
+        "endDate": "18 Oct 2026"
+      }
+    ],
+    "eligibility": [
+      "University students satisfying ICPC age and semester limits."
+    ],
+    "prizes": [
+      {
+        "position": "ICPC World Champions",
+        "reward": "$15,000 USD + ICPC Gold Medals"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How many computers are allowed per team during the contest?",
+        "answer": "During ICPC contests, each 3-member team shares exactly 1 computer."
+      }
+    ],
+    "officialRegistrationUrl": "https://icpc.global",
+    "contactEmail": "manager@icpc.global",
+    "website": "https://icpc.global",
+    "socialLinks": {
+      "twitter": "https://twitter.com/icpcnews",
+      "linkedin": "https://linkedin.com/company/icpc",
+      "github": "https://github.com/icpc"
+    },
+    "tags": [
+      "ICPC",
+      "Olympics of Coding",
+      "Algorithms",
+      "C++"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "Accepted Submissions Count",
+        "weight": "60%",
+        "description": "Total number of algorithmic problems correctly solved within the 5-hour window."
+      },
+      {
+        "title": "Time Penalty Points",
+        "weight": "25%",
+        "description": "Cumulative time taken to solve problems plus penalty points for wrong attempts."
+      },
+      {
+        "title": "Team Coordination & Strategy",
+        "weight": "15%",
+        "description": "Effective distribution of problem solving across 3 team members and 1 computer."
+      }
+    ],
+    "postedDate": "Posted 3 weeks ago",
+    "registeredCount": "16,800 Registered",
+    "views": 47600,
+    "bookmarkCount": 3890,
+    "closingInDays": 40,
+    "status": "Open",
+    "difficulty": "Advanced",
+    "popularityBadge": "Editor's Pick"
+  },
+  {
+    "id": 18,
+    "title": "Reliance Foundation Undergraduate Scholarship 2026",
+    "organization": "Reliance Foundation",
+    "logo": "https://icon.horse/icon/reliancefoundation.org",
+    "banner": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80",
+    "category": "Scholarships",
+    "subcategory": "Financial Education Grant",
+    "description": "Supporting 5,000 undergraduate students per year with up to ₹ 2 Lakhs financial grant and leadership development workshops.",
+    "overview": "Reliance Foundation Undergraduate Scholarships aim to nurture promising young leaders in India by funding degree programs, offering mentorship, and hosting career acceleration seminars.",
+    "mode": "Online",
+    "location": "India",
+    "teamSize": "Individual",
+    "deadline": "05 Oct 2026",
+    "registrationFee": "100% Scholarship Grant",
+    "importantDates": [
+      {
+        "title": "Application Deadline",
+        "date": "05 Oct 2026",
+        "description": "Document & marksheets upload."
+      },
+      {
+        "title": "Aptitude Assessment",
+        "date": "25 Oct 2026",
+        "description": "Online 60-minute test."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Round 1: Document Review & Aptitude Test",
+        "description": "Review of 12th grade marksheets followed by an online aptitude assessment.",
+        "startDate": "05 Oct 2026",
+        "endDate": "25 Oct 2026"
+      }
+    ],
+    "eligibility": [
+      "1st year undergraduate students with household income < ₹ 15 Lakhs."
+    ],
+    "prizes": [
+      {
+        "position": "5,000 Selected Scholars",
+        "reward": "Up to ₹ 2,00,000 total stipend grant across degree duration"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is this scholarship open to all degree streams?",
+        "answer": "Yes! All undergraduate degree streams (Engineering, Science, Commerce, Arts) are eligible."
+      }
+    ],
+    "officialRegistrationUrl": "https://www.scholarships.reliancefoundation.org",
+    "contactEmail": "scholarship@reliancefoundation.org",
+    "website": "https://www.scholarships.reliancefoundation.org",
+    "socialLinks": {
+      "twitter": "https://twitter.com/rfcomm",
+      "linkedin": "https://linkedin.com/company/reliance-foundation",
+      "github": "https://github.com/reliance-foundation"
+    },
+    "tags": [
+      "Reliance",
+      "Scholarship",
+      "Undergraduate",
+      "Education"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "Academic Excellence",
+        "weight": "40%",
+        "description": "Consistently outstanding grade point average (GPA / Percentage) in Class 12 & Degree."
+      },
+      {
+        "title": "Financial Need Assessment",
+        "weight": "35%",
+        "description": "Verified annual family income evaluation to ensure support reaches deserving students."
+      },
+      {
+        "title": "Aptitude Test Score",
+        "weight": "15%",
+        "description": "Performance in the Reliance Foundation online cognitive & reasoning test."
+      },
+      {
+        "title": "Extracurricular & Leadership",
+        "weight": "10%",
+        "description": "Participation in community service, sports, or academic competitions."
+      }
+    ],
+    "postedDate": "Posted 25 days ago",
+    "registeredCount": "34,900 Registered",
+    "views": 81200,
+    "bookmarkCount": 7150,
+    "closingInDays": 35,
+    "status": "Open",
+    "difficulty": "Beginner",
+    "popularityBadge": "Editor's Pick"
+  },
+  {
+    "id": 19,
+    "title": "NIT Trichy Pragyan Innovation Challenge 2026",
+    "organization": "NIT Trichy",
+    "logo": "https://icon.horse/icon/pragyan.org",
+    "banner": "https://images.unsplash.com/photo-1562774053-701939374585?w=800&auto=format&fit=crop&q=80",
+    "category": "Competitions",
+    "subcategory": "IoT & Clean Energy Innovation",
+    "description": "Pragyan is NIT Trichy's ISO 9001 and 20121 certified tech-fest inviting hardware and software projects in IoT, AI, and Clean Energy.",
+    "overview": "NIT Trichy Pragyan Innovation Challenge showcases student prototypes in smart agriculture, IoT sensors, EV infrastructure, and sustainable energy grid management.",
+    "mode": "Hybrid",
+    "location": "NIT Trichy Campus, Tamil Nadu",
+    "teamSize": "2 - 4 Members",
+    "deadline": "12 Nov 2026",
+    "registrationFee": "₹ 200 Entry Fee",
+    "importantDates": [
+      {
+        "title": "Proposal Submission",
+        "date": "12 Nov 2026",
+        "description": "Submit online project synopsis."
+      },
+      {
+        "title": "Onsite Finale",
+        "date": "20 Feb 2027",
+        "description": "Prototype demo at NIT Trichy."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Round 1: Technical Proposal",
+        "description": "Submit problem statement and circuit/software diagram.",
+        "startDate": "12 Nov 2026",
+        "endDate": "15 Nov 2026"
+      }
+    ],
+    "eligibility": [
+      "Enrolled students in technical institutes across India."
+    ],
+    "prizes": [
+      {
+        "position": "1st Prize",
+        "reward": "₹ 1,50,000 Cash Prize + Incubation Mentorship"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What categories are covered in Pragyan?",
+        "answer": "IoT, Renewable Energy, Robotics, and Healthcare Innovations."
+      }
+    ],
+    "officialRegistrationUrl": "https://pragyan.org",
+    "contactEmail": "pragyan@nitt.edu",
+    "website": "https://pragyan.org",
+    "socialLinks": {
+      "twitter": "https://twitter.com/pragyan_nitt",
+      "linkedin": "https://linkedin.com/company/pragyan-nit-trichy",
+      "github": "https://github.com/pragyan-nitt"
+    },
+    "tags": [
+      "NIT Trichy",
+      "Pragyan",
+      "IoT",
+      "CleanTech"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "IoT & CleanTech Prototype",
+        "weight": "35%",
+        "description": "Functional IoT hardware prototype solving clean energy or sustainability needs."
+      },
+      {
+        "title": "Energy Efficiency & Impact",
+        "weight": "30%",
+        "description": "Measurable reduction in power consumption or carbon footprint."
+      },
+      {
+        "title": "Market Feasibility & Cost",
+        "weight": "20%",
+        "description": "Affordability, BOM cost analysis, and scalability for mass deployment."
+      },
+      {
+        "title": "Pragyan Expo Presentation",
+        "weight": "15%",
+        "description": "Project presentation quality at NIT Trichy Pragyan Innovation Exhibition."
+      }
+    ],
+    "postedDate": "Posted 1 month ago",
+    "registeredCount": "7,310 Registered",
+    "views": 21400,
+    "bookmarkCount": 1620,
+    "closingInDays": 11,
+    "status": "Open",
+    "difficulty": "Intermediate",
+    "popularityBadge": "Featured"
+  },
+  {
+    "id": 20,
+    "title": "Uber Global Hackathon 2026",
+    "organization": "Uber Engineering",
+    "logo": "https://icon.horse/icon/uber.com",
+    "banner": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80",
+    "category": "Hackathons",
+    "subcategory": "Distributed Systems & Mobility",
+    "description": "Design high-concurrency microservice architectures, real-time routing algorithms, and dispatch optimization engines for urban mobility.",
+    "overview": "Uber Engineering invites developers to tackle real-time geolocation matching, dynamic pricing algorithms, and distributed queue systems handling microsecond trip updates.",
+    "mode": "Online",
+    "location": "Online / Worldwide",
+    "teamSize": "2 - 4 Members",
+    "deadline": "20 Aug 2026",
+    "registrationFee": "Corporate Sponsored by Uber",
+    "importantDates": [
+      {
+        "title": "Algorithmic Contest",
+        "date": "20 Aug 2026",
+        "description": "Online graph algorithm test."
+      },
+      {
+        "title": "Architecture Hackathon",
+        "date": "10 Sep 2026",
+        "description": "Build high-throughput dispatch engine."
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Round 1: Algorithmic Sprint",
+        "description": "High difficulty graph algorithms and data structures contest.",
+        "startDate": "20 Aug 2026",
+        "endDate": "22 Aug 2026"
+      }
+    ],
+    "eligibility": [
+      "Pre-final & final year CS/IT engineering students."
+    ],
+    "prizes": [
+      {
+        "position": "Winning Team",
+        "reward": "$50,000 USD Cash + Uber SDE Offers"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Will top performers be considered for Uber engineering roles?",
+        "answer": "Yes! Top rankers are directly interviewed for SDE and Applied Scientist roles at Uber."
+      }
+    ],
+    "officialRegistrationUrl": "https://unstop.com/hackathons?keyword=uber",
+    "contactEmail": "university-recruiting@uber.com",
+    "website": "https://www.uber.com/us/en/careers",
+    "socialLinks": {
+      "twitter": "https://twitter.com/ubereng",
+      "linkedin": "https://linkedin.com/company/uber-com",
+      "github": "https://github.com/uber"
+    },
+    "tags": [
+      "Uber",
+      "Microservices",
+      "Graph Theory",
+      "SDE Role"
+    ],
+    "judgingCriteria": [
+      {
+        "title": "Distributed Systems Design",
+        "weight": "35%",
+        "description": "Architectural resilience, microservice decoupling, and high availability design."
+      },
+      {
+        "title": "Real-Time Data Processing",
+        "weight": "30%",
+        "description": "Handling high-frequency streaming location & dispatch data with low latency."
+      },
+      {
+        "title": "Algorithmic Optimization",
+        "weight": "20%",
+        "description": "Efficient routing algorithms, dynamic pricing logic, or matching heuristics."
+      },
+      {
+        "title": "Uber Engineering Tech Pitch",
+        "weight": "15%",
+        "description": "Live demonstration to Uber Staff Engineers and Engineering Directors."
+      }
+    ],
+    "postedDate": "Posted 5 weeks ago",
+    "registeredCount": "13,650 Registered",
+    "views": 36800,
+    "bookmarkCount": 2980,
+    "closingInDays": 19,
+    "status": "Open",
+    "difficulty": "Intermediate",
+    "popularityBadge": "Trending"
+  }
+]
