@@ -281,6 +281,16 @@ useEffect(()=>{
                         key={job.id}
                     >
 
+                         <img
+        src={
+            job.companyLogo
+            ? job.companyLogo
+            : "/default-company.png"
+        }
+        alt={job.companyName}
+        className="company-logo"
+    />
+         
 
 
 
