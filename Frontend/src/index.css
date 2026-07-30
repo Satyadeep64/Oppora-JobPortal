@@ -2717,7 +2717,7 @@ body,
 
 /* Filter box */
 
-[data-theme="dark"] .filter-box {
+/* [data-theme="dark"] .filter-box {
 
     background:#111827;
 
@@ -4128,3 +4128,686 @@ to{
     border-radius:50%;
     display:block;
 }
+
+/* Role Selection CSS for Dark */
+/* ================= DARK THEME ================= */
+
+.role-page.dark {
+    background: #0f172a;
+}
+
+
+/* Main Box */
+
+.role-page.dark .role-box {
+    background: #111827;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+
+
+/* Header */
+
+.role-page.dark .role-header h2 {
+    color: #f8fafc;
+}
+
+
+.role-page.dark .role-subtitle {
+    color: #94a3b8;
+}
+
+
+
+/* Logo */
+
+.role-page.dark .brand-logo {
+    color: #f8fafc;
+}
+
+
+.role-page.dark .brand-logo span {
+    color: #38bdf8;
+}
+
+
+
+
+/* Role Cards */
+
+.role-page.dark .role-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    color: #f8fafc;
+}
+
+
+
+.role-page.dark .role-card h2 {
+    color: #f1f5f9;
+}
+
+
+.role-page.dark .role-card p {
+    color: #cbd5e1;
+}
+
+
+
+
+/* Icons */
+
+.role-page.dark .role-icon {
+    color: #38bdf8;
+}
+
+
+
+
+/* Candidate Card Hover */
+
+.role-page.dark .role-card.candidate:hover {
+    border-color: #38bdf8;
+    box-shadow: 0 10px 25px rgba(56,189,248,0.2);
+}
+
+
+
+
+/* Recruiter Card Hover */
+
+.role-page.dark .role-card.recruiter:hover {
+    border-color: #a78bfa;
+    box-shadow: 0 10px 25px rgba(167,139,250,0.2);
+}
+
+
+
+
+/* Divider */
+
+.role-page.dark .divider {
+    color: #94a3b8;
+}
+
+
+
+
+/* Buttons */
+
+.role-page.dark .role-card button {
+
+    background: linear-gradient(
+        135deg,
+        #38bdf8,
+        #2563eb
+    );
+
+    color:white;
+}
+
+
+
+.role-page.dark .role-card button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+    0 8px 20px rgba(56,189,248,0.35);
+
+}
+/* Whole Role Selection Container - Dark Theme */
+
+.role-page.dark .role-box {
+
+    background: #111827;
+
+    border: 1px solid #334155;
+
+    border-radius: 24px;
+
+    padding: 40px;
+
+    width: 850px;
+
+    max-width: 90%;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.45);
+
+}
+.role-page.dark {
+
+    min-height: 100vh;
+
+    background: #020617;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+.role-page.dark .role-header {
+
+    text-align:center;
+
+}
+.role-page.dark .role-card {
+
+    background:#1e293b;
+
+    border:1px solid #475569;
+
+}
+
+/* =================================
+        LOGIN DARK THEME
+================================= */
+
+
+.parent.dark{
+
+    min-height:100vh;
+
+    background:
+    radial-gradient(
+        circle at top left,
+        #1e293b,
+        #020617 60%
+    );
+
+}
+
+
+
+/* Main box */
+
+.parent.dark .box{
+
+
+    background:#111827;
+
+
+    border:1px solid rgba(255,255,255,0.08);
+
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.7);
+
+
+}
+
+
+
+
+
+/* LEFT IMAGE SECTION
+
+.parent.dark .loginpic{
+
+
+    background:
+
+    linear-gradient(
+        rgba(2,6,23,.35),
+        rgba(2,6,23,.65)
+    );
+
+
+    background-size:cover;
+
+    background-position:center;
+
+
+} */
+
+
+
+/* Brand */
+
+.parent.dark .brand h1{
+
+
+    color:white;
+
+    text-shadow:
+    0 0 20px rgba(56,189,248,.5);
+
+}
+
+
+
+.parent.dark .logo7{
+
+    color:#38bdf8;
+
+}
+
+
+
+
+
+
+/* RIGHT SIDE */
+
+
+.parent.dark .parentinput{
+
+
+    background:#111827;
+
+
+}
+
+
+
+
+
+/* Animated Heading */
+
+
+.parent.dark #id1{
+
+
+    color:white;
+
+}
+
+
+
+.parent.dark .gradient-text{
+
+
+background:
+
+linear-gradient(
+90deg,
+#38bdf8,
+#818cf8,
+#a78bfa
+);
+
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+
+}
+
+
+
+.parent.dark .cursor{
+
+    color:#38bdf8;
+
+}
+
+
+
+
+.parent.dark #id2{
+
+    color:#cbd5e1;
+
+}
+
+
+
+
+
+/* Tabs */
+
+
+.parent.dark .loginSignup{
+
+
+    background:#020617;
+
+
+    border:1px solid #334155;
+
+
+}
+
+
+
+.parent.dark .bt1,
+.parent.dark .bt2{
+
+
+    color:#cbd5e1;
+
+
+}
+
+
+
+.parent.dark .bt1.active,
+.parent.dark .bt2.active{
+
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+    );
+
+
+    color:white;
+
+}
+
+
+
+
+
+
+/* Labels */
+
+
+.parent.dark label{
+
+
+    color:#e5e7eb;
+
+}
+
+
+
+
+
+/* Inputs */
+
+
+.parent.dark input{
+
+
+    background:#1e293b;
+
+
+    border:
+
+    1px solid #475569;
+
+
+    color:white;
+
+
+} */
+
+
+/* 
+.parent.dark input::placeholder{
+
+
+    color:#94a3b8;
+
+
+}
+
+
+
+.parent.dark input:focus{
+
+
+    border-color:#38bdf8;
+
+
+    box-shadow:
+
+    0 0 0 3px rgba(56,189,248,.15);
+
+
+}
+
+
+
+
+
+/* Forgot password */
+
+
+.parent.dark .forgot-password a{
+
+
+    color:#38bdf8;
+
+
+}
+
+
+
+
+
+
+/* Login Button */
+
+
+.parent.dark .bt3 button{
+
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #2563eb,
+    #9333ea
+    );
+
+
+    color:white;
+
+
+    box-shadow:
+
+    0 10px 25px rgba(37,99,235,.4);
+
+
+}
+
+
+
+.parent.dark .bt3 button:hover{
+
+
+    transform:translateY(-2px);
+
+
+}
+
+
+
+
+
+/* Form card */
+
+
+.parent.dark .userinput{
+
+
+    background:#111827;
+
+}
+/* ==========================
+      LIGHT THEME FIX
+========================== */
+
+
+.parent:not(.dark) .box{
+
+    background:white;
+
+}
+
+
+.parent:not(.dark) .parentinput{
+
+    background:white;
+
+}
+
+
+
+.parent:not(.dark) .brand h1{
+
+    color:#111827;
+
+}
+
+
+.parent:not(.dark) .logo7{
+
+    color:#2563eb;
+
+}
+
+
+
+
+
+/* ==========================
+      DARK THEME FIX
+========================== */
+
+
+.parent.dark{
+
+
+    background:#020617;
+
+}
+
+
+
+
+.parent.dark .box{
+
+
+    background:#111827;
+
+}
+
+
+
+.parent.dark .parentinput{
+
+
+    background:#111827;
+
+}
+
+
+
+
+/* Oppora logo visibility */
+
+.parent.dark .brand h1{
+
+
+    color:white;
+
+}
+
+
+
+.parent.dark .logo7{
+
+
+    color:#38bdf8;
+
+}
+
+
+
+
+
+/* Heading text */
+
+.parent.dark #id1{
+
+
+    color:white;
+
+}
+
+
+
+.parent.dark #id2{
+
+
+    color:#cbd5e1;
+
+}
+
+
+
+
+
+/* Labels */
+
+
+.parent.dark label{
+
+
+    color:#e5e7eb;
+
+}
+
+
+
+
+
+/* Inputs */
+
+
+.parent.dark input{
+
+
+    background:#1e293b;
+
+    color:white;
+
+    border-color:#475569;
+
+}
+
+
+.parent.dark input::placeholder{
+
+
+    color:#94a3b8;
+
+}
+
+
+
+
+/* Image visibility fix */
+
+
+/* ==========================
+      DARK THEME LOGIN IMAGE
+========================== */
+.parent.dark .loginpic {
+
+    background-image:
+    url("/loginpicdark.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+    
+    width: 50%;
+    min-height: 500px;
+
+    filter: brightness(1.15);
+     background-size: 90%;   
+} 
