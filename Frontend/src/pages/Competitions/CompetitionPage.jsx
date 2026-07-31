@@ -1,87 +1,66 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import PageHeader from '../../components/PageHeader/PageHeader';
-import CategorySection from '../../components/CategorySection/CategorySection';
-import FilterBar from '../../components/FilterBar/FilterBar';
-import CompetitionList from '../../components/CompetitionList/CompetitionList';
-import FeaturedSection from '../../components/FeaturedSection/FeaturedSection';
+import React, { useEffect } from 'react';
+import CompetitionHeroHeader from '../../components/Competition/Hero/CompetitionHeroHeader';
+import CategoryBar from '../../components/Competition/CategoryBar/CategoryBar';
+import FilterBar from '../../components/Competition/FilterBar/FilterBar';
+import CompetitionGrid from '../../components/Competition/CompetitionGrid/CompetitionGrid';
+import FeaturedSection from '../../components/Competition/FeaturedSection/FeaturedSection';
+import { useCompetitionFeed } from '../../hooks/useCompetitionFeed';
 import './CompetitionPage.css';
 
-const initialFilters = {
-  searchTerm: '',
-  title: '',
-  organization: '',
-  category: 'Competitions',
-  minPrizeAmount: '',
-  maxPrizeAmount: '',
-  deadlineFrom: '',
-  deadlineTo: '',
-  activeOnly: false,
-  location: '',
-  mode: '',
-  teamSize: '',
-  minTeamSize: '',
-  maxTeamSize: '',
-  degree: '',
-  batch: '',
-  domain: '',
-  isFree: null,
-  payment: '',
-  sortBy: 'popularity',
-  sortOrder: 'desc'
-};
-
+/**
+ * CompetitionPage — Redesigned modern Competition Feed Page.
+ */
 const CompetitionPage = () => {
-  const [filters, setFilters] = useState(initialFilters);
+  const {
+    competitions,
+    filters,
+    loadingInitial,
+    loadingMore,
+    hasMore,
+    error,
+    observerTargetRef,
+    updateFilters,
+    resetFilters,
+    retry
+  } = useCompetitionFeed();
 
-  // Restore scroll position when navigating back to feed page
   useEffect(() => {
-    const savedScrollY = sessionStorage.getItem('oppora_competition_feed_scroll');
-    if (savedScrollY) {
-      window.scrollTo(0, parseInt(savedScrollY, 10));
-    }
-
-    const handleScroll = () => {
-      sessionStorage.setItem('oppora_competition_feed_scroll', String(window.scrollY));
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleFilterChange = useCallback((newFilterValues) => {
-    setFilters((prev) => ({
-      ...prev,
-      ...newFilterValues
-    }));
-  }, []);
-
-  const handleResetFilters = useCallback(() => {
-    setFilters(initialFilters);
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
 
   return (
     <div className="competition-page-wrapper">
-      {/* Main Responsive Layout */}
       <div className="portal-main-layout">
-        {/* Center Main Feed Content */}
         <main className="portal-center-content">
-          <PageHeader />
-          <CategorySection 
-            selectedCategory={filters.category}
-            onCategorySelect={(catTitle) => handleFilterChange({ category: catTitle })}
+          <CompetitionHeroHeader 
+            searchTerm={filters.searchTerm}
+            onSearchChange={(term) => updateFilters({ searchTerm: term })}
           />
+
+          <CategoryBar 
+            selectedCategory={filters.category}
+            onCategorySelect={(catTitle) => updateFilters({ category: catTitle })}
+          />
+
           <FilterBar 
             filters={filters}
-            onFilterChange={handleFilterChange}
-            onResetFilters={handleResetFilters}
+            onFilterChange={updateFilters}
+            onResetFilters={resetFilters}
           />
-          <CompetitionList 
+
+          <CompetitionGrid 
+            competitions={competitions}
+            loadingInitial={loadingInitial}
+            loadingMore={loadingMore}
+            hasMore={hasMore}
+            error={error}
             filters={filters}
-            onResetFilters={handleResetFilters}
+            onRetry={retry}
+            onResetFilters={resetFilters}
+            observerTargetRef={observerTargetRef}
           />
         </main>
 
-        {/* Right Sticky Featured Sidebar (Desktop Only) */}
         <FeaturedSection />
       </div>
     </div>
@@ -89,4 +68,3 @@ const CompetitionPage = () => {
 };
 
 export default CompetitionPage;
-

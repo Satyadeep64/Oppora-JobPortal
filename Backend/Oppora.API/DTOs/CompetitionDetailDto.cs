@@ -15,6 +15,10 @@ namespace Oppora.API.DTOs
         public DateTime RegistrationDeadline { get; set; }
         public string Deadline { get; set; } = string.Empty;
         public string DaysLeft { get; set; } = string.Empty;
+        public string Status { get; set; } = "Open";
+        public string Difficulty { get; set; } = "Intermediate";
+        public string PopularityBadge { get; set; } = string.Empty;
+        public string PostedDate { get; set; } = string.Empty;
         public string OfficialRegistrationUrl { get; set; } = string.Empty;
         public bool IsFeatured { get; set; }
         public int RegisteredCount { get; set; }

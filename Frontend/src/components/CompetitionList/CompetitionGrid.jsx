@@ -66,25 +66,32 @@ const CompetitionGrid = memo(({
       {/* Dynamic Data Grid */}
       {competitions.length > 0 && (
         <div className="competition-list-grid">
-          {competitions.map((item, index) => (
-            <CompetitionCard
-              key={`${item.id}-${index}`}
-              id={item.id}
-              logo={item.logo}
-              title={item.title}
-              organization={item.organization}
-              members={item.members || item.teamSize}
-              location={item.location}
-              categories={item.categories || item.tags}
-              postedDate={item.postedDate}
-              daysLeft={item.daysLeft || item.deadline}
-              registeredCount={item.registeredCount}
-              status={item.status}
-              difficulty={item.difficulty}
-              popularityBadge={item.popularityBadge}
-              isBookmarked={item.isBookmarked}
-            />
-          ))}
+          {competitions.map((item, index) => {
+            const regCountText = typeof item.registeredCount === 'number' 
+              ? `${item.registeredCount.toLocaleString()} Registered` 
+              : (item.registeredCount || '1,200 Registered');
+
+            return (
+              <CompetitionCard
+                key={`${item.id}-${index}`}
+                id={item.id}
+                logo={item.logo}
+                banner={item.banner}
+                title={item.title}
+                organization={item.organization}
+                members={item.members || item.teamSize}
+                location={item.location}
+                categories={item.categories || item.tags}
+                postedDate={item.postedDate || (item.createdAt ? 'Posted recently' : 'Posted recently')}
+                daysLeft={item.daysLeft || item.deadline || 'Closing Soon'}
+                registeredCount={regCountText}
+                status={item.status || (item.daysLeft && item.daysLeft.includes('Expiring') ? 'Closing Soon' : 'Open')}
+                difficulty={item.difficulty || 'Intermediate'}
+                popularityBadge={item.popularityBadge || (item.isFeatured ? 'Featured' : null)}
+                isBookmarked={item.isBookmarked}
+              />
+            );
+          })}
         </div>
       )}
 

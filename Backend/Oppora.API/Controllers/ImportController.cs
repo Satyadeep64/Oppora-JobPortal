@@ -8,9 +8,9 @@ namespace Oppora.API.Controllers
     [Route("api/[controller]")]
     public class ImportController : ControllerBase
     {
-        private readonly CompetitionIngestionService _ingestionService;
+        private readonly ICompetitionIngestionService _ingestionService;
 
-        public ImportController(CompetitionIngestionService ingestionService)
+        public ImportController(ICompetitionIngestionService ingestionService)
         {
             _ingestionService = ingestionService;
         }

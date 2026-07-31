@@ -11,7 +11,7 @@
   transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.22s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.22s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   cursor: pointer;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  box-shadow: var(--shadow-sm);
   height: 100%;
   user-select: none;
   box-sizing: border-box;
@@ -22,7 +22,7 @@
 .competition-card:hover {
   transform: translateY(-4px);
   border-color: var(--color-accent, #0056d2);
-  box-shadow: 0 12px 28px rgba(0, 86, 210, 0.12);
+  box-shadow: var(--shadow-md);
 }
 
 .competition-card:active {
@@ -89,21 +89,21 @@
 }
 
 .pop-badge.pop-trending {
-  background-color: #fff7ed;
-  color: #c2410c;
-  border: 1px solid #ffedd5;
+  background-color: var(--color-badge-orange-bg, #fff7ed);
+  color: var(--color-badge-orange-text, #c2410c);
+  border: 1px solid var(--color-badge-orange-border, #ffedd5);
 }
 
 .pop-badge.pop-editorspick {
-  background-color: #f0f5ff;
-  color: #1e40af;
-  border: 1px solid #dbeafe;
+  background-color: var(--color-badge-blue-bg, #f0f5ff);
+  color: var(--color-badge-blue-text, #1e40af);
+  border: 1px solid var(--color-accent-border, #dbeafe);
 }
 
 .pop-badge.pop-featured {
-  background-color: #f0fdf4;
-  color: #15803d;
-  border: 1px solid #dcfce7;
+  background-color: var(--color-badge-green-bg, #f0fdf4);
+  color: var(--color-badge-green-text, #15803d);
+  border: 1px solid var(--color-border, #dcfce7);
 }
 
 .pop-icon {
@@ -120,19 +120,19 @@
 }
 
 .status-pill.status-open {
-  background-color: #dcfce7;
-  color: #15803d;
+  background-color: var(--color-badge-green-bg, #dcfce7);
+  color: var(--color-badge-green-text, #15803d);
 }
 
 .status-pill.status-closingsoon {
-  background-color: #fef3c7;
-  color: #b45309;
+  background-color: var(--color-badge-amber-bg, #fef3c7);
+  color: var(--color-badge-amber-text, #b45309);
 }
 
 .status-pill.status-closed,
 .status-pill.status-registrationclosed {
-  background-color: #f1f5f9;
-  color: #64748b;
+  background-color: var(--color-bg-subtle, #f1f5f9);
+  color: var(--color-text-subtle, #64748b);
 }
 
 .card-logo-wrapper {
@@ -207,7 +207,7 @@
 
 .bookmark-btn.bookmarked {
   background-color: var(--color-badge-amber-bg, #fef3c7);
-  color: #d97706;
+  color: var(--color-badge-amber-text, #d97706);
   border-color: var(--color-badge-amber-border, #fde68a);
 }
 
@@ -279,7 +279,7 @@
 }
 
 .diff-dot.diff-intermediate {
-  background-color: #0284c7;
+  background-color: #3b82f6;
 }
 
 .diff-dot.diff-advanced {
@@ -310,7 +310,7 @@
 
 .category-chip {
   background-color: var(--color-bg-subtle, #f1f5f9);
-  color: #334155;
+  color: var(--color-text-muted, #334155);
   font-size: 12px;
   font-weight: 500;
   padding: 4px 10px;
@@ -369,3 +369,23 @@
     font-size: 14px;
   }
 }
+
+/* Dark Theme System Integration */
+[data-theme="dark"] .diff-dot.diff-beginner {
+  background-color: #4ade80;
+}
+
+[data-theme="dark"] .diff-dot.diff-intermediate {
+  background-color: #60a5fa;
+}
+
+[data-theme="dark"] .diff-dot.diff-advanced {
+  background-color: #c084fc;
+}
+
+[data-theme="dark"] .bookmark-btn.bookmarked {
+  background-color: var(--color-badge-amber-bg, #451a03);
+  color: var(--color-badge-amber-text, #fde68a);
+  border-color: var(--color-badge-amber-border, #78350f);
+}
+

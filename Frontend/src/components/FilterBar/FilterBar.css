@@ -19,10 +19,10 @@
   gap: 8px;
   height: 40px;
   padding: 0 16px;
-  background-color: #ffffff;
-  border: 1.5px solid #e2e8f0;
+  background-color: var(--color-bg-card, #ffffff);
+  border: 1.5px solid var(--color-border, #e2e8f0);
   border-radius: 9999px;
-  color: #334155;
+  color: var(--color-text-muted, #334155);
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
@@ -32,46 +32,46 @@
 }
 
 .filter-pill-btn:hover {
-  background-color: #f8fafc;
-  border-color: #cbd5e1;
-  color: #0f172a;
+  background-color: var(--color-bg-subtle, #f8fafc);
+  border-color: var(--color-border-hover, #cbd5e1);
+  color: var(--color-text-main, #0f172a);
 }
 
 .pill-icon {
   font-size: 16px;
-  color: #64748b;
+  color: var(--color-text-subtle, #64748b);
   flex-shrink: 0;
   transition: color 0.15s ease-in-out;
 }
 
 .chevron-icon {
   font-size: 14px;
-  color: #94a3b8;
+  color: var(--color-text-light, #94a3b8);
   flex-shrink: 0;
   margin-left: 2px;
 }
 
 .filter-pill-btn:hover .pill-icon {
-  color: #1c4980;
+  color: var(--color-primary, #1c4980);
 }
 
 /* Main Filters Button (Active / Selected State) */
 .main-filters-btn {
-  border-color: #1c4980;
-  background-color: #f0f7ff;
-  color: #1c4980;
+  border-color: var(--color-primary, #1c4980);
+  background-color: var(--color-accent-light, #f0f7ff);
+  color: var(--color-primary, #1c4980);
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(28, 73, 128, 0.08);
+  box-shadow: var(--shadow-xs);
 }
 
 .main-filters-btn .pill-icon {
-  color: #1c4980;
+  color: var(--color-primary, #1c4980);
 }
 
 .main-filters-btn:hover {
-  background-color: #e0f2fe;
-  border-color: #0056d2;
-  color: #1c4980;
+  background-color: var(--color-accent-light, #e0f2fe);
+  border-color: var(--color-accent, #0056d2);
+  color: var(--color-primary, #1c4980);
 }
 
 /* Blue Badge showing active filter count */
@@ -82,7 +82,7 @@
   min-width: 20px;
   height: 20px;
   padding: 0 6px;
-  background: linear-gradient(135deg, #1c4980 0%, #0056d2 100%);
+  background: linear-gradient(135deg, var(--color-primary, #1c4980) 0%, var(--color-accent, #0056d2) 100%);
   color: #ffffff;
   font-size: 11px;
   font-weight: 700;
@@ -93,7 +93,7 @@
 
 /* Sort Pill Special Styling */
 .sort-pill-btn .sort-value {
-  color: #1c4980;
+  color: var(--color-primary, #1c4980);
   font-weight: 600;
 }
 
@@ -109,10 +109,10 @@
   left: 0;
   z-index: 100;
   min-width: 180px;
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
+  background-color: var(--color-bg-card, #ffffff);
+  border: 1px solid var(--color-border, #e2e8f0);
   border-radius: 12px;
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  box-shadow: var(--shadow-md);
   padding: 6px;
   animation: filterDropdownFade 0.15s ease-out;
 }
@@ -142,7 +142,7 @@
   background: transparent;
   border: none;
   border-radius: 8px;
-  color: #334155;
+  color: var(--color-text-muted, #334155);
   font-size: 13px;
   font-weight: 500;
   text-align: left;
@@ -151,19 +151,19 @@
 }
 
 .dropdown-option-btn:hover {
-  background-color: #f1f5f9;
-  color: #1c4980;
+  background-color: var(--color-bg-subtle, #f1f5f9);
+  color: var(--color-primary, #1c4980);
 }
 
 .dropdown-option-btn.selected {
-  background-color: #f0f7ff;
-  color: #1c4980;
+  background-color: var(--color-accent-light, #f0f7ff);
+  color: var(--color-primary, #1c4980);
   font-weight: 600;
 }
 
 .dropdown-divider {
   height: 1px;
-  background-color: #e2e8f0;
+  background-color: var(--color-border, #e2e8f0);
   margin: 4px 0;
 }
 
@@ -175,7 +175,7 @@
   right: 0;
   bottom: 0;
   z-index: 999;
-  background-color: rgba(15, 23, 42, 0.5);
+  background-color: rgba(15, 23, 42, 0.6);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
@@ -190,12 +190,13 @@
 }
 
 .filter-modal-content {
-  background: #ffffff;
+  background: var(--color-bg-card, #ffffff);
   width: 100%;
   max-width: 680px;
   max-height: 85vh;
   border-radius: 20px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-border, #e2e8f0);
+  box-shadow: var(--shadow-lg);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -218,7 +219,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 18px 24px;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--color-border, #e2e8f0);
 }
 
 .filter-modal-title {
@@ -227,12 +228,12 @@
   gap: 10px;
   font-size: 18px;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--color-text-main, #0f172a);
   margin: 0;
 }
 
 .filter-modal-close-btn {
-  background: #f1f5f9;
+  background: var(--color-bg-subtle, #f1f5f9);
   border: none;
   width: 32px;
   height: 32px;
@@ -240,14 +241,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #64748b;
+  color: var(--color-text-subtle, #64748b);
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .filter-modal-close-btn:hover {
-  background: #e2e8f0;
-  color: #0f172a;
+  background: var(--color-border, #e2e8f0);
+  color: var(--color-text-main, #0f172a);
 }
 
 .filter-modal-body {
@@ -279,24 +280,24 @@
 .filter-field-label {
   font-size: 13px;
   font-weight: 600;
-  color: #475569;
+  color: var(--color-text-muted, #475569);
 }
 
 .filter-input-control {
   height: 40px;
   padding: 0 14px;
-  border: 1px solid #cbd5e1;
+  border: 1px solid var(--color-border, #cbd5e1);
   border-radius: 10px;
   font-size: 14px;
-  color: #1e293b;
+  color: var(--color-text-main, #1e293b);
   outline: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
-  background-color: #ffffff;
+  background-color: var(--color-bg-card, #ffffff);
 }
 
 .filter-input-control:focus {
-  border-color: #1c4980;
-  box-shadow: 0 0 0 3px rgba(28, 73, 128, 0.12);
+  border-color: var(--color-primary, #1c4980);
+  box-shadow: var(--shadow-glow);
 }
 
 .filter-checkbox-label {
@@ -305,7 +306,7 @@
   gap: 8px;
   font-size: 14px;
   font-weight: 500;
-  color: #334155;
+  color: var(--color-text-muted, #334155);
   cursor: pointer;
   margin-top: 6px;
 }
@@ -313,7 +314,7 @@
 .filter-checkbox-control {
   width: 18px;
   height: 18px;
-  accent-color: #1c4980;
+  accent-color: var(--color-primary, #1c4980);
   cursor: pointer;
 }
 
@@ -322,16 +323,16 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  border-top: 1px solid #e2e8f0;
-  background-color: #f8fafc;
+  border-top: 1px solid var(--color-border, #e2e8f0);
+  background-color: var(--color-bg-subtle, #f8fafc);
 }
 
 .reset-filters-btn {
   background: transparent;
-  border: 1px solid #cbd5e1;
+  border: 1px solid var(--color-border, #cbd5e1);
   padding: 10px 18px;
   border-radius: 10px;
-  color: #475569;
+  color: var(--color-text-muted, #475569);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -339,12 +340,12 @@
 }
 
 .reset-filters-btn:hover {
-  background-color: #e2e8f0;
-  color: #0f172a;
+  background-color: var(--color-border, #e2e8f0);
+  color: var(--color-text-main, #0f172a);
 }
 
 .apply-filters-btn {
-  background: linear-gradient(135deg, #1c4980 0%, #0056d2 100%);
+  background: linear-gradient(135deg, var(--color-primary, #1c4980) 0%, var(--color-accent, #0056d2) 100%);
   border: none;
   padding: 10px 24px;
   border-radius: 10px;
@@ -372,4 +373,13 @@
   }
 }
 
+/* Dark Theme System Integration */
+[data-theme="dark"] .filter-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+[data-theme="dark"] .filter-input-control option {
+  background-color: var(--color-bg-card, #1f2937);
+  color: var(--color-text-main, #f9fafb);
+}
 

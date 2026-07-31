@@ -1,6 +1,9 @@
 import apiClient from './apiClient';
 
 const detailCache = new Map();
+const pagedCache = new Map();
+const inFlightRequestsMap = new Map();
+const CACHE_TTL_MS = 120000; // 2 Minutes TTL
 
 export const competitionService = {
   /**
@@ -12,19 +15,18 @@ export const competitionService = {
   },
 
   /**
-   * Get paged competitions for infinite scrolling & backend filtering with automatic offline fallback
+   * Get paged competitions for infinite scrolling & backend filtering with automatic offline fallback & in-flight request deduplication
    * @param {number} pageNumber - Current page number (1-indexed)
    * @param {number} pageSize - Number of items per page (default 10)
    * @param {Object} filters - Optional filter criteria
    * @returns {Promise<Object>} Paged result object { items, totalCount, currentPage, totalPages, hasNext, hasPrevious }
    */
-  async getCompetitionsPaged(pageNumber = 1, pageSize = 10, filters = {}) {
+  async getCompetitionsPaged(pageNumber = 1, pageSize = 50, filters = {}) {
     const params = {
       pageNumber,
       pageSize,
     };
 
-    // Include non-empty filter parameters
     Object.keys(filters).forEach((key) => {
       const val = filters[key];
       if (val !== null && val !== undefined && val !== '') {
@@ -32,40 +34,77 @@ export const competitionService = {
       }
     });
 
-    try {
-      const res = await apiClient.get('/competitions/advanced-search', { params });
-      if (res && (res.items || Array.isArray(res))) {
-        // Warm up detail cache with items returned in search feed
-        if (Array.isArray(res.items)) {
-          res.items.forEach((item) => {
-            if (item && item.id) detailCache.set(String(item.id), item);
-          });
-        }
-        return res;
+    const cacheKey = JSON.stringify(params);
+
+    // 1. Return cached result if fresh (< 2 minutes old)
+    if (pagedCache.has(cacheKey)) {
+      const cached = pagedCache.get(cacheKey);
+      if (Date.now() - cached.timestamp < CACHE_TTL_MS) {
+        return cached.data;
       }
-    } catch {
-      // Fallback to local static dataset when API is offline or unreachable
+      pagedCache.delete(cacheKey);
     }
 
-    const fallbackModule = await import('../data/competitionData');
-    const filterFn = fallbackModule.filterCompetitions || (() => fallbackModule.competitionData || []);
-    const filteredData = filterFn(filters);
-    const startIndex = (pageNumber - 1) * pageSize;
-    const items = filteredData.slice(startIndex, startIndex + pageSize);
+    // 2. Deduplicate in-flight concurrent duplicate requests
+    if (inFlightRequestsMap.has(cacheKey)) {
+      return await inFlightRequestsMap.get(cacheKey);
+    }
 
-    // Warm up cache
-    items.forEach((item) => {
-      if (item && item.id) detailCache.set(String(item.id), item);
-    });
+    const requestPromise = (async () => {
+      try {
+        const res = await apiClient.get('/competitions/advanced-search', { params });
+        if (res && (res.items !== undefined || Array.isArray(res))) {
+          const apiItems = res.items || (Array.isArray(res) ? res : []);
+          apiItems.forEach((item) => {
+            if (item && item.id) detailCache.set(String(item.id), item);
+          });
+          const currentP = res.currentPage ?? pageNumber;
+          const pageS = res.pageSize ?? pageSize;
+          const totalC = res.totalCount ?? apiItems.length;
 
-    return {
-      items,
-      totalCount: filteredData.length,
-      currentPage: pageNumber,
-      pageSize,
-      hasNext: startIndex + pageSize < filteredData.length,
-      hasPrevious: pageNumber > 1
-    };
+          const resultObj = {
+            items: apiItems,
+            totalCount: totalC,
+            currentPage: currentP,
+            pageSize: pageS,
+            hasNext: res.hasNext !== undefined ? res.hasNext : currentP * pageS < totalC,
+            hasPrevious: res.hasPrevious !== undefined ? res.hasPrevious : currentP > 1
+          };
+
+          pagedCache.set(cacheKey, { timestamp: Date.now(), data: resultObj });
+          return resultObj;
+        }
+      } catch (err) {
+        console.warn('Backend API unreachable, using local fallback:', err?.message);
+      } finally {
+        inFlightRequestsMap.delete(cacheKey);
+      }
+
+      const fallbackModule = await import('../data/competitionData');
+      const filterFn = fallbackModule.filterCompetitions || (() => fallbackModule.competitionData || []);
+      const filteredData = filterFn(filters);
+      const startIndex = (pageNumber - 1) * pageSize;
+      const items = filteredData.slice(startIndex, startIndex + pageSize);
+
+      items.forEach((item) => {
+        if (item && item.id) detailCache.set(String(item.id), item);
+      });
+
+      const fallbackResultObj = {
+        items,
+        totalCount: filteredData.length,
+        currentPage: pageNumber,
+        pageSize,
+        hasNext: startIndex + pageSize < filteredData.length,
+        hasPrevious: pageNumber > 1
+      };
+
+      pagedCache.set(cacheKey, { timestamp: Date.now(), data: fallbackResultObj });
+      return fallbackResultObj;
+    })();
+
+    inFlightRequestsMap.set(cacheKey, requestPromise);
+    return await requestPromise;
   },
 
   /**
@@ -77,13 +116,19 @@ export const competitionService = {
     if (!id) return null;
     const cacheKey = String(id);
 
+    // Instant 0ms return if already in detailCache
     if (detailCache.has(cacheKey)) {
-      return detailCache.get(cacheKey);
+      const cached = detailCache.get(cacheKey);
+      // Background revalidation (silent sync)
+      apiClient.get(`/competitions/${id}`).then((res) => {
+        if (res && res.id) detailCache.set(cacheKey, res);
+      }).catch(() => {});
+      return cached;
     }
 
     try {
       const res = await apiClient.get(`/competitions/${id}`);
-      if (res) {
+      if (res && res.id) {
         detailCache.set(cacheKey, res);
         return res;
       }
@@ -112,8 +157,6 @@ export const competitionService = {
     }
   },
 
-
-
   /**
    * Search competitions by query string
    * @param {string} query - Keyword search term
@@ -134,6 +177,15 @@ export const competitionService = {
     return await apiClient.get(`/competitions/filter`, {
       params,
     });
+  },
+
+  /**
+   * Clear in-memory caches when user explicitly forces a reset
+   */
+  clearCaches() {
+    pagedCache.clear();
+    detailCache.clear();
+    inFlightRequestsMap.clear();
   },
 
   /**
@@ -188,7 +240,6 @@ export const competitionService = {
       console.warn('Failed to save bookmark to localStorage:', e);
     }
 
-    // Dispatch global custom event for instant multi-component reactivity
     if (typeof window !== 'undefined') {
       window.dispatchEvent(
         new CustomEvent('oppora:bookmark-change', {
@@ -201,7 +252,7 @@ export const competitionService = {
   },
 
   /**
-   * Robust cross-browser clipboard copy helper with fallback for non-secure HTTP / legacy browsers
+   * Clipboard copy helper with fallback for non-secure contexts
    * @param {string} text 
    * @returns {Promise<boolean>} Success boolean
    */
@@ -213,7 +264,7 @@ export const competitionService = {
         return true;
       }
     } catch {
-      // Fallthrough to legacy method
+      // Fallback
     }
 
     try {
@@ -235,4 +286,3 @@ export const competitionService = {
 };
 
 export default competitionService;
-

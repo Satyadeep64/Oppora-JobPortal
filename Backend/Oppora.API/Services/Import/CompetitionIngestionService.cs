@@ -1,18 +1,17 @@
-using Microsoft.EntityFrameworkCore;
-using Oppora.API.Data;
+using Oppora.API.Interfaces;
 using Oppora.API.Models;
 using Oppora.API.Services.Import.Models;
 
 namespace Oppora.API.Services.Import
 {
-    public class CompetitionIngestionService
+    public class CompetitionIngestionService : ICompetitionIngestionService
     {
-        private readonly AppDbContext _context;
+        private readonly ICompetitionRepository _repository;
         private readonly CompetitionImporterFactory _factory;
 
-        public CompetitionIngestionService(AppDbContext context, CompetitionImporterFactory factory)
+        public CompetitionIngestionService(ICompetitionRepository repository, CompetitionImporterFactory factory)
         {
-            _context = context;
+            _repository = repository;
             _factory = factory;
         }
 
@@ -42,48 +41,15 @@ namespace Oppora.API.Services.Import
                     continue;
                 }
 
-                // De-duplication check against existing OfficialRegistrationUrl
-                bool exists = await _context.Competitions.AnyAsync(c =>
-                    c.Title.ToLower() == dto.Title.ToLower() ||
-                    (!string.IsNullOrEmpty(dto.OfficialRegistrationUrl) && c.OfficialRegistrationUrl == dto.OfficialRegistrationUrl));
-
-                if (exists)
-                {
-                    result.TotalSkippedDuplicates++;
-                    continue;
-                }
-
-                // Resolve or create Organization
                 var orgName = string.IsNullOrWhiteSpace(dto.OrganizationName) ? "Oppora Partner" : dto.OrganizationName;
-                var org = await _context.Organizations.FirstOrDefaultAsync(o => o.Name.ToLower() == orgName.ToLower());
-                if (org == null)
-                {
-                    org = new Organization { Name = orgName, LogoUrl = dto.OrganizationLogoUrl };
-                    _context.Organizations.Add(org);
-                    await _context.SaveChangesAsync();
-                }
+                var org = await _repository.GetOrCreateOrganizationAsync(orgName, dto.OrganizationLogoUrl);
 
-                // Resolve or create Category
                 var catName = string.IsNullOrWhiteSpace(dto.CategoryName) ? "Competitions" : dto.CategoryName;
-                var cat = await _context.Categories.FirstOrDefaultAsync(c => c.Name.ToLower() == catName.ToLower());
-                if (cat == null)
-                {
-                    cat = new Category { Name = catName, Slug = catName.ToLower().Replace(" ", "-") };
-                    _context.Categories.Add(cat);
-                    await _context.SaveChangesAsync();
-                }
+                var cat = await _repository.GetOrCreateCategoryAsync(catName);
 
-                // Resolve or create Location
                 var locName = string.IsNullOrWhiteSpace(dto.LocationName) ? "Online / India" : dto.LocationName;
-                var loc = await _context.Locations.FirstOrDefaultAsync(l => l.Name.ToLower() == locName.ToLower());
-                if (loc == null)
-                {
-                    loc = new Location { Name = locName, IsOnline = locName.ToLower().Contains("online") };
-                    _context.Locations.Add(loc);
-                    await _context.SaveChangesAsync();
-                }
+                var loc = await _repository.GetOrCreateLocationAsync(locName);
 
-                // Build Competition entity
                 var competition = new Competition
                 {
                     Title = dto.Title,
@@ -100,8 +66,7 @@ namespace Oppora.API.Services.Import
                     CreatedAt = DateTime.UtcNow
                 };
 
-                _context.Competitions.Add(competition);
-                await _context.SaveChangesAsync();
+                await _repository.AddAsync(competition);
                 result.TotalImported++;
             }
 
