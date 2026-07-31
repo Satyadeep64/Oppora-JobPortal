@@ -7,6 +7,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using BCrypt.Net;
+using Oppora.API.Services;
 
 namespace Oppora.API.Controllers
 {
@@ -17,15 +18,17 @@ namespace Oppora.API.Controllers
     {
         private readonly AppDbContext db;
         private readonly IConfiguration config;
+        private readonly IEmailService _emailService;
 
 
         public AuthController(
             AppDbContext context,
-            IConfiguration configuration
+            IConfiguration configuration, IEmailService emailService
         )
         {
             db = context;
             config = configuration;
+            _emailService = emailService;
         }
 
 
@@ -33,7 +36,7 @@ namespace Oppora.API.Controllers
         // REGISTER
 
         [HttpPost("register")]
-        public IActionResult Register(RegisterDto request)
+        public async Task<IActionResult> Register(RegisterDto request)
         {
 
             var existingUser = db.Users
@@ -76,9 +79,31 @@ namespace Oppora.API.Controllers
 
             db.Users.Add(user);
 
-            db.SaveChanges();
+          db.SaveChanges();
+
+            string body = $@"
+<h2>Welcome to Oppora 🎉</h2>
+
+<p>Hello {user.FullName},</p>
+
+<p>Your Oppora account has been created successfully.</p>
+
+<p>You can now explore jobs, internships and apply for opportunities.</p>
+
+<br/>
+
+<p>
+Regards,<br/>
+Oppora Team
+</p>
+";
 
 
+            await _emailService.SendEmailAsync(
+                user.Email,
+                "Welcome to Oppora",
+                body
+            );
 
             return Ok(new
             {

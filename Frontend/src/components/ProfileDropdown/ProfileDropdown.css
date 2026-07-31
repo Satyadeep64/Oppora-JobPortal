@@ -214,7 +214,7 @@
 /* DARK MODE */
 
 
-.dark .profile-popup{
+.dark .pd-dropdown-menu{
 
 
     background:#1e293b;
@@ -226,7 +226,7 @@
 
 
 
-.dark .profile-popup p{
+.dark .pd-dropdown-menu p{
 
 
     color:#cbd5e1;
@@ -248,7 +248,7 @@
    LIGHT THEME
 ========================== */
 
-.profile-popup{
+.pd-dropdown-menu{
     position:absolute;
     top:65px;
     right:0;
@@ -263,11 +263,11 @@
     border:1px solid #e5e7eb;
 }
 
-.profile-popup h3{
+.pd-dropdown-menu h3{
     color:#111827;
 }
 
-.profile-popup p{
+.pd-dropdown-menu p{
     color:#6b7280;
 }
 

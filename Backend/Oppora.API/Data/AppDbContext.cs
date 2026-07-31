@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Oppora.API.Models;
 
 
@@ -19,6 +19,15 @@ namespace Oppora.API.Data
         public DbSet<Opportunity> Opportunities { get; set; }
 
         public DbSet<Application> Applications { get; set; }
+
+        public DbSet<Resume> Resumes { get; set; }
+
+        public DbSet<Notification> Notifications { get; set; }
+
+        public DbSet<BlogPost> BlogPosts { get; set; }
+
+        public DbSet<BlogComment> BlogComments { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()

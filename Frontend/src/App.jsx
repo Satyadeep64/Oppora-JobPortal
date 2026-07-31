@@ -20,6 +20,8 @@ import OpportunityDetails from "./pages/Opportunity/OpportunityDetails";
 import ViewApplicants from "./pages/Recruiter/ViewApplicants";
 import RecruiterApplicants from "./pages/RecruiterApplicants/RecruiterApplicants";
 import ScrollToTop from "./components/ScrollToTop";
+import ResumeBuilder from "./pages/ResumeBuilder/ResumeBuilder";
+import CandidateBlogs from "./pages/CandidateBlogs/CandidateBlogs";
 
 const App = () => {
   const [loading,setLoading] = useState(true);
@@ -61,6 +63,8 @@ const App = () => {
         <Route path="/change-password" element={<ChangePassword/>}/>
          
         <Route path="/settings" element={<Settings/>}/>
+        <Route path="/resume-builder" element={<ResumeBuilder/>}/>
+        <Route path="/blogs" element={<CandidateBlogs/>}/>
         <Route path="/footer" element={<Footer />}/>
 
       </Route>

@@ -508,3 +508,157 @@
 
 
 }
+
+/* ============================= */
+/* RECENT APPLICATIONS */
+/* ============================= */
+
+.applications-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+
+.application-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#ffffff;
+
+    padding:20px 24px;
+
+    border-radius:18px;
+
+    border:1px solid #e5e7eb;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+
+    transition:.3s ease;
+
+}
+
+
+
+.application-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 14px 30px rgba(37,99,235,.12);
+
+}
+
+
+
+.application-card h3{
+
+    margin:0;
+
+    font-size:18px;
+
+    color:#0f172a;
+
+}
+
+
+
+.application-card p{
+
+    margin-top:6px;
+
+    color:#64748b;
+
+    font-size:15px;
+
+}
+
+
+
+/* Status Badge */
+
+.application-status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+    font-size:14px;
+
+}
+
+
+
+.application-status svg{
+
+    color:#16a34a;
+
+}
+
+
+
+/* ============================= */
+/* DARK MODE */
+/* ============================= */
+
+.activity-page.dark .application-card{
+
+    background:#1e293b;
+
+    border:1px solid #334155;
+
+}
+
+
+
+.activity-page.dark .application-card h3{
+
+    color:#ffffff;
+
+}
+
+
+
+.activity-page.dark .application-card p{
+
+    color:#cbd5e1;
+
+}
+
+
+
+.activity-page.dark .application-status{
+
+    background:#14532d;
+
+    color:#bbf7d0;
+
+}
+
+
+
+.activity-page.dark .application-status svg{
+
+    color:#4ade80;
+
+}
