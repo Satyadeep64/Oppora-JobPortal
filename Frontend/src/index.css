@@ -438,43 +438,101 @@ white-space:nowrap;
     position:relative;
 }
 .notification-btn{
-
+    position:relative;
     border:none;
     background:none;
-    margin-top: 10px;
+    margin-top: 6px;
     margin-right: 10px;
-    font-size:22px;
-    color:#374151;
+    font-size:24px;
     cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
-.notification-btn:hover{
-    color:#2563eb;
+.yellow-bell-icon {
+    color: #eab308;
+    filter: drop-shadow(0 2px 4px rgba(234, 179, 8, 0.4));
+    transition: transform 0.2s ease;
+}
+.notification-btn:hover .yellow-bell-icon {
+    transform: scale(1.15) rotate(12deg);
+    color: #f59e0b;
+}
+.notification-badge-count {
+    position: absolute;
+    top: -4px;
+    right: -6px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 50px;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(239, 68, 68, 0.4);
+    animation: badgePulse 2s infinite ease-in-out;
+}
+@keyframes badgePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
 }
 .notification-box{
     position:absolute;
-    top:35px;
+    top:48px;
     right:0;
-    width:280px;
+    width:320px;
+    max-height: 400px;
+    overflow-y: auto;
     background:white;
-    border-radius:12px;
-    box-shadow:
-    0 10px 25px rgba(0,0,0,0.15);
-    padding:15px;
-    z-index:100;
+    border-radius:16px;
+    box-shadow: 0 14px 35px rgba(0,0,0,0.18);
+    padding:16px;
+    z-index:1000;
+    border: 1px solid #e2e8f0;
 }
 .notification-box h4{
-    margin-bottom:10px;
-    font-size:18px;
+    margin-bottom:12px;
+    font-size:16px;
+    font-weight:700;
+    color:#1e293b;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 8px;
 }
-.notification-box p{
-    padding:10px;
-    margin:0;
-    cursor:pointer;
-    border-radius:8px;
+.notification-item-card {
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    background: #f8fafc;
+    border: 1px solid #f1f5f9;
+    transition: all 0.2s ease;
 }
-.notification-box p:hover{
-    background:#eff6ff;
-    color:#2563eb;
+.notification-item-card:hover {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    transform: translateX(2px);
+}
+.notification-item-card strong {
+    display: block;
+    font-size: 0.85rem;
+    color: #1e293b;
+}
+.notification-item-card p {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin: 4px 0 6px;
+    line-height: 1.4;
+}
+.notification-time {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    display: block;
+    text-align: right;
+}
+.no-notif {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    text-align: center;
+    padding: 16px 0;
 }
 .menu a{
      text-decoration:none;
@@ -4539,10 +4597,7 @@ color:transparent;
     1px solid #475569;
 
 
-    color:white;
-
-
-} */
+}
 
 
 /* 
@@ -4814,3 +4869,270 @@ color:transparent;
     filter: brightness(1.15);
      background-size: 90%;   
 } 
+
+.company-logo{
+    width:45px;
+    height:45px;
+    object-fit:contain;
+    border-radius:8px;
+}
+
+.company-section {
+
+    padding: 45px 0;
+
+    overflow: hidden;
+
+    width: 100%;
+
+}
+
+
+
+.company-header {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+
+.company-header h2 {
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+}
+
+
+
+.company-header h2 span {
+
+    color: #2563eb;
+
+}
+
+
+
+.company-header p {
+
+    margin-top: 8px;
+
+    color: #64748b;
+
+    font-size: 15px;
+
+}
+
+
+
+/* Slider Container */
+
+.slider-wrapper {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    position: relative;
+
+}
+
+
+
+/* Infinite Track */
+
+.company-slider {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    width: max-content;
+
+    animation: companyScroll 25s linear infinite;
+
+}
+
+
+
+.company-slider:hover {
+
+    animation-play-state: paused;
+
+}
+
+
+
+/* Company Card */
+
+.company-card {
+
+    width: 210px;
+
+    height: 65px;
+
+    flex-shrink: 0;
+
+
+    display: flex;
+
+    align-items: center;
+
+
+    padding: 0 18px;
+
+    gap: 14px;
+
+
+    background: rgba(255,255,255,0.9);
+
+
+    border-radius: 20px;
+
+
+    border: 1px solid #e5e7eb;
+
+
+    box-shadow:
+
+    0 8px 25px rgba(15,23,42,0.08);
+
+
+    transition: all .3s ease;
+
+
+    cursor: pointer;
+
+
+    overflow: hidden;
+
+}
+
+
+
+.company-card:hover {
+
+    transform: translateY(-6px);
+
+
+    border-color: #2563eb;
+
+
+    box-shadow:
+
+    0 18px 35px rgba(37,99,235,0.18);
+
+}
+
+
+
+/* Logo Container */
+
+.logo-box {
+
+    width: 42px;
+
+    height: 42px;
+
+
+    flex-shrink: 0;
+
+
+    border-radius: 14px;
+
+
+    background: #f8fafc;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+}
+
+
+
+/* Image Logos */
+
+.logo-box img {
+
+    width: 32px;
+
+    height: 32px;
+
+
+    object-fit: contain;
+
+}
+
+
+
+/* React Icons */
+
+.company-icon {
+
+    font-size: 28px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+
+/* Company Name */
+
+.company-name {
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+
+    color:#1e293b;
+
+
+    white-space: nowrap;
+
+}
+
+
+
+
+
+/* Infinite Animation */
+
+@keyframes companyScroll {
+
+
+    from {
+
+        transform: translateX(0);
+
+    }
+
+
+    to {
+
+        transform: translateX(-50%);
+
+    }
+
+
+}
+
+

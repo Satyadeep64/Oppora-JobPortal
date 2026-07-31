@@ -115,4 +115,4 @@ namespace Oppora.API.Data
                 .IsUnique();
         }
     }
-}
+}
