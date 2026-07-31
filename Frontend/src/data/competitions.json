@@ -1,0 +1,1454 @@
+[
+  {
+    "id": 1,
+    "title": "Smart India Hackathon 2026 (SIH Grand Edition)",
+    "organization": "Ministry of Education & AICTE",
+    "logo": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&auto=format&fit=crop&q=80",
+    "category": "Hackathons",
+    "difficulty": "Advanced",
+    "daysLeft": "25 Days Left",
+    "deadline": "25 Aug 2026",
+    "registrationDeadline": "2026-08-25T23:59:59Z",
+    "competitionDate": "15 Sep 2026 - 17 Sep 2026",
+    "prizesTotal": "₹1,00,00,000",
+    "teamSize": "6 Members",
+    "minTeamMembers": 6,
+    "maxTeamMembers": 6,
+    "mode": "Hybrid",
+    "location": "Nodal Centers Across India",
+    "registrationFee": "Free Entry",
+    "description": "Smart India Hackathon is a nationwide initiative by AICTE and Ministry of Education to provide students a platform to solve some of the pressing problems we face in our daily lives, and thus inculcate a culture of product innovation and a mindset of problem-solving.",
+    "overview": "Smart India Hackathon 2026 brings together college students from across India to build software and hardware solutions for problem statements submitted by Central Ministries, State Governments, and Industry Leaders. Winners get cash prizes, incubation support, and government recognition.",
+    "officialRegistrationUrl": "https://sih.gov.in",
+    "registeredCount": 48200,
+    "featured": true,
+    "eligibility": [
+      "Regular undergraduate and postgraduate students from recognized Indian colleges",
+      "Teams must comprise exactly 6 members with at least 1 female member",
+      "Each team must have a faculty mentor assigned by the institute"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "Internal Campus Hackathon & Nomination",
+        "description": "Colleges conduct internal hackathons to select and nominate top 10 team submissions.",
+        "startDate": "2026-08-25T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "National Idea Evaluation Round",
+        "description": "Expert evaluation committee reviews submitted PPTs and architecture diagrams.",
+        "startDate": "2026-09-05T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "36-Hour Non-Stop Grand Finale",
+        "description": "Live non-stop coding and prototyping at designated national nodal centers.",
+        "startDate": "2026-09-15T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "Problem Statement Winner (100 Winners)",
+        "reward": "₹1,00,000 Cash Prize per problem statement",
+        "amount": 100000
+      },
+      {
+        "rank": 2,
+        "position": "1st Runner Up",
+        "reward": "₹75,000 Cash Prize + Certificate of Excellence",
+        "amount": 75000
+      },
+      {
+        "rank": 3,
+        "position": "2nd Runner Up",
+        "reward": "₹50,000 Cash Prize + Trophy",
+        "amount": 50000
+      }
+    ],
+    "rules": [
+      "Submissions must strictly address one of the official problem statements.",
+      "Plagiarism or pre-existing commercial code will result in immediate disqualification.",
+      "Code must be pushed to the designated public GitHub repository during the 36-hour window."
+    ],
+    "tags": ["AI/ML", "Cybersecurity", "Smart Governance", "FinTech", "Hardware"]
+  },
+  {
+    "id": 2,
+    "title": "IIT Bombay Techfest Innovation Challenge 2026",
+    "organization": "IIT Bombay",
+    "logo": "https://images.unsplash.com/photo-1562774053-701939374585?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&auto=format&fit=crop&q=80",
+    "category": "Innovation Challenge",
+    "difficulty": "Advanced",
+    "daysLeft": "18 Days Left",
+    "deadline": "18 Aug 2026",
+    "registrationDeadline": "2026-08-18T23:59:59Z",
+    "competitionDate": "26 Dec 2026 - 28 Dec 2026",
+    "prizesTotal": "₹15,00,000",
+    "teamSize": "1 - 4 Members",
+    "minTeamMembers": 1,
+    "maxTeamMembers": 4,
+    "mode": "Offline",
+    "location": "IIT Bombay Campus, Mumbai",
+    "registrationFee": "Free Entry",
+    "description": "Techfest is Asia's Largest Science and Technology Festival organized annually by students of IIT Bombay. The Innovation Challenge invites groundbreaking tech prototypes in Robotics, Sustainability, and DeepTech.",
+    "overview": "Competitors present working prototypes to a panel of venture capitalists, IIT faculty, and industry leaders. Winning teams receive equity-free seed funding and incubation opportunities at SINE IIT Bombay.",
+    "officialRegistrationUrl": "https://techfest.org",
+    "registeredCount": 24500,
+    "featured": true,
+    "eligibility": [
+      "Open to B.Tech, M.Tech, Dual Degree, and PhD students nationwide",
+      "Working prototype or proof of concept is mandatory for final round"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "Abstract & Pitch Deck Submission",
+        "description": "Submit problem statement, proposed technology stack, and business viability.",
+        "startDate": "2026-08-18T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "Virtual Demonstration & Q&A",
+        "description": "Live online working demo with IIT Bombay faculty jury.",
+        "startDate": "2026-10-10T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "Grand Exhibition at IIT Bombay",
+        "description": "Physical prototype exhibition and stage pitch during Techfest 2026.",
+        "startDate": "2026-12-26T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "Gold Innovation Award",
+        "reward": "₹7,50,000 Cash Prize + SINE Incubation",
+        "amount": 750000
+      },
+      {
+        "rank": 2,
+        "position": "Silver Innovation Award",
+        "reward": "₹4,50,000 Cash Prize",
+        "amount": 450000
+      },
+      {
+        "rank": 3,
+        "position": "Bronze Innovation Award",
+        "reward": "₹3,00,000 Cash Prize",
+        "amount": 300000
+      }
+    ],
+    "rules": [
+      "Intellectual Property remains 100% with the participating student team.",
+      "Physical demonstration of working hardware or software is mandatory in finale."
+    ],
+    "tags": ["Robotics", "CleanTech", "DeepTech", "IIT Bombay", "IoT"]
+  },
+  {
+    "id": 3,
+    "title": "IIT Madras Shaastra National Hackathon",
+    "organization": "IIT Madras",
+    "logo": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&auto=format&fit=crop&q=80",
+    "category": "Hackathons",
+    "difficulty": "Intermediate",
+    "daysLeft": "12 Days Left",
+    "deadline": "12 Aug 2026",
+    "registrationDeadline": "2026-08-12T23:59:59Z",
+    "competitionDate": "04 Jan 2027 - 07 Jan 2027",
+    "prizesTotal": "₹12,00,000",
+    "teamSize": "2 - 4 Members",
+    "minTeamMembers": 2,
+    "maxTeamMembers": 4,
+    "mode": "Hybrid",
+    "location": "IIT Madras, Chennai / Online",
+    "registrationFee": "Free Entry",
+    "description": "Shaastra is the annual technical festival of IIT Madras. The Shaastra National Hackathon focuses on building AI-driven solutions for Climate Action, Healthcare, and Sustainable Mobility.",
+    "overview": "Participants get access to cloud infrastructure, GPU credits, and technical mentorship from IIT Madras Pravartak Technologies foundation.",
+    "officialRegistrationUrl": "https://shaastra.org",
+    "registeredCount": 19800,
+    "featured": true,
+    "eligibility": [
+      "Open to all enrolled university students in India",
+      "Inter-college and inter-branch teams permitted"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "Online Aptitude & Code Screening",
+        "description": "60-minute algorithmic contest evaluating Python and Data Structure skills.",
+        "startDate": "2026-08-15T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "48-Hour Virtual Hackathon",
+        "description": "Develop full-stack web/mobile application with Machine Learning models.",
+        "startDate": "2026-09-20T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "On-Campus Final Presentation",
+        "description": "Present solution to industry judges at IIT Madras Campus.",
+        "startDate": "2027-01-04T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "Champion Team",
+        "reward": "₹6,00,000 Cash Prize + Direct Interview to IITM Incubation",
+        "amount": 600000
+      },
+      {
+        "rank": 2,
+        "position": "1st Runner Up",
+        "reward": "₹4,00,000 Cash Prize",
+        "amount": 400000
+      },
+      {
+        "rank": 3,
+        "position": "2nd Runner Up",
+        "reward": "₹2,00,000 Cash Prize",
+        "amount": 200000
+      }
+    ],
+    "rules": [
+      "Teams must submit original source code hosted on GitHub with open-source license.",
+      "All API integrations used must be documented in the README."
+    ],
+    "tags": ["ClimateTech", "HealthTech", "IIT Madras", "AI/ML"]
+  },
+  {
+    "id": 4,
+    "title": "Google Girl Hackathon India 2026",
+    "organization": "Google India",
+    "logo": "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&auto=format&fit=crop&q=80",
+    "category": "Hackathons",
+    "difficulty": "Intermediate",
+    "daysLeft": "14 Days Left",
+    "deadline": "14 Aug 2026",
+    "registrationDeadline": "2026-08-14T23:59:59Z",
+    "competitionDate": "01 Sep 2026 - 30 Sep 2026",
+    "prizesTotal": "₹8,00,000",
+    "teamSize": "Individual or Pair",
+    "minTeamMembers": 1,
+    "maxTeamMembers": 2,
+    "mode": "Online",
+    "location": "Online / Google India",
+    "registrationFee": "Free Entry",
+    "description": "Google Girl Hackathon is a program for women engineering students in India. It provides a platform to showcase coding skills, learn from Google engineers, and win internship and full-time hiring opportunities.",
+    "overview": "Participants solve complex algorithmic challenges and software design problems over multiple rounds, receiving mentorship from Google India software engineers.",
+    "officialRegistrationUrl": "https://buildyourfuture.withgoogle.com",
+    "registeredCount": 38900,
+    "featured": true,
+    "eligibility": [
+      "Female students currently enrolled in B.E/B.Tech/M.E/M.Tech/MCA degrees graduating in 2026, 2027, or 2028",
+      "Studying at an accredited university in India"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "Learning & Skill Assessment",
+        "description": "Online coding assessment on Data Structures, Algorithms, and System Logic.",
+        "startDate": "2026-09-01T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "Design & Innovation Challenge",
+        "description": "Build an impactful solution for accessibility or sustainability using Google Cloud APIs.",
+        "startDate": "2026-09-15T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "Grand Finale & Mentorship",
+        "description": "Live presentation to Google Technical Leads and Executive Panel.",
+        "startDate": "2026-09-30T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "Winner Category",
+        "reward": "₹5,00,000 + Google SWE Internship Offer",
+        "amount": 500000
+      },
+      {
+        "rank": 2,
+        "position": "Runner Up",
+        "reward": "₹3,00,000 + Google Interview Pre-screening",
+        "amount": 300000
+      }
+    ],
+    "rules": [
+      "Strictly open to female candidates as per program guidelines.",
+      "Code evaluation is automated for efficiency and edge-case correctness."
+    ],
+    "tags": ["Google", "WomenInTech", "Algorithms", "Cloud"]
+  },
+  {
+    "id": 5,
+    "title": "Microsoft Imagine Cup India 2026",
+    "organization": "Microsoft",
+    "logo": "https://images.unsplash.com/photo-1633419461186-7d40a38105ec?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&auto=format&fit=crop&q=80",
+    "category": "Innovation Challenge",
+    "difficulty": "Advanced",
+    "daysLeft": "30 Days Left",
+    "deadline": "30 Aug 2026",
+    "registrationDeadline": "2026-08-30T23:59:59Z",
+    "competitionDate": "15 Oct 2026 - 15 Nov 2026",
+    "prizesTotal": "₹80,00,000 ($100,000 USD)",
+    "teamSize": "1 - 4 Members",
+    "minTeamMembers": 1,
+    "maxTeamMembers": 4,
+    "mode": "Online",
+    "location": "Online / Microsoft Azure",
+    "registrationFee": "Free Entry",
+    "description": "Microsoft Imagine Cup is the premier global student technology competition. Dubbed the 'Olympics of Technology', it empowers student developers to create social impact solutions using Microsoft Azure and AI.",
+    "overview": "The winning team receives $100,000 USD cash prize, 1-on-1 mentorship from Microsoft CEO Satya Nadella, and Azure Founders Hub Credits.",
+    "officialRegistrationUrl": "https://imaginecup.microsoft.com",
+    "registeredCount": 51200,
+    "featured": true,
+    "eligibility": [
+      "Students 16+ enrolled in high school, college, or university globally",
+      "Solutions must utilize Microsoft Azure Cloud Services and AI models"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "Project Proposal & Video Pitch",
+        "description": "Submit a 3-minute video pitch, pitch deck, and Azure architecture diagram.",
+        "startDate": "2026-08-30T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "National Finals India",
+        "description": "Live presentation to Microsoft India leadership team.",
+        "startDate": "2026-10-15T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "World Championship",
+        "description": "Compete against top global regional winners live on stage.",
+        "startDate": "2026-11-15T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "World Champion",
+        "reward": "$100,000 USD + Mentorship with Satya Nadella",
+        "amount": 8000000
+      },
+      {
+        "rank": 2,
+        "position": "Category Champions",
+        "reward": "$50,000 USD + Azure Credits",
+        "amount": 4000000
+      }
+    ],
+    "rules": [
+      "All projects must deploy core functionality on Azure Cloud.",
+      "Teams retain full ownership of their software and patent rights."
+    ],
+    "tags": ["Microsoft", "Azure", "AI", "GlobalChallenge"]
+  },
+  {
+    "id": 6,
+    "title": "Amazon HackOn Season 5",
+    "organization": "Amazon India",
+    "logo": "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&auto=format&fit=crop&q=80",
+    "category": "Hackathons",
+    "difficulty": "Intermediate",
+    "daysLeft": "9 Days Left",
+    "deadline": "09 Aug 2026",
+    "registrationDeadline": "2026-08-09T23:59:59Z",
+    "competitionDate": "20 Aug 2026 - 10 Sep 2026",
+    "prizesTotal": "₹10,00,000",
+    "teamSize": "2 - 4 Members",
+    "minTeamMembers": 2,
+    "maxTeamMembers": 4,
+    "mode": "Online",
+    "location": "Online / Bengaluru",
+    "registrationFee": "Free Entry",
+    "description": "Amazon HackOn is Amazon India's flagship university engineering challenge. It tests students on customer-centric software design, scalable microservices, and AI-driven supply chain optimization.",
+    "overview": "Winning teams receive cash awards, Amazon Kindle/Echo goodies, and Pre-Placement Interviews (PPI) for Software Development Engineer (SDE) roles at Amazon India.",
+    "officialRegistrationUrl": "https://amazon.jobs",
+    "registeredCount": 31000,
+    "featured": false,
+    "eligibility": [
+      "B.Tech / M.Tech / Dual Degree students in 3rd or 4th year from recognized Indian engineering institutes",
+      "Minimum 6.5 CGPA required"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "Coding & CS Fundamentals Test",
+        "description": "Automated online coding assessment on HackerEarth platform.",
+        "startDate": "2026-08-20T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "Prototype Development Phase",
+        "description": "72-hour hackathon building scalable AWS serverless solutions.",
+        "startDate": "2026-08-28T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "Virtual Finale Pitch",
+        "description": "Present working demo to Amazon Senior Software Development Managers.",
+        "startDate": "2026-09-10T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "Winner",
+        "reward": "₹5,00,000 + Amazon SDE PPI Offers",
+        "amount": 500000
+      },
+      {
+        "rank": 2,
+        "position": "1st Runner Up",
+        "reward": "₹3,00,000 + Amazon Devices",
+        "amount": 300000
+      },
+      {
+        "rank": 3,
+        "position": "2nd Runner Up",
+        "reward": "₹2,00,000 + Goodies",
+        "amount": 200000
+      }
+    ],
+    "rules": [
+      "Solutions must adhere to Amazon Leadership Principles.",
+      "Code must be modular and pass automated unit test suites."
+    ],
+    "tags": ["Amazon", "AWS", "Microservices", "SDE Hiring"]
+  },
+  {
+    "id": 7,
+    "title": "ISRO National Space Robotics Challenge 2026",
+    "organization": "ISRO (UR Rao Satellite Centre)",
+    "logo": "https://images.unsplash.com/photo-1517976487492-5750f3195933?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&auto=format&fit=crop&q=80",
+    "category": "Innovation Challenge",
+    "difficulty": "Advanced",
+    "daysLeft": "40 Days Left",
+    "deadline": "10 Sep 2026",
+    "registrationDeadline": "2026-09-10T23:59:59Z",
+    "competitionDate": "01 Nov 2026 - 15 Dec 2026",
+    "prizesTotal": "₹20,00,000",
+    "teamSize": "2 - 5 Members",
+    "minTeamMembers": 2,
+    "maxTeamMembers": 5,
+    "mode": "Hybrid",
+    "location": "URSC Bengaluru / Online",
+    "registrationFee": "Free Entry",
+    "description": "Organized by ISRO's UR Rao Satellite Centre (URSC), this national challenge invites engineering students to design and build autonomous extraterrestrial rover models for lunar and martian surface exploration.",
+    "overview": "Selected rover prototypes are tested at ISRO's simulated lunar terrain arena in Bengaluru. Winners get direct research internship opportunities with ISRO scientists.",
+    "officialRegistrationUrl": "https://isro.gov.in",
+    "registeredCount": 16400,
+    "featured": true,
+    "eligibility": [
+      "Undergraduate and Postgraduate engineering students from Mechatronics, Aerospace, CS, Mechanical, or Electronics branches",
+      "Indian citizenship is mandatory for all team members"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "CAD Design & Simulation Report",
+        "description": "Submit 3D CAD models, ROS simulation results, and payload analysis.",
+        "startDate": "2026-09-10T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "Hardware Fabrication Review",
+        "description": "Video demonstration of mobility and autonomous obstacle avoidance.",
+        "startDate": "2026-10-15T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "ISRO Lunar Arena Testing",
+        "description": "Physical traversal challenge on simulated lunar surface at ISRO Bengaluru.",
+        "startDate": "2026-11-20T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "Best Space Rover Award",
+        "reward": "₹10,00,000 + ISRO Research Internship",
+        "amount": 1000000
+      },
+      {
+        "rank": 2,
+        "position": "Innovation Award",
+        "reward": "₹6,00,000 + ISRO Commendation",
+        "amount": 600000
+      },
+      {
+        "rank": 3,
+        "position": "Special Jury Award",
+        "reward": "₹4,00,000",
+        "amount": 400000
+      }
+    ],
+    "rules": [
+      "Rover dimensions and total weight must conform to ISRO microsatellite payload specs.",
+      "Communication protocols must operate wirelessly over sub-GHz frequency."
+    ],
+    "tags": ["ISRO", "Robotics", "SpaceTech", "ROS", "Autonomous"]
+  },
+  {
+    "id": 8,
+    "title": "DRDO Dare to Dream 4.0 Defence Innovation",
+    "organization": "DRDO (Ministry of Defence)",
+    "logo": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=1200&auto=format&fit=crop&q=80",
+    "category": "Innovation Challenge",
+    "difficulty": "Advanced",
+    "daysLeft": "35 Days Left",
+    "deadline": "05 Sep 2026",
+    "registrationDeadline": "2026-09-05T23:59:59Z",
+    "competitionDate": "10 Oct 2026 - 20 Nov 2026",
+    "prizesTotal": "₹50,00,000",
+    "teamSize": "1 - 5 Members",
+    "minTeamMembers": 1,
+    "maxTeamMembers": 5,
+    "mode": "Hybrid",
+    "location": "New Delhi / Online",
+    "registrationFee": "Free Entry",
+    "description": "Dare to Dream is DRDO's flagship contest initiated in memory of Dr. APJ Abdul Kalam to promote individual innovators and student startups in Defence and Aerospace technologies.",
+    "overview": "Areas include Unmanned Aerial Vehicles (UAVs), Quantum Encryption, Hypersonic Flight Dynamics, and AI-driven Electronic Warfare Systems.",
+    "officialRegistrationUrl": "https://drdo.gov.in",
+    "registeredCount": 22100,
+    "featured": false,
+    "eligibility": [
+      "Open to individual Indian citizens, university students, and registered Indian startups",
+      "No age limit for individual innovators category"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "Technical Proposal Submission",
+        "description": "Submit technical whitepaper outlining novelty, feasibility, and defence applications.",
+        "startDate": "2026-09-05T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "DRDO Scientist Evaluation Panel",
+        "description": "Defense scientist panel reviews simulation data and CAD drawings.",
+        "startDate": "2026-10-10T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "National Defence Pitch",
+        "description": "Pitch before Scientific Advisor to Raksha Mantri and DRDO Chairman.",
+        "startDate": "2026-11-20T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "1st Prize (Individual/Student)",
+        "reward": "₹10,00,000 + TDF Prototype Grant up to ₹1 Crore",
+        "amount": 1000000
+      },
+      {
+        "rank": 2,
+        "position": "2nd Prize",
+        "reward": "₹8,00,000",
+        "amount": 800000
+      },
+      {
+        "rank": 3,
+        "position": "3rd Prize",
+        "reward": "₹6,00,000",
+        "amount": 600000
+      }
+    ],
+    "rules": [
+      "All submissions are subject to non-disclosure agreements and national security checks.",
+      "Innovations must have TRL (Technology Readiness Level) of 3 or above."
+    ],
+    "tags": ["DRDO", "DefenceTech", "Cybersecurity", "Aviation", "Drones"]
+  },
+  {
+    "id": 9,
+    "title": "Flipkart GRID 6.0 Software Development Track",
+    "organization": "Flipkart",
+    "logo": "https://images.unsplash.com/photo-1556742049-0a67daf4004a?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&auto=format&fit=crop&q=80",
+    "category": "Coding Contest",
+    "difficulty": "Intermediate",
+    "daysLeft": "7 Days Left",
+    "deadline": "07 Aug 2026",
+    "registrationDeadline": "2026-08-07T23:59:59Z",
+    "competitionDate": "15 Aug 2026 - 15 Sep 2026",
+    "prizesTotal": "₹15,00,000",
+    "teamSize": "1 - 3 Members",
+    "minTeamMembers": 1,
+    "maxTeamMembers": 3,
+    "mode": "Online",
+    "location": "Online / Flipkart HQ Bengaluru",
+    "registrationFee": "Free Entry",
+    "description": "Flipkart GRID is Flipkart's flagship Engineering Campus Challenge bringing real-world e-commerce problems in high-throughput distributed systems, conversational AI, and computer vision.",
+    "overview": "Top performing students get direct interviews for SDE-1 roles (₹32 LPA CTC package) and paid summer internships.",
+    "officialRegistrationUrl": "https://flipkartgrid.com",
+    "registeredCount": 62400,
+    "featured": true,
+    "eligibility": [
+      "B.Tech / B.E / M.Tech / M.E / MS / Dual Degree students graduating in 2026, 2027, or 2028",
+      "Open to all engineering branches"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "E-Commerce Tech Quiz",
+        "description": "30-minute online quiz testing CS fundamentals, System Design, and DBMS.",
+        "startDate": "2026-08-15T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "Proof of Concept Coding Round",
+        "description": "Problem submission involving real-time recommendation engines and inventory locking.",
+        "startDate": "2026-08-25T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "National Grand Finale",
+        "description": "Live presentation to Flipkart Engineering Leadership.",
+        "startDate": "2026-09-15T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "Grid 6.0 National Winners",
+        "reward": "₹5,00,000 + Flipkart SDE-1 Offers",
+        "amount": 500000
+      },
+      {
+        "rank": 2,
+        "position": "1st Runner Up",
+        "reward": "₹3,00,000 + Internship PPIs",
+        "amount": 300000
+      },
+      {
+        "rank": 3,
+        "position": "2nd Runner Up",
+        "reward": "₹1,50,000",
+        "amount": 150000
+      }
+    ],
+    "rules": [
+      "Teams can consist of students from different branches of the same college.",
+      "Strict plagiarism checks enforced using automated code similarity analysis."
+    ],
+    "tags": ["Flipkart", "E-Commerce", "SystemDesign", "SDE Hiring"]
+  },
+  {
+    "id": 10,
+    "title": "TCS CodeVita Season 12 (Global Coding Contest)",
+    "organization": "Tata Consultancy Services",
+    "logo": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200&auto=format&fit=crop&q=80",
+    "category": "Coding Contest",
+    "difficulty": "Advanced",
+    "daysLeft": "21 Days Left",
+    "deadline": "21 Aug 2026",
+    "registrationDeadline": "2026-08-21T23:59:59Z",
+    "competitionDate": "01 Sep 2026 - 15 Dec 2026",
+    "prizesTotal": "₹16,00,000 ($20,000 USD)",
+    "teamSize": "Individual",
+    "minTeamMembers": 1,
+    "maxTeamMembers": 1,
+    "mode": "Online",
+    "location": "Online / Global",
+    "registrationFee": "Free Entry",
+    "description": "TCS CodeVita holds the Guinness World Record as the World's Largest Computer Programming Competition. It aims to promote competitive programming and connect top coders with TCS global careers.",
+    "overview": "Coders solve complex algorithmic problems in C++, Java, Python, C#, or Perl across multiple 24-hour rounds. Top coders receive instant career offers at TCS Research and Innovation labs.",
+    "officialRegistrationUrl": "https://tcscodevita.com",
+    "registeredCount": 89000,
+    "featured": true,
+    "eligibility": [
+      "Undergraduate and Postgraduate students pursuing Science/Engineering degrees with completion year 2026, 2027, or 2028",
+      "Open globally to coders of all nationalities"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "Pre-Qualifier Round (Zone-wise)",
+        "description": "6-hour individual competitive coding round with 6 algorithmic problems.",
+        "startDate": "2026-09-01T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "Qualifier Round",
+        "description": "Challenging dynamic programming and graph theory problem set.",
+        "startDate": "2026-10-20T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "World Finale",
+        "description": "Top 50 global coders fly to TCS Olympus Campus in Mumbai for 6-hour live contest.",
+        "startDate": "2026-12-15T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "World's Best Coder",
+        "reward": "$10,000 USD + TCS Innovator Job Offer",
+        "amount": 800000
+      },
+      {
+        "rank": 2,
+        "position": "1st Runner Up",
+        "reward": "$7,000 USD",
+        "amount": 560000
+      },
+      {
+        "rank": 3,
+        "position": "2nd Runner Up",
+        "reward": "$3,000 USD",
+        "amount": 240000
+      }
+    ],
+    "rules": [
+      "Compilers support C, C++, C#, Java, Python 3, and JavaScript.",
+      "Code is evaluated against hidden test cases with strict execution time limits."
+    ],
+    "tags": ["TCS", "CodeVita", "CompetitiveProgramming", "DataStructures"]
+  },
+  {
+    "id": 11,
+    "title": "Infosys HackWithInfy 2026",
+    "organization": "Infosys",
+    "logo": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&auto=format&fit=crop&q=80",
+    "category": "Coding Contest",
+    "difficulty": "Intermediate",
+    "daysLeft": "16 Days Left",
+    "deadline": "16 Aug 2026",
+    "registrationDeadline": "2026-08-16T23:59:59Z",
+    "competitionDate": "01 Sep 2026 - 05 Oct 2026",
+    "prizesTotal": "₹5,00,000",
+    "teamSize": "Individual",
+    "minTeamMembers": 1,
+    "maxTeamMembers": 1,
+    "mode": "Online",
+    "location": "Online / Infosys Mysore Campus",
+    "registrationFee": "Free Entry",
+    "description": "HackWithInfy is Infosys' flagship national competitive coding competition for engineering students in India. It offers cash prizes and direct hiring for Power Programmer and Systems Engineer Specialist roles.",
+    "overview": "Consisting of 2 online coding rounds followed by a grand 24-hour hackathon finale at Infosys Mysore global education center.",
+    "officialRegistrationUrl": "https://infosys.com/hackwithinfy",
+    "registeredCount": 43200,
+    "featured": false,
+    "eligibility": [
+      "BE / B.Tech / ME / M.Tech students graduating in 2026 or 2027",
+      "Aggregate percentage of 60% or CGPA 6.0 throughout academics"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "Online Coding Assessment Round 1",
+        "description": "3 coding questions of varying difficulty on Infosys Springboard platform.",
+        "startDate": "2026-09-01T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "Online Coding Assessment Round 2",
+        "description": "Advanced problem-solving round on Trees, Graphs, and Greedy algorithms.",
+        "startDate": "2026-09-18T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "Grand Finale at Infosys Mysore",
+        "description": "Top 100 finalists compete in a 24-hour hackathon for the winner trophy.",
+        "startDate": "2026-10-05T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "1st Prize",
+        "reward": "₹2,00,000 + Power Programmer Offer (₹9.5 LPA)",
+        "amount": 200000
+      },
+      {
+        "rank": 2,
+        "position": "2nd Prize",
+        "reward": "₹1,50,000 + SES Role Offer",
+        "amount": 150000
+      },
+      {
+        "rank": 3,
+        "position": "3rd Prize",
+        "reward": "₹1,00,000",
+        "amount": 100000
+      }
+    ],
+    "rules": [
+      "Proctored environment with web-cam monitoring enabled during tests.",
+      "Multiple submissions allowed within test duration window."
+    ],
+    "tags": ["Infosys", "PowerProgrammer", "Algorithms", "Coding"]
+  },
+  {
+    "id": 12,
+    "title": "Tata Crucible Campus Quiz 2026",
+    "organization": "Tata Group",
+    "logo": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&auto=format&fit=crop&q=80",
+    "category": "Quizzes",
+    "difficulty": "Beginner",
+    "daysLeft": "22 Days Left",
+    "deadline": "22 Aug 2026",
+    "registrationDeadline": "2026-08-22T23:59:59Z",
+    "competitionDate": "01 Sep 2026 - 15 Oct 2026",
+    "prizesTotal": "₹5,00,000",
+    "teamSize": "2 Members",
+    "minTeamMembers": 2,
+    "maxTeamMembers": 2,
+    "mode": "Hybrid",
+    "location": "Online Prelims / Taj Mahal Palace Mumbai",
+    "registrationFee": "Free Entry",
+    "description": "Tata Crucible Campus Quiz is India's largest and most prestigious business quiz for college students, hosted by renowned quizmaster Giri Balasubramaniam (Pickbrain).",
+    "overview": "Testing knowledge across corporate history, technology trends, business acquisitions, brand logos, and economic history.",
+    "officialRegistrationUrl": "https://tatacrucible.com",
+    "registeredCount": 27800,
+    "featured": false,
+    "eligibility": [
+      "B-School, Engineering, Undergraduate, and Postgraduate students from any university in India",
+      "Both team members must be from the same institution"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "Online Preliminary Quiz",
+        "description": "Fastest-finger-first 20-question business knowledge test.",
+        "startDate": "2026-09-01T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "Zonal Cluster Finals",
+        "description": "Buzzer-based online cluster finals across 12 Indian zones.",
+        "startDate": "2026-09-20T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "National Grand Finale Mumbai",
+        "description": "Live stage grand finale hosted at Taj Hotel Mumbai.",
+        "startDate": "2026-10-15T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "National Quiz Champion",
+        "reward": "₹2,50,000 + Tata Crucible Trophy",
+        "amount": 250000
+      },
+      {
+        "rank": 2,
+        "position": "National Runner Up",
+        "reward": "₹1,50,000",
+        "amount": 150000
+      }
+    ],
+    "rules": [
+      "Negative marking applicable on incorrect buzzer responses in finals.",
+      "TATA Group employees' children are eligible provided they are regular students."
+    ],
+    "tags": ["Tata", "BusinessQuiz", "Trivia", "Pickbrain"]
+  },
+  {
+    "id": 13,
+    "title": "EY Techathon 5.0 Generative AI Challenge",
+    "organization": "Ernst & Young (EY India)",
+    "logo": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80",
+    "category": "Hackathons",
+    "difficulty": "Intermediate",
+    "daysLeft": "28 Days Left",
+    "deadline": "28 Aug 2026",
+    "registrationDeadline": "2026-08-28T23:59:59Z",
+    "competitionDate": "10 Sep 2026 - 20 Oct 2026",
+    "prizesTotal": "₹8,00,000",
+    "teamSize": "2 - 4 Members",
+    "minTeamMembers": 2,
+    "maxTeamMembers": 4,
+    "mode": "Online",
+    "location": "Online / EY Wavespace Bengaluru",
+    "registrationFee": "Free Entry",
+    "description": "EY Techathon 5.0 invites engineering and business students to build innovative Generative AI solutions for enterprise automation, ESG compliance, and intelligent document processing.",
+    "overview": "Participants leverage LLMs, RAG pipelines, and cloud services while receiving 1-on-1 mentorship from EY Technology Consulting Partners.",
+    "officialRegistrationUrl": "https://ey.com/techathon",
+    "registeredCount": 18200,
+    "featured": true,
+    "eligibility": [
+      "Full-time B.E / B.Tech / M.Tech / MBA students graduating in 2026 or 2027",
+      "Cross-domain teams encouraged"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "Executive Summary & Architecture Pitch",
+        "description": "Submit GenAI workflow diagram, vector DB choice, and business ROI deck.",
+        "startDate": "2026-09-10T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "Prototype Development & API Integration",
+        "description": "Build functional web prototype using LangChain, OpenAI, or Llama 3.",
+        "startDate": "2026-09-25T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "EY Wavespace Finale Presentation",
+        "description": "Pitch live demo to EY India Leadership & Executive Jury.",
+        "startDate": "2026-10-20T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "Techathon 5.0 Winner",
+        "reward": "₹4,00,000 + EY Technology Consulting Job Offers",
+        "amount": 400000
+      },
+      {
+        "rank": 2,
+        "position": "1st Runner Up",
+        "reward": "₹2,50,000 + EY Internship Offers",
+        "amount": 250000
+      },
+      {
+        "rank": 3,
+        "position": "2nd Runner Up",
+        "reward": "₹1,50,000",
+        "amount": 150000
+      }
+    ],
+    "rules": [
+      "All GenAI API calls must include safety guardrails and hallucination checks.",
+      "Source code must be submitted with unit test coverage report."
+    ],
+    "tags": ["EY", "GenerativeAI", "LangChain", "LLM", "Consulting"]
+  },
+  {
+    "id": 14,
+    "title": "L'Oréal Brandstorm India 2026",
+    "organization": "L'Oréal",
+    "logo": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=1200&auto=format&fit=crop&q=80",
+    "category": "Innovation Challenge",
+    "difficulty": "Intermediate",
+    "daysLeft": "32 Days Left",
+    "deadline": "01 Sep 2026",
+    "registrationDeadline": "2026-09-01T23:59:59Z",
+    "competitionDate": "15 Sep 2026 - 15 Nov 2026",
+    "prizesTotal": "€10,000 (Fully Paid Paris Trip)",
+    "teamSize": "3 Members",
+    "minTeamMembers": 3,
+    "maxTeamMembers": 3,
+    "mode": "Hybrid",
+    "location": "Mumbai / Paris, France",
+    "registrationFee": "Free Entry",
+    "description": "Brandstorm is L'Oréal's global innovation competition for students. Participants crack tech-driven beauty innovations using AI, AR/VR, and sustainable bio-materials.",
+    "overview": "The winning team represents India at the International Finals in Paris, France, competing for the 3-month Intrapreneurship Mission at Station F in Paris.",
+    "officialRegistrationUrl": "https://brandstorm.loreal.com",
+    "registeredCount": 21500,
+    "featured": false,
+    "eligibility": [
+      "Undergraduate and Master's students in India aged 18 to 30",
+      "Teams must comprise 3 students"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "1-Minute Video & Slide Deck Submission",
+        "description": "Pitch innovative BeautyTech concept in 60 seconds.",
+        "startDate": "2026-09-15T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "India National Semi-Finals",
+        "description": "Virtual pitch to L'Oréal India Executive Board.",
+        "startDate": "2026-10-15T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "Paris World Finals",
+        "description": "Fly to Paris, France to pitch at Station F startup incubator.",
+        "startDate": "2026-11-15T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "Global Intrapreneurship Award",
+        "reward": "All-expense paid 3-month Intrapreneurship at Station F Paris",
+        "amount": 900000
+      },
+      {
+        "rank": 2,
+        "position": "National Winners India",
+        "reward": "Trip to Paris + L'Oréal Management Trainee Offers",
+        "amount": 400000
+      }
+    ],
+    "rules": [
+      "Concepts must focus on Tech, Sustainability, or Inclusivity.",
+      "English fluency required for global final presentations."
+    ],
+    "tags": ["Loreal", "BeautyTech", "Paris", "Innovation"]
+  },
+  {
+    "id": 15,
+    "title": "Schneider Go Green Student Competition 2026",
+    "organization": "Schneider Electric",
+    "logo": "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&auto=format&fit=crop&q=80",
+    "category": "Innovation Challenge",
+    "difficulty": "Intermediate",
+    "daysLeft": "26 Days Left",
+    "deadline": "26 Aug 2026",
+    "registrationDeadline": "2026-08-26T23:59:59Z",
+    "competitionDate": "10 Sep 2026 - 10 Nov 2026",
+    "prizesTotal": "€10,000",
+    "teamSize": "2 Members",
+    "minTeamMembers": 2,
+    "maxTeamMembers": 2,
+    "mode": "Online",
+    "location": "Online / Schneider Electric HQ",
+    "registrationFee": "Free Entry",
+    "description": "Schneider Go Green seeks bold ideas from students to push the boundaries of green energy management, smart building automation, and circular economy.",
+    "overview": "Winning student teams get executive mentorship, VIP trips to Schneider Electric Innovation Hubs, and fast-tracked job offers.",
+    "officialRegistrationUrl": "https://gogreen.se.com",
+    "registeredCount": 15900,
+    "featured": false,
+    "eligibility": [
+      "Students enrolled in Business, Engineering, Marketing, or Energy studies in India",
+      "Teams must consist of 2 members with diversity inclusion"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "Project Synopsis & Deck Upload",
+        "description": "Submit problem statement and energy saving calculation matrix.",
+        "startDate": "2026-09-10T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "Regional Mentorship Round",
+        "description": "Work with Schneider Electric mentors to refine technical architecture.",
+        "startDate": "2026-10-05T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "Global Pitch Finale",
+        "description": "Present live to Schneider Electric Global C-Suite Panel.",
+        "startDate": "2026-11-10T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "Global Winner",
+        "reward": "€10,000 Trip + Schneider Career Offers",
+        "amount": 900000
+      },
+      {
+        "rank": 2,
+        "position": "India Regional Winner",
+        "reward": "₹2,50,000 + Paid Internships",
+        "amount": 250000
+      }
+    ],
+    "rules": [
+      "Ideas must demonstrate quantifiable carbon reduction metrics.",
+      "Proposals must include economic payback analysis."
+    ],
+    "tags": ["Schneider", "GreenEnergy", "Sustainability", "SmartGrid"]
+  },
+  {
+    "id": 16,
+    "title": "CodeChef SnackDown 2026 Global Championship",
+    "organization": "CodeChef & Directi",
+    "logo": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&auto=format&fit=crop&q=80",
+    "category": "Coding Contest",
+    "difficulty": "Advanced",
+    "daysLeft": "19 Days Left",
+    "deadline": "19 Aug 2026",
+    "registrationDeadline": "2026-08-19T23:59:59Z",
+    "competitionDate": "01 Sep 2026 - 15 Nov 2026",
+    "prizesTotal": "₹25,00,000",
+    "teamSize": "2 Members",
+    "minTeamMembers": 2,
+    "maxTeamMembers": 2,
+    "mode": "Online",
+    "location": "Online / CodeChef Platform",
+    "registrationFee": "Free Entry",
+    "description": "SnackDown is CodeChef's global team competitive programming contest. Bringing together the world's finest algorithmic programmers to solve complex data structure problems.",
+    "overview": "Open to all coders worldwide, teams of 2 battle through 4 qualifying rounds to reach the onsite or virtual World Finals.",
+    "officialRegistrationUrl": "https://codechef.com/snackdown",
+    "registeredCount": 74000,
+    "featured": true,
+    "eligibility": [
+      "Open to coders of all ages, universities, and professions worldwide",
+      "Teams must have exactly 2 members"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "Qualifier Round 1A / 1B",
+        "description": "Solve at least 1 problem out of 5 in 72-hour open round.",
+        "startDate": "2026-09-01T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "Pre-Elimination Round",
+        "description": "Top 1500 teams compete in a 2.5-hour intense speed contest.",
+        "startDate": "2026-09-20T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "Elimination Round & Finals",
+        "description": "Top 50 global teams battle live for the SnackDown Crown.",
+        "startDate": "2026-11-15T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "World Champions",
+        "reward": "$10,000 USD + Gold Trophies",
+        "amount": 800000
+      },
+      {
+        "rank": 2,
+        "position": "Best Indian Team",
+        "reward": "₹3,00,000",
+        "amount": 300000
+      },
+      {
+        "rank": 3,
+        "position": "Best School Team",
+        "reward": "₹1,50,000",
+        "amount": 150000
+      }
+    ],
+    "rules": [
+      "Both team members can write and submit code simultaneously.",
+      "Strict anti-cheating automated detection active during all timed rounds."
+    ],
+    "tags": ["CodeChef", "SnackDown", "CompetitiveProgramming", "DataStructures"]
+  },
+  {
+    "id": 17,
+    "title": "MyGov AI for Public Good National Challenge",
+    "organization": "MeitY (Ministry of Electronics & IT)",
+    "logo": "https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&auto=format&fit=crop&q=80",
+    "category": "Innovation Challenge",
+    "difficulty": "Intermediate",
+    "daysLeft": "29 Days Left",
+    "deadline": "29 Aug 2026",
+    "registrationDeadline": "2026-08-29T23:59:59Z",
+    "competitionDate": "15 Sep 2026 - 30 Oct 2026",
+    "prizesTotal": "₹30,00,000",
+    "teamSize": "1 - 4 Members",
+    "minTeamMembers": 1,
+    "maxTeamMembers": 4,
+    "mode": "Online",
+    "location": "New Delhi / Online",
+    "registrationFee": "Free Entry",
+    "description": "MyGov and Digital India Corporation present the AI for Public Good Challenge to crowd-source AI solutions for Indic language translation, agricultural yield prediction, and citizen service delivery.",
+    "overview": "Winning solutions get deployed on Bhashini AI platform and Digital India public infrastructure serving 1.4 billion citizens.",
+    "officialRegistrationUrl": "https://mygov.in",
+    "registeredCount": 29300,
+    "featured": false,
+    "eligibility": [
+      "Open to Indian citizens, researchers, students, and registered tech startups",
+      "Solutions must utilize open datasets available on data.gov.in"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "AI Model Concept & Dataset Submission",
+        "description": "Submit GitHub repository link, model card, and benchmark metrics.",
+        "startDate": "2026-09-15T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "MeitY Cloud Deployment Round",
+        "description": "Deploy Containerized API model on NIC Cloud for stress testing.",
+        "startDate": "2026-10-05T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "National Jury Evaluation",
+        "description": "Live presentation to Digital India technical architects.",
+        "startDate": "2026-10-30T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "1st Prize Winner",
+        "reward": "₹15,00,000 + MeitY Deployment Grant",
+        "amount": 1500000
+      },
+      {
+        "rank": 2,
+        "position": "2nd Prize Winner",
+        "reward": "₹10,00,000",
+        "amount": 1000000
+      },
+      {
+        "rank": 3,
+        "position": "3rd Prize Winner",
+        "reward": "₹5,00,000",
+        "amount": 500000
+      }
+    ],
+    "rules": [
+      "AI models must comply with Responsible AI guidelines and data privacy standards.",
+      "Open-source weights (MIT or Apache 2.0) receive bonus points."
+    ],
+    "tags": ["MeitY", "Bhashini", "MyGov", "AI4Good", "DigitalIndia"]
+  },
+  {
+    "id": 18,
+    "title": "Reliance TUP 8.0 (The Ultimate Pitch)",
+    "organization": "Reliance Industries Limited",
+    "logo": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&auto=format&fit=crop&q=80",
+    "category": "Innovation Challenge",
+    "difficulty": "Intermediate",
+    "daysLeft": "15 Days Left",
+    "deadline": "15 Aug 2026",
+    "registrationDeadline": "2026-08-15T23:59:59Z",
+    "competitionDate": "01 Sep 2026 - 15 Oct 2026",
+    "prizesTotal": "₹9,50,000",
+    "teamSize": "2 - 4 Members",
+    "minTeamMembers": 2,
+    "maxTeamMembers": 4,
+    "mode": "Hybrid",
+    "location": "Jio World Centre Mumbai / Online",
+    "registrationFee": "Free Entry",
+    "description": "Reliance TUP is one of India's biggest B-Plan and startup pitch competitions hosted by Reliance Industries for B-School and Engineering campuses.",
+    "overview": "Student entrepreneurs pitch disruptive business ideas across 5 verticals: 5G & Telecom, New Energy, Retail Tech, Media & Entertainment, and Smart Mobility.",
+    "officialRegistrationUrl": "https://ril.com/tup",
+    "registeredCount": 17600,
+    "featured": false,
+    "eligibility": [
+      "Full-time B-School (MBA) and B.Tech 3rd/4th year students in India",
+      "Teams of 2 to 4 members"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "Executive Summary & Elevator Video Pitch",
+        "description": "Submit a 3-slide deck and 90-second pitch video.",
+        "startDate": "2026-09-01T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "Semi-Final Regional Pitch",
+        "description": "Present detailed financial model and Go-to-Market strategy.",
+        "startDate": "2026-09-20T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "Grand Finale at Jio World Centre",
+        "description": "Live presentation to Reliance C-Suite Executives and VC Partners.",
+        "startDate": "2026-10-15T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "National Winner",
+        "reward": "₹5,00,000 + PPI for Reliance Leadership Program",
+        "amount": 500000
+      },
+      {
+        "rank": 2,
+        "position": "1st Runner Up",
+        "reward": "₹3,00,000",
+        "amount": 300000
+      },
+      {
+        "rank": 3,
+        "position": "2nd Runner Up",
+        "reward": "₹1,50,000",
+        "amount": 150000
+      }
+    ],
+    "rules": [
+      "Financial projections must be realistic with detailed unit economics.",
+      "Prototypes must be demonstrated live in final presentation."
+    ],
+    "tags": ["Reliance", "Jio", "StartupPitch", "BPlan", "FinTech"]
+  },
+  {
+    "id": 19,
+    "title": "Accenture Innovation Challenge 2026",
+    "organization": "Accenture India",
+    "logo": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=1200&auto=format&fit=crop&q=80",
+    "category": "Innovation Challenge",
+    "difficulty": "Intermediate",
+    "daysLeft": "23 Days Left",
+    "deadline": "23 Aug 2026",
+    "registrationDeadline": "2026-08-23T23:59:59Z",
+    "competitionDate": "10 Sep 2026 - 25 Oct 2026",
+    "prizesTotal": "₹10,00,000",
+    "teamSize": "1 - 4 Members",
+    "minTeamMembers": 1,
+    "maxTeamMembers": 4,
+    "mode": "Online",
+    "location": "Online / Accenture Innovation Hub Bengaluru",
+    "registrationFee": "Free Entry",
+    "description": "Accenture Innovation Challenge invites university students across India to innovate solutions under themes: 'Innovate for Business' and 'Innovate for Society' using Cloud, AI, and Quantum Tech.",
+    "overview": "Top winners earn fast-track interview opportunities for Advanced Application Engineering roles at Accenture India and gadgets.",
+    "officialRegistrationUrl": "https://accenture.com/innovationchallenge",
+    "registeredCount": 35400,
+    "featured": false,
+    "eligibility": [
+      "Students from B.E/B.Tech, M.E/M.Tech, MCA, or Dual Degree programs in India",
+      "Graduation years 2026, 2027"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "Idea Submission Round",
+        "description": "Submit a 5-slide deck detailing problem definition and tech solution.",
+        "startDate": "2026-09-10T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "Prototype Building & Mentorship",
+        "description": "Build functional prototype with guidance from Accenture Innovation Leads.",
+        "startDate": "2026-10-01T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "Grand Finale Pitch",
+        "description": "Live presentation to Accenture India MDs and Industry Experts.",
+        "startDate": "2026-10-25T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "Grand Winner",
+        "reward": "₹5,00,000 + Accenture Fast-Track Job Offers",
+        "amount": 500000
+      },
+      {
+        "rank": 2,
+        "position": "1st Runner Up",
+        "reward": "₹3,00,000 + Premium Gadgets",
+        "amount": 300000
+      },
+      {
+        "rank": 3,
+        "position": "2nd Runner Up",
+        "reward": "₹2,00,000",
+        "amount": 200000
+      }
+    ],
+    "rules": [
+      "Ideas must leverage at least 2 modern technology domains.",
+      "Plagiarism checks strictly enforced."
+    ],
+    "tags": ["Accenture", "Innovation", "Cloud", "EmergingTech"]
+  },
+  {
+    "id": 20,
+    "title": "Barclays Hack-a-Sol 2026 Fintech Challenge",
+    "organization": "Barclays Technology Centre India",
+    "logo": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=120&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop&q=80",
+    "category": "Hackathons",
+    "difficulty": "Intermediate",
+    "daysLeft": "11 Days Left",
+    "deadline": "11 Aug 2026",
+    "registrationDeadline": "2026-08-11T23:59:59Z",
+    "competitionDate": "22 Aug 2026 - 15 Sep 2026",
+    "prizesTotal": "₹6,00,000",
+    "teamSize": "2 - 4 Members",
+    "minTeamMembers": 2,
+    "maxTeamMembers": 4,
+    "mode": "Online",
+    "location": "Online / Barclays Pune Campus",
+    "registrationFee": "Free Entry",
+    "description": "Barclays Hack-a-Sol is a national fintech hackathon challenging students to build resilient banking infrastructure, fraud detection algorithms, and decentralized open banking APIs.",
+    "overview": "Winning teams earn direct interview entry into Barclays Technology Graduate & Analyst Programs in Pune and Chennai.",
+    "officialRegistrationUrl": "https://barclays.corp/hackasol",
+    "registeredCount": 20800,
+    "featured": false,
+    "eligibility": [
+      "Engineering students in 3rd or 4th year from recognized Indian universities",
+      "Minimum 60% aggregate score"
+    ],
+    "rounds": [
+      {
+        "roundNumber": 1,
+        "title": "Online Aptitude & Coding Round",
+        "description": "60-minute test on SQL, Data Structures, and Cybersecurity concepts.",
+        "startDate": "2026-08-22T00:00:00Z"
+      },
+      {
+        "roundNumber": 2,
+        "title": "24-Hour Virtual Hackathon",
+        "description": "Build working Fintech application using REST APIs and secure authentication.",
+        "startDate": "2026-09-02T00:00:00Z"
+      },
+      {
+        "roundNumber": 3,
+        "title": "Barclays Jury Finale",
+        "description": "Present prototype to Barclays VP of Technology.",
+        "startDate": "2026-09-15T00:00:00Z"
+      }
+    ],
+    "prizes": [
+      {
+        "rank": 1,
+        "position": "1st Rank Team",
+        "reward": "₹3,00,000 + Barclays Technology Graduate Job Offers",
+        "amount": 300000
+      },
+      {
+        "rank": 2,
+        "position": "2nd Rank Team",
+        "reward": "₹2,00,000 + Internship PPIs",
+        "amount": 200000
+      },
+      {
+        "rank": 3,
+        "position": "3rd Rank Team",
+        "reward": "₹1,00,000",
+        "amount": 100000
+      }
+    ],
+    "rules": [
+      "All API endpoints must include JWT or OAuth2 authentication security.",
+      "Database schema must follow 3NF normalization rules."
+    ],
+    "tags": ["Barclays", "FinTech", "Cybersecurity", "BankingAPIs"]
+  }
+]
