@@ -103,18 +103,14 @@ const Sidebar = () => {
                 </NavLink>
 
 
-                {
-                    !isRecruiter && (
-                        <a 
-                        href="https://takeuforward.org/strivers-a2z-dsa-course/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >
-                            <FaCode/>
-                            Striver DSA Sheet
-                        </a>
-                    )
-                }
+               {
+    !isRecruiter && (
+        <NavLink to="/dsa-sheet">
+            <FaCode />
+            DSA Sheet
+        </NavLink>
+    )
+}
 
 
                 <NavLink to={isRecruiter ? "/courses" : "/courses"}>
