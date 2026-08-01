@@ -20,11 +20,13 @@ import OpportunityDetails from "./pages/Opportunity/OpportunityDetails";
 import ViewApplicants from "./pages/Recruiter/ViewApplicants";
 import RecruiterApplicants from "./pages/RecruiterApplicants/RecruiterApplicants";
 import ScrollToTop from "./components/ScrollToTop";
-<<<<<<< HEAD
 import ResumeBuilder from "./pages/ResumeBuilder/ResumeBuilder";
 import CandidateBlogs from "./pages/CandidateBlogs/CandidateBlogs";
 import DSASheet from "./pages/DSASheet/DSASheet";
 import PatternDetails from "./pages/PatternDetails/PatternDetails";
+import AIMockInterview from "./pages/AIMockInterview/AIMockInterview";
+import CareerPath from "./pages/CareerPath/CareerPath";
+
 const App = () => {
   const [loading,setLoading] = useState(true);
 
@@ -67,6 +69,9 @@ const App = () => {
         <Route path="/settings" element={<Settings/>}/>
         <Route path="/resume-builder" element={<ResumeBuilder/>}/>
         <Route path="/blogs" element={<CandidateBlogs/>}/>
+        <Route path="/mock-interview" element={<AIMockInterview/>}/>
+        <Route path="/career-path" element={<CareerPath/>}/>
+        <Route path="/awards" element={<CareerPath/>}/>
         <Route path="/footer" element={<Footer />}/>
         <Route path="/dsa-sheet" element={<DSASheet />} />
         <Route path="/pattern/:id" element={<PatternDetails />} />
