@@ -15,6 +15,7 @@ import {
     FaGift,
     FaBookOpen,
     FaAward,
+    FaRoute,
     FaCog,
     FaPlus
 } from "react-icons/fa";
@@ -165,9 +166,9 @@ const Sidebar = () => {
                 )}
 
 
-                <NavLink to="/awards">
-                    <FaAward/>
-                    Oppora Awards
+                <NavLink to="/career-path">
+                    <FaRoute/>
+                    Career Path
                 </NavLink>
 
 
