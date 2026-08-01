@@ -22,6 +22,8 @@ import RecruiterApplicants from "./pages/RecruiterApplicants/RecruiterApplicants
 import ScrollToTop from "./components/ScrollToTop";
 import ResumeBuilder from "./pages/ResumeBuilder/ResumeBuilder";
 import CandidateBlogs from "./pages/CandidateBlogs/CandidateBlogs";
+import AIMockInterview from "./pages/AIMockInterview/AIMockInterview";
+import CareerPath from "./pages/CareerPath/CareerPath";
 
 const App = () => {
   const [loading,setLoading] = useState(true);
@@ -65,6 +67,9 @@ const App = () => {
         <Route path="/settings" element={<Settings/>}/>
         <Route path="/resume-builder" element={<ResumeBuilder/>}/>
         <Route path="/blogs" element={<CandidateBlogs/>}/>
+        <Route path="/mock-interview" element={<AIMockInterview/>}/>
+        <Route path="/career-path" element={<CareerPath/>}/>
+        <Route path="/awards" element={<CareerPath/>}/>
         <Route path="/footer" element={<Footer />}/>
 
       </Route>
