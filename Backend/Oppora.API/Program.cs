@@ -32,12 +32,19 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<ICompetitionRepository, CompetitionRepository>();
 builder.Services.AddScoped<ICompetitionService, CompetitionService>();
 builder.Services.AddScoped<CloudinaryService>();
+
 builder.Services.AddScoped<ICompetitionImporter, CsvCompetitionImporter>();
 builder.Services.AddScoped<ICompetitionImporter, RssCompetitionImporter>();
 builder.Services.AddScoped<ICompetitionImporter, ApiCompetitionImporter>();
 builder.Services.AddScoped<ICompetitionImporter, ManualCompetitionImporter>();
 builder.Services.AddScoped<CompetitionImporterFactory>();
 builder.Services.AddScoped<ICompetitionIngestionService, CompetitionIngestionService>();
+
+builder.Services.AddScoped<ResumeTextExtractor>();
+
+builder.Services.AddHttpClient<ATSAnalysisService>();
+
+
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
@@ -128,6 +135,9 @@ if (app.Environment.IsDevelopment())
 app.UseRouting();
 app.UseCors("AllowReact");
 app.UseStaticFiles();
+ 
+
+
 app.UseAuthentication();
 app.UseAuthorization();
 

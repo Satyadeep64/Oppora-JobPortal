@@ -301,7 +301,11 @@ namespace Oppora.API.Migrations
                     b.ToTable("Opportunities");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("Oppora.API.Models.Organization", b =>
+=======
+            modelBuilder.Entity("Oppora.API.Models.Resume", b =>
+>>>>>>> 9418946 (Resume feature completed (upload, history, preview))
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -309,6 +313,7 @@ namespace Oppora.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+<<<<<<< HEAD
                     b.Property<string>("ContactEmail")
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
@@ -404,6 +409,48 @@ namespace Oppora.API.Migrations
                 });
 
             modelBuilder.Entity("Oppora.API.Models.RuleItem", b =>
+=======
+                    b.Property<int?>("ATSScore")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ExtractedText")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("FilePath")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("FileType")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("UploadedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Resumes");
+                });
+
+            modelBuilder.Entity("Oppora.API.Models.ResumeAnalysisHistory", b =>
+>>>>>>> 9418946 (Resume feature completed (upload, history, preview))
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -411,6 +458,7 @@ namespace Oppora.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+<<<<<<< HEAD
                     b.Property<int>("CompetitionId")
                         .HasColumnType("int");
 
@@ -481,6 +529,48 @@ namespace Oppora.API.Migrations
                     b.HasIndex("CompetitionId");
 
                     b.ToTable("TimelineRounds");
+=======
+                    b.Property<int>("ATSScore")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FileUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MissingSkills")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OverallFeedback")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Strengths")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Suggestions")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UploadedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ResumeAnalysisHistories");
+>>>>>>> 9418946 (Resume feature completed (upload, history, preview))
                 });
 
             modelBuilder.Entity("Oppora.API.Models.User", b =>
@@ -719,6 +809,27 @@ namespace Oppora.API.Migrations
 
             modelBuilder.Entity("Oppora.API.Models.Opportunity", b =>
                 {
+                    b.HasOne("Oppora.API.Models.User", "Recruiter")
+                        .WithMany()
+                        .HasForeignKey("RecruiterId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Recruiter");
+                });
+
+            modelBuilder.Entity("Oppora.API.Models.Resume", b =>
+                {
+                    b.HasOne("Oppora.API.Models.User", "User")
+                        .WithMany("Resumes")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Oppora.API.Models.Opportunity", b =>
+                {
                     b.Navigation("Applications");
                 });
 
@@ -735,6 +846,8 @@ namespace Oppora.API.Migrations
             modelBuilder.Entity("Oppora.API.Models.User", b =>
                 {
                     b.Navigation("Applications");
+
+                    b.Navigation("Resumes");
                 });
 #pragma warning restore 612, 618
         }

@@ -14,6 +14,7 @@ namespace Oppora.API.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Opportunity> Opportunities { get; set; }
         public DbSet<Application> Applications { get; set; }
+ 
 
         // Competition Module DbSets
         public DbSet<Organization> Organizations => Set<Organization>();
@@ -28,6 +29,10 @@ namespace Oppora.API.Data
         public DbSet<CompetitionTag> CompetitionTags => Set<CompetitionTag>();
         public DbSet<Registration> Registrations => Set<Registration>();
 
+
+        public DbSet<Resume> Resumes { get; set; }
+        public DbSet<ResumeAnalysisHistory> ResumeAnalysisHistories { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -39,6 +44,7 @@ namespace Oppora.API.Data
             modelBuilder.Entity<User>()
                 .Property(x => x.PasswordHash)
                 .HasColumnName("PasswordHash");
+
 
             modelBuilder.Entity<Opportunity>()
                 .HasOne(o => o.Recruiter)
@@ -116,3 +122,18 @@ namespace Oppora.API.Data
         }
     }
 }
+
+            modelBuilder.Entity<Resume>()
+            .HasOne(r => r.User)
+            .WithMany(u => u.Resumes)
+            .HasForeignKey(r => r.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Opportunity>()
+    .HasOne(o => o.Recruiter)
+    .WithMany()
+    .HasForeignKey(o => o.RecruiterId)
+    .OnDelete(DeleteBehavior.NoAction);
+        }
+    }
+}
+
