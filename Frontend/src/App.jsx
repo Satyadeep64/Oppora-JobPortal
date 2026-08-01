@@ -20,6 +20,8 @@ import OpportunityDetails from "./pages/Opportunity/OpportunityDetails";
 import ViewApplicants from "./pages/Recruiter/ViewApplicants";
 import RecruiterApplicants from "./pages/RecruiterApplicants/RecruiterApplicants";
 import ScrollToTop from "./components/ScrollToTop";
+import DSASheet from "./pages/DSASheet/DSASheet";
+import PatternDetails from "./pages/PatternDetails/PatternDetails";
 
 const App = () => {
   const [loading,setLoading] = useState(true);
@@ -62,6 +64,8 @@ const App = () => {
          
         <Route path="/settings" element={<Settings/>}/>
         <Route path="/footer" element={<Footer />}/>
+        <Route path="/dsa-sheet" element={<DSASheet />} />
+        <Route path="/pattern/:id" element={<PatternDetails />} />
 
       </Route>
 
