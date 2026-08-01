@@ -1,0 +1,500 @@
+.edit-page {
+
+    min-height:100vh;
+
+    padding:40px 50px;
+
+    background:#f8fafc;
+
+    color:#111827;
+
+    transition:0.3s ease;
+
+}
+
+
+
+/* DARK THEME */
+
+.edit-page.dark {
+
+    background:#020617;
+
+    color:white;
+
+}
+
+
+
+
+
+/* HEADER */
+
+.edit-header {
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+
+.edit-header h1 {
+
+    font-size:32px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+
+
+.edit-header p {
+
+    margin:0;
+
+    color:#64748b;
+
+}
+
+
+
+.edit-page.dark .edit-header p {
+
+    color:#94a3b8;
+
+}
+
+
+
+
+
+
+
+/* CARD */
+
+.edit-card {
+
+
+    max-width:750px;
+
+
+    margin:auto;
+
+
+    background:white;
+
+
+    padding:28px;
+
+
+    border-radius:18px;
+
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+
+}
+
+
+
+.edit-page.dark .edit-card {
+
+
+    background:#111827;
+
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.4);
+
+
+}
+
+
+
+
+
+
+
+
+/* FORM */
+
+.edit-card form {
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:14px;
+
+
+}
+
+
+
+
+
+
+
+/* GROUP */
+
+
+.form-group {
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:5px;
+
+
+}
+
+
+
+
+
+.form-group label {
+
+
+    font-size:14px;
+
+
+    font-weight:600;
+
+
+    color:#334155;
+
+
+}
+
+
+
+.edit-page.dark .form-group label {
+
+
+    color:#e2e8f0;
+
+}
+
+
+
+
+
+
+
+/* TWO COLUMN */
+
+
+.form-row {
+
+
+    display:grid;
+
+
+    grid-template-columns:1fr 1fr;
+
+
+    gap:15px;
+
+
+}
+
+
+
+
+
+
+
+
+/* INPUTS */
+
+
+.edit-card input,
+.edit-card select,
+.edit-card textarea {
+
+
+    width:100%;
+
+
+    padding:11px 13px;
+
+
+    border-radius:10px;
+
+
+    border:1px solid #cbd5e1;
+
+
+    font-size:14px;
+
+
+    outline:none;
+
+
+    transition:0.2s;
+
+
+    box-sizing:border-box;
+
+
+}
+
+
+
+
+
+.edit-card input:focus,
+.edit-card select:focus,
+.edit-card textarea:focus {
+
+
+    border-color:#2563eb;
+
+
+}
+
+
+
+
+
+
+
+
+/* DARK INPUT */
+
+.edit-page.dark input,
+.edit-page.dark select,
+.edit-page.dark textarea {
+
+
+    background:#1e293b;
+
+
+    color:white;
+
+
+    border-color:#334155;
+
+
+}
+
+
+
+
+
+
+
+/* TEXTAREA */
+
+
+.edit-card textarea {
+
+
+    min-height:110px;
+
+
+    max-height:160px;
+
+
+    resize:vertical;
+
+
+}
+
+
+
+
+
+
+
+/* BUTTONS */
+
+
+.edit-buttons {
+
+
+    display:flex;
+
+
+    gap:12px;
+
+
+    margin-top:10px;
+
+
+}
+
+
+
+
+
+.edit-buttons button {
+
+
+    flex:1;
+
+
+    padding:11px;
+
+
+    border:none;
+
+
+    border-radius:10px;
+
+
+    font-size:14px;
+
+
+    font-weight:600;
+
+
+    cursor:pointer;
+
+
+    transition:0.3s;
+
+
+}
+
+
+
+
+
+.update-btn {
+
+
+    background:#2563eb;
+
+
+    color:white;
+
+
+}
+
+
+
+.update-btn:hover {
+
+
+    background:#1d4ed8;
+
+
+}
+
+
+
+
+
+
+.cancel-btn {
+
+
+    background:#ef4444;
+
+
+    color:white;
+
+
+}
+
+
+
+.cancel-btn:hover {
+
+
+    background:#dc2626;
+
+
+}
+
+
+
+
+
+
+
+
+/* LOADING */
+
+
+.edit-loading {
+
+
+    height:100vh;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    font-size:22px;
+
+
+}
+
+
+
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:700px){
+
+
+    .edit-page {
+
+
+        padding:25px;
+
+    }
+
+
+
+    .edit-header h1 {
+
+
+        font-size:26px;
+
+    }
+
+
+
+    .form-row {
+
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .edit-card {
+
+
+        padding:20px;
+
+    }
+
+
+}
