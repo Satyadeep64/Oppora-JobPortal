@@ -1,102 +1,89 @@
 import { useNavigate } from "react-router-dom";
 import { FaUserGraduate, FaBuilding } from "react-icons/fa";
-import "./RoleSelection.css";
 
-const RoleSelection = () => {
-    const navigate = useNavigate();
 
-    const selectRole = (role) => {
-        localStorage.setItem("selectedRole", role);
-        navigate("/login");
-    };
+const RoleSelection =()=>{
+const navigate = useNavigate();
+const selectRole=(role)=>{
+localStorage.setItem(
+"selectedRole",
+role
+);
+navigate("/login");
+}
+return (
+<div className={`role-page ${localStorage.getItem("theme")==="dark" ? "dark" : ""}`}>
 
-    return (
-        <div className={`oppora-role-page ${localStorage.getItem("theme") === "dark" ? "dark" : ""}`}>
+    <div className="role-box">
 
-            <div className="oppora-role-box">
+        <div className="role-header">
 
-                <div className="oppora-role-header">
+            <h1 className="brand-logo">
+                <span>O</span>PPORA
+            </h1>
 
-                    <h1 className="oppora-role-brand">
-                        <span>O</span>PPORA
-                    </h1>
+            <h2>
+                Choose Your Account
+            </h2>
 
-                    <h2 className="oppora-role-heading">Choose Your Account</h2>
+            <p className="role-subtitle">
+                Continue as a Candidate or Recruiter
+            </p>
 
-                    <p className="oppora-role-subtitle">
-                        Continue as a Candidate or Recruiter
-                    </p>
+        </div>
 
-                </div>
+        <div className="role-container">
 
-                <div className="oppora-role-container">
+            <div
+                className="role-card candidate"
+                onClick={() => selectRole("Candidate")}
+            >
 
-                    <div
-                        className="oppora-role-card oppora-role-candidate"
-                        onClick={() => selectRole("Candidate")}
-                        role="button"
-                        tabIndex={0}
-                        onKeyDown={(e) => e.key === "Enter" && selectRole("Candidate")}
-                    >
+                <FaUserGraduate className="role-icon"/>
 
-                        <div className="oppora-role-icon-badge">
-                            <FaUserGraduate className="oppora-role-icon" />
-                        </div>
+                <h2>Candidate</h2>
 
-                        <h2 className="oppora-role-card-title">Candidate</h2>
+                <p>
+                    Discover jobs, internships, hackathons,
+                    courses and career opportunities.
+                </p>
 
-                        <p className="oppora-role-card-text">
-                            Discover jobs, internships, hackathons,
-                            courses and career opportunities.
-                        </p>
+                <button>
+                    Continue as Candidate
+                </button>
 
-                        <button
-                            className="oppora-role-btn"
-                            onClick={(e) => { e.stopPropagation(); selectRole("Candidate"); }}
-                        >
-                            Continue as Candidate
-                        </button>
+            </div>
 
-                    </div>
+            <div
+                className="divider">
+                OR
+            </div>
 
-                    <div className="oppora-role-divider">
-                        <div className="oppora-role-divider-node">OR</div>
-                    </div>
+            <div
+                className="role-card recruiter"
+                onClick={() => selectRole("Recruiter")}
+            >
 
-                    <div
-                        className="oppora-role-card oppora-role-recruiter"
-                        onClick={() => selectRole("Recruiter")}
-                        role="button"
-                        tabIndex={0}
-                        onKeyDown={(e) => e.key === "Enter" && selectRole("Recruiter")}
-                    >
+                <FaBuilding className="role-icon"/>
 
-                        <div className="oppora-role-icon-badge">
-                            <FaBuilding className="oppora-role-icon" />
-                        </div>
+                <h2>Recruiter</h2>
 
-                        <h2 className="oppora-role-card-title">Recruiter</h2>
+                <p>
+                    Post jobs, manage applicants and hire
+                    talented candidates.
+                </p>
 
-                        <p className="oppora-role-card-text">
-                            Post jobs, manage applicants and hire
-                            talented candidates.
-                        </p>
-
-                        <button
-                            className="oppora-role-btn"
-                            onClick={(e) => { e.stopPropagation(); selectRole("Recruiter"); }}
-                        >
-                            Continue as Recruiter
-                        </button>
-
-                    </div>
-
-                </div>
+                <button>
+                    Continue as Recruiter
+                </button>
 
             </div>
 
         </div>
-    );
-};
 
+    </div>
+
+</div>
+);
+}
 export default RoleSelection;
