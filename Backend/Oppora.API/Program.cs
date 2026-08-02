@@ -3,37 +3,54 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Oppora.API.Data;
+using Oppora.API.Interfaces;
+using Oppora.API.Repositories;
 using Oppora.API.Services;
+using Oppora.API.Services.Import;
+using Oppora.API.Services.Import.Importers;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// CORS Policy
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReact",
         policy =>
         {
             policy
-            .SetIsOriginAllowed(_ => true)
+            .WithOrigins("http://localhost:5173", "http://localhost:3000")
             .AllowAnyHeader()
             .AllowAnyMethod();
         });
 });
 
-// Controllers
+// Memory Cache & Controllers
+builder.Services.AddMemoryCache();
 builder.Services.AddControllers();
 
-// Services
+// Repositories & Services
+builder.Services.AddScoped<ICompetitionRepository, CompetitionRepository>();
+builder.Services.AddScoped<ICompetitionService, CompetitionService>();
 builder.Services.AddScoped<CloudinaryService>();
-builder.Services.AddScoped<IEmailService, EmailService>();
+
+builder.Services.AddScoped<ICompetitionImporter, CsvCompetitionImporter>();
+builder.Services.AddScoped<ICompetitionImporter, RssCompetitionImporter>();
+builder.Services.AddScoped<ICompetitionImporter, ApiCompetitionImporter>();
+builder.Services.AddScoped<ICompetitionImporter, ManualCompetitionImporter>();
+builder.Services.AddScoped<CompetitionImporterFactory>();
+builder.Services.AddScoped<ICompetitionIngestionService, CompetitionIngestionService>();
+
+builder.Services.AddScoped<ResumeTextExtractor>();
+
+builder.Services.AddHttpClient<ATSAnalysisService>();
+
+
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SupportNonNullableReferenceTypes();
-
     c.AddSecurityDefinition("Bearer",
         new OpenApiSecurityScheme
         {
@@ -41,15 +58,15 @@ builder.Services.AddSwaggerGen(c =>
             Name = "Authorization",
             In = ParameterLocation.Header,
             Type = SecuritySchemeType.Http,
-            Scheme = "bearer",
-            BearerFormat = "JWT"
+            Scheme = "bearer"
         });
 
-    c.AddSecurityRequirement(
-        new OpenApiSecurityRequirement
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
         {
+            new OpenApiSecurityScheme
             {
-                new OpenApiSecurityScheme
+                Reference = new OpenApiReference
                 {
                     Reference = new OpenApiReference
                     {
@@ -115,10 +132,22 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseRouting();
 app.UseCors("AllowReact");
 app.UseStaticFiles();
+ 
+
+
 app.UseAuthentication();
 app.UseAuthorization();
+
 app.MapControllers();
+
+// Seed Database
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    await DbInitializer.SeedAsync(context);
+}
 
 app.Run();

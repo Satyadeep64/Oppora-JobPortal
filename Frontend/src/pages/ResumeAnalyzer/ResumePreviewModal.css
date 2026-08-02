@@ -1,0 +1,151 @@
+/* Dark overlay */
+.resume-modal-overlay{
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.65);
+    backdrop-filter:blur(6px);
+
+    z-index:9999;
+}
+
+/* Popup */
+.resume-modal{
+    width:85%;
+    max-width:900px;
+    height:90vh;
+
+    background:var(--card-bg);
+    color:var(--text-primary);
+
+    border:1px solid var(--border);
+    border-radius:18px;
+
+    display:flex;
+    flex-direction:column;
+
+    overflow:hidden;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+}
+
+/* Header */
+.resume-modal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 24px;
+
+    border-bottom:1px solid var(--border);
+}
+
+/* Close button */
+.resume-modal-header button{
+    width:40px;
+    height:40px;
+
+    border:none;
+    border-radius:10px;
+
+    background:transparent;
+    color:var(--text-primary);
+
+    font-size:24px;
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.resume-modal-header button:hover{
+    background:rgba(59,130,246,.12);
+    color:var(--accent);
+}
+
+/* PDF container */
+.resume-modal-body{
+    flex:1;
+
+    overflow:auto;
+
+    padding:20px;
+
+    display:flex;
+    justify-content:center;
+
+    /*background:var(--bg);*/
+    background:rgba(148,163,184,.08);
+}
+.react-pdf__Page{
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 12px 35px rgba(0,0,0,.2);
+}
+.react-pdf__Document{
+    display:flex;
+    justify-content:center;
+}
+.resume-modal{
+    animation:popup .25s ease;
+}
+
+@keyframes popup{
+    from{
+        opacity:0;
+        transform:scale(.95);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+.preview-footer{
+    flex-shrink:0;
+}
+.resume-modal-header{
+    flex-shrink:0;
+}
+.pdf-loading{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100%;
+    color:var(--text-secondary);
+    font-size:18px;
+    font-weight:600;
+}
+.pdf-error{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100%;
+    color:#ef4444;
+    font-weight:600;
+}
+.download-btn{
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    background:var(--accent);
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.download-btn:hover{
+
+    opacity:.9;
+
+}

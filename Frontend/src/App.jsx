@@ -2,12 +2,12 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Layout from "./components/Layout";
 import Home from "./components/Home";
-import Footer from "./components/section1/Footer"
+import Footer from "./components/section1/Footer";
 import SplashScreen from "./components/Splash/Splash";
 import { useState, useEffect } from "react";
-import RoleSelection from "./components/RoleSelection"
+import RoleSelection from "./components/RoleSelection";
 import Profile from "./components/Profile/Profile";
-import Settings from "./components/Setting/Setting"
+import Settings from "./components/Setting/Setting";
 import { BrowserRouter } from "react-router-dom";
 import ChangePassword from "./pages/ChangePassword/ChangePassword";
 import PostOpportunity from "./pages/PostOpportunity/PostOpportunity";
@@ -20,33 +20,56 @@ import OpportunityDetails from "./pages/Opportunity/OpportunityDetails";
 import ViewApplicants from "./pages/Recruiter/ViewApplicants";
 import RecruiterApplicants from "./pages/RecruiterApplicants/RecruiterApplicants";
 import ScrollToTop from "./components/ScrollToTop";
-import ResumeBuilder from "./pages/ResumeBuilder/ResumeBuilder";
-import CandidateBlogs from "./pages/CandidateBlogs/CandidateBlogs";
-import DSASheet from "./pages/DSASheet/DSASheet";
-import PatternDetails from "./pages/PatternDetails/PatternDetails";
-import AIMockInterview from "./pages/AIMockInterview/AIMockInterview";
-import CareerPath from "./pages/CareerPath/CareerPath";
+import CompetitionPage from "./pages/Competitions/CompetitionPage";
+import CompetitionDetails from "./pages/CompetitionDetails/CompetitionDetails";
+import { BookmarkProvider } from "./context/BookmarkContext";
+
+import ResumeAnalyzer from "./pages/ResumeAnalyzer/ResumeAnalyzer";
+
 
 const App = () => {
-  const [loading,setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
-
-  useEffect(()=>{
-
-    setTimeout(()=>{
+  useEffect(() => {
+    setTimeout(() => {
       setLoading(false);
-    },2000);
+    }, 2000);
+  }, []);
 
-  },[]);
-
-
-
-  if(loading){
+  if (loading) {
     return <SplashScreen />;
   }
 
-  return(
+  return (
     <BrowserRouter>
+
+      <BookmarkProvider>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/login" element={<Login setLoading={setLoading} />} />
+          <Route path="/" element={<RoleSelection />} />
+          <Route element={<Layout />}>
+            <Route path="/home" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/post-opportunity" element={<PostOpportunity />} />
+            <Route path="/edit-opportunity/:id" element={<EditOpportunity />} />
+            <Route path="/jobs" element={<Jobs />} />
+            <Route path="/competitions" element={<CompetitionPage />} />
+            <Route path="/competitions/:id" element={<CompetitionDetails />} />
+            <Route path="/manage-opportunities" element={<ManageOpportunities />} />
+            <Route path="/my-activity" element={<UserDashboard />} />
+            <Route path="/opportunity/:id" element={<OpportunityDetails />} />
+            <Route path="/recruiter/opportunity/:id/applicants" element={<ViewApplicants />} />
+            <Route path="dashboard/recruiter" element={<RecruiterDashboard />} />
+            <Route path="/recruiter/applicants" element={<RecruiterApplicants />} />
+            <Route path="/change-password" element={<ChangePassword />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/footer" element={<Footer />} />
+            <Route path="/resume-analyzer" element={<ResumeAnalyzer />} />
+          </Route>
+        </Routes>
+      </BookmarkProvider>
+
      <ScrollToTop />
     <Routes>
 
@@ -58,6 +81,7 @@ const App = () => {
         <Route path="/post-opportunity" element={<PostOpportunity/>}/> 
         <Route path="/edit-opportunity/:id" element={<EditOpportunity/>}/>
         <Route path="/jobs" element={<Jobs />}/>
+        <Route path="/resume-analyzer" element={<ResumeAnalyzer />} />
         <Route path="/manage-opportunities"element={<ManageOpportunities/>}/>
         <Route path="/my-activity"element={<UserDashboard />}/>
         <Route path="/opportunity/:id" element={<OpportunityDetails/>}/>
@@ -67,20 +91,14 @@ const App = () => {
         <Route path="/change-password" element={<ChangePassword/>}/>
          
         <Route path="/settings" element={<Settings/>}/>
-        <Route path="/resume-builder" element={<ResumeBuilder/>}/>
-        <Route path="/blogs" element={<CandidateBlogs/>}/>
-        <Route path="/mock-interview" element={<AIMockInterview/>}/>
-        <Route path="/career-path" element={<CareerPath/>}/>
-        <Route path="/awards" element={<CareerPath/>}/>
         <Route path="/footer" element={<Footer />}/>
-        <Route path="/dsa-sheet" element={<DSASheet />} />
-        <Route path="/pattern/:id" element={<PatternDetails />} />
 
       </Route>
 
     </Routes>
+ 
     </BrowserRouter>
-  )
-}
+  );
+};
 
 export default App;

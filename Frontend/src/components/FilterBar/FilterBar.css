@@ -1,0 +1,385 @@
+/* Horizontal Filter Bar */
+.filter-bar {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.filter-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Rounded Pill Button */
+.filter-pill-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  background-color: var(--color-bg-card, #ffffff);
+  border: 1.5px solid var(--color-border, #e2e8f0);
+  border-radius: 9999px;
+  color: var(--color-text-muted, #334155);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  outline: none;
+  white-space: nowrap;
+}
+
+.filter-pill-btn:hover {
+  background-color: var(--color-bg-subtle, #f8fafc);
+  border-color: var(--color-border-hover, #cbd5e1);
+  color: var(--color-text-main, #0f172a);
+}
+
+.pill-icon {
+  font-size: 16px;
+  color: var(--color-text-subtle, #64748b);
+  flex-shrink: 0;
+  transition: color 0.15s ease-in-out;
+}
+
+.chevron-icon {
+  font-size: 14px;
+  color: var(--color-text-light, #94a3b8);
+  flex-shrink: 0;
+  margin-left: 2px;
+}
+
+.filter-pill-btn:hover .pill-icon {
+  color: var(--color-primary, #1c4980);
+}
+
+/* Main Filters Button (Active / Selected State) */
+.main-filters-btn {
+  border-color: var(--color-primary, #1c4980);
+  background-color: var(--color-accent-light, #f0f7ff);
+  color: var(--color-primary, #1c4980);
+  font-weight: 600;
+  box-shadow: var(--shadow-xs);
+}
+
+.main-filters-btn .pill-icon {
+  color: var(--color-primary, #1c4980);
+}
+
+.main-filters-btn:hover {
+  background-color: var(--color-accent-light, #e0f2fe);
+  border-color: var(--color-accent, #0056d2);
+  color: var(--color-primary, #1c4980);
+}
+
+/* Blue Badge showing active filter count */
+.filter-count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background: linear-gradient(135deg, var(--color-primary, #1c4980) 0%, var(--color-accent, #0056d2) 100%);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 9999px;
+  margin-left: 4px;
+  box-shadow: 0 2px 6px rgba(0, 86, 210, 0.25);
+}
+
+/* Sort Pill Special Styling */
+.sort-pill-btn .sort-value {
+  color: var(--color-primary, #1c4980);
+  font-weight: 600;
+}
+
+/* Popover Dropdown Wrapper */
+.filter-pill-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.filter-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 100;
+  min-width: 180px;
+  background-color: var(--color-bg-card, #ffffff);
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  padding: 6px;
+  animation: filterDropdownFade 0.15s ease-out;
+}
+
+.filter-dropdown-menu.right-aligned {
+  left: auto;
+  right: 0;
+}
+
+@keyframes filterDropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-option-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--color-text-muted, #334155);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.dropdown-option-btn:hover {
+  background-color: var(--color-bg-subtle, #f1f5f9);
+  color: var(--color-primary, #1c4980);
+}
+
+.dropdown-option-btn.selected {
+  background-color: var(--color-accent-light, #f0f7ff);
+  color: var(--color-primary, #1c4980);
+  font-weight: 600;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: var(--color-border, #e2e8f0);
+  margin: 4px 0;
+}
+
+/* Modal Overlay & Container */
+.filter-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeInOverlay 0.2s ease-out;
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.filter-modal-content {
+  background: var(--color-bg-card, #ffffff);
+  width: 100%;
+  max-width: 680px;
+  max-height: 85vh;
+  border-radius: 20px;
+  border: 1px solid var(--color-border, #e2e8f0);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUpModal 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUpModal {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.filter-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--color-border, #e2e8f0);
+}
+
+.filter-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-main, #0f172a);
+  margin: 0;
+}
+
+.filter-modal-close-btn {
+  background: var(--color-bg-subtle, #f1f5f9);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-subtle, #64748b);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.filter-modal-close-btn:hover {
+  background: var(--color-border, #e2e8f0);
+  color: var(--color-text-main, #0f172a);
+}
+
+.filter-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filter-group-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .filter-group-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.filter-field-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filter-field-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted, #475569);
+}
+
+.filter-input-control {
+  height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--color-border, #cbd5e1);
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--color-text-main, #1e293b);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  background-color: var(--color-bg-card, #ffffff);
+}
+
+.filter-input-control:focus {
+  border-color: var(--color-primary, #1c4980);
+  box-shadow: var(--shadow-glow);
+}
+
+.filter-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-muted, #334155);
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.filter-checkbox-control {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary, #1c4980);
+  cursor: pointer;
+}
+
+.filter-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-top: 1px solid var(--color-border, #e2e8f0);
+  background-color: var(--color-bg-subtle, #f8fafc);
+}
+
+.reset-filters-btn {
+  background: transparent;
+  border: 1px solid var(--color-border, #cbd5e1);
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: var(--color-text-muted, #475569);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.reset-filters-btn:hover {
+  background-color: var(--color-border, #e2e8f0);
+  color: var(--color-text-main, #0f172a);
+}
+
+.apply-filters-btn {
+  background: linear-gradient(135deg, var(--color-primary, #1c4980) 0%, var(--color-accent, #0056d2) 100%);
+  border: none;
+  padding: 10px 24px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 86, 210, 0.25);
+  transition: all 0.15s ease;
+}
+
+.apply-filters-btn:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .filter-dropdown-menu,
+  .filter-modal-overlay,
+  .filter-modal-content,
+  .filter-pill-btn,
+  .apply-filters-btn {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Dark Theme System Integration */
+[data-theme="dark"] .filter-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+[data-theme="dark"] .filter-input-control option {
+  background-color: var(--color-bg-card, #1f2937);
+  color: var(--color-text-main, #f9fafb);
+}
+

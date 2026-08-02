@@ -1,0 +1,399 @@
+/* Oppora Competition Card — Compact Professional Size (Unstop / Devfolio Inspired) */
+.competition-card {
+  background-color: var(--color-bg-card, #ffffff);
+  border: 1.5px solid var(--color-border, #e2e8f0);
+  border-radius: var(--radius-md, 14px);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  cursor: pointer;
+  box-shadow: var(--shadow-xs, 0 1px 3px rgba(0, 0, 0, 0.04));
+  height: 100%;
+  user-select: none;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+}
+
+.competition-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-accent, #0056d2);
+  box-shadow: var(--shadow-md, 0 6px 18px -3px rgba(0, 86, 210, 0.12));
+}
+
+.competition-card:active {
+  transform: translateY(-1px) scale(0.995);
+}
+
+.competition-card:focus-visible {
+  outline: 2px solid var(--color-primary, #1c4980);
+  outline-offset: 2px;
+}
+
+/* Card Banner Wrapper */
+.card-banner-wrapper {
+  margin: -14px -16px 10px -16px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 16 / 4;
+}
+
+.card-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.competition-card:hover .card-banner-img {
+  transform: scale(1.03);
+}
+
+/* Card Header: Logo & Badges */
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card-header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+
+.card-top-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+/* Popularity Badges */
+.pop-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.pop-badge.pop-trending {
+  background-color: var(--color-badge-orange-bg, #fff7ed);
+  color: var(--color-badge-orange-text, #c2410c);
+  border: 1px solid var(--color-badge-orange-border, #ffedd5);
+}
+
+.pop-badge.pop-editorspick {
+  background-color: var(--color-badge-blue-bg, #e0f2fe);
+  color: var(--color-badge-blue-text, #0284c7);
+  border: 1px solid var(--color-accent-border, #bae6fd);
+}
+
+.pop-badge.pop-featured {
+  background-color: var(--color-badge-green-bg, #dcfce7);
+  color: var(--color-badge-green-text, #15803d);
+  border: 1px solid var(--color-border, #bbf7d0);
+}
+
+.pop-icon {
+  font-size: 11px;
+}
+
+/* Status Pills */
+.status-pill {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.status-pill.status-open {
+  background-color: var(--color-badge-green-bg, #dcfce7);
+  color: var(--color-badge-green-text, #15803d);
+}
+
+.status-pill.status-closing {
+  background-color: var(--color-badge-amber-bg, #fef3c7);
+  color: var(--color-badge-amber-text, #b45309);
+}
+
+.status-pill.status-closed {
+  background-color: var(--color-bg-subtle, #f1f5f9);
+  color: var(--color-text-subtle, #64748b);
+}
+
+.card-logo-wrapper {
+  width: 44px;
+  height: 44px;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1.5px solid var(--color-border, #e2e8f0);
+  background-color: var(--color-bg-subtle, #f8fafc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-logo-lazy {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+}
+
+.card-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  aspect-ratio: 1 / 1;
+  padding: 4px;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.competition-card:hover .card-logo {
+  transform: scale(1.06);
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+/* Compact Action Buttons */
+.action-btn {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  min-height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-border, #e2e8f0);
+  background-color: var(--color-bg-subtle, #f8fafc);
+  color: var(--color-text-subtle, #64748b);
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  outline: none;
+  flex-shrink: 0;
+}
+
+.action-btn:hover {
+  background-color: var(--color-accent-light, #f0f7ff);
+  color: var(--color-primary, #1c4980);
+  border-color: var(--color-accent-border, #bae6fd);
+  transform: scale(1.05);
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+}
+
+.bookmark-btn.bookmarked {
+  background-color: var(--color-badge-amber-bg, #fef3c7);
+  color: var(--color-badge-amber-text, #d97706);
+  border-color: var(--color-badge-amber-border, #fde68a);
+}
+
+/* Card Body */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text-main, #0f172a);
+  line-height: 1.35;
+  margin: 0 0 4px 0;
+  transition: color 0.15s ease;
+  word-break: break-word;
+  letter-spacing: -0.15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.competition-card:hover .card-title {
+  color: var(--color-primary, #1c4980);
+}
+
+.card-organization {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-muted, #475569);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+
+.card-meta-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-bottom: 10px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--color-text-subtle, #64748b);
+  font-weight: 500;
+}
+
+.meta-icon {
+  font-size: 14px;
+  color: var(--color-text-light, #94a3b8);
+  flex-shrink: 0;
+}
+
+.diff-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.diff-dot.diff-beginner {
+  background-color: #22c55e;
+}
+
+.diff-dot.diff-intermediate {
+  background-color: #3b82f6;
+}
+
+.diff-dot.diff-advanced {
+  background-color: #a855f7;
+}
+
+.days-left-badge {
+  background-color: var(--color-badge-amber-bg, #fef3c7);
+  color: var(--color-badge-amber-text, #b45309);
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 11.5px;
+  white-space: nowrap;
+}
+
+.days-left-badge .meta-icon {
+  color: var(--color-badge-amber-text, #b45309);
+}
+
+/* Category Chips */
+.card-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: auto;
+}
+
+.category-chip {
+  background-color: var(--color-bg-subtle, #f1f5f9);
+  color: var(--color-text-muted, #334155);
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 5px;
+  border: 1px solid var(--color-border, #e2e8f0);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.competition-card:hover .category-chip {
+  border-color: var(--color-border-hover, #cbd5e1);
+  background-color: var(--color-bg-card, #ffffff);
+}
+
+/* Card Footer */
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-border, #f1f5f9);
+  padding-top: 10px;
+  margin-top: 2px;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.posted-date {
+  font-size: 11.5px;
+  color: var(--color-text-light, #94a3b8);
+  font-weight: 400;
+}
+
+.registered-badge {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--color-primary, #1c4980);
+  background-color: var(--color-accent-light, #f0f7ff);
+  padding: 3px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+/* Mobile Adjustments (<= 480px) */
+@media (max-width: 480px) {
+  .competition-card {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+  
+  .card-logo-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .action-btn {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    font-size: 14px;
+  }
+}
+
+/* Dark Mode Integration */
+[data-theme="dark"] .competition-card {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .competition-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  border-color: var(--color-primary, #60a5fa);
+}
+
+[data-theme="dark"] .competition-card:hover .card-title {
+  color: var(--color-primary, #60a5fa);
+}

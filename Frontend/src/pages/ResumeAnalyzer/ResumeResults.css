@@ -1,0 +1,87 @@
+.results-container{
+    margin-top:50px;
+}
+
+.score-card{
+    background:white;
+    border-radius:16px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    margin-bottom:30px;
+}
+
+.score-circle{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:8px solid #5b3fd8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:20px auto;
+    font-size:28px;
+    font-weight:bold;
+    color:#5b3fd8;
+}
+
+.results-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+    margin-bottom:25px;
+}
+
+.result-card{
+    background:white;
+    border-radius:16px;
+    padding:25px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.badge-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:15px;
+}
+
+.skill-badge{
+    background:#e7f0ff;
+    color:#2563eb;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:14px;
+}
+
+.missing-badge{
+    background:#fff3e6;
+    color:#ff7a00;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:14px;
+}
+
+.suggestion-list{
+    margin-top:15px;
+    padding-left:20px;
+}
+
+.suggestion-list li{
+    margin-bottom:12px;
+}
+.results-container {
+  margin-top: 30px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

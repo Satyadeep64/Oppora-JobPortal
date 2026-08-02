@@ -1,0 +1,117 @@
+/* Competition List Layout */
+.competition-list-container {
+  width: 100%;
+  flex: 1;
+}
+
+/* One Card Per Row with 20px gap */
+.competition-list-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Friendly Error State UI */
+.error-state-box {
+  background-color: var(--color-bg-card, #ffffff);
+  border: 1.5px solid var(--color-border, #fee2e2);
+  border-radius: 16px;
+  padding: 40px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.error-state-icon {
+  font-size: 44px;
+  color: #ef4444;
+}
+
+.error-state-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-main, #0f172a);
+  margin: 0;
+}
+
+.error-state-message {
+  font-size: 14px;
+  color: var(--color-text-subtle, #64748b);
+  max-width: 480px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.retry-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 20px;
+  background: linear-gradient(135deg, var(--color-primary, #1c4980) 0%, var(--color-accent, #0056d2) 100%);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  margin-top: 6px;
+}
+
+.retry-btn:hover {
+  background: linear-gradient(135deg, var(--color-primary-hover, #163a66) 0%, var(--color-accent-hover, #0044ab) 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 86, 210, 0.25);
+}
+
+.retry-btn-icon {
+  font-size: 16px;
+}
+
+/* Empty State UI */
+.empty-state-box {
+  background-color: var(--color-bg-card, #ffffff);
+  border: 1.5px solid var(--color-border, #e2e8f0);
+  border-radius: 16px;
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--color-text-subtle, #64748b);
+}
+
+.empty-state-box h3 {
+  font-size: 18px;
+  color: var(--color-text-main, #0f172a);
+  margin: 0 0 6px 0;
+}
+
+.end-of-feed-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background-color: var(--color-bg-card, #ffffff);
+  border: 1.5px solid var(--color-border, #e2e8f0);
+  border-radius: 12px;
+  color: var(--color-text-subtle, #64748b);
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+.end-feed-icon {
+  color: var(--color-badge-green-text, #15803d);
+  font-size: 16px;
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+  .competition-list-grid {
+    gap: 16px;
+  }
+}
