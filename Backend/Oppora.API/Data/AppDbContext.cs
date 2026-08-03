@@ -28,6 +28,8 @@ namespace Oppora.API.Data
 
         public DbSet<BlogComment> BlogComments { get; set; }
 
+        public DbSet<Course> Courses { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()

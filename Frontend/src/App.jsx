@@ -32,6 +32,7 @@ import MockTest from "./components/MockTest/MockTest";
 import Test from "./components/MockTest/Test";
 import Result from "./components/MockTest/Result";
 
+import CoursesPage from "./components/Courses/CoursesPage";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -89,7 +90,7 @@ const App = () => {
 
         <Route path="/mocktest/test" element={<Test />} />
         <Route path="/mocktest/result" element={<Result />} />
-
+        <Route path="/courses" element={<CoursesPage />} />
       </Routes>
     </BrowserRouter>
   )
