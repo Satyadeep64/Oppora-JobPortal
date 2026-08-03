@@ -85,12 +85,13 @@ const App = () => {
           <Route path="/footer" element={<Footer />} />
           <Route path="/dsa-sheet" element={<DSASheet />} />
           <Route path="/pattern/:id" element={<PatternDetails />} />
+             <Route path="/courses" element={<CoursesPage />} />
 
         </Route>
 
         <Route path="/mocktest/test" element={<Test />} />
         <Route path="/mocktest/result" element={<Result />} />
-        <Route path="/courses" element={<CoursesPage />} />
+     
       </Routes>
     </BrowserRouter>
   )
