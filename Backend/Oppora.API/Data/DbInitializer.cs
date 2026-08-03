@@ -8,8 +8,15 @@ namespace Oppora.API.Data
     {
         public static async Task SeedAsync(AppDbContext context)
         {
-            // Ensure DB schema is created
-            await context.Database.EnsureCreatedAsync();
+            // Ensure DB schema is created and all migrations are applied
+            try
+            {
+                await context.Database.MigrateAsync();
+            }
+            catch
+            {
+                await context.Database.EnsureCreatedAsync();
+            }
 
             // If at least 20 complete competitions already exist with relational data, skip seeding
             int compCount = await context.Competitions.CountAsync();

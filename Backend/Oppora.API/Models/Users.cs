@@ -30,8 +30,6 @@ namespace Oppora.API.Models
         public string? LinkedIn { get; set; }
         public string? GitHub { get; set; }
         public string? Education { get; set; }
-        public ICollection<Application> Applications { get; set; }
-
         public ICollection<Application> Applications { get; set; } = new List<Application>();
         public ICollection<Resume> Resumes { get; set; } = new List<Resume>();
     }

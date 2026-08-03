@@ -89,6 +89,10 @@ const Sidebar = () => {
                     <FaUserTie/>
                     Resume Builder
                 </NavLink>
+                <NavLink to="/resume-analyzer">
+                    <FaUserTie/>
+                    Resume Analyzer
+                </NavLink>
 
 
                 <NavLink to={isRecruiter ? "/interviews" : "/mock-tests"}>

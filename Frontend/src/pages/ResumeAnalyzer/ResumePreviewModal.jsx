@@ -21,9 +21,13 @@ const ResumePreviewModal = ({ resume, onClose }) => {
 
   if (!resume) return null;
 
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
+  const getFullFileUrl = (url) => {
+    if (!url) return "#";
+    if (url.startsWith("http")) return url;
+    return `http://localhost:5024${url}`;
+  };
+
+  const fileUrl = getFullFileUrl(resume.fileUrl);
 
   return (
 
@@ -41,7 +45,7 @@ const ResumePreviewModal = ({ resume, onClose }) => {
 
           <h2>{resume.fileName}</h2>
           <a
-    href={`https://localhost:7054${resume.fileUrl}`}
+    href={fileUrl}
     download
     className="download-btn"
 >
@@ -57,7 +61,7 @@ const ResumePreviewModal = ({ resume, onClose }) => {
         <div className="resume-modal-body">
 
 <iframe
-  src={`https://localhost:7054${resume.fileUrl}`}
+  src={fileUrl}
   width="100%"
   height="600px"
   style={{

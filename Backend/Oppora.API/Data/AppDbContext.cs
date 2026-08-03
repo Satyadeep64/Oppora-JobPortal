@@ -14,7 +14,6 @@ namespace Oppora.API.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Opportunity> Opportunities { get; set; }
         public DbSet<Application> Applications { get; set; }
- 
 
         // Competition Module DbSets
         public DbSet<Organization> Organizations => Set<Organization>();
@@ -29,9 +28,14 @@ namespace Oppora.API.Data
         public DbSet<CompetitionTag> CompetitionTags => Set<CompetitionTag>();
         public DbSet<Registration> Registrations => Set<Registration>();
 
-
+        // Resume & Analysis DbSets
         public DbSet<Resume> Resumes { get; set; }
         public DbSet<ResumeAnalysisHistory> ResumeAnalysisHistories { get; set; }
+
+        // Blog & Notification DbSets
+        public DbSet<BlogPost> BlogPosts { get; set; }
+        public DbSet<BlogComment> BlogComments { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -44,7 +48,6 @@ namespace Oppora.API.Data
             modelBuilder.Entity<User>()
                 .Property(x => x.PasswordHash)
                 .HasColumnName("PasswordHash");
-
 
             modelBuilder.Entity<Opportunity>()
                 .HasOne(o => o.Recruiter)
@@ -63,7 +66,6 @@ namespace Oppora.API.Data
                 .WithMany()
                 .HasForeignKey(a => a.OpportunityId)
                 .OnDelete(DeleteBehavior.Restrict);
-
 
             // Composite primary key for CompetitionTag join table
             modelBuilder.Entity<CompetitionTag>()
@@ -119,21 +121,12 @@ namespace Oppora.API.Data
             modelBuilder.Entity<Tag>()
                 .HasIndex(t => t.Name)
                 .IsUnique();
-        }
-    }
-}
 
             modelBuilder.Entity<Resume>()
-            .HasOne(r => r.User)
-            .WithMany(u => u.Resumes)
-            .HasForeignKey(r => r.UserId)
-            .OnDelete(DeleteBehavior.Cascade);
-            modelBuilder.Entity<Opportunity>()
-    .HasOne(o => o.Recruiter)
-    .WithMany()
-    .HasForeignKey(o => o.RecruiterId)
-    .OnDelete(DeleteBehavior.NoAction);
+                .HasOne(r => r.User)
+                .WithMany(u => u.Resumes)
+                .HasForeignKey(r => r.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
-

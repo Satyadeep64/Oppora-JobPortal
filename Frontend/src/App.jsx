@@ -70,33 +70,6 @@ const App = () => {
         </Routes>
       </BookmarkProvider>
 
-     <ScrollToTop />
-    <Routes>
-
-      <Route path="/login" element={<Login setLoading={setLoading}/>}/>
-      <Route path="/"element={<RoleSelection/>}/>
-      <Route element={<Layout/>}>
-      <Route path="/home" element={<Home/>}/>
-        <Route path="/profile" element={<Profile/>}/>
-        <Route path="/post-opportunity" element={<PostOpportunity/>}/> 
-        <Route path="/edit-opportunity/:id" element={<EditOpportunity/>}/>
-        <Route path="/jobs" element={<Jobs />}/>
-        <Route path="/resume-analyzer" element={<ResumeAnalyzer />} />
-        <Route path="/manage-opportunities"element={<ManageOpportunities/>}/>
-        <Route path="/my-activity"element={<UserDashboard />}/>
-        <Route path="/opportunity/:id" element={<OpportunityDetails/>}/>
-        <Route path="/recruiter/opportunity/:id/applicants"element={<ViewApplicants/>}/>
-        <Route path="dashboard/recruiter" element={<RecruiterDashboard />} />
-        <Route path="/recruiter/applicants" element={<RecruiterApplicants />}/>
-        <Route path="/change-password" element={<ChangePassword/>}/>
-         
-        <Route path="/settings" element={<Settings/>}/>
-        <Route path="/footer" element={<Footer />}/>
-
-      </Route>
-
-    </Routes>
- 
     </BrowserRouter>
   );
 };

@@ -15,18 +15,32 @@ const ResumeLibrary = ({ resumes, onViewReport }) => {
   }, [showAll]);
 
   const fetchHistory = async () => {
-  try {
-    const response = await fetch(
-      `https://localhost:7054/api/ResumeAnalysis/history/1${showAll ? "?all=true" : ""}`
-    );
+    try {
+      let data = null;
+      const apiUrls = [
+        `http://localhost:5024/api/ResumeAnalysis/history/1${showAll ? "?all=true" : ""}`,
+        `https://localhost:7054/api/ResumeAnalysis/history/1${showAll ? "?all=true" : ""}`
+      ];
 
-    const data = await response.json();
-    setHistory(data);
+      for (const url of apiUrls) {
+        try {
+          const response = await fetch(url);
+          if (response.ok) {
+            data = await response.json();
+            break;
+          }
+        } catch (e) {
+          // ignore network failure
+        }
+      }
 
-  } catch (err) {
-    console.error(err);
-  }
-};
+      if (data && Array.isArray(data)) {
+        setHistory(data);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
 return (
     <section className="resume-library">
 
@@ -50,7 +64,8 @@ return (
 
 </div>      
 
-      <table className="resume-table">
+      <div className="resume-table-wrapper">
+        <table className="resume-table">
 
         <thead>
 
@@ -132,7 +147,8 @@ resume.status === "Excellent"
 
 </tbody>
 
-      </table>
+        </table>
+      </div>
       <ResumePreviewModal
     resume={selectedResume}
     onClose={() => setSelectedResume(null)}

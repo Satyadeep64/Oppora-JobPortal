@@ -2,13 +2,19 @@ import ATSScoreCard from "./ATSScoreCard";
 import "./ResumeDashboard.css";
 
 const ResumeDashboard = ({ result }) => {
+  const skills = Array.isArray(result?.skills) ? result.skills : [];
+  const missing = Array.isArray(result?.missing) ? result.missing : [];
+  const suggestions = Array.isArray(result?.suggestions) ? result.suggestions : [];
+  const score = result?.score || 0;
+  const feedback = result?.feedback || "No feedback provided.";
+
   return (
     <div className="dashboard-container">
 
       {/* Left Sidebar */}
       <div className="dashboard-sidebar">
 
-        <ATSScoreCard score={result.score} />
+        <ATSScoreCard score={score} />
 
         <div className="summary-card">
           <h4>Resume Summary</h4>
@@ -19,17 +25,17 @@ const ResumeDashboard = ({ result }) => {
 
           <div className="summary-item">
             <span>Strengths</span>
-            <strong>{result.skills.length}</strong>
+            <strong>{skills.length}</strong>
           </div>
 
           <div className="summary-item">
             <span>Missing Skills</span>
-            <strong>{result.missing.length}</strong>
+            <strong>{missing.length}</strong>
           </div>
 
           <div className="summary-item">
             <span>Suggestions</span>
-            <strong>{result.suggestions.length}</strong>
+            <strong>{suggestions.length}</strong>
           </div>
 
         </div>
@@ -46,7 +52,7 @@ const ResumeDashboard = ({ result }) => {
 
     <div className="tag-container">
 
-      {result.skills.map((item, index) => (
+      {skills.map((item, index) => (
 
         <span
           key={index}
@@ -68,7 +74,7 @@ const ResumeDashboard = ({ result }) => {
 
     <div className="tag-container">
 
-      {result.missing.map((item, index) => (
+      {missing.map((item, index) => (
 
         <span
           key={index}
@@ -90,7 +96,7 @@ const ResumeDashboard = ({ result }) => {
 
     <ul>
 
-      {result.suggestions.map((item, index) => (
+      {suggestions.map((item, index) => (
 
         <li key={index}>
           {item}
@@ -109,7 +115,7 @@ const ResumeDashboard = ({ result }) => {
 
     <p className="feedback">
 
-      {result.feedback}
+      {feedback}
 
     </p>
     </div>
