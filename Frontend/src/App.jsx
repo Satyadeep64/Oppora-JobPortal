@@ -27,6 +27,8 @@ import PatternDetails from "./pages/PatternDetails/PatternDetails";
 import AIMockInterview from "./pages/AIMockInterview/AIMockInterview";
 import CareerPath from "./pages/CareerPath/CareerPath";
 
+import CoursesPage from "./components/Courses/CoursesPage";
+
 const App = () => {
   const [loading,setLoading] = useState(true);
 
@@ -70,6 +72,9 @@ const App = () => {
         <Route path="/resume-builder" element={<ResumeBuilder/>}/>
         <Route path="/blogs" element={<CandidateBlogs/>}/>
         <Route path="/mock-interview" element={<AIMockInterview/>}/>
+
+         <Route path="/courses" element={<CoursesPage />} />
+         
         <Route path="/career-path" element={<CareerPath/>}/>
         <Route path="/awards" element={<CareerPath/>}/>
         <Route path="/footer" element={<Footer />}/>

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Oppora.API.Data;
 
@@ -11,9 +12,11 @@ using Oppora.API.Data;
 namespace Oppora.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260802192243_AddCourseTable")]
+    partial class AddCourseTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,7 +52,7 @@ namespace Oppora.API.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Applications", (string)null);
+                    b.ToTable("Applications");
                 });
 
             modelBuilder.Entity("Oppora.API.Models.BlogComment", b =>
@@ -81,7 +84,7 @@ namespace Oppora.API.Migrations
 
                     b.HasIndex("BlogPostId");
 
-                    b.ToTable("BlogComments", (string)null);
+                    b.ToTable("BlogComments");
                 });
 
             modelBuilder.Entity("Oppora.API.Models.BlogPost", b =>
@@ -125,7 +128,7 @@ namespace Oppora.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("BlogPosts", (string)null);
+                    b.ToTable("BlogPosts");
                 });
 
             modelBuilder.Entity("Oppora.API.Models.Course", b =>
@@ -158,7 +161,7 @@ namespace Oppora.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Courses", (string)null);
+                    b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("Oppora.API.Models.Notification", b =>
@@ -192,7 +195,7 @@ namespace Oppora.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Notifications", (string)null);
+                    b.ToTable("Notifications");
                 });
 
             modelBuilder.Entity("Oppora.API.Models.Opportunity", b =>
@@ -203,8 +206,7 @@ namespace Oppora.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CompanyLogo")
-                        .HasColumnType("nvarchar(max)");
+
 
                     b.Property<string>("CompanyName")
                         .IsRequired()
@@ -258,7 +260,7 @@ namespace Oppora.API.Migrations
 
                     b.HasIndex("RecruiterId");
 
-                    b.ToTable("Opportunities", (string)null);
+                    b.ToTable("Opportunities");
                 });
 
             modelBuilder.Entity("Oppora.API.Models.Resume", b =>
@@ -331,7 +333,7 @@ namespace Oppora.API.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Resumes", (string)null);
+                    b.ToTable("Resumes");
                 });
 
             modelBuilder.Entity("Oppora.API.Models.User", b =>
@@ -401,7 +403,7 @@ namespace Oppora.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Oppora.API.Models.Application", b =>
