@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Oppora.API.Data;
 using Oppora.API.Services;
+using Oppora.API.Session;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,18 +16,26 @@ builder.Services.AddCors(options =>
         policy =>
         {
             policy
-            .SetIsOriginAllowed(_ => true)
-            .AllowAnyHeader()
-            .AllowAnyMethod();
+                .SetIsOriginAllowed(_ => true)
+                .AllowAnyHeader()
+                .AllowAnyMethod();
         });
 });
 
 // Controllers
 builder.Services.AddControllers();
 
+// HttpClient
+builder.Services.AddHttpClient();
+
 // Services
 builder.Services.AddScoped<CloudinaryService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+
+// Mock Test Services
+builder.Services.AddSingleton<TestSessionManager>();
+builder.Services.AddScoped<GeminiService>();
+builder.Services.AddScoped<MockTestService>();
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
@@ -116,9 +125,13 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors("AllowReact");
+
 app.UseStaticFiles();
+
 app.UseAuthentication();
+
 app.UseAuthorization();
+
 app.MapControllers();
 
 app.Run();

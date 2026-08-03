@@ -92,7 +92,7 @@ const Sidebar = () => {
                 </NavLink>
 
 
-                <NavLink to={isRecruiter ? "/interviews" : "/mock-tests"}>
+                <NavLink to={isRecruiter ? "/interviews" : "/mocktest"}>
                     <FaClipboardCheck/>
                     {isRecruiter ? "Schedule Interviews" : "Mock Tests"}
                 </NavLink>
