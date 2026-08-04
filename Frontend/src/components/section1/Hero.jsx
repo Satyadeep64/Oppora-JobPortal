@@ -36,7 +36,7 @@ const Hero = () => {
   const candidateCards = [
     {
       title: "Jobs",
-      subtitle: "10,000+ Active Roles",
+     
       icon: <BriefcaseBusiness size={24} />,
       path: "/jobs",
       badge: "Hot",
@@ -44,17 +44,17 @@ const Hero = () => {
       accent: "#3b82f6"
     },
     {
-      title: "Internships",
-      subtitle: "Paid & Remote Positions",
+      title: "Resume Builder",
+      
       icon: <GraduationCap size={24} />,
-      path: "/internships",
+      path: "/resume-builder",
       badge: "Trending",
       color: "from-emerald-500 to-teal-600",
       accent: "#10b981"
     },
     {
       title: "Competitions",
-      subtitle: "Win Cash & Hiring Perks",
+      
       icon: <Trophy size={24} />,
       path: "/competitions",
       badge: "₹50L+ Prizes",
@@ -63,7 +63,7 @@ const Hero = () => {
     },
     {
       title: "AI Interview",
-      subtitle: "Real-time Mock Practice",
+      
       icon: <Bot size={24} />,
       path: "/ai-interview",
       badge: "AI Powered",
@@ -72,7 +72,7 @@ const Hero = () => {
     },
     {
       title: "Courses",
-      subtitle: "Upskill with Top Mentors",
+      
       icon: <BookOpen size={24} />,
       path: "/courses",
       badge: "Certifications",
@@ -81,8 +81,8 @@ const Hero = () => {
     },
     {
       title: "Resume Analyzer",
-      subtitle: "Instant ATS Score Check",
-      icon: <FileText size={24} />,
+      
+      icon: <FileText size={40} />,
       path: "/resume-analyzer",
       badge: "Free Check",
       color: "from-cyan-500 to-blue-600",

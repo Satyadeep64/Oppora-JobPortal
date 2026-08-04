@@ -35,6 +35,7 @@
     transform: translateY(100%);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -251,7 +252,9 @@
 }
 
 /* Loading & Empty States */
-.blogs-loading, .blogs-error, .empty-blogs {
+.blogs-loading,
+.blogs-error,
+.empty-blogs {
   text-align: center;
   padding: 60px 20px;
   background: #ffffff;
@@ -276,7 +279,9 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Blog Cards Feed */
@@ -496,9 +501,17 @@
 }
 
 @keyframes pulseVote {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.15); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .secondary-actions {
@@ -550,8 +563,15 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-6px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .comments-section h4 {
@@ -687,8 +707,15 @@
 }
 
 @keyframes modalScale {
-  from { transform: scale(0.92); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .modal-header {

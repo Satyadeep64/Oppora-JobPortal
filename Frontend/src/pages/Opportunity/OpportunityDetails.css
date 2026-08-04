@@ -1,27 +1,28 @@
 /* ================================
    PAGE
 ================================ */
-body{
-    margin:0;
-    font-family:Inter,Arial,sans-serif;
-    background:#f3f4f6;
+body {
+    margin: 0;
+    font-family: Inter, Arial, sans-serif;
+    background: #f3f4f6;
 }
 
 
-body:has(.opportunity-page.dark){
+body:has(.opportunity-page.dark) {
 
-    background:#0f172a;
+    background: #0f172a;
 
 }
+
 .opportunity-page {
 
-    min-height:100vh;
-    padding:40px;
+    min-height: 100vh;
+    padding: 40px;
 
-    background:#f3f4f6;
-    color:#111827;
+    background: #f3f4f6;
+    color: #111827;
 
-    transition:0.3s ease;
+    transition: 0.3s ease;
 }
 
 
@@ -29,8 +30,8 @@ body:has(.opportunity-page.dark){
 
 .opportunity-page.dark {
 
-    background:#0f172a;
-    color:#f8fafc;
+    background: #0f172a;
+    color: #f8fafc;
 
 }
 
@@ -42,8 +43,8 @@ body:has(.opportunity-page.dark){
 
 .opportunity-container {
 
-    max-width:1000px;
-    margin:auto;
+    max-width: 1000px;
+    margin: auto;
 
 }
 
@@ -55,27 +56,27 @@ body:has(.opportunity-page.dark){
 
 .back-btn {
 
-    display:flex;
-    align-items:center;
-    gap:8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
-    border:none;
-    background:transparent;
+    border: none;
+    background: transparent;
 
-    color:#2563eb;
+    color: #2563eb;
 
-    font-size:16px;
+    font-size: 16px;
 
-    cursor:pointer;
+    cursor: pointer;
 
-    margin-bottom:25px;
+    margin-bottom: 25px;
 
 }
 
 
 .opportunity-page.dark .back-btn {
 
-    color:#93c5fd;
+    color: #93c5fd;
 
 }
 
@@ -89,16 +90,16 @@ body:has(.opportunity-page.dark){
 .opportunity-card {
 
 
-    background:#ffffff;
+    background: #ffffff;
 
-    color:#111827;
+    color: #111827;
 
-    padding:40px;
+    padding: 40px;
 
-    border-radius:24px;
+    border-radius: 24px;
 
     box-shadow:
-    0 15px 35px rgba(0,0,0,0.08);
+        0 15px 35px rgba(0, 0, 0, 0.08);
 
 }
 
@@ -107,12 +108,12 @@ body:has(.opportunity-page.dark){
 .opportunity-page.dark .opportunity-card {
 
 
-    background:#1e293b;
+    background: #1e293b;
 
-    color:#f8fafc;
+    color: #f8fafc;
 
     box-shadow:
-    0 15px 40px rgba(0,0,0,0.5);
+        0 15px 40px rgba(0, 0, 0, 0.5);
 
 }
 
@@ -129,15 +130,15 @@ body:has(.opportunity-page.dark){
 .opportunity-hero {
 
 
-    display:flex;
+    display: flex;
 
-    justify-content:space-between;
+    justify-content: space-between;
 
-    align-items:center;
+    align-items: center;
 
-    padding-bottom:30px;
+    padding-bottom: 30px;
 
-    border-bottom:1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
 
 }
 
@@ -146,7 +147,7 @@ body:has(.opportunity-page.dark){
 .opportunity-page.dark .opportunity-hero {
 
 
-    border-color:#334155;
+    border-color: #334155;
 
 }
 
@@ -155,19 +156,18 @@ body:has(.opportunity-page.dark){
 .opportunity-hero h1 {
 
 
-    font-size:36px;
+    font-size: 36px;
 
-    color:#111827;
+    color: #111827;
 
 }
 
 
 
-.opportunity-page.dark 
-.opportunity-hero h1 {
+.opportunity-page.dark .opportunity-hero h1 {
 
 
-    color:white;
+    color: white;
 
 }
 
@@ -177,16 +177,15 @@ body:has(.opportunity-page.dark){
 .opportunity-hero h3 {
 
 
-    color:#2563eb;
+    color: #2563eb;
 
 }
 
 
-.opportunity-page.dark 
-.opportunity-hero h3 {
+.opportunity-page.dark .opportunity-hero h3 {
 
 
-    color:#60a5fa;
+    color: #60a5fa;
 
 }
 
@@ -195,17 +194,16 @@ body:has(.opportunity-page.dark){
 .tagline {
 
 
-    color:#6b7280;
+    color: #6b7280;
 
 }
 
 
 
-.opportunity-page.dark 
-.tagline {
+.opportunity-page.dark .tagline {
 
 
-    color:#cbd5e1;
+    color: #cbd5e1;
 
 }
 
@@ -217,21 +215,21 @@ body:has(.opportunity-page.dark){
 .hero-icon {
 
 
-    height:100px;
-    width:100px;
+    height: 100px;
+    width: 100px;
 
-    border-radius:50%;
+    border-radius: 50%;
 
-    display:flex;
+    display: flex;
 
-    align-items:center;
+    align-items: center;
 
-    justify-content:center;
+    justify-content: center;
 
 
-    background:#dbeafe;
+    background: #dbeafe;
 
-    color:#2563eb;
+    color: #2563eb;
 
 
 }
@@ -241,9 +239,9 @@ body:has(.opportunity-page.dark){
 .opportunity-page.dark .hero-icon {
 
 
-    background:#1e40af;
+    background: #1e40af;
 
-    color:white;
+    color: white;
 
 }
 
@@ -261,13 +259,13 @@ body:has(.opportunity-page.dark){
 .details-grid {
 
 
-    margin:35px 0;
+    margin: 35px 0;
 
-    display:grid;
+    display: grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
 
-    gap:20px;
+    gap: 20px;
 
 
 }
@@ -277,33 +275,32 @@ body:has(.opportunity-page.dark){
 .detail-box {
 
 
-    display:flex;
+    display: flex;
 
-    align-items:center;
+    align-items: center;
 
-    gap:15px;
-
-
-    padding:20px;
-
-    border-radius:15px;
+    gap: 15px;
 
 
-    background:#f8fafc;
+    padding: 20px;
 
-    color:#111827;
+    border-radius: 15px;
+
+
+    background: #f8fafc;
+
+    color: #111827;
 
 }
 
 
 
-.opportunity-page.dark 
-.detail-box {
+.opportunity-page.dark .detail-box {
 
 
-    background:#334155;
+    background: #334155;
 
-    color:white;
+    color: white;
 
 }
 
@@ -313,16 +310,15 @@ body:has(.opportunity-page.dark){
 .detail-box svg {
 
 
-    color:#2563eb;
+    color: #2563eb;
 
 }
 
 
-.opportunity-page.dark
-.detail-box svg {
+.opportunity-page.dark .detail-box svg {
 
 
-    color:#93c5fd;
+    color: #93c5fd;
 
 }
 
@@ -332,21 +328,20 @@ body:has(.opportunity-page.dark){
 .detail-box p {
 
 
-    margin:0;
+    margin: 0;
 
-    font-size:14px;
+    font-size: 14px;
 
-    color:#64748b;
+    color: #64748b;
 
 }
 
 
 
-.opportunity-page.dark
-.detail-box p {
+.opportunity-page.dark .detail-box p {
 
 
-    color:#cbd5e1;
+    color: #cbd5e1;
 
 }
 
@@ -357,17 +352,16 @@ body:has(.opportunity-page.dark){
 .detail-box strong {
 
 
-    color:#111827;
+    color: #111827;
 
 }
 
 
 
-.opportunity-page.dark
-.detail-box strong {
+.opportunity-page.dark .detail-box strong {
 
 
-    color:white;
+    color: white;
 
 }
 
@@ -385,7 +379,7 @@ body:has(.opportunity-page.dark){
 .opportunity-section {
 
 
-    margin-top:35px;
+    margin-top: 35px;
 
 }
 
@@ -394,17 +388,16 @@ body:has(.opportunity-page.dark){
 .opportunity-section h2 {
 
 
-    color:#111827;
+    color: #111827;
 
 }
 
 
 
-.opportunity-page.dark 
-.opportunity-section h2 {
+.opportunity-page.dark .opportunity-section h2 {
 
 
-    color:white;
+    color: white;
 
 }
 
@@ -415,19 +408,18 @@ body:has(.opportunity-page.dark){
 .description {
 
 
-    line-height:1.8;
+    line-height: 1.8;
 
-    color:#4b5563;
+    color: #4b5563;
 
 }
 
 
 
-.opportunity-page.dark 
-.description {
+.opportunity-page.dark .description {
 
 
-    color:#e2e8f0;
+    color: #e2e8f0;
 
 }
 
@@ -446,11 +438,11 @@ body:has(.opportunity-page.dark){
 .skills-container {
 
 
-    display:flex;
+    display: flex;
 
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 
-    gap:12px;
+    gap: 12px;
 
 }
 
@@ -459,28 +451,27 @@ body:has(.opportunity-page.dark){
 .skill {
 
 
-    padding:8px 16px;
+    padding: 8px 16px;
 
-    border-radius:20px;
+    border-radius: 20px;
 
 
-    background:#dbeafe;
+    background: #dbeafe;
 
-    color:#1d4ed8;
+    color: #1d4ed8;
 
-    font-weight:600;
+    font-weight: 600;
 
 }
 
 
 
-.opportunity-page.dark
-.skill {
+.opportunity-page.dark .skill {
 
 
-    background:#1e3a8a;
+    background: #1e3a8a;
 
-    color:#dbeafe;
+    color: #dbeafe;
 
 }
 
@@ -499,9 +490,9 @@ body:has(.opportunity-page.dark){
 .points {
 
 
-    padding:0;
+    padding: 0;
 
-    list-style:none;
+    list-style: none;
 
 }
 
@@ -510,26 +501,25 @@ body:has(.opportunity-page.dark){
 .points li {
 
 
-    display:flex;
+    display: flex;
 
-    align-items:center;
+    align-items: center;
 
-    gap:10px;
+    gap: 10px;
 
-    margin:15px 0;
+    margin: 15px 0;
 
 
-    color:#475569;
+    color: #475569;
 
 }
 
 
 
-.opportunity-page.dark
-.points li {
+.opportunity-page.dark .points li {
 
 
-    color:#e2e8f0;
+    color: #e2e8f0;
 
 }
 
@@ -538,7 +528,7 @@ body:has(.opportunity-page.dark){
 .points svg {
 
 
-    color:#22c55e;
+    color: #22c55e;
 
 }
 
@@ -557,11 +547,11 @@ body:has(.opportunity-page.dark){
 .eligibility {
 
 
-    display:flex;
+    display: flex;
 
-    gap:20px;
+    gap: 20px;
 
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 
 }
 
@@ -570,31 +560,30 @@ body:has(.opportunity-page.dark){
 .eligibility p {
 
 
-    display:flex;
+    display: flex;
 
-    align-items:center;
+    align-items: center;
 
-    gap:10px;
-
-
-    padding:15px 20px;
-
-    border-radius:12px;
+    gap: 10px;
 
 
-    background:#f8fafc;
+    padding: 15px 20px;
+
+    border-radius: 12px;
+
+
+    background: #f8fafc;
 
 }
 
 
 
-.opportunity-page.dark
-.eligibility p {
+.opportunity-page.dark .eligibility p {
 
 
-    background:#334155;
+    background: #334155;
 
-    color:white;
+    color: white;
 
 }
 
@@ -613,28 +602,27 @@ body:has(.opportunity-page.dark){
 .apply-section {
 
 
-    margin-top:40px;
+    margin-top: 40px;
 
-    text-align:center;
+    text-align: center;
 
-    padding:35px;
-
-
-    border-radius:20px;
+    padding: 35px;
 
 
-    background:#eff6ff;
+    border-radius: 20px;
+
+
+    background: #eff6ff;
 
 
 }
 
 
 
-.opportunity-page.dark
-.apply-section {
+.opportunity-page.dark .apply-section {
 
 
-    background:#172554;
+    background: #172554;
 
 }
 
@@ -643,17 +631,16 @@ body:has(.opportunity-page.dark){
 .apply-section h2 {
 
 
-    color:#111827;
+    color: #111827;
 
 }
 
 
 
-.opportunity-page.dark
-.apply-section h2 {
+.opportunity-page.dark .apply-section h2 {
 
 
-    color:white;
+    color: white;
 
 }
 
@@ -662,17 +649,16 @@ body:has(.opportunity-page.dark){
 .apply-section p {
 
 
-    color:#475569;
+    color: #475569;
 
 }
 
 
 
-.opportunity-page.dark
-.apply-section p {
+.opportunity-page.dark .apply-section p {
 
 
-    color:#cbd5e1;
+    color: #cbd5e1;
 
 }
 
@@ -683,25 +669,25 @@ body:has(.opportunity-page.dark){
 .apply-btn {
 
 
-    width:250px;
+    width: 250px;
 
-    padding:15px;
+    padding: 15px;
 
-    border:none;
+    border: none;
 
-    border-radius:12px;
-
-
-    background:#2563eb;
-
-    color:white;
+    border-radius: 12px;
 
 
-    font-size:18px;
+    background: #2563eb;
 
-    font-weight:600;
+    color: white;
 
-    cursor:pointer;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    cursor: pointer;
 
 
 }
@@ -711,7 +697,7 @@ body:has(.opportunity-page.dark){
 .apply-btn:hover {
 
 
-    background:#1d4ed8;
+    background: #1d4ed8;
 
 }
 
@@ -726,44 +712,44 @@ body:has(.opportunity-page.dark){
 ================================ */
 
 
-@media(max-width:700px){
+@media(max-width:700px) {
 
 
-.opportunity-page{
+    .opportunity-page {
 
-    padding:20px;
+        padding: 20px;
 
-}
-
-
-.opportunity-card{
-
-    padding:25px;
-
-}
+    }
 
 
-.opportunity-hero{
+    .opportunity-card {
 
-    flex-direction:column;
+        padding: 25px;
 
-    align-items:flex-start;
-
-}
+    }
 
 
-.details-grid{
+    .opportunity-hero {
 
-    grid-template-columns:1fr;
+        flex-direction: column;
 
-}
+        align-items: flex-start;
+
+    }
 
 
-.apply-btn{
+    .details-grid {
 
-    width:100%;
+        grid-template-columns: 1fr;
 
-}
+    }
+
+
+    .apply-btn {
+
+        width: 100%;
+
+    }
 
 
 }
@@ -782,7 +768,7 @@ body:has(.opportunity-page.dark){
 .opportunity-page div,
 .opportunity-page li {
 
-    color:#111827;
+    color: #111827;
 
 }
 
@@ -796,7 +782,7 @@ body:has(.opportunity-page.dark){
 .opportunity-page.dark div,
 .opportunity-page.dark li {
 
-    color:#f8fafc;
+    color: #f8fafc;
 
 }
 
@@ -809,7 +795,7 @@ body:has(.opportunity-page.dark){
 .opportunity-page .detail-box p,
 .opportunity-page .apply-section p {
 
-    color:#475569;
+    color: #475569;
 
 }
 
@@ -819,7 +805,7 @@ body:has(.opportunity-page.dark){
 .opportunity-page.dark .detail-box p,
 .opportunity-page.dark .apply-section p {
 
-    color:#cbd5e1;
+    color: #cbd5e1;
 
 }
 
@@ -831,7 +817,7 @@ body:has(.opportunity-page.dark){
 .opportunity-page h2,
 .opportunity-page h3 {
 
-    color:#111827;
+    color: #111827;
 
 }
 
@@ -840,7 +826,7 @@ body:has(.opportunity-page.dark){
 .opportunity-page.dark h2,
 .opportunity-page.dark h3 {
 
-    color:white;
+    color: white;
 
 }
 
@@ -850,14 +836,14 @@ body:has(.opportunity-page.dark){
 
 .detail-box strong {
 
-    color:#111827;
+    color: #111827;
 
 }
 
 
 .opportunity-page.dark .detail-box strong {
 
-    color:white;
+    color: white;
 
 }
 
@@ -867,14 +853,14 @@ body:has(.opportunity-page.dark){
 
 .skill {
 
-    color:#1d4ed8;
+    color: #1d4ed8;
 
 }
 
 
 .opportunity-page.dark .skill {
 
-    color:#dbeafe;
+    color: #dbeafe;
 
 }
 
@@ -884,14 +870,14 @@ body:has(.opportunity-page.dark){
 
 .back-btn {
 
-    color:#2563eb;
+    color: #2563eb;
 
 }
 
 
 .opportunity-page.dark .back-btn {
 
-    color:#93c5fd;
+    color: #93c5fd;
 
 }
 
@@ -901,9 +887,10 @@ body:has(.opportunity-page.dark){
 
 .apply-btn {
 
-    color:white !important;
+    color: white !important;
 
 }
+
 /* =========================================
    FINAL DARK MODE TEXT VISIBILITY FIX
 ========================================= */
@@ -913,7 +900,7 @@ body:has(.opportunity-page.dark){
 
 .opportunity-page.dark * {
 
-    color:#f8fafc;
+    color: #f8fafc;
 
 }
 
@@ -928,7 +915,7 @@ body:has(.opportunity-page.dark){
 .opportunity-page.dark h4,
 .opportunity-page.dark h5 {
 
-    color:white !important;
+    color: white !important;
 
 }
 
@@ -943,7 +930,7 @@ body:has(.opportunity-page.dark){
 .opportunity-page.dark li,
 .opportunity-page.dark label {
 
-    color:#e2e8f0 !important;
+    color: #e2e8f0 !important;
 
 }
 
@@ -953,18 +940,16 @@ body:has(.opportunity-page.dark){
 
 /* HERO SECTION */
 
-.opportunity-page.dark 
-.opportunity-hero h1 {
+.opportunity-page.dark .opportunity-hero h1 {
 
-    color:white !important;
+    color: white !important;
 
 }
 
 
-.opportunity-page.dark 
-.opportunity-hero h3 {
+.opportunity-page.dark .opportunity-hero h3 {
 
-    color:#60a5fa !important;
+    color: #60a5fa !important;
 
 }
 
@@ -973,10 +958,9 @@ body:has(.opportunity-page.dark){
 
 /* TAGLINE */
 
-.opportunity-page.dark 
-.tagline {
+.opportunity-page.dark .tagline {
 
-    color:#cbd5e1 !important;
+    color: #cbd5e1 !important;
 
 }
 
@@ -986,30 +970,27 @@ body:has(.opportunity-page.dark){
 
 /* DETAIL BOX */
 
-.opportunity-page.dark 
-.detail-box {
+.opportunity-page.dark .detail-box {
 
-    background:#334155 !important;
+    background: #334155 !important;
 
-    color:white !important;
-
-}
-
-
-
-.opportunity-page.dark 
-.detail-box strong {
-
-    color:white !important;
+    color: white !important;
 
 }
 
 
 
-.opportunity-page.dark 
-.detail-box p {
+.opportunity-page.dark .detail-box strong {
 
-    color:#cbd5e1 !important;
+    color: white !important;
+
+}
+
+
+
+.opportunity-page.dark .detail-box p {
+
+    color: #cbd5e1 !important;
 
 }
 
@@ -1019,10 +1000,9 @@ body:has(.opportunity-page.dark){
 
 /* DESCRIPTION */
 
-.opportunity-page.dark 
-.description {
+.opportunity-page.dark .description {
 
-    color:#e2e8f0 !important;
+    color: #e2e8f0 !important;
 
 }
 
@@ -1032,12 +1012,11 @@ body:has(.opportunity-page.dark){
 
 /* SKILLS */
 
-.opportunity-page.dark 
-.skill {
+.opportunity-page.dark .skill {
 
-    background:#1e3a8a !important;
+    background: #1e3a8a !important;
 
-    color:white !important;
+    color: white !important;
 
 }
 
@@ -1046,10 +1025,9 @@ body:has(.opportunity-page.dark){
 
 /* RESPONSIBILITY LIST */
 
-.opportunity-page.dark 
-.points li {
+.opportunity-page.dark .points li {
 
-    color:#e2e8f0 !important;
+    color: #e2e8f0 !important;
 
 }
 
@@ -1059,12 +1037,11 @@ body:has(.opportunity-page.dark){
 
 /* ELIGIBILITY */
 
-.opportunity-page.dark 
-.eligibility p {
+.opportunity-page.dark .eligibility p {
 
-    background:#334155 !important;
+    background: #334155 !important;
 
-    color:white !important;
+    color: white !important;
 
 }
 
@@ -1074,27 +1051,24 @@ body:has(.opportunity-page.dark){
 
 /* APPLY SECTION */
 
-.opportunity-page.dark 
-.apply-section {
+.opportunity-page.dark .apply-section {
 
-    background:#172554 !important;
-
-}
-
-
-
-.opportunity-page.dark 
-.apply-section h2 {
-
-    color:white !important;
+    background: #172554 !important;
 
 }
 
 
-.opportunity-page.dark 
-.apply-section p {
 
-    color:#cbd5e1 !important;
+.opportunity-page.dark .apply-section h2 {
+
+    color: white !important;
+
+}
+
+
+.opportunity-page.dark .apply-section p {
+
+    color: #cbd5e1 !important;
 
 }
 
@@ -1105,7 +1079,7 @@ body:has(.opportunity-page.dark){
 
 .opportunity-page.dark svg {
 
-    color:#93c5fd !important;
+    color: #93c5fd !important;
 
 }
 
@@ -1113,17 +1087,16 @@ body:has(.opportunity-page.dark){
 
 /* BUTTON */
 
-.opportunity-page.dark 
-.apply-btn {
+.opportunity-page.dark .apply-btn {
 
-    color:white !important;
+    color: white !important;
 
 }
 
 
-.opportunity-page.dark *{
+.opportunity-page.dark * {
 
-    color:inherit;
+    color: inherit;
 
 }
 
@@ -1131,39 +1104,39 @@ body:has(.opportunity-page.dark){
 .opportunity-page.dark h1,
 .opportunity-page.dark h2,
 .opportunity-page.dark h3,
-.opportunity-page.dark strong{
+.opportunity-page.dark strong {
 
-    color:#ffffff;
+    color: #ffffff;
 
 }
 
 
-.opportunity-page.dark p{
+.opportunity-page.dark p {
 
-    color:#e2e8f0;
+    color: #e2e8f0;
 
 }
 
 
 .opportunity-page.dark .detail-box,
-.opportunity-page.dark .eligibility p{
+.opportunity-page.dark .eligibility p {
 
-    background:#334155;
+    background: #334155;
 
-    color:white;
-
-}
-
-
-.opportunity-page.dark .description{
-
-    color:#e2e8f0;
+    color: white;
 
 }
 
 
-.opportunity-page.dark .apply-section p{
+.opportunity-page.dark .description {
 
-    color:#cbd5e1;
+    color: #e2e8f0;
+
+}
+
+
+.opportunity-page.dark .apply-section p {
+
+    color: #cbd5e1;
 
 }
