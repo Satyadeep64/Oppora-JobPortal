@@ -13,7 +13,6 @@ import {
     FaChartLine, 
     FaUser,
     FaGift,
-    FaBookOpen,
     FaAward,
     FaCog,
     FaPlus
@@ -85,13 +84,13 @@ const Sidebar = () => {
     </NavLink>
 
 
-                <NavLink to="/resume-builder">
+                <NavLink to={isRecruiter ? "/create-test" : "/resume-analyzer"}>
                     <FaUserTie/>
-                    Resume Builder
+                    {isRecruiter ? "Create Assessment" : "AI Resume Analyzer"}
                 </NavLink>
 
 
-                <NavLink to={isRecruiter ? "/interviews" : "/mocktest"}>
+                <NavLink to={isRecruiter ? "/interviews" : "/mock-tests"}>
                     <FaClipboardCheck/>
                     {isRecruiter ? "Schedule Interviews" : "Mock Tests"}
                 </NavLink>
@@ -152,17 +151,10 @@ const Sidebar = () => {
                 </h5>
 
 
-                {!isRecruiter ? (
-                    <NavLink to="/blogs">
-                        <FaBookOpen />
-                        Candidate Blogs
-                    </NavLink>
-                ) : (
-                    <NavLink to="/referrals">
-                        <FaGift />
-                        Referrals
-                    </NavLink>
-                )}
+                <NavLink to="/referrals">
+                    <FaGift/>
+                    Referrals
+                </NavLink>
 
 
                 <NavLink to="/awards">

@@ -2,15 +2,39 @@ import React, { useState, useEffect, useRef, memo } from 'react';
 import './LazyImage.css';
 
 /**
+ * Helper to resolve relative backend image URLs (e.g. /uploads/filename.jpg -> http://localhost:5024/uploads/filename.jpg)
+ */
+export const resolveImageUrl = (url) => {
+  if (!url || typeof url !== 'string') return '';
+  const trimmed = url.trim();
+  if (!trimmed) return '';
+
+  if (trimmed.startsWith('http://') || trimmed.startsWith('https://') || trimmed.startsWith('data:')) {
+    return trimmed;
+  }
+
+  if (trimmed.startsWith('/') || trimmed.startsWith('uploads/') || trimmed.startsWith('images/') || trimmed.startsWith('logos/')) {
+    const apiBase = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5024/api';
+    const origin = apiBase.replace(/\/api\/?$/, '');
+    const cleanPath = trimmed.startsWith('/') ? trimmed : `/${trimmed}`;
+    return `${origin}${cleanPath}`;
+  }
+
+  return trimmed;
+};
+
+/**
  * Helper to compress and optimize image URLs dynamically (e.g. Unsplash WebP auto-formatting, HiDPI sizing)
  */
 export const compressImageUrl = (url, width = 800) => {
   if (!url || typeof url !== 'string') return url;
+  const resolved = resolveImageUrl(url);
+  if (!resolved) return url;
 
-  // Unsplash dynamic compression and auto-format (serves WebP/AVIF automatically with optimal quality)
-  if (url.includes('images.unsplash.com')) {
+  // Unsplash dynamic compression and auto-format
+  if (resolved.includes('images.unsplash.com')) {
     try {
-      const parsedUrl = new URL(url);
+      const parsedUrl = new URL(resolved);
       parsedUrl.searchParams.set('auto', 'format');
       parsedUrl.searchParams.set('fit', 'crop');
       parsedUrl.searchParams.set('q', '80');
@@ -19,42 +43,35 @@ export const compressImageUrl = (url, width = 800) => {
       }
       return parsedUrl.toString();
     } catch {
-      return url;
+      return resolved;
     }
   }
 
   // Clearbit logo resolution optimization
-  if (url.includes('logo.clearbit.com')) {
+  if (resolved.includes('logo.clearbit.com')) {
     try {
-      const parsedUrl = new URL(url);
+      const parsedUrl = new URL(resolved);
       parsedUrl.searchParams.set('size', '160');
       return parsedUrl.toString();
     } catch {
-      return url;
+      return resolved;
     }
   }
 
-  return url;
+  return resolved;
 };
 
 /**
- * LazyImage — Robust, production-grade image component that ensures logos and banners display cleanly:
- *  - Immediate initial rendering with native browser loading="lazy" or "eager"
- *  - Handles cached images instantly via complete & naturalWidth checks
- *  - Shimmer skeleton placeholder while loading
- *  - Smooth fade-in transition (opacity: 0 -> 1)
- *  - Reliable fallback handling for 404 or missing URLs
- *  - Enforces object-fit: contain (logos) / cover (banners)
- *  - Maintains 1:1 or custom aspect ratios to prevent Cumulative Layout Shift (CLS)
+ * LazyImage — Production-grade image component with strict size boundaries, shimmer skeleton, and zero overflow
  */
 const LazyImage = memo(({
   src,
   alt = '',
   className = '',
   fallbackSrc = null,
-  onFallback = null,          // called when primary src fails
-  aspectRatio = null,         // e.g. '1/1' for logos, '16/9' for banners
-  objectFit = 'contain',      // default contain for logos
+  onFallback = null,
+  aspectRatio = null,
+  objectFit = 'contain',
   objectPosition = 'center',
   borderRadius = null,
   wrapperClassName = '',
@@ -66,26 +83,22 @@ const LazyImage = memo(({
   const optimizedPrimarySrc = compressImageUrl(src, targetWidth);
   const optimizedFallbackSrc = compressImageUrl(fallbackSrc, targetWidth);
 
-  const [currentSrc, setCurrentSrc] = useState(() => optimizedPrimarySrc || optimizedFallbackSrc);
+  const [currentSrc, setCurrentSrc] = useState(() => optimizedPrimarySrc || optimizedFallbackSrc || '');
   const [status, setStatus] = useState('loading'); // loading | loaded | error
   const imgRef = useRef(null);
 
-  // Sync state if src or fallbackSrc props change
+  // Sync state if primary or fallback src props change
   useEffect(() => {
-    const newSrc = optimizedPrimarySrc || optimizedFallbackSrc;
-    if (newSrc !== currentSrc) {
-      setCurrentSrc(newSrc);
-      setStatus('loading');
-    }
+    const newSrc = optimizedPrimarySrc || optimizedFallbackSrc || '';
+    setCurrentSrc(newSrc);
+    setStatus('loading');
   }, [optimizedPrimarySrc, optimizedFallbackSrc]);
 
-  // Check if image is already loaded from browser cache or fast load
+  // Handle cached images already complete in memory
   useEffect(() => {
     if (imgRef.current && imgRef.current.complete) {
       if (imgRef.current.naturalWidth > 0) {
         setStatus('loaded');
-      } else if (imgRef.current.src && status === 'loading') {
-        handleError();
       }
     }
   }, [currentSrc]);
@@ -108,7 +121,13 @@ const LazyImage = memo(({
     position: 'relative',
     width: '100%',
     height: '100%',
+    maxWidth: '100%',
+    maxHeight: '100%',
     overflow: 'hidden',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    boxSizing: 'border-box',
     ...(aspectRatio ? { aspectRatio } : {}),
     ...(borderRadius ? { borderRadius } : {}),
     ...wrapperStyle,
@@ -128,7 +147,7 @@ const LazyImage = memo(({
       className={`lazy-image-wrapper ${wrapperClassName}`}
       style={wStyle}
     >
-      {/* Shimmer Skeleton Placeholder — shown while loading */}
+      {/* Shimmer Skeleton Placeholder while loading */}
       {status === 'loading' && (
         <div
           className="lazy-image-skeleton"
@@ -148,6 +167,10 @@ const LazyImage = memo(({
             objectPosition,
             width: '100%',
             height: '100%',
+            maxWidth: '100%',
+            maxHeight: '100%',
+            boxSizing: 'border-box',
+            display: 'block',
           }}
           onLoad={handleLoad}
           onError={handleError}
@@ -158,7 +181,7 @@ const LazyImage = memo(({
       )}
 
       {/* Fallback Error State — crisp avatar initials if primary & fallback images fail */}
-      {status === 'error' && (
+      {(status === 'error' || !currentSrc) && (
         <div className="lazy-image-error" aria-label={alt}>
           <svg className="lazy-image-fallback-svg" viewBox="0 0 100 100" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <rect width="100" height="100" fill="#1c4980" rx="12" />

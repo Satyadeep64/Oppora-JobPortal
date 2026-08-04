@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import competitionService from '../services/competitionService';
+import competitionService, { normalizeCompetitionItem } from '../services/competitionService';
 
 export const useCompetitionList = (filters = {}) => {
   const [competitions, setCompetitions] = useState([]);
@@ -26,24 +26,38 @@ export const useCompetitionList = (filters = {}) => {
       }
       setError(null);
 
-      try {
-        const res = await competitionService.getCompetitionsPaged(pageNumber, 50, filters);
+      let res = null;
 
-        if (isCancelled || currentRequestId !== requestIdRef.current) return;
-
-        const newItems = res?.items || (Array.isArray(res) ? res : []);
-        const hasNext = res?.hasNext !== undefined ? res.hasNext : newItems.length >= 50;
-
-        setCompetitions((prev) => (pageNumber === 1 ? newItems : [...prev, ...newItems]));
-        setHasMore(hasNext);
-      } catch (err) {
-        if (isCancelled || currentRequestId !== requestIdRef.current) return;
-        setError(err?.message || 'Unable to connect to Oppora server. Please verify API status.');
-      } finally {
-        if (!isCancelled && currentRequestId === requestIdRef.current) {
-          setLoadingInitial(false);
-          setLoadingMore(false);
+      // 1. Fetch with automatic 1x retry
+      for (let attempt = 1; attempt <= 2; attempt++) {
+        if (isCancelled) break;
+        try {
+          res = await competitionService.getCompetitionsPaged(pageNumber, 50, filters);
+          if (res && Array.isArray(res.items) && res.items.length > 0) {
+            break;
+          }
+        } catch (err) {
+          if (attempt === 1 && !isCancelled) {
+            await new Promise((r) => setTimeout(r, 300));
+          }
         }
+      }
+
+      if (isCancelled) return;
+
+      const rawItems = res?.items || (Array.isArray(res) ? res : []);
+      const normalizedItems = rawItems.map(normalizeCompetitionItem);
+      const hasNext = res?.hasNext !== undefined ? res.hasNext : normalizedItems.length >= 50;
+
+      if (!isCancelled && (currentRequestId === requestIdRef.current || pageNumber === 1)) {
+        setCompetitions((prev) => (pageNumber === 1 ? normalizedItems : [...prev, ...normalizedItems]));
+        setHasMore(hasNext);
+        setError(null);
+      }
+
+      if (!isCancelled) {
+        setLoadingInitial(false);
+        setLoadingMore(false);
       }
     };
 

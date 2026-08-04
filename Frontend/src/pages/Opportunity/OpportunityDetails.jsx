@@ -47,10 +47,6 @@ const handleApply = async()=>{
 
 
     try{
-        console.log("Sending Apply Data",{
- userId:Number(userId),
- opportunityId:opportunity.id
-});
 
         const response = await axios.post(
             "http://localhost:5024/api/Application/apply",
@@ -574,7 +570,6 @@ Submit your application and take the next step towards your career.
 <button 
 className="apply-btn"
 onClick={handleApply}
-
 >
 Apply Now
 </button>

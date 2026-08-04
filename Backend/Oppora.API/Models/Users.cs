@@ -1,4 +1,4 @@
-namespace Oppora.API.Models
+﻿namespace Oppora.API.Models
 {
     public class User
     {
@@ -19,20 +19,12 @@ namespace Oppora.API.Models
         public bool IsActive { get; set; }
 
         // Profile fields
+
         public string? ProfileImage { get; set; }
+
         public string? Resume { get; set; }
+
         public string? Skills { get; set; }
-
-        public string? Phone { get; set; }
-        public string? Location { get; set; }
-        public string? Bio { get; set; }
-        public string? Title { get; set; }
-        public string? LinkedIn { get; set; }
-        public string? GitHub { get; set; }
-        public string? Education { get; set; }
         public ICollection<Application> Applications { get; set; }
-
-        public ICollection<Application> Applications { get; set; } = new List<Application>();
-        public ICollection<Resume> Resumes { get; set; } = new List<Resume>();
     }
 }

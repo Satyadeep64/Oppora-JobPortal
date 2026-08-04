@@ -5,6 +5,41 @@ const pagedCache = new Map();
 const inFlightRequestsMap = new Map();
 const CACHE_TTL_MS = 120000; // 2 Minutes TTL
 
+export const normalizeCompetitionItem = (item) => {
+  if (!item || typeof item !== 'object') return item;
+
+  const title = item.title || item.Title || 'Opportunity';
+  const org = item.organization || item.Organization || item.companyName || 'Oppora Partner';
+
+  const rawLogo = item.logo || item.Logo || item.logoUrl || '';
+  const isPicsum = typeof rawLogo === 'string' && rawLogo.includes('picsum.photos');
+  const logo = rawLogo && !isPicsum 
+    ? rawLogo 
+    : `https://ui-avatars.com/api/?name=${encodeURIComponent(org)}&background=1c4980&color=fff&bold=true&format=png`;
+
+  const banner = item.banner || item.Banner || 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80';
+
+  return {
+    ...item,
+    id: item.id || item.Id,
+    title,
+    organization: org,
+    logo,
+    banner,
+    location: item.location || item.Location || item.mode || 'Online',
+    members: item.members || item.teamSize || item.TeamSize || '1 - 4 Members',
+    categories: Array.isArray(item.categories) && item.categories.length > 0
+      ? item.categories
+      : (Array.isArray(item.tags) && item.tags.length > 0 ? item.tags : [item.category || 'Engineering']),
+    postedDate: item.postedDate || 'Posted recently',
+    daysLeft: item.daysLeft || item.deadline || 'Closing Soon',
+    registeredCount: item.registeredCount || 1200,
+    status: item.status || 'Open',
+    difficulty: item.difficulty || 'Intermediate',
+    popularityBadge: item.popularityBadge || (item.isFeatured ? 'Featured' : null)
+  };
+};
+
 export const competitionService = {
   /**
    * Get all active competitions from backend
@@ -54,7 +89,7 @@ export const competitionService = {
       try {
         const res = await apiClient.get('/competitions/advanced-search', { params });
         if (res && (res.items !== undefined || Array.isArray(res))) {
-          const apiItems = res.items || (Array.isArray(res) ? res : []);
+          const apiItems = (res.items || (Array.isArray(res) ? res : [])).map(normalizeCompetitionItem);
           apiItems.forEach((item) => {
             if (item && item.id) detailCache.set(String(item.id), item);
           });
@@ -84,7 +119,7 @@ export const competitionService = {
       const filterFn = fallbackModule.filterCompetitions || (() => fallbackModule.competitionData || []);
       const filteredData = filterFn(filters);
       const startIndex = (pageNumber - 1) * pageSize;
-      const items = filteredData.slice(startIndex, startIndex + pageSize);
+      const items = filteredData.slice(startIndex, startIndex + pageSize).map(normalizeCompetitionItem);
 
       items.forEach((item) => {
         if (item && item.id) detailCache.set(String(item.id), item);

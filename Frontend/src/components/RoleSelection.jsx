@@ -12,7 +12,7 @@ role
 navigate("/login");
 }
 return (
-<div className={`role-page ${localStorage.getItem("theme")==="dark" ? "dark" : ""}`}>
+<div className="role-page">
 
     <div className="role-box">
 

@@ -1,0 +1,477 @@
+/* Enterprise ATS Design System - Schedule Interview Module */
+:root {
+  --ats-primary: var(--color-primary, #4f46e5);
+  --ats-primary-hover: var(--color-primary-hover, #4338ca);
+  --ats-secondary: #3b82f6;
+  --ats-success: #10b981;
+  --ats-warning: #f59e0b;
+  --ats-danger: #ef4444;
+  --ats-bg: var(--color-bg-page, var(--bg-color, #f8fafc));
+  --ats-card-bg: var(--color-bg-card, var(--card-bg, #ffffff));
+  --ats-border: var(--color-border, var(--border-color, #cbd5e1));
+  --ats-text-main: var(--color-text-main, var(--text-color, #0f172a));
+  --ats-text-muted: var(--color-text-muted, var(--muted-text, #64748b));
+  --ats-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --ats-shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --ats-radius: 14px;
+}
+
+/* Dark Mode Theme Tokens - Inherits from parent theme or [data-theme="dark"] / .dark */
+[data-theme="dark"],
+[data-theme="dark"] .interviews-page,
+.dark,
+.dark .interviews-page,
+.interviews-page.dark,
+body.dark .interviews-page {
+  --ats-primary: #6366f1;
+  --ats-primary-hover: #818cf8;
+  --ats-secondary: #60a5fa;
+  --ats-bg: var(--color-bg-page, var(--bg-color, #0f172a));
+  --ats-card-bg: var(--color-bg-card, var(--card-bg, #1e293b));
+  --ats-border: var(--color-border, var(--border-color, #334155));
+  --ats-text-main: var(--color-text-main, var(--text-color, #f8fafc));
+  --ats-text-muted: var(--color-text-muted, var(--muted-text, #94a3b8));
+  --ats-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --ats-shadow-lg: 0 20px 30px rgba(0, 0, 0, 0.5);
+}
+
+.interviews-page {
+  background-color: var(--ats-bg);
+  color: var(--ats-text-main);
+  min-height: 100vh;
+  padding: 28px 32px;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  box-sizing: border-box;
+}
+
+/* Premium Hero Banner */
+.ats-hero-banner {
+  background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 50%, #2563eb 100%);
+  border-radius: var(--ats-radius);
+  padding: 26px 32px;
+  color: #ffffff;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.ats-hero-banner::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+}
+
+.ats-hero-content h1 {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 0 0 6px 0;
+  color: #ffffff !important;
+}
+
+.ats-hero-content p {
+  font-size: 13.5px;
+  opacity: 0.95;
+  margin: 0;
+  max-width: 620px;
+  color: rgba(255, 255, 255, 0.95) !important;
+  line-height: 1.4;
+}
+
+.ats-hero-cta {
+  background: #ffffff;
+  color: #4f46e5;
+  border: none;
+  border-radius: 10px;
+  padding: 11px 22px;
+  font-size: 13.5px;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+
+.ats-hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  background: #f8fafc;
+}
+
+/* Statistics KPI Cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-kpi-card {
+  background: var(--ats-card-bg);
+  border: 1px solid var(--ats-border);
+  border-radius: var(--ats-radius);
+  padding: 18px 20px;
+  box-shadow: var(--ats-shadow);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.stat-kpi-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--ats-shadow-lg);
+  border-color: var(--ats-primary);
+}
+
+.kpi-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.kpi-data h3 {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0;
+  color: var(--ats-text-main);
+  line-height: 1.2;
+}
+
+.kpi-data p {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--ats-text-muted);
+  text-transform: uppercase;
+  margin: 2px 0 0 0;
+  letter-spacing: 0.5px;
+}
+
+/* Toolbar & Filter Bar */
+.toolbar-container {
+  background: var(--ats-card-bg);
+  border: 1px solid var(--ats-border);
+  border-radius: var(--ats-radius);
+  padding: 14px 20px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  box-shadow: var(--ats-shadow);
+}
+
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Inputs, Selects & Textareas */
+.ats-search-input,
+.ats-select-filter,
+.interviews-page input,
+.interviews-page select,
+.interviews-page textarea,
+.ats-modal-dialog input,
+.ats-modal-dialog select,
+.ats-modal-dialog textarea {
+  background-color: var(--ats-card-bg) !important;
+  border: 1px solid var(--ats-border) !important;
+  color: var(--ats-text-main) !important;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ats-search-input {
+  padding-left: 36px !important;
+  width: 260px;
+}
+
+.ats-select-filter {
+  cursor: pointer;
+}
+
+/* Select Dropdown Option Override for Dark Mode */
+.interviews-page select option,
+.ats-modal-dialog select option {
+  background-color: var(--ats-card-bg) !important;
+  color: var(--ats-text-main) !important;
+}
+
+/* Focus Ring States */
+.ats-search-input:focus,
+.ats-select-filter:focus,
+.interviews-page input:focus,
+.interviews-page select:focus,
+.interviews-page textarea:focus,
+.ats-modal-dialog input:focus,
+.ats-modal-dialog select:focus,
+.ats-modal-dialog textarea:focus {
+  border-color: var(--ats-primary) !important;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2) !important;
+}
+
+.ats-view-tabs {
+  display: flex;
+  background: var(--ats-bg);
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid var(--ats-border);
+}
+
+.view-tab-btn {
+  background: transparent;
+  border: none;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ats-text-muted);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.view-tab-btn.active {
+  background: var(--ats-card-bg);
+  color: var(--ats-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+/* Main Content & Bottom Section Layout */
+.main-content-full-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bottom-audit-log-section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bottom-audit-log-section .audit-log-panel {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+.section-card-title {
+  font-size: 16.5px;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ats-text-main);
+}
+
+.badge-count {
+  background: var(--ats-primary);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+/* Cards & Modals */
+.interview-card,
+.candidate-card,
+.notification-card,
+.audit-log-panel {
+  background: var(--ats-card-bg) !important;
+  border: 1px solid var(--ats-border) !important;
+  color: var(--ats-text-main) !important;
+  border-radius: var(--ats-radius) !important;
+  box-shadow: var(--ats-shadow) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+}
+
+.interview-card:hover,
+.candidate-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: var(--ats-shadow-lg) !important;
+  border-color: var(--ats-primary) !important;
+}
+
+/* Tables & Dark Mode Cells */
+.interviews-page table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--ats-card-bg) !important;
+  color: var(--ats-text-main) !important;
+}
+
+.interviews-page th {
+  background: var(--ats-bg) !important;
+  color: var(--ats-text-muted) !important;
+  border-bottom: 1px solid var(--ats-border) !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 12px 14px;
+}
+
+.interviews-page td {
+  border-bottom: 1px solid var(--ats-border) !important;
+  color: var(--ats-text-main) !important;
+  padding: 12px 14px;
+}
+
+.interviews-page tr:hover td {
+  background: rgba(79, 70, 229, 0.05) !important;
+}
+
+/* Modal Animations & Backdrop */
+@keyframes atsFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes atsModalScaleUp {
+  from { opacity: 0; transform: scale(0.96) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes atsSkeletonPulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 0.9; }
+  100% { opacity: 0.5; }
+}
+
+.ats-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+  animation: atsFadeIn 0.2s ease forwards;
+}
+
+.ats-modal-dialog {
+  background: var(--ats-card-bg) !important;
+  border: 1px solid var(--ats-border) !important;
+  color: var(--ats-text-main) !important;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: var(--ats-shadow-lg);
+  animation: atsModalScaleUp 0.25s ease forwards;
+}
+
+/* Skeleton Loading State */
+.ats-skeleton-loader {
+  background: var(--ats-border);
+  border-radius: 8px;
+  animation: atsSkeletonPulse 1.5s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   Responsive Audit Log Specific Styles (Bottom Full-Width Section)
+   ========================================================================== */
+
+/* Desktop (>768px): Full-Width Responsive Table */
+@media (min-width: 769px) {
+  .audit-mobile-list {
+    display: none !important;
+  }
+
+  .audit-desktop-table {
+    display: block !important;
+    width: 100% !important;
+  }
+}
+
+/* Mobile (<= 768px): Stacked Cards or Scrollable Table down to 320px */
+@media (max-width: 768px) {
+  .interviews-page {
+    padding: 16px;
+  }
+
+  .ats-hero-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .toolbar-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toolbar-left {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ats-search-input {
+    width: 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .audit-log-panel {
+    padding: 14px !important;
+    border-radius: 12px !important;
+    gap: 12px !important;
+  }
+
+  .audit-mobile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .audit-desktop-table {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ats-hero-content h1 {
+    font-size: 22px;
+  }
+}
+

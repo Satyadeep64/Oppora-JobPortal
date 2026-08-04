@@ -261,8 +261,12 @@ setProfile({
 
 
             {
+
                 open &&
-                <div className="pd-dropdown-menu">
+
+
+
+                <div className="profile-popup">
 
 
 

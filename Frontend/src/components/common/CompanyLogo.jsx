@@ -10,8 +10,8 @@ import LazyImage from './LazyImage';
 const CompanyLogo = memo(({
   src,
   organization = 'Oppora',
-  size = 52,
-  borderRadius = '12px',
+  size = 44,
+  borderRadius = '10px',
   className = '',
   wrapperClassName = '',
   eager = true
@@ -21,17 +21,24 @@ const CompanyLogo = memo(({
   const fallbackUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(cleanOrg.substring(0, 2).toUpperCase())}&size=${avatarSize}&background=1c4980&color=fff&bold=true&format=png`;
 
   const finalSrc = src || fallbackUrl;
+  const dimension = typeof size === 'number' ? `${size}px` : size;
 
   return (
     <div 
       className={`company-logo-container ${wrapperClassName}`}
       style={{
-        width: typeof size === 'number' ? `${size}px` : size,
-        height: typeof size === 'number' ? `${size}px` : size,
+        width: dimension,
+        height: dimension,
+        maxWidth: dimension,
+        maxHeight: dimension,
         borderRadius,
         flexShrink: 0,
         overflow: 'hidden',
-        position: 'relative'
+        position: 'relative',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxSizing: 'border-box'
       }}
     >
       <LazyImage

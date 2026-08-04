@@ -44,7 +44,6 @@ namespace Oppora.API.Models
 
         public DateTime Deadline { get; set; }
 
-        public string? CompanyLogo { get; set; }
 
         public DateTime CreatedAt { get; set; }
             = DateTime.UtcNow;

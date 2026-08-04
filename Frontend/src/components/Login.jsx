@@ -124,9 +124,6 @@ useEffect(()=>{
 
 
         console.log("Login Response:", response.data);
-        console.log("API ROLE:", response.data.role);
-console.log("SELECTED ROLE:", selectedRole);
-console.log("USER ID:", response.data.userId);
 
 
 
@@ -151,7 +148,7 @@ console.log("USER ID:", response.data.userId);
 
         // Save Authentication Data
 
-        console.log("Saving local storage...");
+
         localStorage.setItem(
             "token",
             response.data.token
@@ -267,17 +264,7 @@ console.log("USER ID:", response.data.userId);
 
 
   return (
-    <div 
-    className={
-        `parent ${
-            localStorage.getItem("theme")==="dark"
-            ?
-            "dark"
-            :
-            ""
-        }`
-    }
-    >
+    <div className="parent">
       <div className="box">
  
         <div className="loginpic">

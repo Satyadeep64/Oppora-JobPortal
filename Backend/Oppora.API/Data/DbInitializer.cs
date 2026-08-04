@@ -8,45 +8,83 @@ namespace Oppora.API.Data
     {
         public static async Task SeedAsync(AppDbContext context)
         {
-            // Ensure DB schema is created
-            await context.Database.EnsureCreatedAsync();
-
-            // If at least 20 complete competitions already exist with relational data, skip seeding
-            int compCount = await context.Competitions.CountAsync();
-            if (compCount >= 20 && await context.TimelineRounds.AnyAsync())
-            {
-                return;
-            }
-
-            // If fewer than 20 competitions exist (or legacy incomplete data), reset & re-seed dataset
-            if (compCount > 0)
-            {
-                var existingComps = await context.Competitions.ToListAsync();
-                context.Competitions.RemoveRange(existingComps);
-                await context.SaveChangesAsync();
-            }
-
-            string jsonPath = Path.Combine(AppContext.BaseDirectory, "Data", "competitions.json");
-            if (!File.Exists(jsonPath))
-            {
-                jsonPath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "competitions.json");
-            }
-
-            if (!File.Exists(jsonPath))
-            {
-                return;
-            }
-
+            // EnsureCreatedAsync creates all tables defined in the DbContext via EF Core.
+            // This is the correct approach for both MySQL and SQL Server.
             try
             {
+                await context.Database.EnsureCreatedAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[DbInitializer] EnsureCreated notice: {ex.Message}");
+            }
+
+            // Run MySQL-compatible column migrations for any schema gaps
+            await EnsureColumnsMySqlAsync(context);
+
+            // Seed default recruiter user if none exist
+            try
+            {
+                if (!await context.Users.AnyAsync(u => u.Role == "Recruiter" || u.Role == "Admin"))
+                {
+                    context.Users.Add(new User
+                    {
+                        FullName = "Oppora Lead Recruiter",
+                        Email = "opporateam@gmail.com",
+                        Password = "hashed_password",
+                        PasswordHash = "hashed_password",
+                        Role = "Recruiter",
+                        CreatedAt = DateTime.UtcNow
+                    });
+                    await context.SaveChangesAsync();
+                }
+
+                if (!await context.Users.AnyAsync(u => u.Role == "Candidate" || u.Role == "Student"))
+                {
+                    context.Users.Add(new User
+                    {
+                        FullName = "Alex Rivera",
+                        Email = "alex.rivera@example.com",
+                        Password = "hashed_password",
+                        PasswordHash = "hashed_password",
+                        Role = "Candidate",
+                        CreatedAt = DateTime.UtcNow
+                    });
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[DbInitializer] User seeding notice: {ex.Message}");
+            }
+
+            // Skip competition seeding if enough already exist
+            try
+            {
+                int compCount = await context.Competitions.CountAsync();
+                if (compCount >= 20 && await context.TimelineRounds.AnyAsync())
+                    return;
+
+                if (compCount > 0)
+                {
+                    var existingComps = await context.Competitions.ToListAsync();
+                    context.Competitions.RemoveRange(existingComps);
+                    await context.SaveChangesAsync();
+                }
+
+                string jsonPath = Path.Combine(AppContext.BaseDirectory, "Data", "competitions.json");
+                if (!File.Exists(jsonPath))
+                    jsonPath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "competitions.json");
+
+                if (!File.Exists(jsonPath))
+                    return;
+
                 string jsonString = await File.ReadAllTextAsync(jsonPath);
                 using var doc = JsonDocument.Parse(jsonString);
                 var root = doc.RootElement;
 
                 if (root.ValueKind != JsonValueKind.Array)
-                {
                     return;
-                }
 
                 foreach (var el in root.EnumerateArray())
                 {
@@ -89,7 +127,6 @@ namespace Oppora.API.Data
                             else if (v.ValueKind == JsonValueKind.String && int.TryParse(v.GetString(), out int parsedV)) viewsCount = parsedV;
                         }
 
-                        // Organization
                         var orgObj = await context.Organizations.FirstOrDefaultAsync(x => x.Name.ToLower() == orgName.ToLower());
                         if (orgObj == null)
                         {
@@ -98,7 +135,6 @@ namespace Oppora.API.Data
                             await context.SaveChangesAsync();
                         }
 
-                        // Category
                         var catObj = await context.Categories.FirstOrDefaultAsync(x => x.Name.ToLower() == catName.ToLower());
                         if (catObj == null)
                         {
@@ -107,7 +143,6 @@ namespace Oppora.API.Data
                             await context.SaveChangesAsync();
                         }
 
-                        // Location
                         var locObj = await context.Locations.FirstOrDefaultAsync(x => x.Name.ToLower() == locName.ToLower());
                         if (locObj == null)
                         {
@@ -116,7 +151,6 @@ namespace Oppora.API.Data
                             await context.SaveChangesAsync();
                         }
 
-                        // Competition
                         var comp = new Competition
                         {
                             Title = title,
@@ -136,8 +170,7 @@ namespace Oppora.API.Data
                             CreatedAt = DateTime.UtcNow
                         };
 
-                        // Eligibility
-                        List<string> eligList = new List<string>();
+                        List<string> eligList = new();
                         if (el.TryGetProperty("eligibility", out var eligEl) && eligEl.ValueKind == JsonValueKind.Array)
                         {
                             foreach (var item in eligEl.EnumerateArray())
@@ -157,7 +190,6 @@ namespace Oppora.API.Data
                             MaxAge = 35
                         };
 
-                        // Rounds
                         int roundNo = 1;
                         if (el.TryGetProperty("rounds", out var roundsEl) && roundsEl.ValueKind == JsonValueKind.Array)
                         {
@@ -166,7 +198,6 @@ namespace Oppora.API.Data
                                 string rTitle = r.TryGetProperty("title", out var rt) ? rt.GetString() ?? $"Round {roundNo}" : $"Round {roundNo}";
                                 string rDesc = r.TryGetProperty("description", out var rd) ? rd.GetString() ?? "" : "";
                                 string rDateStr = r.TryGetProperty("startDate", out var rsd) ? rsd.GetString() ?? "" : "";
-
                                 DateTime rDate = DateTime.TryParse(rDateStr, out var parsedRDate) ? parsedRDate : DateTime.UtcNow.AddDays(7 * roundNo);
 
                                 comp.TimelineRounds.Add(new TimelineRound
@@ -186,7 +217,6 @@ namespace Oppora.API.Data
                                 string dTitle = dItem.TryGetProperty("title", out var dt) ? dt.GetString() ?? $"Phase {roundNo}" : $"Phase {roundNo}";
                                 string dDesc = dItem.TryGetProperty("description", out var dd) ? dd.GetString() ?? "" : "";
                                 string dDateStr = dItem.TryGetProperty("date", out var ddt) ? ddt.GetString() ?? "" : "";
-
                                 DateTime dDate = DateTime.TryParse(dDateStr, out var parsedDDate) ? parsedDDate : DateTime.UtcNow.AddDays(7 * roundNo);
 
                                 comp.TimelineRounds.Add(new TimelineRound
@@ -200,7 +230,6 @@ namespace Oppora.API.Data
                             }
                         }
 
-                        // Prizes
                         int rankNo = 1;
                         if (el.TryGetProperty("prizes", out var prizesEl) && prizesEl.ValueKind == JsonValueKind.Array)
                         {
@@ -212,9 +241,7 @@ namespace Oppora.API.Data
 
                                 var digits = new string(rewardDesc.Where(char.IsDigit).ToArray());
                                 if (!string.IsNullOrEmpty(digits) && decimal.TryParse(digits, out decimal parsedAmt))
-                                {
                                     amt = parsedAmt;
-                                }
 
                                 comp.Prizes.Add(new Prize
                                 {
@@ -227,7 +254,6 @@ namespace Oppora.API.Data
                             }
                         }
 
-                        // Rules
                         int ruleOrder = 1;
                         if (el.TryGetProperty("rules", out var rulesEl) && rulesEl.ValueKind == JsonValueKind.Array)
                         {
@@ -257,16 +283,13 @@ namespace Oppora.API.Data
                             }
                         }
 
-                        // Tags
-                        List<string> tagNames = new List<string> { catName };
+                        List<string> tagNames = new() { catName };
                         if (el.TryGetProperty("tags", out var tagsEl) && tagsEl.ValueKind == JsonValueKind.Array)
                         {
                             foreach (var tItem in tagsEl.EnumerateArray())
                             {
                                 if (tItem.ValueKind == JsonValueKind.String && !string.IsNullOrWhiteSpace(tItem.GetString()))
-                                {
                                     tagNames.Add(tItem.GetString()!);
-                                }
                             }
                         }
 
@@ -281,9 +304,7 @@ namespace Oppora.API.Data
                             }
 
                             if (!comp.CompetitionTags.Any(ct => ct.TagId == tagObj.Id))
-                            {
                                 comp.CompetitionTags.Add(new CompetitionTag { CompetitionId = comp.Id, TagId = tagObj.Id });
-                            }
                         }
 
                         context.Competitions.Add(comp);
@@ -291,13 +312,99 @@ namespace Oppora.API.Data
                     }
                     catch (Exception itemEx)
                     {
-                        Console.WriteLine($"[DbInitializer] Error seeding item: {itemEx.Message}");
+                        Console.WriteLine($"[DbInitializer] Error seeding competition: {itemEx.Message}");
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"[DbInitializer] Error during db initialization: {ex.Message}");
+                Console.WriteLine($"[DbInitializer] Competition seeding notice: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Runs MySQL-compatible ALTER TABLE statements to add any missing columns
+        /// that EF Core's EnsureCreated may not have added (due to schema drift).
+        /// Uses MySQL's IF NOT EXISTS syntax for ADD COLUMN (MySQL 8.0+).
+        /// </summary>
+        private static async Task EnsureColumnsMySqlAsync(AppDbContext context)
+        {
+            try
+            {
+                // Detect if we're using MySQL by checking the provider name
+                var providerName = context.Database.ProviderName ?? "";
+                if (!providerName.Contains("MySql", StringComparison.OrdinalIgnoreCase) &&
+                    !providerName.Contains("Pomelo", StringComparison.OrdinalIgnoreCase))
+                {
+                    // Not MySQL — skip (SQL Server handled by EnsureCreated)
+                    return;
+                }
+
+                // MySQL 8.0.29+ supports ALTER TABLE IF NOT EXISTS for ADD COLUMN
+                // Wrapped in individual try-catch blocks so one failure doesn't stop others
+                var alterStatements = new[]
+                {
+                    // Interviews table — ensure all critical columns exist
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `CandidateName` VARCHAR(150) NULL;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `CandidateEmail` VARCHAR(150) NULL;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `CandidatePhone` VARCHAR(50) NULL;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `JobRole` VARCHAR(150) NULL;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `Department` VARCHAR(150) NULL;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `Interviewer` VARCHAR(150) NULL;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `InterviewRound` VARCHAR(100) NULL;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `InterviewType` VARCHAR(50) NULL;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `GoogleMeetLink` VARCHAR(500) NULL;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `Notes` TEXT NULL;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `Status` VARCHAR(50) NOT NULL DEFAULT 'Scheduled';",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `OverallStatus` VARCHAR(50) NOT NULL DEFAULT 'Scheduled';",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `InvitationStatus` VARCHAR(50) NOT NULL DEFAULT 'Pending';",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `Duration` INT NOT NULL DEFAULT 45;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `InterviewTime` VARCHAR(50) NULL;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `InterviewDate` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `RecruiterNotes` TEXT NULL;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `CreatedBy` VARCHAR(150) NULL;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `OverallResult` VARCHAR(50) NULL;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `UpdatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `CustomCandidateName` VARCHAR(150) NULL;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `CustomCandidateEmail` VARCHAR(150) NULL;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `CustomJobTitle` VARCHAR(150) NULL;",
+                    "ALTER TABLE `Interviews` ADD COLUMN IF NOT EXISTS `Location` VARCHAR(200) NULL;",
+
+                    // InterviewAudits table — ensure Changes/Details column exists
+                    "ALTER TABLE `InterviewAudits` ADD COLUMN IF NOT EXISTS `Details` VARCHAR(1000) NULL;",
+                    "ALTER TABLE `InterviewAudits` ADD COLUMN IF NOT EXISTS `OldValue` VARCHAR(1000) NULL;",
+                    "ALTER TABLE `InterviewAudits` ADD COLUMN IF NOT EXISTS `NewValue` VARCHAR(1000) NULL;",
+                    "ALTER TABLE `InterviewAudits` ADD COLUMN IF NOT EXISTS `PerformedByName` VARCHAR(150) NULL;",
+                    "ALTER TABLE `InterviewAudits` ADD COLUMN IF NOT EXISTS `PerformedByUserId` INT NOT NULL DEFAULT 0;",
+
+                    // Candidates table extra columns
+                    "ALTER TABLE `Candidates` ADD COLUMN IF NOT EXISTS `Phone` VARCHAR(50) NULL;",
+                    "ALTER TABLE `Candidates` ADD COLUMN IF NOT EXISTS `PhoneNumber` VARCHAR(50) NULL;",
+                    "ALTER TABLE `Candidates` ADD COLUMN IF NOT EXISTS `College` VARCHAR(200) NULL;",
+                    "ALTER TABLE `Candidates` ADD COLUMN IF NOT EXISTS `CurrentCompany` VARCHAR(150) NULL;",
+                    "ALTER TABLE `Candidates` ADD COLUMN IF NOT EXISTS `ExperienceYears` DOUBLE NOT NULL DEFAULT 0;",
+                    "ALTER TABLE `Candidates` ADD COLUMN IF NOT EXISTS `Source` VARCHAR(100) NULL;",
+                    "ALTER TABLE `Candidates` ADD COLUMN IF NOT EXISTS `UpdatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;",
+                    "ALTER TABLE `Candidates` ADD COLUMN IF NOT EXISTS `CreatedOn` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;",
+                    "ALTER TABLE `Candidates` ADD COLUMN IF NOT EXISTS `UserId` INT NULL;",
+                };
+
+                foreach (var sql in alterStatements)
+                {
+                    try
+                    {
+                        await context.Database.ExecuteSqlRawAsync(sql);
+                    }
+                    catch (Exception colEx)
+                    {
+                        // Non-critical — column may already exist or table may not exist yet
+                        Console.WriteLine($"[DbInitializer] Column migration notice: {colEx.Message.Split('\n')[0]}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[DbInitializer] Schema migration notice: {ex.Message}");
             }
         }
     }

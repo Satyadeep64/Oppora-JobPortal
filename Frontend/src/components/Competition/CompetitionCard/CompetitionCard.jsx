@@ -103,6 +103,7 @@ const CompetitionCard = memo(({
             wrapperStyle={{ width: '100%', height: '84px', borderRadius: '12px 12px 0 0', overflow: 'hidden' }}
             objectFit="cover"
             eager={false}
+            fallbackSrc="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80"
           />
         </div>
       )}

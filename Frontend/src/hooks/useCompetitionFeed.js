@@ -1,11 +1,12 @@
 /**
  * useCompetitionFeed Hook
- * Optimized hook handling infinite pagination, request deduplication, memory caching, and URL synchronization.
+ * Optimized hook handling infinite pagination, request deduplication, memory caching, URL synchronization, and robust reload/retry handling.
  */
 
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import competitionApi from '../services/competitionApi';
+import { normalizeCompetitionItem } from '../services/competitionService';
 import { DEFAULT_FILTERS } from '../constants/competitionConstants';
 
 // Client-side cache for paginated competition feeds
@@ -90,22 +91,24 @@ export const useCompetitionFeed = () => {
     }
   }, [activeFiltersJson]);
 
-  // Fetch paginated feed data with deduplication & caching
+  // Fetch paginated feed data with automatic retry, normalization, and deduplication
   useEffect(() => {
     let isCancelled = false;
     const currentRequestId = ++requestIdRef.current;
     const cacheKey = `${activeFiltersJson}_p${pageNumber}`;
 
     const loadData = async () => {
-      // Return cached results if available
+      // Check client-side in-memory cache if available
       if (feedCache.has(cacheKey)) {
         const cached = feedCache.get(cacheKey);
-        setCompetitions((prev) => (pageNumber === 1 ? cached.items : [...prev, ...cached.items]));
-        setHasMore(cached.hasMore);
-        setLoadingInitial(false);
-        setLoadingMore(false);
-        setError(null);
-        return;
+        if (cached && Array.isArray(cached.items) && cached.items.length > 0) {
+          setCompetitions((prev) => (pageNumber === 1 ? cached.items : [...prev, ...cached.items]));
+          setHasMore(cached.hasMore);
+          setLoadingInitial(false);
+          setLoadingMore(false);
+          setError(null);
+          return;
+        }
       }
 
       if (pageNumber === 1) {
@@ -115,40 +118,68 @@ export const useCompetitionFeed = () => {
       }
       setError(null);
 
-      try {
-        const res = await competitionApi.getAdvancedSearch(pageNumber, 50, activeFilters);
+      let fetchedItems = null;
+      let hasNextPage = false;
+      let apiSuccess = false;
 
-        if (isCancelled || currentRequestId !== requestIdRef.current) return;
+      // 1. Primary API Attempt & 1x Automatic Retry on Failure
+      for (let attempt = 1; attempt <= 2; attempt++) {
+        if (isCancelled) break;
+        try {
+          const res = await competitionApi.getAdvancedSearch(pageNumber, 50, activeFilters);
+          if (isCancelled) break;
 
-        const items = res?.items || (Array.isArray(res) ? res : []);
-        const hasNext = res?.hasNext !== undefined ? res.hasNext : items.length >= 50;
+          const rawItems = res?.items || (Array.isArray(res) ? res : []);
+          if (Array.isArray(rawItems)) {
+            fetchedItems = rawItems.map(normalizeCompetitionItem);
+            hasNextPage = res?.hasNext !== undefined ? res.hasNext : fetchedItems.length >= 50;
+            apiSuccess = true;
+            break; // Success on attempt
+          }
+        } catch (err) {
+          if (attempt === 1 && !isCancelled) {
+            // Short 300ms pause before automatic retry
+            await new Promise((r) => setTimeout(r, 300));
+          }
+        }
+      }
 
-        // Store in memory cache
-        feedCache.set(cacheKey, { items, hasMore: hasNext });
+      if (isCancelled) return;
 
-        setCompetitions((prev) => (pageNumber === 1 ? items : [...prev, ...items]));
-        setHasMore(hasNext);
-      } catch (err) {
-        if (isCancelled || currentRequestId !== requestIdRef.current) return;
-
-        // Fallback gracefully to offline dataset
+      // 2. Offline / Fallback Dataset if API failed twice or returned empty
+      if (!apiSuccess || !fetchedItems || fetchedItems.length === 0) {
         try {
           const fallbackModule = await import('../data/competitionData');
           const filterFn = fallbackModule.filterCompetitions || (() => fallbackModule.competitionData || []);
           const filtered = filterFn(activeFilters);
           const startIndex = (pageNumber - 1) * 50;
-          const sliced = filtered.slice(startIndex, startIndex + 50);
+          const sliced = filtered.slice(startIndex, startIndex + 50).map(normalizeCompetitionItem);
 
-          setCompetitions((prev) => (pageNumber === 1 ? sliced : [...prev, ...sliced]));
-          setHasMore(startIndex + 50 < filtered.length);
+          fetchedItems = sliced;
+          hasNextPage = startIndex + 50 < filtered.length;
         } catch {
-          setError(err?.message || 'Unable to connect to Oppora competition server.');
+          if (pageNumber === 1 && (!competitions || competitions.length === 0)) {
+            setError('Unable to load opportunities. Please try again.');
+          }
         }
-      } finally {
-        if (!isCancelled && currentRequestId === requestIdRef.current) {
-          setLoadingInitial(false);
-          setLoadingMore(false);
+      }
+
+      // 3. Update State (Accept if active request OR if initializing page 1 with empty list)
+      if (!isCancelled && (currentRequestId === requestIdRef.current || pageNumber === 1)) {
+        if (fetchedItems && fetchedItems.length > 0) {
+          // Cache successful results
+          feedCache.set(cacheKey, { items: fetchedItems, hasMore: hasNextPage });
+
+          setCompetitions((prev) => (pageNumber === 1 ? fetchedItems : [...prev, ...fetchedItems]));
+          setHasMore(hasNextPage);
+          setError(null);
         }
+      }
+
+      // Always reset loading indicators in finally block
+      if (!isCancelled) {
+        setLoadingInitial(false);
+        setLoadingMore(false);
       }
     };
 

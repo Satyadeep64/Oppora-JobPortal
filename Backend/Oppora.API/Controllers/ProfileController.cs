@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Oppora.API.Data;
 using Oppora.API.Models;
 using Oppora.API.Services;
@@ -33,6 +33,7 @@ namespace Oppora.API.Controllers
                 return NotFound();
             }
 
+
             return Ok(new
             {
                 user.Id,
@@ -41,41 +42,34 @@ namespace Oppora.API.Controllers
                 user.Role,
                 user.ProfileImage,
                 user.Resume,
-                user.Skills,
-                user.Phone,
-                user.Location,
-                user.Bio,
-                user.Title,
-                user.LinkedIn,
-                user.GitHub,
-                user.Education
+                user.Skills
             });
         }
+
+
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProfile(
             int id,
-            [FromBody] DTOs.UpdateProfileDto userData)
+            User userData)
         {
+
             var user = await _context.Users.FindAsync(id);
+
 
             if (user == null)
             {
-                return NotFound(new { message = "User not found" });
+                return NotFound();
             }
 
-            if (userData.FullName != null) user.FullName = userData.FullName;
-            if (userData.Email != null) user.Email = userData.Email;
-            if (userData.Skills != null) user.Skills = userData.Skills;
-            if (userData.Phone != null) user.Phone = userData.Phone;
-            if (userData.Location != null) user.Location = userData.Location;
-            if (userData.Bio != null) user.Bio = userData.Bio;
-            if (userData.Title != null) user.Title = userData.Title;
-            if (userData.LinkedIn != null) user.LinkedIn = userData.LinkedIn;
-            if (userData.GitHub != null) user.GitHub = userData.GitHub;
-            if (userData.Education != null) user.Education = userData.Education;
+
+            user.FullName = userData.FullName;
+            user.Email = userData.Email;
+            user.Skills = userData.Skills;
+
 
             await _context.SaveChangesAsync();
+
 
             return Ok(user);
         }

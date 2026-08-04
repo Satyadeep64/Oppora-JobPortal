@@ -6,6 +6,7 @@ namespace Oppora.API.DTOs
         public string Title { get; set; } = string.Empty;
         public string Organization { get; set; } = string.Empty;
         public string Logo { get; set; } = string.Empty;
+        public string Banner { get; set; } = string.Empty;
         public string Category { get; set; } = string.Empty;
         public string Location { get; set; } = string.Empty;
         public string Mode { get; set; } = "Online";

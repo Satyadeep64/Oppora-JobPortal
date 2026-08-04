@@ -152,12 +152,19 @@ namespace Oppora.API.Services
             int daysAgo = (DateTime.UtcNow - c.CreatedAt).Days;
             string postedDateText = daysAgo > 0 ? $"Posted {daysAgo}d ago" : "Posted today";
 
+            string orgName = c.Organization?.Name ?? "Oppora Host";
+            string logoUrl = !string.IsNullOrWhiteSpace(c.Organization?.LogoUrl) && !c.Organization.LogoUrl.Contains("picsum.photos")
+                ? c.Organization.LogoUrl
+                : $"https://ui-avatars.com/api/?name={Uri.EscapeDataString(orgName)}&background=1c4980&color=fff&bold=true&format=png";
+            string bannerUrl = "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80";
+
             return new CompetitionListDto
             {
                 Id = c.Id,
                 Title = c.Title,
-                Organization = c.Organization?.Name ?? "Oppora Host",
-                Logo = c.Organization?.LogoUrl ?? "https://picsum.photos/200/200?random=1",
+                Organization = orgName,
+                Logo = logoUrl,
+                Banner = bannerUrl,
                 Category = c.Category?.Name ?? "Competitions",
                 Location = c.Location?.Name ?? "Online / India",
                 Mode = c.Mode,
@@ -187,14 +194,20 @@ namespace Oppora.API.Services
             string popBadge = c.IsFeatured ? "Featured" : (c.RegisteredCount >= 30000 ? "Trending" : "Popular");
             int daysAgo = (DateTime.UtcNow - c.CreatedAt).Days;
             string postedDateText = daysAgo > 0 ? $"Posted {daysAgo}d ago" : "Posted today";
+            string orgName = c.Organization?.Name ?? "Oppora Host";
+            string logoUrl = !string.IsNullOrWhiteSpace(c.Organization?.LogoUrl) && !c.Organization.LogoUrl.Contains("picsum.photos")
+                ? c.Organization.LogoUrl
+                : $"https://ui-avatars.com/api/?name={Uri.EscapeDataString(orgName)}&background=1c4980&color=fff&bold=true&format=png";
+            string bannerUrl = "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80";
 
             return new CompetitionDetailDto
             {
                 Id = c.Id,
                 Title = c.Title,
                 Description = c.Description,
-                Organization = c.Organization?.Name ?? "Oppora Host",
-                Logo = c.Organization?.LogoUrl ?? "https://picsum.photos/200/200?random=1",
+                Organization = orgName,
+                Logo = logoUrl,
+                Banner = bannerUrl,
                 Category = c.Category?.Name ?? "Competitions",
                 Location = c.Location?.Name ?? "Online / India",
                 Mode = c.Mode,

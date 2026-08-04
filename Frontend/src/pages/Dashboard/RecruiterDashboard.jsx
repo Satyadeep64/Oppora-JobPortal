@@ -10,8 +10,9 @@ const RecruiterDashboard = () => {
     const navigate = useNavigate();
 
 
-    const [dashboard, setDashboard] = useState(null);
-    const [loading, setLoading] = useState(true);
+    const [dashboard,setDashboard] = useState(null);
+
+    const [loading,setLoading] = useState(true);
 
 
 
@@ -19,19 +20,26 @@ const RecruiterDashboard = () => {
 
 
 
-    const loadDashboard = async () => {
 
-        try {
 
-            const res = await axios.get(
+    const loadDashboard = async()=>{
+
+
+        try{
+
+
+            const response = await axios.get(
+
                 `http://localhost:5024/api/Dashboard/recruiter/${recruiterId}`
+
             );
 
 
-            setDashboard(res.data);
+            setDashboard(response.data);
 
 
-        } catch(error){
+        }
+        catch(error){
 
             console.log(error);
 
@@ -42,7 +50,9 @@ const RecruiterDashboard = () => {
 
         }
 
+
     };
+
 
 
 
@@ -50,9 +60,12 @@ const RecruiterDashboard = () => {
 
     useEffect(()=>{
 
+
         loadDashboard();
 
+
     },[]);
+
 
 
 
@@ -62,17 +75,20 @@ const RecruiterDashboard = () => {
     const deleteOpportunity = async(id)=>{
 
 
-        const confirm = window.confirm(
+        const confirmDelete =
+        window.confirm(
             "Are you sure you want to delete this opportunity?"
         );
 
 
-        if(!confirm)
+        if(!confirmDelete)
             return;
 
 
 
+
         try{
+
 
             await axios.delete(
 
@@ -95,6 +111,7 @@ const RecruiterDashboard = () => {
         catch(error){
 
             console.log(error);
+
             alert("Delete failed");
 
         }
@@ -108,36 +125,17 @@ const RecruiterDashboard = () => {
 
 
 
-    if(loading){
 
-        return (
+    if(loading || !dashboard)
+    {
 
-            <div className="loading">
+        return(
 
+            <h2 className="loading">
                 Loading Dashboard...
+            </h2>
 
-            </div>
-
-        );
-
-    }
-
-
-
-
-
-
-    if(!dashboard){
-
-        return (
-
-            <div className="loading">
-
-                No Dashboard Data Found
-
-            </div>
-
-        );
+        )
 
     }
 
@@ -147,457 +145,534 @@ const RecruiterDashboard = () => {
 
 
 
-    return (
+return(
 
-        <div className="dashboard">
 
+<div className="dashboard">
 
 
-            {/* Header */}
 
-            <div className="dashboard-header">
 
-                <h1>
-                    Recruiter Dashboard
-                </h1>
 
 
-                <p>
-                    Manage your opportunities and connect with talented candidates.
-                </p>
+<div className="dashboard-header">
 
-            </div>
 
+<h1>
+Recruiter Dashboard
+</h1>
 
 
+<p>
+Manage your opportunities and connect with talented candidates.
+</p>
 
 
+</div>
 
 
 
 
-            {/* Statistics */}
 
-            <div className="stats-container">
 
 
-                <div className="stat-card">
 
-                    <h2>
-                        {dashboard.statistics?.totalJobs || 0}
-                    </h2>
 
-                    <p>
-                        Total Opportunities
-                    </p>
+{/* Statistics */}
 
-                </div>
+<div className="stats-container">
 
 
 
+<div className="stat-card">
 
+<h2>
+{dashboard.statistics?.totalJobs || 0}
+</h2>
 
-                <div className="stat-card">
+<p>
+Total Opportunities
+</p>
 
-                    <h2>
-                        {dashboard.statistics?.totalApplications || 0}
-                    </h2>
+</div>
 
-                    <p>
-                        Applications
-                    </p>
 
-                </div>
 
 
+<div className="stat-card">
 
+<h2>
+{dashboard.statistics?.totalApplications || 0}
+</h2>
 
+<p>
+Applications
+</p>
 
-                <div className="stat-card">
+</div>
 
-                    <h2>
-                        {dashboard.statistics?.activeJobs || 0}
-                    </h2>
 
-                    <p>
-                        Active Jobs
-                    </p>
 
-                </div>
 
 
+<div className="stat-card">
 
+<h2>
+{dashboard.statistics?.activeJobs || 0}
+</h2>
 
+<p>
+Active Jobs
+</p>
 
-                <div className="stat-card">
+</div>
 
-                    <h2>
-                        {dashboard.statistics?.shortlisted || 0}
-                    </h2>
 
-                    <p>
-                        Shortlisted
-                    </p>
 
-                </div>
 
 
 
-            </div>
+<div className="stat-card">
 
+<h2>
+{dashboard.statistics?.shortlisted || 0}
+</h2>
 
+<p>
+Shortlisted
+</p>
 
+</div>
 
 
 
+</div>
 
 
 
 
 
-            {/* Actions */}
 
-            <div className="dashboard-section">
 
 
-                <h2>
-                    Quick Actions
-                </h2>
 
+{/* Quick Actions */}
 
 
-                <div className="quick-actions">
+<div className="dashboard-section">
 
 
-                    <button
-                    onClick={()=>navigate("/post-opportunity")}
-                    >
-                        + Post Opportunity
-                    </button>
+<h2>
+Quick Actions
+</h2>
 
 
+<div className="quick-actions">
 
-                    <button
-                    onClick={()=>navigate("/manage-opportunities")}
-                    >
-                        Manage Opportunities
-                    </button>
 
+<button
+onClick={()=>
+navigate("/post-opportunity")
+}
+>
++ Post Opportunity
+</button>
 
 
-                    <button
-                    onClick={()=>navigate("/profile")}
-                    >
-                        Edit Profile
-                    </button>
 
 
 
-                </div>
+<button
+onClick={()=>
+navigate("/manage-opportunities")
+}
+>
+Manage Opportunities
+</button>
 
 
-            </div>
 
 
 
+<button
+onClick={()=>
+navigate("/profile")
+}
+>
+Edit Profile
+</button>
 
 
 
 
+</div>
 
 
-            {/* Opportunities */}
+</div>
 
 
-            <div className="dashboard-section">
 
 
-                <h2>
-                    Recent Opportunities
-                </h2>
 
 
 
-                {
-                    dashboard.opportunities?.length > 0 ?
 
 
-                    dashboard.opportunities.map(job=>(
+{/* Opportunities */}
 
 
-                        <div
-                        className="job-item"
-                        key={job.id}
-                        >
+<div className="dashboard-section">
 
 
-                            <div>
+<h2>
+Recent Opportunities
+</h2>
 
 
-                                <h3>
-                                    {job.title}
-                                </h3>
 
+{
 
-                                <p>
-                                    {job.companyName}
-                                </p>
+dashboard.opportunities?.length === 0 ?
 
+<p>
+No opportunities posted yet.
+</p>
 
-                                <small>
-                                    {job.location} • {job.employmentType}
-                                </small>
 
+:
 
-                            </div>
 
+dashboard.opportunities?.map((job)=>(
 
 
+<div
+className="job-item"
+key={job.id}
+>
 
 
 
-                            <div className="job-right">
+<div>
 
 
-                                <span>
-                                    {job.type}
-                                </span>
+<h3>
+{job.title}
+</h3>
 
 
+<p>
+{job.companyName}
+</p>
 
-                                <div className="job-actions">
 
+<small>
+{job.location} • {job.employmentType}
+</small>
 
-                                    <button
-                                    onClick={()=>
-                                        navigate(`/edit-opportunity/${job.id}`)
-                                    }
-                                    >
-                                        Edit
-                                    </button>
 
+</div>
 
 
 
-                                    <button
-                                    onClick={()=>
-                                        navigate(`/recruiter/opportunity/${job.id}/applicants`)
-                                    }
-                                    >
-                                        View Applicants
-                                    </button>
 
 
 
 
+<div className="job-right">
 
-                                    <button
-                                    onClick={()=>
-                                        deleteOpportunity(job.id)
-                                    }
-                                    >
-                                        Delete
-                                    </button>
 
+<span>
+{job.type}
+</span>
 
-                                </div>
 
 
-                            </div>
 
+<div className="job-actions">
 
 
-                        </div>
+<button
+onClick={()=>
+navigate(
+`/edit-opportunity/${job.id}`
+)
+}
+>
+Edit
+</button>
 
 
-                    ))
 
-                    :
 
-                    <p>
-                        No opportunities posted yet.
-                    </p>
 
 
-                }
+<button
 
+className="view-applicants-btn"
 
+onClick={()=>
+navigate(
+`/recruiter/opportunity/${job.id}/applicants`
+)
+}
 
-            </div>
+>
 
+View Applicants
 
+</button>
 
 
 
 
 
 
+<button
 
+onClick={()=>
+deleteOpportunity(job.id)
+}
 
+>
 
+Delete
 
-            {/* Applications */}
+</button>
 
 
-            <div className="dashboard-section">
 
+</div>
 
-                <h2>
-                    Recent Applications
-                </h2>
 
 
+</div>
 
 
-                {
-                    dashboard.applications?.length > 0 ?
 
+</div>
 
-                    dashboard.applications.map(app=>(
 
+))
 
-                        <div
-                        className="application-card"
-                        key={app.id}
-                        >
 
+}
 
-                            <div>
 
+</div>
 
-                                <h3>
-                                    {
-                                    app.candidate?.fullName ||
-                                    "Candidate"
-                                    }
-                                </h3>
 
 
 
-                                <p>
-                                    {
-                                    app.opportunity?.title ||
-                                    "Opportunity"
-                                    }
-                                </p>
 
 
 
-                                <small>
-                                    Status : {app.status}
-                                </small>
 
 
-                            </div>
 
 
 
+{/* Applications */}
 
 
-                            <button
-                            onClick={()=>
-                                navigate(`/candidate/${app.userId}`)
-                            }
-                            >
 
-                                View Candidate
+<div className="dashboard-section">
 
-                            </button>
 
+<h2>
+Recent Applications
+</h2>
 
 
-                        </div>
 
 
-                    ))
 
+{
 
-                    :
+dashboard.applications?.length === 0 ?
 
-                    <p>
-                        No applications received yet.
-                    </p>
+<p>
+No applications received yet.
+</p>
 
 
-                }
 
+:
 
 
-            </div>
+dashboard.applications?.map((app)=>(
 
 
+<div
 
+className="application-card"
 
+key={app.id}
 
+>
 
 
 
+<div>
 
-            {/* Profile */}
 
+<h3>
 
-            <div className="dashboard-section profile-box">
+{
+app.candidate?.fullName ||
+"Candidate"
 
+}
 
-                <h2>
-                    Recruiter Profile
-                </h2>
+</h3>
 
 
 
 
-                <p>
+<p>
 
-                    <b>Name:</b>{" "}
+{
+app.opportunity?.title ||
+"Opportunity"
 
-                    {
-                    dashboard.profile?.fullName ||
-                    "Not Added"
-                    }
+}
 
-                </p>
+</p>
 
 
 
 
+<small>
 
-                <p>
+Status :
+{app.status}
 
-                    <b>Email:</b>{" "}
+</small>
 
-                    {
-                    dashboard.profile?.email ||
-                    "Not Added"
-                    }
 
-                </p>
+</div>
 
 
 
 
 
-                <p>
 
-                    <b>Posted Opportunities:</b>{" "}
+<button
 
-                    {
-                    dashboard.statistics?.totalJobs || 0
-                    }
+onClick={()=>{
 
-                </p>
+navigate(
+`/candidate/${app.userId}`
+)
 
+}}
 
+>
 
-            </div>
+View Candidate
 
+</button>
 
 
 
 
-        </div>
+</div>
 
 
-    );
+))
+
+
+}
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+{/* Profile */}
+
+
+
+<div className="dashboard-section profile-box">
+
+
+<h2>
+Recruiter Profile
+</h2>
+
+
+
+
+<p>
+
+<b>Name:</b>
+
+{" "}
+
+{
+dashboard.profile?.fullName ||
+"Not Added"
+
+}
+
+</p>
+
+
+
+
+<p>
+
+<b>Email:</b>
+
+{" "}
+
+{
+dashboard.profile?.email ||
+"Not Added"
+
+}
+
+</p>
+
+
+
+
+<p>
+
+<b>Posted Opportunities:</b>
+
+{" "}
+
+{
+dashboard.statistics?.totalJobs || 0
+
+}
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+)
+
+
 
 };
 
