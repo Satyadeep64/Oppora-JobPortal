@@ -1,16 +1,24 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useContext } from "react";
 import { FaSearch, FaBell, FaFilter } from "react-icons/fa";
+import { Sun, Moon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import ProfileDropdown from "../ProfileDropdown/ProfileDropdown";
+import { ThemeContext } from "../../context/ThemeContext";
 import axios from "axios";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const { theme, setTheme } = useContext(ThemeContext);
   const [search, setSearch] = useState("");
   const [showNotification, setShowNotification] = useState(false);
   const [showFilter, setShowFilter] = useState(false);
   const [notifications, setNotifications] = useState([]);
   const [unreadCount, setUnreadCount] = useState(0);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+  };
 
   const placeholders = [
     "Search Jobs...",
@@ -70,8 +78,22 @@ const Navbar = () => {
   }, [charIndex, deleting, index]);
 
   const handleSearch = () => {
-    if (search.trim() === "") return;
-    console.log("Searching for:", search);
+    if (search.trim() === "") {
+      navigate("/jobs");
+      return;
+    }
+    navigate(`/jobs?search=${encodeURIComponent(search.trim())}`);
+  };
+
+  const handleFilterSelect = (filterType, value) => {
+    setShowFilter(false);
+    if (filterType === "employment") {
+      navigate(`/jobs?employment=${encodeURIComponent(value)}`);
+    } else if (filterType === "type") {
+      navigate(`/jobs?type=${encodeURIComponent(value)}`);
+    } else {
+      navigate("/jobs");
+    }
   };
 
   const handleToggleNotifications = async () => {
@@ -126,7 +148,7 @@ const Navbar = () => {
             }
           }}
         />
-        <button onClick={handleSearch}>
+        <button onClick={handleSearch} type="button">
           <FaSearch />
         </button>
       </div>
@@ -135,6 +157,7 @@ const Navbar = () => {
         <button
           className="filter-btn"
           onClick={() => setShowFilter(!showFilter)}
+          type="button"
         >
           <FaFilter />
           Filters
@@ -143,27 +166,37 @@ const Navbar = () => {
         {showFilter && (
           <div className="filter-box">
             <h4>Filter Jobs</h4>
-            <label>
-              <input type="checkbox" />
+            <label onClick={() => handleFilterSelect("employment", "Full Time")}>
+              <input type="checkbox" readOnly />
               Full Time
             </label>
-            <label>
-              <input type="checkbox" />
+            <label onClick={() => handleFilterSelect("type", "Internship")}>
+              <input type="checkbox" readOnly />
               Internship
             </label>
-            <label>
-              <input type="checkbox" />
+            <label onClick={() => handleFilterSelect("employment", "Remote")}>
+              <input type="checkbox" readOnly />
               Remote
             </label>
-            <label>
-              <input type="checkbox" />
-              Work From Home
+            <label onClick={() => handleFilterSelect("employment", "Hybrid")}>
+              <input type="checkbox" readOnly />
+              Work From Home / Hybrid
             </label>
           </div>
         )}
       </div>
 
       <div className="nav-right">
+        {/* Dark / Light theme toggle button to the left of notifications */}
+        <button
+          className="theme-toggle-btn"
+          onClick={toggleTheme}
+          title={theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+          type="button"
+        >
+          {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+        </button>
+
         {!token ? (
           <>
             <button className="nav-login" onClick={() => navigate("/login")}>
@@ -175,11 +208,11 @@ const Navbar = () => {
           </>
         ) : (
           <div className="notification">
-            <button className="notification-btn yellow-bell-btn" onClick={handleToggleNotifications}>
+            <button className="notification-btn yellow-bell-btn" onClick={handleToggleNotifications} type="button">
               <FaBell className="yellow-bell-icon" />
               {unreadCount > 0 && (
                 <span className="notification-badge-count">
-                  {unreadCount > 9 ? "9+" : unreadCount}
+                  {unreadCount > 5 ? "5+" : unreadCount}
                 </span>
               )}
             </button>
@@ -187,7 +220,7 @@ const Navbar = () => {
               <div className="notification-box">
                 <h4>Notifications</h4>
                 {notifications.length > 0 ? (
-                  notifications.map((n) => (
+                  notifications.slice(0, 5).map((n) => (
                     <div key={n.id} className="notification-item-card">
                       <strong>{n.title}</strong>
                       <p>{n.message}</p>

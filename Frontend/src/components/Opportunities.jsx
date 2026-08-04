@@ -192,8 +192,18 @@ const TrendingOpportunities = () => {
   const jobsList = filteredData.filter((i) => i.type === "Job");
   const internshipsList = filteredData.filter((i) => i.type === "Internship");
 
+  const resolveCompanyLogoUrl = (logoPath) => {
+    if (!logoPath) return null;
+    if (logoPath.startsWith("http://") || logoPath.startsWith("https://") || logoPath.startsWith("data:")) {
+      return logoPath;
+    }
+    return `http://localhost:5024${logoPath.startsWith('/') ? '' : '/'}${logoPath}`;
+  };
+
   const OpportunityCard = ({ job }) => {
     const isBookmarked = bookmarkedIds.includes(job.id);
+    const logoUrl = resolveCompanyLogoUrl(job.companyLogo);
+    const [imgError, setImgError] = useState(false);
 
     return (
       <div className="trend-card">
@@ -221,11 +231,12 @@ const TrendingOpportunities = () => {
 
         {/* Company & Job Title Row */}
         <div className="trend-card-info-row">
-          {job.companyLogo ? (
+          {logoUrl && !imgError ? (
             <img
-              src={`http://localhost:5024${job.companyLogo}`}
+              src={logoUrl}
               alt="company logo"
               className="company-logo"
+              onError={() => setImgError(true)}
             />
           ) : (
             <div className="default-company-avatar">
@@ -396,16 +407,21 @@ const TrendingOpportunities = () => {
       {/* Section 1: Jobs */}
       {(activeTab === "all" || activeTab === "jobs" || activeTab === "remote") && (
         <section className="opp-section">
-          <div className="trend-title">
-            <h2>
-              Trending <span>Jobs</span>
-            </h2>
-            <span className="count-pill">{jobsList.length} Active Positions</span>
+          <div className="trend-title" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <h2>
+                Trending <span>Jobs</span>
+              </h2>
+              <span className="count-pill">{jobsList.length} Active Positions</span>
+            </div>
+            <button className="see-all-btn" onClick={() => navigate("/jobs")} type="button">
+              See All Jobs →
+            </button>
           </div>
 
           {jobsList.length > 0 ? (
             <div className="trend-container">
-              {jobsList.map((job) => (
+              {jobsList.slice(0, 3).map((job) => (
                 <OpportunityCard key={job.id} job={job} />
               ))}
             </div>
@@ -423,16 +439,21 @@ const TrendingOpportunities = () => {
       {/* Section 2: Internships */}
       {(activeTab === "all" || activeTab === "internships" || activeTab === "remote") && (
         <section className="opp-section">
-          <div className="trend-title">
-            <h2>
-              Trending <span>Internships</span>
-            </h2>
-            <span className="count-pill">{internshipsList.length} Active Opportunities</span>
+          <div className="trend-title" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <h2>
+                Trending <span>Internships</span>
+              </h2>
+              <span className="count-pill">{internshipsList.length} Active Opportunities</span>
+            </div>
+            <button className="see-all-btn" onClick={() => navigate("/jobs")} type="button">
+              See All Internships →
+            </button>
           </div>
 
           {internshipsList.length > 0 ? (
             <div className="trend-container">
-              {internshipsList.map((job) => (
+              {internshipsList.slice(0, 3).map((job) => (
                 <OpportunityCard key={job.id} job={job} />
               ))}
             </div>

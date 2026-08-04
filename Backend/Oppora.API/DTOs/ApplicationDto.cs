@@ -1,4 +1,4 @@
-﻿public class ApplicantDto
+public class ApplicantDto
 {
 
     public int ApplicationId { get; set; }
@@ -11,6 +11,9 @@
 
 
     public string Email { get; set; }
+
+
+    public string? Resume { get; set; }
 
 
     public string Status { get; set; }

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
     Briefcase,
     MapPin,
@@ -15,60 +15,70 @@ import "./Jobs.css";
 
 const Jobs = () => {
     const navigate = useNavigate();
-
+    const location = useLocation();
 
     const [jobs,setJobs] = useState([]);
-
     const [loading,setLoading] = useState(true);
+    const [searchQuery, setSearchQuery] = useState("");
     const [selectedType, setSelectedType] = useState("");
-const [selectedLocation, setSelectedLocation] = useState("");
-const [selectedEmployment, setSelectedEmployment] = useState("");
-const [selectedExperience, setSelectedExperience] = useState("");
-const [typeOpen, setTypeOpen] = useState(false);
+    const [selectedLocation, setSelectedLocation] = useState("");
+    const [selectedEmployment, setSelectedEmployment] = useState("");
+    const [selectedExperience, setSelectedExperience] = useState("");
+    const [typeOpen, setTypeOpen] = useState(false);
 
-const typeRef = useRef(null);
+    const typeRef = useRef(null);
+    const locationRef = useRef(null);
+    const employmentRef = useRef(null);
+    const experienceRef = useRef(null);
 
-const locationRef = useRef(null);
+    const [locationOpen, setLocationOpen] = useState(false);
+    const [employmentOpen, setEmploymentOpen] = useState(false);
+    const [experienceOpen, setExperienceOpen] = useState(false);
 
-const employmentRef = useRef(null);
+    useEffect(() => {
+        const queryParams = new URLSearchParams(location.search);
+        const searchParam = queryParams.get("search");
+        const typeParam = queryParams.get("type");
+        const employmentParam = queryParams.get("employment");
 
-const experienceRef = useRef(null);
+        if (searchParam !== null) setSearchQuery(searchParam);
+        if (typeParam !== null) setSelectedType(typeParam);
+        if (employmentParam !== null) setSelectedEmployment(employmentParam);
+    }, [location.search]);
 
-const [locationOpen, setLocationOpen] = useState(false);
+    const typeOptions = [...new Set(jobs.map(job => job.type))];
+    const locationOptions = [...new Set(jobs.map(job => job.location))];
+    const employmentOptions = [...new Set(jobs.map(job => job.employmentType))];
+    const experienceOptions = [
+      ...new Set(jobs.map(job => job.experience || "Fresher"))
+    ];
 
-const [employmentOpen, setEmploymentOpen] = useState(false);
+    const filteredJobs = jobs.filter((job) => {
+        const matchesSearch = !searchQuery || 
+            job.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            job.companyName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            job.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            (job.skills && job.skills.toLowerCase().includes(searchQuery.toLowerCase()));
 
-const [experienceOpen, setExperienceOpen] = useState(false);
+        return (
+            matchesSearch &&
+            (selectedType === "" ||
+                selectedType === "ALL" ||
+                job.type === selectedType) &&
 
-const typeOptions = [...new Set(jobs.map(job => job.type))];
+            (selectedLocation === "" ||
+                selectedLocation === "ALL" ||
+                job.location === selectedLocation) &&
 
-const locationOptions = [...new Set(jobs.map(job => job.location))];
+            (selectedEmployment === "" ||
+                selectedEmployment === "ALL" ||
+                job.employmentType === selectedEmployment) &&
 
-const employmentOptions = [...new Set(jobs.map(job => job.employmentType))];
-
-const experienceOptions = [
-  ...new Set(jobs.map(job => job.experience || "Fresher"))
-];
-
-const filteredJobs = jobs.filter((job) => {
-    return (
-        (selectedType === "" ||
-            selectedType === "ALL" ||
-            job.type === selectedType) &&
-
-        (selectedLocation === "" ||
-            selectedLocation === "ALL" ||
-            job.location === selectedLocation) &&
-
-        (selectedEmployment === "" ||
-            selectedEmployment === "ALL" ||
-            job.employmentType === selectedEmployment) &&
-
-        (selectedExperience === "" ||
-            selectedExperience === "ALL" ||
-            (job.experience || "Fresher") === selectedExperience)
-    );
-});
+            (selectedExperience === "" ||
+                selectedExperience === "ALL" ||
+                (job.experience || "Fresher") === selectedExperience)
+        );
+    });
 
 
     useEffect(()=>{
@@ -687,11 +697,15 @@ const filteredJobs = jobs.filter((job) => {
 <img
   src={
     job.companyLogo
-      ? job.companyLogo
+      ? (job.companyLogo.startsWith("http") ? job.companyLogo : `http://localhost:5024${job.companyLogo.startsWith('/') ? '' : '/'}${job.companyLogo}`)
       : "/default-company.png"
   }
   alt={job.companyName}
   className="company-logo"
+  onError={(e) => {
+    e.target.onerror = null;
+    e.target.style.display = "none";
+  }}
 />
 
 

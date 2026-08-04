@@ -11,10 +11,8 @@ import {
     FaCode,
     FaBook,
     FaChartLine, 
-    FaUser,
     FaGift,
     FaBookOpen,
-    FaAward,
     FaRoute,
     FaCog,
     FaPlus
@@ -80,10 +78,12 @@ const Sidebar = () => {
     </NavLink>)}
 
 
-     <NavLink 
-    to={isRecruiter ? "/recruiter/applicants" : "/competitions"}
-    ><FaTrophy/>{isRecruiter ? "Applicants" : "Competitions"}
+     {isRecruiter && (
+    <NavLink to="/recruiter/applicants">
+        <FaTrophy />
+        Applicants
     </NavLink>
+)}
 
 
                 <NavLink to="/resume-builder">
@@ -92,16 +92,18 @@ const Sidebar = () => {
                 </NavLink>
 
 
-                <NavLink to={isRecruiter ? "/interviews" : "/mocktest"}>
-                    <FaClipboardCheck/>
-                    {isRecruiter ? "Schedule Interviews" : "Mock Tests"}
-                </NavLink>
+               <NavLink to="/mocktest">
+    <FaClipboardCheck />
+    Mock Tests
+</NavLink>
 
 
-                <NavLink to={isRecruiter ? "/candidate-search" : "/mock-interview"}>
-                    <FaUserTie/>
-                    {isRecruiter ? "Find Candidates" : "AI Mock Interview"}
-                </NavLink>
+                {!isRecruiter && (
+    <NavLink to="/mock-interview">
+        <FaUserTie />
+        AI Mock Interview
+    </NavLink>
+)}
 
 
                {
@@ -126,16 +128,18 @@ const Sidebar = () => {
             <hr/>
 
 
-            <div className="menu">
+            {!isRecruiter && (
+    <div className="menu">
 
-                <h5>
-                    {isRecruiter ? "Recruitment Activity" : "My Activity"}
-                </h5>
+        <h5>My Activity</h5>
 
+        <NavLink to="/my-activity">
+            <FaChartLine />
+            My Activity
+        </NavLink>
 
-                {!isRecruiter && (<NavLink to="/my-activity"><FaChartLine />My Activity</NavLink>)}
-
-            </div>
+    </div>
+)}
 
 
 

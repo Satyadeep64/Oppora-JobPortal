@@ -181,6 +181,14 @@ const Profile = () => {
         return Math.min(100, completed);
     };
 
+    const resolveResumeUrl = (url) => {
+        if (!url) return "";
+        if (url.startsWith("http://") || url.startsWith("https://") || url.startsWith("blob:") || url.startsWith("data:")) {
+            return url;
+        }
+        return `http://localhost:5024${url.startsWith("/") ? "" : "/"}${url}`;
+    };
+
     const completion = calculateCompletion();
     const showPopup = completion < 100 && !hidePopup;
 
@@ -220,7 +228,7 @@ const Profile = () => {
                     </div>
                 </div>
 
-                {/* Notifications Center */}
+                {/* Notifications Center (Limited to 5) */}
                 <div className="section notifications-center-section">
                     <div className="section-heading">
                         <h2 className="section-title-with-icon">
@@ -230,7 +238,7 @@ const Profile = () => {
                     </div>
                     <div className="notifications-list">
                         {userNotifications.length > 0 ? (
-                            userNotifications.map(n => (
+                            userNotifications.slice(0, 5).map(n => (
                                 <div key={n.id} className="notification-item">
                                     <CheckCircle size={18} className="icon-green" />
                                     <div>
@@ -258,7 +266,7 @@ const Profile = () => {
                         </button>
                     </div>
 
-                    <div className="details-grid">
+                    <div className="info-grid">
                         {isEditing ? (
                             <>
                                 <div className="field-group">
@@ -460,7 +468,7 @@ const Profile = () => {
                                 </div>
                                 <div className="ur-actions">
                                     <a
-                                        href={profile.resume}
+                                        href={resolveResumeUrl(profile.resume)}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="btn-secondary"
@@ -491,7 +499,7 @@ const Profile = () => {
                                         </button>
                                     </div>
                                     <iframe
-                                        src={profile.resume}
+                                        src={resolveResumeUrl(profile.resume)}
                                         className="resume-pdf-iframe"
                                         title="Uploaded Resume Preview"
                                     />
@@ -499,12 +507,19 @@ const Profile = () => {
                             )}
                         </div>
                     ) : (
-                        <label className="resume-box">
-                            <Upload size={40} />
-                            <p>Upload your CV (PDF format)</p>
-                            <span className="resume-box-hint">Click to select and preview document</span>
-                            <input hidden type="file" accept=".pdf" onChange={handleResume} />
-                        </label>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                            <label className="resume-box">
+                                <Upload size={40} />
+                                <p>Upload your CV (PDF format)</p>
+                                <span className="resume-box-hint">Click to select and preview document</span>
+                                <input hidden type="file" accept=".pdf" onChange={handleResume} />
+                            </label>
+                            <div style={{ textAlign: 'center' }}>
+                                <a href="/resume-builder" className="btn-secondary" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '10px 20px', borderRadius: '10px', textDecoration: 'none', fontWeight: 600 }}>
+                                    <FileText size={18} /> Or Create / View Resume with Resume Builder →
+                                </a>
+                            </div>
+                        </div>
                     )}
                 </div>
             </div>

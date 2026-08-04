@@ -3078,3 +3078,109 @@ position:static;
 .section-heading p{
     text-align: left;
 }
+
+/* ==========================================================================
+   MOCK TEST PAGE DARK THEME COMPATIBILITY
+   ========================================================================== */
+[data-theme="dark"] .mocktest-page,
+[data-theme="dark"] .mock-test-container,
+[data-theme="dark"] .test-page,
+[data-theme="dark"] .result-page {
+    background: transparent !important;
+    color: #f8fafc !important;
+}
+
+[data-theme="dark"] .mocktest-hero {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.88) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+[data-theme="dark"] .hero-left h1 {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .hero-left p {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .preferences-section,
+[data-theme="dark"] .trending-section,
+[data-theme="dark"] .test-card,
+[data-theme="dark"] .question-card,
+[data-theme="dark"] .result-card,
+[data-theme="dark"] .score-card,
+[data-theme="dark"] .submit-modal {
+    background: rgba(15, 23, 42, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #f8fafc !important;
+}
+
+[data-theme="dark"] .section-content h2,
+[data-theme="dark"] .section-heading h2,
+[data-theme="dark"] .preferences-section .section-header h2,
+[data-theme="dark"] .test-card h3,
+[data-theme="dark"] .question-text,
+[data-theme="dark"] .result-card h2,
+[data-theme="dark"] .submit-modal h3 {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .section-content p,
+[data-theme="dark"] .section-heading p,
+[data-theme="dark"] .test-card p,
+[data-theme="dark"] .submit-modal p {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .preference-group label {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .preference-group input,
+[data-theme="dark"] .preference-group select,
+[data-theme="dark"] .topic-dropdown {
+    background: rgba(15, 23, 42, 0.9) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .topic-item {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .topic-item:hover {
+    background: rgba(59, 130, 246, 0.2) !important;
+    color: #60a5fa !important;
+}
+
+[data-theme="dark"] .option-btn,
+[data-theme="dark"] .option-card {
+    background: rgba(30, 41, 59, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #f8fafc !important;
+}
+
+[data-theme="dark"] .option-btn:hover,
+[data-theme="dark"] .option-card:hover {
+    border-color: #60a5fa !important;
+    background: rgba(59, 130, 246, 0.15) !important;
+}
+
+[data-theme="dark"] .option-btn.selected,
+[data-theme="dark"] .option-card.selected {
+    background: rgba(37, 99, 235, 0.3) !important;
+    border-color: #3b82f6 !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .meta-item,
+[data-theme="dark"] .test-details span {
+    color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .metric-box,
+[data-theme="dark"] .explanation-card {
+    background: rgba(30, 41, 59, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #f8fafc !important;
+}

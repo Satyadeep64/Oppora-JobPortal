@@ -363,6 +363,40 @@ label {
     flex-shrink: 0;
 }
 
+.theme-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    border: 1.5px solid #e2e8f0;
+    color: #334155;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    padding: 0;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1) rotate(15deg);
+    background: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
+}
+
+[data-theme="dark"] .theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    color: #fbbf24 !important;
+}
+
+[data-theme="dark"] .theme-toggle-btn:hover {
+    background: #fbbf24 !important;
+    color: #0f172a !important;
+    border-color: #fbbf24 !important;
+}
+
 .logoutbtn {
     padding: 10px 22px;
     border: none;
@@ -1725,15 +1759,21 @@ label {
 
 .stats-container {
 
+
     display: grid;
 
-    grid-template-columns: repeat(5, 1fr);
 
-    gap: 25px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
 
-    max-width: 1200px;
+
+    gap: 14px;
+
+
+    width: 100%;
+
 
     margin: auto;
+
 
 }
 
@@ -3726,27 +3766,14 @@ body,
 /* DARK MODE */
 
 
-.trending-page.dark {
+.trending-page.dark,
+[data-theme="dark"] .trending-page {
 
 
-    background: #020617;
+    background: transparent;
 
 
-    color: white;
-
-
-}
-
-
-
-
-.trending-page.dark .trend-card {
-
-
-    background: #1e293b;
-
-
-    border-color: #334155;
+    color: #f8fafc;
 
 
 }
@@ -3754,11 +3781,17 @@ body,
 
 
 
+.trending-page.dark .trend-card,
+[data-theme="dark"] .trend-card {
 
-.trending-page.dark .trend-header h2 {
+
+    background: rgba(15, 23, 42, 0.95) !important;
 
 
-    color: white;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+
+
+    color: #f8fafc !important;
 
 
 }
@@ -3767,22 +3800,12 @@ body,
 
 
 
-.trending-page.dark .trend-details p {
+.trending-page.dark .trend-header h2,
+[data-theme="dark"] .trend-header h2,
+[data-theme="dark"] .trend-title h2 {
 
 
-    color: #cbd5e1;
-
-
-}
-
-
-
-
-
-.trending-page.dark .trend-skills {
-
-
-    background: #334155;
+    color: #ffffff !important;
 
 
 }
@@ -3791,11 +3814,38 @@ body,
 
 
 
+.trending-page.dark .trend-details p,
+[data-theme="dark"] .trend-details p {
 
-.trending-page.dark .trend-badges span {
+
+    color: #cbd5e1 !important;
 
 
-    background: #1e40af;
+}
+
+
+
+
+
+.trending-page.dark .trend-skills,
+[data-theme="dark"] .trend-skills {
+
+
+    background: transparent;
+
+
+}
+
+
+
+
+
+
+.trending-page.dark .trend-badges span,
+[data-theme="dark"] .trend-badges span {
+
+
+    background: rgba(255, 255, 255, 0.08);
 
 
     color: #dbeafe;
@@ -3807,7 +3857,8 @@ body,
 
 
 
-.trending-page.dark .explore-btn {
+.trending-page.dark .explore-btn,
+[data-theme="dark"] .explore-btn {
 
 
     background: #3b82f6;

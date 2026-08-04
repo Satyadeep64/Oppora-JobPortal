@@ -712,31 +712,83 @@
 }
 
 /* Print */
+/* Print */
 @media print {
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    body,
+    html {
+        background: white !important;
+        color: black !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
     body * {
         visibility: hidden;
     }
 
+    .resume-builder-page,
+    .rb-layout,
+    .rb-preview-panel,
+    .rb-preview-scroll,
+    .rb-preview-wrapper,
     #resume-print-area,
     #resume-print-area * {
-        visibility: visible;
+        visibility: visible !important;
     }
 
-    #resume-print-area {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        box-shadow: none;
-        border-radius: 0;
-        padding: 40px;
+    .navbar,
+    .sidebar,
+    .rb-header,
+    .rb-form-panel,
+    .rb-preview-toolbar,
+    .rb-live-badge,
+    .rb-zoom-controls {
+        display: none !important;
     }
 
     .resume-builder-page,
-    .rb-form-panel,
-    .rb-header,
-    .rb-preview-toolbar {
-        display: none !important;
+    .rb-layout,
+    .rb-preview-panel,
+    .rb-preview-scroll {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        overflow: visible !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    .rb-preview-wrapper {
+        transform: none !important;
+        transform-origin: top left !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    #resume-print-area {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 100vh !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 30px 40px !important;
+        margin: 0 !important;
+        background: white !important;
+        color: #1a1a2e !important;
+        page-break-after: avoid;
     }
 }
 
@@ -760,11 +812,18 @@
 /* Dark mode support */
 [data-theme="dark"] .resume-builder-page {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f8fafc;
 }
 
 [data-theme="dark"] .rb-form-panel {
     background: #1e293b;
     box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .rb-section-nav {
+    background: #0f172a;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
 [data-theme="dark"] .rb-header-left h1 {
@@ -779,9 +838,19 @@
     color: #94a3b8;
 }
 
+[data-theme="dark"] .rb-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #f1f5f9;
+}
+
 [data-theme="dark"] .rb-nav-btn.active {
     background: #1e3a5f;
     color: #60a5fa;
+    border-color: #3b82f6;
+}
+
+[data-theme="dark"] .rb-field label {
+    color: #cbd5e1;
 }
 
 [data-theme="dark"] .rb-field input,
@@ -791,9 +860,18 @@
     color: #f1f5f9;
 }
 
+[data-theme="dark"] .rb-field input::placeholder,
+[data-theme="dark"] .rb-field textarea::placeholder {
+    color: #64748b;
+}
+
 [data-theme="dark"] .rb-card {
     background: #0f172a;
     border-color: #334155;
+}
+
+[data-theme="dark"] .rb-card-header {
+    color: #cbd5e1;
 }
 
 [data-theme="dark"] .rb-form-section h3 {
@@ -806,11 +884,32 @@
     border-color: #334155;
 }
 
-[data-theme="dark"] .rb-template-picker {
+[data-theme="dark"] .rb-btn-outline:hover {
+    background: #334155;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .rb-template-picker,
+[data-theme="dark"] .rb-color-swatches,
+[data-theme="dark"] .rb-zoom-controls {
     background: #1e293b;
     border-color: #334155;
 }
 
 [data-theme="dark"] .rb-template-picker select {
     color: #e2e8f0;
+}
+
+[data-theme="dark"] .rb-zoom-controls button {
+    background: #0f172a;
+    color: #cbd5e1;
+}
+
+[data-theme="dark"] .rb-zoom-controls button:hover {
+    background: #334155;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .rb-zoom-controls span {
+    color: #cbd5e1;
 }

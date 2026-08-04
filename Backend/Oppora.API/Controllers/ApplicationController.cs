@@ -271,6 +271,10 @@ namespace Oppora.API.Controllers
                     a.User.Email:
                     "Email Not Found",
 
+                    Resume=a.User!=null?
+                    a.User.Resume:
+                    null,
+
 
                     Status=a.Status,
 
@@ -508,6 +512,10 @@ namespace Oppora.API.Controllers
                 email=a.User!=null?
                 a.User.Email:
                 "Not Available",
+
+                resume=a.User!=null?
+                a.User.Resume:
+                null,
 
                 opportunityTitle=a.Opportunity!.Title,
 

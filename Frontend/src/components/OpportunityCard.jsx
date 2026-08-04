@@ -10,24 +10,30 @@ import { useNavigate } from "react-router-dom";
 
 
 const OpportunityCard = ({job}) => {
-
-
     const navigate = useNavigate();
 
+    const logoUrl = job?.companyLogo
+        ? (job.companyLogo.startsWith("http") ? job.companyLogo : `http://localhost:5024${job.companyLogo.startsWith('/') ? '' : '/'}${job.companyLogo}`)
+        : null;
 
     return (
-
         <div className="job-card">
-
-
+            {logoUrl && (
+                <img
+                    src={logoUrl}
+                    alt={job.companyName}
+                    className="company-logo"
+                    onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.style.display = "none";
+                    }}
+                />
+            )}
             <div className="job-card-header">
-
                 <Briefcase size={22}/>
-
                 <h2>
                     {job.title}
                 </h2>
-
             </div>
 
 

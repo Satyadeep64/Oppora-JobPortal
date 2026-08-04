@@ -21,6 +21,25 @@ const RecruiterApplicants = () => {
 
     const [statusFilter,setStatusFilter] = useState("All");
 
+    const resolveResumeUrl = (url) => {
+        if (!url) return null;
+        if (url.startsWith("http://") || url.startsWith("https://") || url.startsWith("blob:") || url.startsWith("data:")) {
+            return url;
+        }
+        return `http://localhost:5024${url.startsWith("/") ? "" : "/"}${url}`;
+    };
+
+    const handleViewResume = (app) => {
+        const resumeUrl = app.resume || app.resumeUrl || app.user?.resume;
+        if (resumeUrl) {
+            window.open(resolveResumeUrl(resumeUrl), "_blank");
+        } else if (app.userId) {
+            alert(`Candidate ${app.fullName || "Applicant"} has not uploaded a standalone PDF resume yet.`);
+        } else {
+            alert("No resume available for this applicant.");
+        }
+    };
+
 
 
 
@@ -524,7 +543,7 @@ app.appliedAt
 <div className="actions">
 
 
-<button className="resume">
+<button className="resume" onClick={() => handleViewResume(app)} type="button">
 View Resume
 </button>
 

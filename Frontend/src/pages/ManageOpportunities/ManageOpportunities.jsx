@@ -281,14 +281,18 @@ useEffect(()=>{
                         key={job.id}
                     >
 
-                         <img
+                          <img
         src={
             job.companyLogo
-            ? job.companyLogo
+            ? (job.companyLogo.startsWith("http") ? job.companyLogo : `http://localhost:5024${job.companyLogo.startsWith('/') ? '' : '/'}${job.companyLogo}`)
             : "/default-company.png"
         }
         alt={job.companyName}
         className="company-logo"
+        onError={(e) => {
+            e.target.onerror = null;
+            e.target.style.display = "none";
+        }}
     />
          
 
