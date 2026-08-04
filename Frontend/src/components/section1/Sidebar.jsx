@@ -15,7 +15,6 @@ import {
     FaGift,
     FaBookOpen,
     FaAward,
-    FaRoute,
     FaCog,
     FaPlus
 } from "react-icons/fa";
@@ -104,14 +103,18 @@ const Sidebar = () => {
                 </NavLink>
 
 
-               {
-    !isRecruiter && (
-        <NavLink to="/dsa-sheet">
-            <FaCode />
-            DSA Sheet
-        </NavLink>
-    )
-}
+                {
+                    !isRecruiter && (
+                        <a 
+                        href="https://takeuforward.org/strivers-a2z-dsa-course/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >
+                            <FaCode/>
+                            Striver DSA Sheet
+                        </a>
+                    )
+                }
 
 
                 <NavLink to={isRecruiter ? "/courses" : "/courses"}>
@@ -162,9 +165,9 @@ const Sidebar = () => {
                 )}
 
 
-                <NavLink to="/career-path">
-                    <FaRoute/>
-                    Career Path
+                <NavLink to="/awards">
+                    <FaAward/>
+                    Oppora Awards
                 </NavLink>
 
 

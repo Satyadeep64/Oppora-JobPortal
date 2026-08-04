@@ -1,0 +1,10 @@
+[33m33cfe02[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mbhumi-feature-clean[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/bhumi-final[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mfeature/bhumi-resume-analyzer[m[33m, [m[1;32mbhumi-final[m[33m)[m Fix appsettings.json merge conflict
+[33me5580da[m Merge pull request #2 from Satyadeep64/shipra-ui-jobportal
+[33mee8d66c[m[33m ([m[1;31morigin/shipra-ui-jobportal[m[33m)[m Enhanced Jobs page UI and updated project configuration
+[33m0379384[m Merge pull request #1 from Satyadeep64/shipra-ui-jobportal
+[33m8ac353e[m Merge branch 'main' into shipra-ui-jobportal
+[33m64f3b8b[m RoleSelection Updated
+[33ma42c4f1[m Build DSA sheet module with premium UI, search, and dark mode
+[33m1fb864e[m Update sidebar navigation
+[33med6bcd8[m Add AI Mock Interview and Career Path features with backend updates
+[33m3ecfac8[m Initial Commit with Featured Website

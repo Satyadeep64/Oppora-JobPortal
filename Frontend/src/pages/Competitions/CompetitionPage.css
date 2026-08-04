@@ -1,0 +1,65 @@
+/* Competition Portal Master Layout */
+.competition-page-wrapper {
+  width: 100%;
+  background-color: var(--color-bg-page, #f8fafc);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Master Responsive Layout: Adapts to Oppora Content Area */
+.portal-main-layout {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 0 32px 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(280px, 24vw, 320px);
+  gap: 24px;
+  align-items: start;
+  box-sizing: border-box;
+}
+
+/* Center Feed Container */
+.portal-center-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 100%;
+}
+
+/* Large Desktop (>= 1200px) */
+@media (min-width: 1200px) {
+  .portal-main-layout {
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 24px;
+  }
+}
+
+/* Medium Desktop / Laptop (1025px - 1199px) */
+@media (max-width: 1199px) and (min-width: 1025px) {
+  .portal-main-layout {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 20px;
+  }
+}
+
+/* Tablet Viewport (769px - 1024px): Stack Featured Sidebar */
+@media (max-width: 1024px) {
+  .portal-main-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 0 0 24px 0;
+  }
+}
+
+/* Mobile Viewport (<= 768px): Full-Width Single Column Feed */
+@media (max-width: 768px) {
+  .portal-main-layout {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 0 20px 0;
+    gap: 16px;
+  }
+}
+
+
