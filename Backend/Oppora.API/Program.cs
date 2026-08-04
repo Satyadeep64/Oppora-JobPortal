@@ -8,6 +8,7 @@ using Oppora.API.Repositories;
 using Oppora.API.Services;
 using Oppora.API.Services.Import;
 using Oppora.API.Services.Import.Importers;
+using Oppora.API.Session;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,9 +19,9 @@ builder.Services.AddCors(options =>
         policy =>
         {
             policy
-            .WithOrigins("http://localhost:5173", "http://localhost:3000")
-            .AllowAnyHeader()
-            .AllowAnyMethod();
+                .WithOrigins("http://localhost:5173", "http://localhost:3000")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
         });
 });
 
@@ -28,9 +29,13 @@ builder.Services.AddCors(options =>
 builder.Services.AddMemoryCache();
 builder.Services.AddControllers();
 
-// Repositories & Services
+// HttpClient
+  // Repositories & Services
 builder.Services.AddScoped<ICompetitionRepository, CompetitionRepository>();
 builder.Services.AddScoped<ICompetitionService, CompetitionService>();
+builder.Services.AddHttpClient();
+
+// Services
 builder.Services.AddScoped<CloudinaryService>();
 
 builder.Services.AddScoped<ICompetitionImporter, CsvCompetitionImporter>();
@@ -45,6 +50,11 @@ builder.Services.AddScoped<ResumeTextExtractor>();
 builder.Services.AddHttpClient<ATSAnalysisService>();
 
 
+
+// Mock Test Services
+builder.Services.AddSingleton<TestSessionManager>();
+builder.Services.AddScoped<GeminiService>();
+builder.Services.AddScoped<MockTestService>();
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
@@ -134,11 +144,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseRouting();
 app.UseCors("AllowReact");
-app.UseStaticFiles();
- 
 
+app.UseStaticFiles();
 
 app.UseAuthentication();
+
 app.UseAuthorization();
 
 app.MapControllers();

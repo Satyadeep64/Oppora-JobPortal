@@ -25,16 +25,25 @@ import CompetitionDetails from "./pages/CompetitionDetails/CompetitionDetails";
 import { BookmarkProvider } from "./context/BookmarkContext";
 
 import ResumeAnalyzer from "./pages/ResumeAnalyzer/ResumeAnalyzer";
+import MockTest from "./components/MockTest/MockTest";
+import Test from "./components/MockTest/Test";
+import Result from "./components/MockTest/Result";
 
+import CoursesPage from "./components/Courses/CoursesPage";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
+
     setTimeout(() => {
       setLoading(false);
     }, 2000);
+
   }, []);
+
+
 
   if (loading) {
     return <SplashScreen />;
@@ -42,61 +51,49 @@ const App = () => {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
 
-      <BookmarkProvider>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/login" element={<Login setLoading={setLoading} />} />
-          <Route path="/" element={<RoleSelection />} />
-          <Route element={<Layout />}>
-            <Route path="/home" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/post-opportunity" element={<PostOpportunity />} />
-            <Route path="/edit-opportunity/:id" element={<EditOpportunity />} />
-            <Route path="/jobs" element={<Jobs />} />
-            <Route path="/competitions" element={<CompetitionPage />} />
-            <Route path="/competitions/:id" element={<CompetitionDetails />} />
-            <Route path="/manage-opportunities" element={<ManageOpportunities />} />
-            <Route path="/my-activity" element={<UserDashboard />} />
-            <Route path="/opportunity/:id" element={<OpportunityDetails />} />
-            <Route path="/recruiter/opportunity/:id/applicants" element={<ViewApplicants />} />
-            <Route path="dashboard/recruiter" element={<RecruiterDashboard />} />
-            <Route path="/recruiter/applicants" element={<RecruiterApplicants />} />
-            <Route path="/change-password" element={<ChangePassword />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/footer" element={<Footer />} />
-            <Route path="/resume-analyzer" element={<ResumeAnalyzer />} />
-          </Route>
-        </Routes>
-      </BookmarkProvider>
+        <Route path="/login" element={<Login setLoading={setLoading} />} />
+        <Route path="/" element={<RoleSelection />} />
+        <Route element={<Layout />}>
+          <Route path="/home" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/post-opportunity" element={<PostOpportunity />} />
+          <Route path="/edit-opportunity/:id" element={<EditOpportunity />} />
+          <Route path="/jobs" element={<Jobs />} />
+          <Route path="/manage-opportunities" element={<ManageOpportunities />} />
+          <Route path="/my-activity" element={<UserDashboard />} />
+          <Route path="/opportunity/:id" element={<OpportunityDetails />} />
+          <Route path="/recruiter/opportunity/:id/applicants" element={<ViewApplicants />} />
+          <Route path="dashboard/recruiter" element={<RecruiterDashboard />} />
+          <Route path="/recruiter/applicants" element={<RecruiterApplicants />} />
+          <Route path="/change-password" element={<ChangePassword />} />
 
-     <ScrollToTop />
-    <Routes>
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/resume-builder" element={<ResumeBuilder />} />
+          <Route path="/blogs" element={<CandidateBlogs />} />
+          <Route path="/mock-interview" element={<AIMockInterview />} />
+          <Route path="/career-path" element={<CareerPath />} />
+          <Route path="/awards" element={<CareerPath />} />
 
-      <Route path="/login" element={<Login setLoading={setLoading}/>}/>
-      <Route path="/"element={<RoleSelection/>}/>
-      <Route element={<Layout/>}>
-      <Route path="/home" element={<Home/>}/>
-        <Route path="/profile" element={<Profile/>}/>
-        <Route path="/post-opportunity" element={<PostOpportunity/>}/> 
-        <Route path="/edit-opportunity/:id" element={<EditOpportunity/>}/>
-        <Route path="/jobs" element={<Jobs />}/>
-        <Route path="/resume-analyzer" element={<ResumeAnalyzer />} />
-        <Route path="/manage-opportunities"element={<ManageOpportunities/>}/>
-        <Route path="/my-activity"element={<UserDashboard />}/>
-        <Route path="/opportunity/:id" element={<OpportunityDetails/>}/>
-        <Route path="/recruiter/opportunity/:id/applicants"element={<ViewApplicants/>}/>
-        <Route path="dashboard/recruiter" element={<RecruiterDashboard />} />
-        <Route path="/recruiter/applicants" element={<RecruiterApplicants />}/>
-        <Route path="/change-password" element={<ChangePassword/>}/>
-         
-        <Route path="/settings" element={<Settings/>}/>
-        <Route path="/footer" element={<Footer />}/>
+          <Route path="/mocktest" element={<MockTest />} />
+          <Route path="/resume-analyzer" element={<ResumeAnalyzer />} />
+            
+          <Route path="/competitions" element={<CompetitionPage />} />
+          <Route path="/competitions/:id" element={<CompetitionDetails />} />
 
-      </Route>
+          <Route path="/footer" element={<Footer />} />
+          <Route path="/dsa-sheet" element={<DSASheet />} />
+          <Route path="/pattern/:id" element={<PatternDetails />} />
+             <Route path="/courses" element={<CoursesPage />} />
 
-    </Routes>
- 
+        </Route>
+
+        <Route path="/mocktest/test" element={<Test />} />
+        <Route path="/mocktest/result" element={<Result />} />
+     
+      </Routes>
     </BrowserRouter>
   );
 };
