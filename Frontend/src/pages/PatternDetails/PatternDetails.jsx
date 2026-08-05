@@ -1,6 +1,6 @@
 import "./PatternDetails.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { dsaSheet } from "../../data";
+import { dsaSheet } from "../../Data";
 
 
 

@@ -1,5 +1,5 @@
 import "./DSASheet.css";
-import { dsaSheet } from "../../data";
+import { dsaSheet } from "../../Data";
 import PatternCard from "../../components/DSA/PatternCard";
 import { useState } from "react";
 import { Brain } from "lucide-react";
