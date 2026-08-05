@@ -35,14 +35,15 @@
     height: 100%;
 
     background:
-        linear-gradient(rgba(37, 99, 235, 0.65),
-            rgba(30, 64, 175, 0.75)),
+        linear-gradient(135deg, rgba(15, 23, 42, 0.75), rgba(30, 58, 138, 0.85), rgba(37, 99, 235, 0.9)),
         url("./images/pic1.avif");
 
     background-size: cover;
     background-position: center;
 
     position: relative;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 
 }
 
@@ -267,24 +268,29 @@
 
     position: absolute;
 
-    top: 10px;
+    top: 15px;
 
-    left: 40px;
+    left: 30px;
 
-    color: #2563eb
+    color: #ffffff;
+    z-index: 10;
 }
 
 
 .brand h1 {
 
-    font-size: 40px;
+    font-size: 32px;
 
     font-weight: 800;
 
     letter-spacing: 1px;
-    color: black;
+    color: #ffffff !important;
     margin: 0;
 
+}
+
+.brand .logo7 {
+    color: #60a5fa !important;
 }
 
 .logo-o {
@@ -331,15 +337,15 @@
 }
 
 .loginpic {
-    border-radius: 20px 50px 10px 70px;
-    height: auto;
-    width: 400px;
-    background-color: white;
-    background-size: 110%;
-    background-repeat: no-repeat;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%) !important;
+    background-size: cover;
     background-position: center;
-    background-image: url("./images/pic1.avif");
-
+    position: relative;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow: hidden;
 }
 
 .required {
