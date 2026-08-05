@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - oppora
+name: Build and deploy Single Service (API + React) to Azure Web App - oppora
 
 on:
   push:
@@ -18,16 +18,35 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build React Frontend
+        run: |
+          cd Frontend
+          npm ci
+          npm run build
+        env:
+          VITE_API_BASE_URL: ""
+
+      - name: Copy Frontend Build to .NET wwwroot
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path "Backend/Oppora.API/wwwroot"
+          Copy-Item -Path "Frontend/dist/*" -Destination "Backend/Oppora.API/wwwroot" -Recurse -Force
+
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.x'
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build Backend/Oppora.API/Oppora.API.csproj --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
+        run: dotnet publish Backend/Oppora.API/Oppora.API.csproj -c Release -o "${{env.DOTNET_ROOT}}/myapp"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -62,4 +81,3 @@ jobs:
           app-name: 'oppora'
           slot-name: 'Production'
           package: .
-          
