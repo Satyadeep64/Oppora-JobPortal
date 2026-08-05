@@ -98,19 +98,21 @@ builder.Services.AddAuthentication(
         }
     };
 
+    var jwtKey = builder.Configuration["Jwt:Key"];
+    if (string.IsNullOrWhiteSpace(jwtKey))
+    {
+        jwtKey = "OpporaSuperSecretJwtKey2026_MustBeAtLeast32BytesLong!";
+    }
+
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
         ValidateAudience = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        ValidIssuer = builder.Configuration["Jwt:Issuer"],
-        ValidAudience = builder.Configuration["Jwt:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(
-            Encoding.UTF8.GetBytes(
-                builder.Configuration["Jwt:Key"]!
-            )
-        )
+        ValidIssuer = builder.Configuration["Jwt:Issuer"] ?? "OpporaAPI",
+        ValidAudience = builder.Configuration["Jwt:Audience"] ?? "OpporaUsers",
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
     };
 });
 
