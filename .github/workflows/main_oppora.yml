@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,8 +22,6 @@ jobs:
       - name: Install Frontend Dependencies
         working-directory: ./Frontend
         run: npm install --include=dev
-        env:
-          NODE_ENV: development
 
       - name: Build React Frontend
         working-directory: ./Frontend
@@ -44,25 +42,9 @@ jobs:
       - name: Publish Single Service Bundle
         run: dotnet publish Backend/Oppora.API/Oppora.API.csproj -c Release -o ./publish
 
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v4
-        with:
-          name: net-app
-          path: ./publish
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v4
-        with:
-          name: net-app
-
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'oppora'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ./
+          package: ./publish
