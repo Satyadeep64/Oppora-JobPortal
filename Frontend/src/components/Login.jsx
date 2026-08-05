@@ -2,6 +2,7 @@ import { useState,useEffect} from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { API_BASE_URL } from "../config/api";
+import { Briefcase, Sparkles, CheckCircle2, Users, Building2, TrendingUp } from "lucide-react";
 
 const Login = ({ setLoading }) => {
 
@@ -282,14 +283,50 @@ console.log("USER ID:", response.data.userId);
       <div className="box">
  
         <div className="loginpic">
-            <div className="brand">
+          <div className="brand">
+            <h1>
+              <span className="logo7">O</span>PPORA
+            </h1>
+          </div>
 
-       <h1>
-    <span className="logo7">O</span>PPORA
-</h1>
+          <div className="login-illustration-container">
+            <div className="glow-orb-primary"></div>
+            <div className="glow-orb-secondary"></div>
 
-    </div>
+            {/* Main Job Card */}
+            <div className="hero-graphic-card">
+              <div className="graphic-header">
+                <div className="icon-badge-box">
+                  <Briefcase className="badge-icon-primary" />
+                </div>
+                <div className="graphic-text">
+                  <div className="graphic-title">Dream Opportunity</div>
+                  <div className="graphic-sub">Top Tier Tech & Corporate Roles</div>
+                </div>
+              </div>
+              <div className="graphic-tags">
+                <span className="gtag"><Building2 size={12} /> Full-Time</span>
+                <span className="gtag"><TrendingUp size={12} /> High Growth</span>
+                <span className="gtag highlight">₹15L - ₹35L PA</span>
+              </div>
+            </div>
 
+            {/* Interactive Floating Badges */}
+            <div className="floating-badge badge-top-right">
+              <Sparkles className="f-icon text-yellow" size={16} />
+              <span>AI Match: <b>98% Score</b></span>
+            </div>
+
+            <div className="floating-badge badge-bottom-left">
+              <CheckCircle2 className="f-icon text-green" size={16} />
+              <span><b>10,000+</b> Active Jobs</span>
+            </div>
+
+            <div className="floating-badge badge-bottom-right">
+              <Users className="f-icon text-blue" size={16} />
+              <span><b>500+</b> Verified Recruiters</span>
+            </div>
+          </div>
         </div>
         
         <div className="parentinput">
