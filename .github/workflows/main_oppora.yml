@@ -39,14 +39,8 @@ jobs:
         with:
           dotnet-version: '8.x'
 
-      - name: Restore dependencies
-        run: dotnet restore Backend/Oppora.API/Oppora.API.csproj
-
-      - name: Build with dotnet
-        run: dotnet build Backend/Oppora.API/Oppora.API.csproj --configuration Release --no-restore
-
-      - name: Publish single service package
-        run: dotnet publish Backend/Oppora.API/Oppora.API.csproj -c Release -o ./publish --no-build
+      - name: Publish Single Service Bundle
+        run: dotnet publish Backend/Oppora.API/Oppora.API.csproj -c Release -o ./publish
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
