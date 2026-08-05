@@ -4,6 +4,7 @@ import { useState } from "react";
 import "./PostOpportunity.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../../config/api";
 
 
 const PostOpportunity = () => {
@@ -204,7 +205,7 @@ console.log("TOKEN:", token);
 
 const response = await axios.post(
 
-"http://localhost:5024/api/Opportunities",
+`${API_BASE_URL}/api/Opportunities`,
 
 data,
 

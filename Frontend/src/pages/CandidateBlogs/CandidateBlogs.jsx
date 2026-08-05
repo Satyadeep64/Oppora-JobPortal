@@ -16,9 +16,10 @@ import {
   FaTimes
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../../config/api";
 import "./CandidateBlogs.css";
 
-const API_BASE = "http://localhost:5024/api/Blog";
+const API_BASE = `${API_BASE_URL}/api/Blog`;
 
 const CATEGORIES = [
   "All",

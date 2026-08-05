@@ -6,27 +6,18 @@ import {
 } from "react";
 
 import axios from "axios";
-
+import { API_BASE_URL, getFullUrl } from "../../config/api";
 
 const RecruiterApplicants = () => {
 
-
     const [applications,setApplications] = useState([]);
-
     const [filteredApplications,setFilteredApplications] = useState([]);
-
     const [loading,setLoading] = useState(true);
-
     const [search,setSearch] = useState("");
-
     const [statusFilter,setStatusFilter] = useState("All");
 
     const resolveResumeUrl = (url) => {
-        if (!url) return null;
-        if (url.startsWith("http://") || url.startsWith("https://") || url.startsWith("blob:") || url.startsWith("data:")) {
-            return url;
-        }
-        return `http://localhost:5024${url.startsWith("/") ? "" : "/"}${url}`;
+        return getFullUrl(url);
     };
 
     const handleViewResume = (app) => {
@@ -68,7 +59,7 @@ const RecruiterApplicants = () => {
 
             const response = await axios.get(
 
-                `http://localhost:5024/api/Application/recruiter/${recruiterId}`
+                `${API_BASE_URL}/api/Application/recruiter/${recruiterId}`
 
             );
 
@@ -186,7 +177,7 @@ const RecruiterApplicants = () => {
 
             await axios.put(
 
-                `http://localhost:5024/api/Application/${id}/status`,
+                `${API_BASE_URL}/api/Application/${id}/status`,
 
                 JSON.stringify(status),
 

@@ -7,13 +7,14 @@ import {
 } from "lucide-react";
 
 import { useNavigate } from "react-router-dom";
+import { getFullUrl } from "../config/api";
 
 
 const OpportunityCard = ({job}) => {
     const navigate = useNavigate();
 
     const logoUrl = job?.companyLogo
-        ? (job.companyLogo.startsWith("http") ? job.companyLogo : `http://localhost:5024${job.companyLogo.startsWith('/') ? '' : '/'}${job.companyLogo}`)
+        ? getFullUrl(job.companyLogo)
         : null;
 
     return (

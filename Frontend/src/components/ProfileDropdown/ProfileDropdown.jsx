@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { User, LogOut } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_BASE_URL, getFullUrl } from "../../config/api";
 
 import "./ProfileDropdown.css";
 
@@ -56,7 +57,7 @@ const ProfileDropdown = () => {
 
         // Local uploaded image
 
-        return `http://localhost:5024/${image.replace(/^\/+/,"")}`;
+        return getFullUrl(image);
 
 
     };
@@ -88,7 +89,7 @@ const ProfileDropdown = () => {
 
 const response = await axios.get(
 
-    `http://localhost:5024/api/Profile/${id}`,
+    `${API_BASE_URL}/api/Profile/${id}`,
 
     {
         headers:{

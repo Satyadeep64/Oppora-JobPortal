@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { API_BASE_URL } from "../../config/api";
 
 import "./EditOpportunity.css";
 
@@ -54,7 +55,7 @@ const EditOpportunity = () => {
 
                 const response = await axios.get(
 
-                    `http://localhost:5024/api/Opportunities/recruiter/${recruiterId}`
+                    `${API_BASE_URL}/api/Opportunities/recruiter/${recruiterId}`
 
                 );
 
@@ -171,7 +172,7 @@ const EditOpportunity = () => {
 
             await axios.put(
 
-                `http://localhost:5024/api/Opportunities/${id}`,
+                `${API_BASE_URL}/api/Opportunities/${id}`,
 
                 {
 

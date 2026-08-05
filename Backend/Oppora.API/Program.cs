@@ -126,6 +126,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("AllowReact");
 
+app.UseDefaultFiles();
 app.UseStaticFiles();
 
 app.UseAuthentication();
@@ -133,5 +134,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapFallbackToFile("index.html");
 
 app.Run();

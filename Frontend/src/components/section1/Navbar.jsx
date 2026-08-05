@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import ProfileDropdown from "../ProfileDropdown/ProfileDropdown";
 import { ThemeContext } from "../../context/ThemeContext";
 import axios from "axios";
+import { API_BASE_URL } from "../../config/api";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -39,7 +40,7 @@ const Navbar = () => {
   const fetchNotifications = useCallback(async () => {
     if (!userId) return;
     try {
-      const res = await axios.get(`http://localhost:5024/api/Notification/${userId}`);
+      const res = await axios.get(`${API_BASE_URL}/api/Notification/${userId}`);
       setUnreadCount(res.data.unreadCount || 0);
       setNotifications(res.data.notifications || []);
     } catch {
@@ -102,7 +103,7 @@ const Navbar = () => {
 
     if (nextState && unreadCount > 0 && userId) {
       try {
-        await axios.put(`http://localhost:5024/api/Notification/read/${userId}`);
+        await axios.put(`${API_BASE_URL}/api/Notification/read/${userId}`);
         setUnreadCount(0);
       } catch {
         /* ignore */

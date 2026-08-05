@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_BASE_URL } from "../../config/api";
 
 import {
     MapPin,
@@ -53,7 +54,7 @@ const handleApply = async()=>{
 });
 
         const response = await axios.post(
-            "http://localhost:5024/api/Application/apply",
+            `${API_BASE_URL}/api/Application/apply`,
             {
                 userId: Number(userId),
                 opportunityId: opportunity.id
@@ -120,7 +121,7 @@ const handleApply = async()=>{
 
 
                 const response = await axios.get(
-                    `http://localhost:5024/api/Opportunities/${id}`
+                    `${API_BASE_URL}/api/Opportunities/${id}`
                 );
 
 

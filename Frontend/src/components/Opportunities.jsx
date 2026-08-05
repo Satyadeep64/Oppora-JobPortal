@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL, getFullUrl } from "../config/api";
 import {
   Briefcase,
   MapPin,
@@ -127,7 +128,7 @@ const TrendingOpportunities = () => {
   useEffect(() => {
     const loadOpportunities = async () => {
       try {
-        const response = await axios.get("http://localhost:5024/api/Opportunities");
+        const response = await axios.get(`${API_BASE_URL}/api/Opportunities`);
         if (response.data && response.data.length > 0) {
           setAllOpportunities(response.data);
         } else {
@@ -193,11 +194,7 @@ const TrendingOpportunities = () => {
   const internshipsList = filteredData.filter((i) => i.type === "Internship");
 
   const resolveCompanyLogoUrl = (logoPath) => {
-    if (!logoPath) return null;
-    if (logoPath.startsWith("http://") || logoPath.startsWith("https://") || logoPath.startsWith("data:")) {
-      return logoPath;
-    }
-    return `http://localhost:5024${logoPath.startsWith('/') ? '' : '/'}${logoPath}`;
+    return getFullUrl(logoPath);
   };
 
   const OpportunityCard = ({ job }) => {

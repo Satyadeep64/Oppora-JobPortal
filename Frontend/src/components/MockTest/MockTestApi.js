@@ -1,4 +1,6 @@
-const API_BASE_URL = "http://localhost:5024/api/MockTest";
+import { API_BASE_URL } from "../../config/api";
+
+const MOCK_TEST_API_URL = `${API_BASE_URL}/api/MockTest`;
 
 async function handleResponse(response) {
     const data = await response.json();
@@ -12,7 +14,7 @@ async function handleResponse(response) {
 
 // Generate AI Mock Test
 export async function generateTest(request) {
-    const response = await fetch(`${API_BASE_URL}/generate`, {
+    const response = await fetch(`${MOCK_TEST_API_URL}/generate`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -25,7 +27,7 @@ export async function generateTest(request) {
 
 // Get Existing Test
 export async function getTest(sessionId) {
-    const response = await fetch(`${API_BASE_URL}/${sessionId}`);
+    const response = await fetch(`${MOCK_TEST_API_URL}/${sessionId}`);
 
     return handleResponse(response);
 }
@@ -33,7 +35,7 @@ export async function getTest(sessionId) {
 // Submit Test
 export async function submitTest(sessionId, answers) {
     const response = await fetch(
-        `${API_BASE_URL}/submit/${sessionId}`,
+        `${MOCK_TEST_API_URL}/submit/${sessionId}`,
         {
             method: "POST",
             headers: {
@@ -50,7 +52,7 @@ export async function submitTest(sessionId, answers) {
 
 // Clear Session
 export async function clearSession(sessionId) {
-    const response = await fetch(`${API_BASE_URL}/${sessionId}`, {
+    const response = await fetch(`${MOCK_TEST_API_URL}/${sessionId}`, {
         method: "DELETE",
     });
 

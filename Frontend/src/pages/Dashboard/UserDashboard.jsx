@@ -3,6 +3,7 @@ import "./UserDashboard.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../../config/api";
 
 import {
     Briefcase,
@@ -44,7 +45,7 @@ const MyActivity = () => {
 
                 const response = await axios.get(
 
-                    `http://localhost:5024/api/Dashboard/candidate/${userId}`
+                    `${API_BASE_URL}/api/Dashboard/candidate/${userId}`
 
                 );
 

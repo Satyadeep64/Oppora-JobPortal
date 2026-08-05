@@ -7,6 +7,7 @@ import {
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import "./Profile.css";
 import axios from "axios";
+import { API_BASE_URL, getFullUrl } from "../../config/api";
 
 const Profile = () => {
     const [image, setImage] = useState(null);
@@ -39,7 +40,7 @@ const Profile = () => {
         const getProfile = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:5024/api/Profile/${userId}`
+                    `${API_BASE_URL}/api/Profile/${userId}`
                 );
                 const data = response.data;
                 setProfile({
@@ -67,7 +68,7 @@ const Profile = () => {
 
         const getNotifications = async () => {
             try {
-                const res = await axios.get(`http://localhost:5024/api/Notification/${userId}`);
+                const res = await axios.get(`${API_BASE_URL}/api/Notification/${userId}`);
                 setUserNotifications(res.data.notifications || []);
             } catch {
                 /* ignore */
@@ -87,7 +88,7 @@ const Profile = () => {
             formData.append("file", file);
             try {
                 const response = await axios.post(
-                    `http://localhost:5024/api/Profile/upload-image/${userId}`,
+                    `${API_BASE_URL}/api/Profile/upload-image/${userId}`,
                     formData,
                     { headers: { "Content-Type": "multipart/form-data" } }
                 );
@@ -109,7 +110,7 @@ const Profile = () => {
             formData.append("file", file);
             try {
                 const response = await axios.post(
-                    `http://localhost:5024/api/Profile/upload-resume/${userId}`,
+                    `${API_BASE_URL}/api/Profile/upload-resume/${userId}`,
                     formData,
                     { headers: { "Content-Type": "multipart/form-data" } }
                 );
@@ -145,7 +146,7 @@ const Profile = () => {
     const saveProfile = async () => {
         try {
             await axios.put(
-                `http://localhost:5024/api/Profile/${userId}`,
+                `${API_BASE_URL}/api/Profile/${userId}`,
                 {
                     fullName: profile.fullName,
                     email: profile.email,
@@ -182,11 +183,7 @@ const Profile = () => {
     };
 
     const resolveResumeUrl = (url) => {
-        if (!url) return "";
-        if (url.startsWith("http://") || url.startsWith("https://") || url.startsWith("blob:") || url.startsWith("data:")) {
-            return url;
-        }
-        return `http://localhost:5024${url.startsWith("/") ? "" : "/"}${url}`;
+        return getFullUrl(url);
     };
 
     const completion = calculateCompletion();

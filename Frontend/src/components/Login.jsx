@@ -79,7 +79,7 @@ useEffect(()=>{
     
     try {
       const response = await axios.post(
-        "http://localhost:5024/api/auth/register",
+        `${API_BASE_URL}/api/auth/register`,
         {
           fullName,
           email,
@@ -114,7 +114,7 @@ useEffect(()=>{
 
 
         const response = await axios.post(
-            "http://localhost:5024/api/auth/login",
+            `${API_BASE_URL}/api/auth/login`,
             {
                 email,
                 password

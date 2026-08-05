@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
+import { API_BASE_URL, getFullUrl } from "../../config/api";
 
 import {
     Briefcase,
@@ -41,7 +42,7 @@ const ManageOpportunities = () => {
 
 
             const response = await axios.get(
-    `http://localhost:5024/api/Opportunities/recruiter/${recruiterId}`,
+    `${API_BASE_URL}/api/Opportunities/recruiter/${recruiterId}`,
     {
         headers:{
             Authorization:`Bearer ${localStorage.getItem("token")}`
@@ -108,7 +109,7 @@ useEffect(()=>{
 
             await axios.delete(
 
-                `http://localhost:5024/api/Opportunities/${id}`,
+                `${API_BASE_URL}/api/Opportunities/${id}`,
 
                 {
                     headers:{
@@ -284,7 +285,7 @@ useEffect(()=>{
                           <img
         src={
             job.companyLogo
-            ? (job.companyLogo.startsWith("http") ? job.companyLogo : `http://localhost:5024${job.companyLogo.startsWith('/') ? '' : '/'}${job.companyLogo}`)
+            ? getFullUrl(job.companyLogo)
             : "/default-company.png"
         }
         alt={job.companyName}

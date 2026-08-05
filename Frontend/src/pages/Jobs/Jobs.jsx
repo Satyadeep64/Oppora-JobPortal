@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
+import { API_BASE_URL, getFullUrl } from "../../config/api";
 import {
     Briefcase,
     MapPin,
@@ -91,7 +92,7 @@ const Jobs = () => {
 
 
                 const response = await axios.get(
-                    "http://localhost:5024/api/Opportunities"
+                    `${API_BASE_URL}/api/Opportunities`
                 );
 
                 console.log(response.data);
@@ -697,7 +698,7 @@ const Jobs = () => {
 <img
   src={
     job.companyLogo
-      ? (job.companyLogo.startsWith("http") ? job.companyLogo : `http://localhost:5024${job.companyLogo.startsWith('/') ? '' : '/'}${job.companyLogo}`)
+      ? getFullUrl(job.companyLogo)
       : "/default-company.png"
   }
   alt={job.companyName}

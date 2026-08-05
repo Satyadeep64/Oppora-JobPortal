@@ -49,7 +49,7 @@ namespace Oppora.API.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Applications", (string)null);
+                    b.ToTable("Applications");
                 });
 
             modelBuilder.Entity("Oppora.API.Models.BlogComment", b =>
@@ -81,7 +81,7 @@ namespace Oppora.API.Migrations
 
                     b.HasIndex("BlogPostId");
 
-                    b.ToTable("BlogComments", (string)null);
+                    b.ToTable("BlogComments");
                 });
 
             modelBuilder.Entity("Oppora.API.Models.BlogPost", b =>
@@ -125,7 +125,7 @@ namespace Oppora.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("BlogPosts", (string)null);
+                    b.ToTable("BlogPosts");
                 });
 
             modelBuilder.Entity("Oppora.API.Models.Course", b =>
@@ -158,7 +158,7 @@ namespace Oppora.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Courses", (string)null);
+                    b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("Oppora.API.Models.Notification", b =>
@@ -192,7 +192,7 @@ namespace Oppora.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Notifications", (string)null);
+                    b.ToTable("Notifications");
                 });
 
             modelBuilder.Entity("Oppora.API.Models.Opportunity", b =>
@@ -258,7 +258,7 @@ namespace Oppora.API.Migrations
 
                     b.HasIndex("RecruiterId");
 
-                    b.ToTable("Opportunities", (string)null);
+                    b.ToTable("Opportunities");
                 });
 
             modelBuilder.Entity("Oppora.API.Models.Resume", b =>
@@ -331,7 +331,7 @@ namespace Oppora.API.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Resumes", (string)null);
+                    b.ToTable("Resumes");
                 });
 
             modelBuilder.Entity("Oppora.API.Models.User", b =>
@@ -401,7 +401,7 @@ namespace Oppora.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Oppora.API.Models.Application", b =>
@@ -415,7 +415,7 @@ namespace Oppora.API.Migrations
                     b.HasOne("Oppora.API.Models.User", "User")
                         .WithMany("Applications")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Opportunity");

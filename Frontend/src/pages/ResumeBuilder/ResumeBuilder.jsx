@@ -6,9 +6,10 @@ import {
     FaPalette, FaCheckCircle
 } from "react-icons/fa";
 import ResumeTemplate from "./ResumeTemplate";
+import { API_BASE_URL } from "../../config/api";
 import "./ResumeBuilder.css";
 
-const API = "http://localhost:5024/api";
+const API = `${API_BASE_URL}/api`;
 
 const emptyExperience = () => ({
     jobTitle: "", company: "", startDate: "", endDate: "", description: ""

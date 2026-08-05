@@ -40,6 +40,43 @@ namespace Oppora.API.Data
             modelBuilder.Entity<User>()
                 .Property(x => x.PasswordHash)
                 .HasColumnName("PasswordHash");
+
+            modelBuilder.Entity<Application>()
+                .HasOne(a => a.User)
+                .WithMany(u => u.Applications)
+                .HasForeignKey(a => a.UserId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<Application>()
+                .HasOne(a => a.Opportunity)
+                .WithMany(o => o.Applications)
+                .HasForeignKey(a => a.OpportunityId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Opportunity>()
+                .HasOne(o => o.Recruiter)
+                .WithMany()
+                .HasForeignKey(o => o.RecruiterId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Application>()
+    .HasOne(a => a.User)
+    .WithMany(u => u.Applications)
+    .HasForeignKey(a => a.UserId)
+    .OnDelete(DeleteBehavior.NoAction);
+
+modelBuilder.Entity<Application>()
+    .HasOne(a => a.Opportunity)
+    .WithMany(o => o.Applications)
+    .HasForeignKey(a => a.OpportunityId)
+    .OnDelete(DeleteBehavior.Cascade);
+
+modelBuilder.Entity<Opportunity>()
+    .HasOne(o => o.Recruiter)
+    .WithMany()
+    .HasForeignKey(o => o.RecruiterId)
+    .OnDelete(DeleteBehavior.Cascade);
         }
+    }
 }
-}
+

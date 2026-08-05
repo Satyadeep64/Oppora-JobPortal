@@ -2,6 +2,7 @@ import "./ViewApplicant.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { API_BASE_URL, getFullUrl } from "../../config/api";
 
 
 const ViewApplicants = () => {
@@ -15,11 +16,7 @@ const ViewApplicants = () => {
     const [loading, setLoading] = useState(true);
 
     const resolveResumeUrl = (url) => {
-        if (!url) return null;
-        if (url.startsWith("http://") || url.startsWith("https://") || url.startsWith("blob:") || url.startsWith("data:")) {
-            return url;
-        }
-        return `http://localhost:5024${url.startsWith("/") ? "" : "/"}${url}`;
+        return getFullUrl(url);
     };
 
     const handleViewResume = (app) => {
@@ -47,7 +44,7 @@ const ViewApplicants = () => {
 
                 const response = await axios.get(
 
-                    `http://localhost:5024/api/Application/opportunity/${id}`
+                    `${API_BASE_URL}/api/Application/opportunity/${id}`
 
                 );
 
@@ -121,7 +118,7 @@ const updateStatus = async(applicationId,status)=>{
 
         await axios.put(
 
-            `http://localhost:5024/api/Application/${applicationId}/status`,
+            `${API_BASE_URL}/api/Application/${applicationId}/status`,
 
             status,
 

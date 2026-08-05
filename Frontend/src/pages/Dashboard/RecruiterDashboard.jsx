@@ -2,6 +2,7 @@ import "./RecruiterDashboard.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../../config/api";
 
 
 const RecruiterDashboard = () => {
@@ -24,7 +25,7 @@ const RecruiterDashboard = () => {
         try {
 
             const res = await axios.get(
-                `http://localhost:5024/api/Dashboard/recruiter/${recruiterId}`
+                `${API_BASE_URL}/api/Dashboard/recruiter/${recruiterId}`
             );
 
 
@@ -76,7 +77,7 @@ const RecruiterDashboard = () => {
 
             await axios.delete(
 
-                `http://localhost:5024/api/Opportunities/${id}`,
+                `${API_BASE_URL}/api/Opportunities/${id}`,
 
                 {
                     headers:{

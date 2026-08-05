@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { API_BASE_URL } from "../../config/api";
 import "./ChangePassword.css";
 
 const ChangePassword = () => {
@@ -14,7 +15,7 @@ const ChangePassword = () => {
             const id = localStorage.getItem("userId");
              console.log("User ID:", id);
             await axios.put(
-                `http://localhost:5024/api/profile/change-password/${id}`,
+                `${API_BASE_URL}/api/profile/change-password/${id}`,
                 {
                     oldPassword,
                     newPassword

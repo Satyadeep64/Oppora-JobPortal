@@ -1,5 +1,6 @@
 import "./Courses.css";
 import { useState, useEffect } from "react";
+import { API_BASE_URL } from "../../config/api";
 
 import HeroSection from "./components/HeroSection";
 import SearchBar from "./components/SearchBar";
@@ -54,7 +55,7 @@ const CoursesPage = () => {
 
         setLoading(true);
 const response = await fetch(
-  `http://localhost:5024/api/courses?search=${encodeURIComponent(search)}&category=${encodeURIComponent(category)}`
+  `${API_BASE_URL}/api/courses?search=${encodeURIComponent(search)}&category=${encodeURIComponent(category)}`
 );
 
         const data = await response.json();
